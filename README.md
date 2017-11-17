@@ -1,4 +1,5 @@
-# generator-altran-angular [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-altran-angular 
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Use it to help you create AngularJS applications.
 
 ## Installation
@@ -26,7 +27,6 @@ yo altran-angular
 ## License
 
 MIT © [C0ZEN](www.geoffreytestelin.comgeoffreytestelin.com)
-
 
 [npm-image]: https://badge.fury.io/js/generator-altran-angular.svg
 [npm-url]: https://npmjs.org/package/generator-altran-angular
