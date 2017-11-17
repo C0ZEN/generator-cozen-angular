@@ -1,2 +1,2 @@
-[*.md]
+[*.{md,markdown}]
 trim_trailing_whitespace = false

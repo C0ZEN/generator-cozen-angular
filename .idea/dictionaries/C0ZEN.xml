@@ -1,0 +1,32 @@
+<component name="ProjectDictionaryState">
+  <dictionary name="C0ZEN">
+    <words>
+      <w>autoprefix</w>
+      <w>autoprefixer</w>
+      <w>bowerrc</w>
+      <w>cssmin</w>
+      <w>cssnano</w>
+      <w>editorconfig</w>
+      <w>filerev</w>
+      <w>gitattributes</w>
+      <w>gitignore</w>
+      <w>htmlmin</w>
+      <w>imagemin</w>
+      <w>jshintrc</w>
+      <w>lodash</w>
+      <w>logex</w>
+      <w>minimatch</w>
+      <w>mkdirp</w>
+      <w>phantomjs</w>
+      <w>pixrem</w>
+      <w>portail</w>
+      <w>preprocess</w>
+      <w>preprod</w>
+      <w>svgmin</w>
+      <w>uglify</w>
+      <w>usemin</w>
+      <w>webrtc</w>
+      <w>wiredep</w>
+    </words>
+  </dictionary>
+</component>
