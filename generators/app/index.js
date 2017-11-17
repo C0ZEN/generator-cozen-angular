@@ -39,8 +39,7 @@
 
             this.logFnCalled = $target => {
                 if (debug) {
-                    this.log(chalk.hex(colors.blue)('[' + $target + ']'),
-                        'Called');
+                    this.log(chalk.hex(colors.blue)('[' + $target + ']'), 'Called');
                 }
             };
 
@@ -48,11 +47,10 @@
                 if ($spaceBefore) {
                     this.log('');
                 }
-                this.log(chalk.hex(colors.orange).bold('>>> %s <<<\n'),
-                    upperCase($priority));
+                this.log(chalk.hex(colors.orange).bold('>>> %s <<<\n'), upperCase($priority));
             };
 
-            this.logHint = ($text) => {
+            this.logHint = $text => {
                 if ($text) {
                     this.log(chalk.hex(colors.purple)($text + '\n'));
                 }
@@ -62,18 +60,11 @@
             };
 
             this.copyFile = $path => {
-                this.fs.copy(
-                    this.templatePath($path),
-                    this.destinationPath($path)
-                );
+                this.fs.copy(this.templatePath($path), this.destinationPath($path));
             };
 
             this.copyFileTpl = ($path, $data) => {
-                this.fs.copyTpl(
-                    this.templatePath($path),
-                    this.destinationPath($path),
-                    $data
-                );
+                this.fs.copyTpl(this.templatePath($path), this.destinationPath($path), $data);
             };
 
             this.copyFileTplWithMultipleDestinations = ($path, $data, $destinations) => {
@@ -103,7 +94,13 @@
 
             moment.locale('en');
 
-            this.log(yosay('Welcome to the wonderful ' + chalk.hex(colors.red)('generator-altran-angular') + ' generator !'));
+            this.log(
+                yosay(
+                    'Welcome to the wonderful ' +
+                    chalk.hex(colors.red)('generator-altran-angular') +
+                    ' generator !'
+                )
+            );
 
             const prompts = [
                 {
@@ -125,9 +122,13 @@
 
         appName() {
             this.logHint();
-            this.logHint('The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json');
+            this.logHint(
+                'The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json'
+            );
             this.logHint('Write it down in his normal syntax like <Altran Angular Generator>');
-            this.logHint('Wrong examples: <altran Angular Generator>, <altranAngularGenerator>, <altran-angular-generator>');
+            this.logHint(
+                'Wrong examples: <altran Angular Generator>, <altranAngularGenerator>, <altran-angular-generator>'
+            );
 
             const prompts = [
                 {
@@ -143,12 +144,18 @@
                 this.appNameCamel       = camelCase($response.appName);
                 this.appNameKebab       = kebabCase($response.appName);
                 this.appNameUpperPython = upperPythonCase($response.appName);
-                this.log('The app name in camelCase is :',
-                    chalk.hex(colors.cyan)(this.appNameCamel));
-                this.log('The app name in kebab-case is :',
-                    chalk.hex(colors.cyan)(this.appNameKebab));
-                this.log('The app name in UPPER_PYTHON_CASE is :',
-                    chalk.hex(colors.cyan)(this.appNameUpperPython));
+                this.log(
+                    'The app name in camelCase is :',
+                    chalk.hex(colors.cyan)(this.appNameCamel)
+                );
+                this.log(
+                    'The app name in kebab-case is :',
+                    chalk.hex(colors.cyan)(this.appNameKebab)
+                );
+                this.log(
+                    'The app name in UPPER_PYTHON_CASE is :',
+                    chalk.hex(colors.cyan)(this.appNameUpperPython)
+                );
                 this.log();
             });
         }
@@ -174,7 +181,9 @@
         theme() {
             this.logHint();
             this.logHint('The theme is a pure dependency of the Altran Angular Lib.');
-            this.logHint('Enter an existing theme or enter a new one that you will create in a few.');
+            this.logHint(
+                'Enter an existing theme or enter a new one that you will create in a few.'
+            );
 
             this.log('Current theme list :');
             this.log(chalk.hex(colors.cyan)('origin'));
@@ -223,7 +232,9 @@
 
         color() {
             this.logHint();
-            this.logHint('The backgroundColor is the background color for the Web App Manifest.');
+            this.logHint(
+                'The backgroundColor is the background color for the Web App Manifest.'
+            );
             this.logHint('The value can be any valid CSS color (blue, red, ...).');
             this.logHint('The themeColor is the background color for the search address bar.');
             this.logHint('The value can be any hexadecimal color (#123456, #4F257B, ...).');
@@ -292,14 +303,19 @@
                     type   : 'input',
                     name   : 'authorEmail',
                     message: 'Your email (altran) :',
-                    default: _.lowerCase(this.authorFirstName) + '.' + _.lowerCase(this.authorLastName) + '@altran.com'
+                    default:
+                    _.lowerCase(this.authorFirstName) +
+                    '.' +
+                    _.lowerCase(this.authorLastName) +
+                    '@altran.com'
                 }
             ];
 
             return this.prompt(prompts).then($response => {
                 this.authorEmail = $response.authorEmail;
                 this.authorShort = this.authorFirstName + ' ' + this.authorLastName;
-                this.authorLong  = this.authorFirstName + ' ' + this.authorLastName + ' ' + this.authorEmail;
+                this.authorLong  =
+                    this.authorFirstName + ' ' + this.authorLastName + ' ' + this.authorEmail;
                 this.log();
             });
         }
@@ -367,17 +383,21 @@
                 nowDate     : this.nowDate,
                 nowTime     : this.nowTime
             });
-            this.copyFileTplWithMultipleDestinations('app/config/targets/config.json', {
-                lang        : this.lang,
-                theme       : this.theme,
-                appName     : this.appName,
-                appNameKebab: this.appNameKebab
-            }, [
-                'app/config/targets/config.dev.json',
-                'app/config/targets/config.test.json',
-                'app/config/targets/config.prod.json',
-                'app/config/targets/config.preprod.json'
-            ]);
+            this.copyFileTplWithMultipleDestinations(
+                'app/config/targets/config.json',
+                {
+                    lang        : this.lang,
+                    theme       : this.theme,
+                    appName     : this.appName,
+                    appNameKebab: this.appNameKebab
+                },
+                [
+                    'app/config/targets/config.dev.json',
+                    'app/config/targets/config.test.json',
+                    'app/config/targets/config.prod.json',
+                    'app/config/targets/config.preprod.json'
+                ]
+            );
             this.copyFileTpl('app/config/tpls/index.tpl.html', {
                 appNameCamel: this.appNameCamel,
                 lang        : this.lang,
@@ -395,17 +415,21 @@
                 appNameUpperPython: this.appNameUpperPython,
                 appName           : this.appName
             });
-            this.copyFileTplWithMultipleDestinations('app/styles/less/app.less', {
-                theme       : this.theme,
-                appNameKebab: this.appNameKebab
-            }, [
-                'app/styles/less/' + this.appNameKebab + '.less'
-            ]);
-            this.copyFileTplWithMultipleDestinations('app/styles/less/app.loader.less', {
-                theme: this.theme
-            }, [
-                'app/styles/less/' + this.appNameKebab + '.loader.less'
-            ]);
+            this.copyFileTplWithMultipleDestinations(
+                'app/styles/less/app.less',
+                {
+                    theme       : this.theme,
+                    appNameKebab: this.appNameKebab
+                },
+                ['app/styles/less/' + this.appNameKebab + '.less']
+            );
+            this.copyFileTplWithMultipleDestinations(
+                'app/styles/less/app.loader.less',
+                {
+                    theme: this.theme
+                },
+                ['app/styles/less/' + this.appNameKebab + '.loader.less']
+            );
             this.copyFileTplWithMultipleDestinations('app/styles/less/app.variables.less', {}, [
                 'app/styles/less/' + this.appNameKebab + '.variables.less'
             ]);
@@ -445,92 +469,98 @@
             this.logPriority('install', true);
 
             if (!skipInstall) {
-                this.npmInstall([
-                    'app',
-                    'autoprefixer',
-                    'autoprefixer-core',
-                    'browser-window',
-                    'cssnano',
-                    'graceful-fs',
-                    'grunt',
-                    'grunt-angular-file-loader',
-                    'grunt-angular-templates',
-                    'grunt-autoprefixer',
-                    'grunt-cache-pug-compile',
-                    'grunt-concurrent',
-                    'grunt-contrib-clean',
-                    'grunt-contrib-concat',
-                    'grunt-contrib-copy',
-                    'grunt-contrib-cssmin',
-                    'grunt-contrib-htmlmin',
-                    'grunt-contrib-imagemin',
-                    'grunt-contrib-jshint',
-                    'grunt-contrib-less',
-                    'grunt-contrib-pug',
-                    'grunt-contrib-uglify',
-                    'grunt-cssnano',
-                    'grunt-filerev',
-                    'grunt-google-cdn',
-                    'grunt-jscs',
-                    'grunt-less-imports',
-                    'grunt-merge-json',
-                    'grunt-newer',
-                    'grunt-notify',
-                    'grunt-pixrem',
-                    'grunt-postcss',
-                    'grunt-preprocess',
-                    'grunt-prettier',
-                    'grunt-string-replace',
-                    'grunt-svgmin',
-                    'grunt-usemin',
-                    'grunt-wiredep',
-                    'jasmine-core',
-                    'jit-grunt',
-                    'jshint-stylish',
-                    'karma',
-                    'karma-jasmine',
-                    'karma-phantomjs-launcher',
-                    'less-plugin-autoprefix',
-                    'minimatch',
-                    'ng-simple-webrtc',
-                    'phantomjs-prebuilt',
-                    'pixrem',
-                    'prettier',
-                    'pug',
-                    'pug-inheritance',
-                    'time-grunt'
-                ], {
-                    'save-dev': true
-                });
+                this.npmInstall(
+                    [
+                        'app',
+                        'autoprefixer',
+                        'autoprefixer-core',
+                        'browser-window',
+                        'cssnano',
+                        'graceful-fs',
+                        'grunt',
+                        'grunt-angular-file-loader',
+                        'grunt-angular-templates',
+                        'grunt-autoprefixer',
+                        'grunt-cache-pug-compile',
+                        'grunt-concurrent',
+                        'grunt-contrib-clean',
+                        'grunt-contrib-concat',
+                        'grunt-contrib-copy',
+                        'grunt-contrib-cssmin',
+                        'grunt-contrib-htmlmin',
+                        'grunt-contrib-imagemin',
+                        'grunt-contrib-jshint',
+                        'grunt-contrib-less',
+                        'grunt-contrib-pug',
+                        'grunt-contrib-uglify',
+                        'grunt-cssnano',
+                        'grunt-filerev',
+                        'grunt-google-cdn',
+                        'grunt-jscs',
+                        'grunt-less-imports',
+                        'grunt-merge-json',
+                        'grunt-newer',
+                        'grunt-notify',
+                        'grunt-pixrem',
+                        'grunt-postcss',
+                        'grunt-preprocess',
+                        'grunt-prettier',
+                        'grunt-string-replace',
+                        'grunt-svgmin',
+                        'grunt-usemin',
+                        'grunt-wiredep',
+                        'jasmine-core',
+                        'jit-grunt',
+                        'jshint-stylish',
+                        'karma',
+                        'karma-jasmine',
+                        'karma-phantomjs-launcher',
+                        'less-plugin-autoprefix',
+                        'minimatch',
+                        'ng-simple-webrtc',
+                        'phantomjs-prebuilt',
+                        'pixrem',
+                        'prettier',
+                        'pug',
+                        'pug-inheritance',
+                        'time-grunt'
+                    ],
+                    {
+                        'save-dev': true
+                    }
+                );
 
-                this.bowerInstall([
-                    'reset-css',
-                    'jquery',
-                    'angular',
-                    'angular-aria',
-                    'angular-animate',
-                    'angular-cookies',
-                    'angular-messages',
-                    'angular-resource',
-                    'angular-route',
-                    'angular-sanitize',
-                    'angular-touch',
-                    'moment',
-                    'angular-translate',
-                    'angular-uuid-service',
-                    'angular-logex',
-                    'angular-ui-router',
-                    'angular-translate-loader-static-files',
-                    'angular-translate-loader-url',
-                    'angular-translate-loader-partial',
-                    'chance',
-                    'angular-dynamic-locale',
-                    'lodash',
-                    'animate.css',
-                    'angular-local-storage'
-                ], {
-                    'save-dev': false
-                });
+                this.bowerInstall(
+                    [
+                        'reset-css',
+                        'jquery',
+                        'angular',
+                        'angular-aria',
+                        'angular-animate',
+                        'angular-cookies',
+                        'angular-messages',
+                        'angular-resource',
+                        'angular-route',
+                        'angular-sanitize',
+                        'angular-touch',
+                        'moment',
+                        'angular-translate',
+                        'angular-uuid-service',
+                        'angular-logex',
+                        'angular-ui-router',
+                        'angular-translate-loader-static-files',
+                        'angular-translate-loader-url',
+                        'angular-translate-loader-partial',
+                        'chance',
+                        'angular-dynamic-locale',
+                        'lodash',
+                        'animate.css',
+                        'angular-local-storage'
+                    ],
+                    {
+                        'save-dev': false
+                    }
+                );
             }
             else {
                 this.log(chalk.hex(colors.blue)('Install was skipped.'));
@@ -539,13 +569,15 @@
 
         end() {
             this.logPriority('end', true);
-            this.log(chalk.hex(colors.green)('That\'s all folks !'));
+            this.log(chalk.hex(colors.green)("That's all folks !"));
             this.log(chalk.hex(colors.green)('Your project is ready ;)\n'));
-            this.log('Use the',
+            this.log(
+                'Use the',
                 chalk.hex(colors.navy).bgHex(colors.grey)('grunt-cli'),
-                'or use',
+                'or',
                 chalk.hex(colors.navy).bgHex(colors.grey)('grunt serve'),
-                'to start the server.');
+                'to start the server.'
+            );
         }
     };
-}());
+})();
