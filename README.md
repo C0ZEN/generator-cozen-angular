@@ -17,6 +17,22 @@ Then generate your new project:
 yo altran-angular
 ```
 
+## Development
+
+If you edit the generator, you must follow these steps.
+
+Run the link command:
+
+```bash
+npm link
+```
+
+And finally publish the new npm package:
+
+```bash
+npm publish
+```
+
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.
@@ -27,7 +43,6 @@ yo altran-angular
 ## License
 
 MIT © [C0ZEN](www.geoffreytestelin.comgeoffreytestelin.com)
-
 
 [npm-image]: https://badge.fury.io/js/generator-altran-angular.svg
 [npm-url]: https://npmjs.org/package/generator-altran-angular

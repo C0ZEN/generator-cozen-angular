@@ -25,12 +25,13 @@
         grey    : '#bdc3c7',
         darkGrey: '#7f8c8d',
         white   : '#ecf0f1',
-        navy    : '#2c3e50'
+        navy    : '#2c3e50',
+        purple  : '#9b59b6'
     };
 
     // Config
     const debug       = true;
-    const skipInstall = true;
+    const skipInstall = false;
 
     module.exports = class extends Generator {
         constructor($args, $opts) {
@@ -49,6 +50,15 @@
                 }
                 this.log(chalk.hex(colors.orange).bold('>>> %s <<<\n'),
                     upperCase($priority));
+            };
+
+            this.logHint = ($text) => {
+                if ($text) {
+                    this.log(chalk.hex(colors.purple)($text + '\n'));
+                }
+                else {
+                    this.log(chalk.hex(colors.purple).bold('Hint:\n'));
+                }
             };
 
             this.copyFile = $path => {
@@ -114,6 +124,11 @@
         }
 
         appName() {
+            this.logHint();
+            this.logHint('The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json');
+            this.logHint('Write it down in his normal syntax like <Altran Angular Generator>');
+            this.logHint('Wrong examples: <altran Angular Generator>, <altranAngularGenerator>, <altran-angular-generator>');
+
             const prompts = [
                 {
                     type   : 'input',
@@ -139,6 +154,9 @@
         }
 
         appDescription() {
+            this.logHint();
+            this.logHint('Just describe the purpose of your project.');
+
             const prompts = [
                 {
                     type   : 'input',
@@ -154,6 +172,10 @@
         }
 
         theme() {
+            this.logHint();
+            this.logHint('The theme is a pure dependency of the Altran Angular Lib.');
+            this.logHint('Enter an existing theme or enter a new one that you will create in a few.');
+
             this.log('Current theme list :');
             this.log(chalk.hex(colors.cyan)('origin'));
             this.log(chalk.hex(colors.cyan)('altran-portail-france'));
@@ -176,6 +198,9 @@
         }
 
         lang() {
+            this.logHint();
+            this.logHint('The default language of your application.');
+
             this.log('Current lang list :');
             this.log(chalk.hex(colors.cyan)('fr'));
             this.log(chalk.hex(colors.cyan)('en'));
@@ -197,29 +222,40 @@
         }
 
         color() {
+            this.logHint();
+            this.logHint('The backgroundColor is the background color for the Web App Manifest.');
+            this.logHint('The value can be any valid CSS color (blue, red, ...).');
+            this.logHint('The themeColor is the background color for the search address bar.');
+            this.logHint('The value can be any hexadecimal color (#123456, #4F257B, ...).');
+
             const prompts = [
                 {
                     type   : 'input',
-                    name   : 'color',
-                    message: 'Manifest color (string) :',
+                    name   : 'backgroundColor',
+                    message: 'Background color color :',
                     store  : true
                 },
                 {
                     type   : 'input',
-                    name   : 'colorHexadecimal',
-                    message: 'Manifest color (hexadecimal) :',
+                    name   : 'themeColor',
+                    message: 'Theme color :',
                     store  : true
                 }
             ];
 
             return this.prompt(prompts).then($response => {
-                this.color            = $response.color;
-                this.colorHexadecimal = $response.colorHexadecimal;
+                this.backgroundColor = $response.backgroundColor;
+                this.themeColor      = $response.themeColor;
                 this.log();
             });
         }
 
         author() {
+            this.logHint();
+            this.logHint('Simply set up your first name and last name.');
+            this.logHint('Do not forget the uppercase ;)');
+            this.logHint('Used on the file headers.');
+
             const prompts = [
                 {
                     type    : 'input',
@@ -248,6 +284,9 @@
         }
 
         authorEmail() {
+            this.logHint();
+            this.logHint('Simply set up your email.');
+
             const prompts = [
                 {
                     type   : 'input',
@@ -267,16 +306,16 @@
 
         configuring() {
             this.logPriority('configuring', true);
+        }
 
+        writing() {
             this.now     = moment();
             this.nowDate = this.now.format('DD/MM/YYYY');
             this.nowTime = this.now.format('HH:mm');
 
             this.log('Now :', chalk.hex(colors.cyan)(this.nowDate, this.nowTime));
             this.log();
-        }
 
-        writing() {
             this.logPriority('writing', true);
 
             // Default architecture
@@ -299,11 +338,11 @@
                 appNameKebab: this.appNameKebab
             });
             this.copyFileTpl('manifest.json', {
-                lang            : this.lang,
-                appDescription  : this.appDescription,
-                appName         : this.appName,
-                color           : this.color,
-                colorHexadecimal: this.colorHexadecimal
+                lang           : this.lang,
+                appDescription : this.appDescription,
+                appName        : this.appName,
+                backgroundColor: this.backgroundColor,
+                themeColor     : this.themeColor
             });
             this.copyFileTpl('LICENSE.md', {
                 appName: this.appName
@@ -340,10 +379,10 @@
                 'app/config/targets/config.preprod.json'
             ]);
             this.copyFileTpl('app/config/tpls/index.tpl.html', {
-                appNameCamel    : this.appNameCamel,
-                lang            : this.lang,
-                appNameKebab    : this.appNameKebab,
-                colorHexadecimal: this.colorHexadecimal
+                appNameCamel: this.appNameCamel,
+                lang        : this.lang,
+                appNameKebab: this.appNameKebab,
+                themeColor  : this.themeColor
             });
             this.copyFileTpl('app/config/tpls/target.config.tpl.js', {
                 appNameCamel: this.appNameCamel

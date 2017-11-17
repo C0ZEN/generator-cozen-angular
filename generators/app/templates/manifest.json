@@ -10,7 +10,7 @@
     "homepage_url": "",
     "short_name": "<%= appName %>",
     "version_name": "0.0.0",
-    "theme_color": "<%= colorHexadecimal %>",
-    "background_color": "<%= color %>",
+    "theme_color": "<%= themeColor %>",
+    "background_color": "<%= backgroundColor %>",
     "lang": "<%= lang %>"
 }
