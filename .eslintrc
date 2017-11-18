@@ -210,10 +210,7 @@
         ],
         "keyword-spacing": "error",
         "line-comment-position": "error",
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
+        "linebreak-style": "off",
         "lines-around-comment": "error",
         "max-depth": "error",
         "max-len": "off",
