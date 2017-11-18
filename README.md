@@ -1,5 +1,5 @@
 # generator-altran-angular 
-[![Software License][license-image]](LICENSE) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Maintainability][code-climate-maintainability-image]][code-climate-maintainability-url]] [![Test Coverage][code-climate-coverage-image]][code-climate-coverage-url]]
+[![Software License][license-image]](LICENSE) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Maintainability][code-climate-maintainability-image]][code-climate-maintainability-url] [![Test Coverage][code-climate-coverage-image]][code-climate-coverage-url]
 > Use it to help you create AngularJS applications using the internal library for Altran projects.
 
 ## Installation
