@@ -23,10 +23,9 @@
 		$translateProvider
 			.useSanitizeValueStrategy(config.useSanitizeValueStrategy)
 			.useStaticFilesLoader({
-					prefix: config.useStaticFilesLoader.prefix,
-					suffix: config.useStaticFilesLoader.suffix
-				}
-			)
+				prefix: config.useStaticFilesLoader.prefix,
+				suffix: config.useStaticFilesLoader.suffix
+			})
 			.preferredLanguage(config.defaultLanguage);
 	}
 
