@@ -8,26 +8,26 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    "use strict";
+	'use strict';
 
-    angular
-        .module("<%= appNameCamel %>")
-        .config(config);
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
 
-    config.$inject = [
-        "$translateProvider",
-        "config"
-    ];
+	provider.$inject = [
+		'$translateProvider',
+		'config'
+	];
 
-    function config($translateProvider, config) {
-        $translateProvider
-            .useSanitizeValueStrategy(config.useSanitizeValueStrategy)
-            .useStaticFilesLoader({
-                    prefix: config.useStaticFilesLoader.prefix,
-                    suffix: config.useStaticFilesLoader.suffix
-                }
-            )
-            .preferredLanguage(config.defaultLanguage);
-    }
+	function provider($translateProvider, config) {
+		$translateProvider
+			.useSanitizeValueStrategy(config.useSanitizeValueStrategy)
+			.useStaticFilesLoader({
+					prefix: config.useStaticFilesLoader.prefix,
+					suffix: config.useStaticFilesLoader.suffix
+				}
+			)
+			.preferredLanguage(config.defaultLanguage);
+	}
 
 })(window.angular);

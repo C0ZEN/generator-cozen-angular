@@ -8,20 +8,20 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    "use strict";
+	'use strict';
 
-    angular
-        .module("<%= appNameCamel %>")
-        .config(config);
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
 
-    config.$inject = [
-        "tmhDynamicLocaleProvider",
-        "config"
-    ];
+	provider.$inject = [
+		'tmhDynamicLocaleProvider',
+		'config'
+	];
 
-    function config(tmhDynamicLocaleProvider, config) {
-        tmhDynamicLocaleProvider
-            .localeLocationPattern(config.localeLocationPattern);
-    }
+	function provider(tmhDynamicLocaleProvider, config) {
+		tmhDynamicLocaleProvider
+			.localeLocationPattern(config.localeLocationPattern);
+	}
 
 })(window.angular);

@@ -35,6 +35,7 @@
     "esversion": 6,
     "globals": {
         "require": true,
-        "module": true
+        "module": true,
+        "window": true
     }
 }

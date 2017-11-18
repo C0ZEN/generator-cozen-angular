@@ -8,20 +8,20 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    "use strict";
+	'use strict';
 
-    angular
-        .module("<%= appNameCamel %>")
-        .config(config);
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
 
-    config.$inject = [
-        "altranApiProvider",
-        "config"
-    ];
+	provider.$inject = [
+		'altranApiProvider',
+		'config'
+	];
 
-    function config(altranApiProvider, config) {
-        altranApiProvider
-            .baseUrl(config.baseUrl);
-    }
+	function provider(altranApiProvider, config) {
+		altranApiProvider
+			.baseUrl(config.baseUrl);
+	}
 
 })(window.angular);

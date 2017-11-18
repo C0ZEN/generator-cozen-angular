@@ -8,24 +8,24 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    "use strict";
+	'use strict';
 
-    angular
-        .module("<%= appNameCamel %>")
-        .config(config);
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
 
-    config.$inject = [
-        "$locationProvider",
-        "config"
-    ];
+	provider.$inject = [
+		'$locationProvider',
+		'config'
+	];
 
-    function config($locationProvider, config) {
-        $locationProvider
-            .html5Mode({
-                enabled    : config.html5Mode.enabled,
-                requireBase: config.html5Mode.requireBase
-            })
-            .hashPrefix(config.hashPrefix);
-    }
+	function provider($locationProvider, config) {
+		$locationProvider
+			.html5Mode({
+				enabled    : config.html5Mode.enabled,
+				requireBase: config.html5Mode.requireBase
+			})
+			.hashPrefix(config.hashPrefix);
+	}
 
 })(window.angular);

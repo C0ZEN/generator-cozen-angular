@@ -8,17 +8,17 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    "use strict";
+	'use strict';
 
-    angular
-        .module("<%= appNameCamel %>")
-        .config(config);
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
 
-    config.$inject = [
-        "altranKeyboardProvider",
-        "config"
-    ];
+	provider.$inject = [
+		'altranKeyboardProvider',
+		'config'
+	];
 
-    function config(altranKeyboardProvider, config) {}
+	function provider(altranKeyboardProvider, config) {}
 
 })(window.angular);

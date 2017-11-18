@@ -8,20 +8,20 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    "use strict";
+	'use strict';
 
-    angular
-        .module("<%= appNameCamel %>")
-        .config(config);
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
 
-    config.$inject = [
-        "altranThemeProvider",
-        "config"
-    ];
+	provider.$inject = [
+		'altranThemeProvider',
+		'config'
+	];
 
-    function config(altranThemeProvider, config) {
-        altranThemeProvider
-            .setCurrent(config.theme);
-    }
+	function provider(altranThemeProvider, config) {
+		altranThemeProvider
+			.setCurrent(config.theme);
+	}
 
 })(window.angular);

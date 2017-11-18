@@ -2,12 +2,16 @@
 /.sass-cache/
 /bower_components/
 /node_modules/
+/app/languages/min/
+/release/
+/test/
+/preprod/
+/prod/
 /app/config/target.config.js
 /.idea/workspace.xml
 /app/scripts/<%= appNameKebab %>.js
 /app/scripts/<%= appNameKebab %>.min.js
 /app/scripts/<%= appNameKebab %>.min.js.map
-/app/languages/min/
 /app/styles/css/<%= appNameKebab %>.css
 /app/styles/css/<%= appNameKebab %>.css.map
 /app/styles/css/<%= appNameKebab %>.min.css
@@ -16,8 +20,4 @@
 /app/styles/css/init-loader.css.map
 /app/styles/css/init-loader.min.css
 /app/styles/css/init-loader.min.css.map
-/release/
-/test/
-/preprod/
-/prod/
 /app/index.html

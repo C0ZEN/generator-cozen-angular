@@ -8,20 +8,20 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    "use strict";
+	'use strict';
 
-    angular
-        .module("<%= appNameCamel %>")
-        .config(config);
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
 
-    config.$inject = [
-        "altranLanguageProvider",
-        "config"
-    ];
+	provider.$inject = [
+		'altranLanguageProvider',
+		'config'
+	];
 
-    function config(altranLanguageProvider, config) {
-        altranLanguageProvider
-            .setCurrent(config.defaultLanguage);
-    }
+	function provider(altranLanguageProvider, config) {
+		altranLanguageProvider
+			.setCurrent(config.defaultLanguage);
+	}
 
 })(window.angular);
