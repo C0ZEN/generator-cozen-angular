@@ -7,6 +7,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - New badge for MIT License
+- New badge for CodeClimate maintainability
+- New badge for CodeClimate test coverage
 
 ## [0.1.1]
 ### Changed
