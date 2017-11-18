@@ -19,19 +19,29 @@ yo altran-angular
 
 ## Development
 
-If you edit the generator, you must follow these steps.
+If you edit the generator, there is some npm commands to test or publish your changes.
 
-Run the link command:
+When you want to test your changes in local, you must run the link command:
 
 ```bash
 npm link
 ```
 
-And finally publish the new npm package:
+When you are done, you can publish the new npm package:
 
 ```bash
 npm publish
 ```
+
+## Npm publish fails
+
+If something goes wrong with `npm publish`, make sure to login yourself on npm and then fill the blanks:
+
+```bash
+npm login
+```
+
+And increment the `package.json` version.
 
 ## Getting To Know Yeoman
 

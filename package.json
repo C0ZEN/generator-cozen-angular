@@ -1,6 +1,6 @@
 {
     "name": "generator-altran-angular",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Use it to help you create AngularJS applications.",
     "homepage": "https://github.com/C0ZEN/generator-altran-angular",
     "author": {
@@ -52,7 +52,7 @@
         "testEnvironment": "node"
     },
     "scripts": {
-        "prepublish": "nsp check",
+        "prepare": "nsp check",
         "pretest": "eslint .",
         "test": "jest"
     },
