@@ -8,21 +8,21 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('<%= appNameCamel %>')
-        .config(config);
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
 
-    config.$inject = [
-        'altranDebugProvider',
-        'config'
-    ];
+	provider.$inject = [
+		'altranDebugProvider',
+		'config'
+	];
 
-    function config(altranDebugProvider, config) {
-        altranDebugProvider
-            .compile(config.compile)
-            .logsEnabled(config.logs.enabled);
-    }
+	function provider(altranDebugProvider, config) {
+		altranDebugProvider
+			.compile(config.compile)
+			.logsEnabled(config.logs.enabled);
+	}
 
 })(window.angular);

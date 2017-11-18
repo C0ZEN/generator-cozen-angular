@@ -1,0 +1,12 @@
+/.tmp/
+/.sass-cache/
+/bower_components/
+/node_modules/
+/.idea/
+/release/
+/test/
+/preprod/
+/prod/
+/app/scripts/<%= appNameKebab %>.js
+/app/scripts/<%= appNameKebab %>.min.js
+/app/scripts/<%= appNameKebab %>.min.js.map

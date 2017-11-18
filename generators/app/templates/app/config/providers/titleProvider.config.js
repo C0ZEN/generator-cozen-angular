@@ -8,20 +8,20 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('<%= appNameCamel %>')
-        .config(config);
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
 
-    config.$inject = [
-        'altranTitleProvider',
-        'config'
-    ];
+	provider.$inject = [
+		'altranTitleProvider',
+		'config'
+	];
 
-    function config(altranTitleProvider, config) {
-        altranTitleProvider
-            .defaultTitle(config.defaultTitle);
-    }
+	function provider(altranTitleProvider, config) {
+		altranTitleProvider
+			.defaultTitle(config.defaultTitle);
+	}
 
 })(window.angular);

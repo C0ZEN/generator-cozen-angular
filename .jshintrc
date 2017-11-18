@@ -5,7 +5,7 @@
     "forin": true,
     "freeze": true,
     "futurehostile": true,
-    "latedef": true,
+    "latedef": "nofunc",
     "maxdepth": 6,
     "maxerr": 1000,
     "maxparams": 5,
@@ -35,6 +35,10 @@
     "esversion": 6,
     "globals": {
         "require": true,
-        "module": true
+        "module": true,
+        "window": true,
+        "describe": true,
+        "beforeAll": true,
+        "it": true
     }
 }

@@ -1,2 +1,2 @@
-coverage
-**/templates
+/__tests__/
+/node_modules/

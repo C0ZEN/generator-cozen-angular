@@ -1,7 +1,6 @@
 {
     "disallowDanglingUnderscores": true,
     "disallowArrayDestructuringReturn": true,
-    "disallowArrowFunctions": false,
     "disallowIdenticalDestructuringNames": true,
     "disallowMixedSpacesAndTabs": "smart",
     "disallowEmptyBlocks": true,
@@ -14,7 +13,6 @@
     "disallowSpaceBeforeSemicolon": true,
     "disallowSpacesInCallExpression": true,
     "disallowTrailingComma": true,
-    "disallowYodaConditions": true,
     "requireCamelCaseOrUpperCaseIdentifiers": true,
     "requireCapitalizedComments": true,
     "requireCapitalizedConstructors": true,
@@ -56,5 +54,6 @@
     "requirePaddingNewLinesAfterUseStrict": true,
     "requirePaddingNewLinesBeforeLineComments": true,
     "validateQuoteMarks": "'",
-    "maxErrors": 10000
+    "maxErrors": 10000,
+    "validateIndentation": "\t"
 }
