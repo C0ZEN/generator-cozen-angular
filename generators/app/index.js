@@ -369,6 +369,41 @@
 			});
 
 			// App architecture
+			this.copyFileTpl('app/config/providers/apiProvider.config.js', {
+				appNameKebab: this.appNameKebab,
+				appNameCamel: this.appNameCamel,
+				authorShort : this.authorShort,
+				nowDate     : this.nowDate,
+				nowTime     : this.nowTime
+			});
+			this.copyFileTpl('app/config/providers/appProvider.config.js', {
+				appNameKebab: this.appNameKebab,
+				appNameCamel: this.appNameCamel,
+				authorShort : this.authorShort,
+				nowDate     : this.nowDate,
+				nowTime     : this.nowTime
+			});
+			this.copyFileTpl('app/config/providers/debugProvider.config.js', {
+				appNameKebab: this.appNameKebab,
+				appNameCamel: this.appNameCamel,
+				authorShort : this.authorShort,
+				nowDate     : this.nowDate,
+				nowTime     : this.nowTime
+			});
+			this.copyFileTpl('app/config/providers/dynamicLocaleProvider.config.js', {
+				appNameKebab: this.appNameKebab,
+				appNameCamel: this.appNameCamel,
+				authorShort : this.authorShort,
+				nowDate     : this.nowDate,
+				nowTime     : this.nowTime
+			});
+			this.copyFileTpl('app/config/providers/httpProvider.config.js', {
+				appNameKebab: this.appNameKebab,
+				appNameCamel: this.appNameCamel,
+				authorShort : this.authorShort,
+				nowDate     : this.nowDate,
+				nowTime     : this.nowTime
+			});
 			this.copyFileTpl('app/config/providers/languageProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
@@ -376,8 +411,42 @@
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTplWithMultipleDestinations(
-				'app/config/targets/config.json',
+			this.copyFileTpl('app/config/providers/locationProvider.config.js', {
+				appNameKebab: this.appNameKebab,
+				appNameCamel: this.appNameCamel,
+				authorShort : this.authorShort,
+				nowDate     : this.nowDate,
+				nowTime     : this.nowTime
+			});
+			this.copyFileTpl('app/config/providers/themeProvider.config.js', {
+				appNameKebab: this.appNameKebab,
+				appNameCamel: this.appNameCamel,
+				authorShort : this.authorShort,
+				nowDate     : this.nowDate,
+				nowTime     : this.nowTime
+			});
+			this.copyFileTpl('app/config/providers/titleProvider.config.js', {
+				appNameKebab: this.appNameKebab,
+				appNameCamel: this.appNameCamel,
+				authorShort : this.authorShort,
+				nowDate     : this.nowDate,
+				nowTime     : this.nowTime
+			});
+			this.copyFileTpl('app/config/providers/translateProvider.config.js', {
+				appNameKebab: this.appNameKebab,
+				appNameCamel: this.appNameCamel,
+				authorShort : this.authorShort,
+				nowDate     : this.nowDate,
+				nowTime     : this.nowTime
+			});
+			this.copyFileTpl('app/config/providers/urlRouterProvider.config.js', {
+				appNameKebab: this.appNameKebab,
+				appNameCamel: this.appNameCamel,
+				authorShort : this.authorShort,
+				nowDate     : this.nowDate,
+				nowTime     : this.nowTime
+			});
+			this.copyFileTplWithMultipleDestinations('app/config/targets/config.json',
 				{
 					lang        : this.lang,
 					theme       : this.theme,
@@ -389,8 +458,7 @@
 					'app/config/targets/config.test.json',
 					'app/config/targets/config.prod.json',
 					'app/config/targets/config.preprod.json'
-				]
-			);
+				]);
 			this.copyFileTpl('app/config/tpls/index.tpl.html', {
 				appNameCamel: this.appNameCamel,
 				lang        : this.lang,
@@ -452,6 +520,7 @@
 				'app/scripts/filters',
 				'app/scripts/services',
 				'app/scripts/constants',
+				'app/scripts/providers',
 				'app/styles/css',
 				'app/styles/less/override',
 				'app/views/'

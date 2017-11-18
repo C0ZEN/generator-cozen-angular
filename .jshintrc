@@ -36,6 +36,9 @@
     "globals": {
         "require": true,
         "module": true,
-        "window": true
+        "window": true,
+        "describe": true,
+        "beforeAll": true,
+        "it": true
     }
 }

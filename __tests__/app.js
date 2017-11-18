@@ -1,11 +1,126 @@
-'use strict';
-const path    = require('path');
-const assert  = require('yeoman-assert');
-const helpers = require('yeoman-test');
+/* jshint -W117 */
+(function () {
+	'use strict';
 
-describe('generator-altran-angular:app', () => {
-    beforeAll(() => {
-        return helpers.run(path.join(__dirname, '../generators/app'))
-            .withPrompts({someAnswer: true});
-    });
-});
+	const path      = require('path');
+	const assert    = require('yeoman-assert');
+	const helpers   = require('yeoman-test');
+	const kebabCase = require('lodash.kebabcase');
+
+	const appName      = 'Test App';
+	const appNameKebab = kebabCase(appName);
+
+	describe('generator-altran-angular:app', () => {
+		beforeAll(() => {
+			return helpers.run(path.join(__dirname, '../generators/app'))
+				.withPrompts({
+					appName        : appName,
+					appDescription : 'Generated Test App',
+					theme          : 'origin',
+					lang           : 'en',
+					backgroundColor: 'white',
+					themeColor     : '#123456',
+					authorFirstName: 'Geoffrey',
+					authorLastName : 'Testelin',
+					authorEmail    : 'geoffrey.testelin@gmail.com'
+				});
+		});
+
+		it('create config root files', () => {
+			assert.file([
+				'.bowerrc',
+				'.editorconfig',
+				'.eslintignore',
+				'.eslintrc',
+				'.gitattributes',
+				'.gitignore',
+				'.jscsrc',
+				'.jshintrc',
+				'bower.json',
+				'CHANGELOG.md',
+				'CONTRIBUTING.md',
+				'Gruntfile.js',
+				'LICENSE.md',
+				'manifest.json',
+				'package.json',
+				'README.md'
+			]);
+		});
+
+		it('create app module file', () => {
+			assert.file([
+				'app/app.js'
+			]);
+		});
+
+		it('create app config files', () => {
+			assert.file([
+				'app/config/providers/apiProvider.config.js',
+				'app/config/providers/appProvider.config.js',
+				'app/config/providers/debugProvider.config.js',
+				'app/config/providers/dynamicLocaleProvider.config.js',
+				'app/config/providers/httpProvider.config.js',
+				'app/config/providers/languageProvider.config.js',
+				'app/config/providers/locationProvider.config.js',
+				'app/config/providers/themeProvider.config.js',
+				'app/config/providers/titleProvider.config.js',
+				'app/config/providers/translateProvider.config.js',
+				'app/config/providers/urlRouterProvider.config.js',
+				'app/config/targets/config.dev.json',
+				'app/config/targets/config.test.json',
+				'app/config/targets/config.preprod.json',
+				'app/config/targets/config.prod.json',
+				'app/config/tpls/index.tpl.html',
+				'app/config/tpls/target.config.tpl.js'
+			]);
+		});
+
+		it('create app images folders', () => {
+			assert.file([
+				'app/images/gif',
+				'app/images/jpg',
+				'app/images/png',
+				'app/images/svg'
+			]);
+		});
+
+		it('create app languages files', () => {
+			assert.file([
+				'app/languages/en/global.json',
+				'app/languages/fr/global.json'
+			]);
+		});
+
+		it('create app medias folders', () => {
+			assert.file([
+				'app/medias/sounds',
+				'app/medias/videos'
+			]);
+		});
+
+		it('create app scripts folders', () => {
+			assert.file([
+				'app/scripts/constants',
+				'app/scripts/directives',
+				'app/scripts/filters',
+				'app/scripts/services',
+				'app/scripts/providers'
+			]);
+		});
+
+		it('create app styles files', () => {
+			assert.file([
+				'app/styles/css',
+				'app/styles/less/' + appNameKebab + '.less',
+				'app/styles/less/' + appNameKebab + '.loader.less',
+				'app/styles/less/' + appNameKebab + '.variables.less'
+			]);
+		});
+
+		it('create app views folder', () => {
+			assert.file([
+				'app/views'
+			]);
+		});
+	});
+})();

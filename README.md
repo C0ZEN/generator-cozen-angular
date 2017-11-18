@@ -4,6 +4,8 @@
 
 ## Installation
 
+If you're on Windows, do yourself a favor and use [cmder](http://cmder.net/) instead of `cmd.exe`.
+
 First, install [Yeoman](http://yeoman.io) and generator-altran-angular using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
@@ -27,7 +29,15 @@ When you want to test your changes in local, you must run the link command:
 npm link
 ```
 
-When you are done, you can publish the new npm package:
+Then you can create a new project with `yo altran-angular`.
+
+You can also lint and test the code:
+
+```bash
+npm test
+```
+
+When you are done, you can commit and publish the new npm package:
 
 ```bash
 npm publish

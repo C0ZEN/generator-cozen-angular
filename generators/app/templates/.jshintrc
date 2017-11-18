@@ -45,6 +45,9 @@
         "moment": true,
         "Chance": true,
         "_": true,
-        "Intl": true
+        "Intl": true,
+        "describe": true,
+        "beforeAll": true,
+        "it": true
     }
 }
