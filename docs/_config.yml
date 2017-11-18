@@ -7,4 +7,5 @@ author_email: geoffrey.testelin@gmail.com
 permalink: pretty
 
 # Url
-homePageUrl: https://c0zen.github.io/Generator-Altran-Angular/
+homePageUrl: https://c0zen.github.io/generator-altran-angular/
+baseUrl: https://c0zen.github.io/generator-altran-angular/
