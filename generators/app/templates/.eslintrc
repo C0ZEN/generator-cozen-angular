@@ -234,7 +234,7 @@
         "no-mixed-spaces-and-tabs": "error",
         "no-multi-assign": "error",
         "no-multiple-empty-lines": "error",
-        "no-negated-condition": "error",
+        "no-negated-condition": "off",
         "no-nested-ternary": "error",
         "no-new-object": "error",
         "no-plusplus": "off",
@@ -295,7 +295,10 @@
         "template-tag-spacing": "error",
         "unicode-bom": "error",
         "wrap-regex": "error",
-        "arrow-body-style": "error",
+        "arrow-body-style": [
+            "error",
+            "always"
+        ],
         "arrow-parens": "error",
         "arrow-spacing": "error",
         "constructor-super": "error",

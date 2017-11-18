@@ -414,16 +414,20 @@
 					theme       : this.theme,
 					appNameKebab: this.appNameKebab
 				},
-				['app/styles/less/' + this.appNameKebab + '.less']
+				[
+					'app/styles/less/' + this.appNameKebab + '.less'
+				]
 			);
 			this.copyFileTplWithMultipleDestinations(
 				'app/styles/less/app.loader.less',
 				{
 					theme: this.theme
 				},
-				['app/styles/less/' + this.appNameKebab + '.loader.less']
+				[
+					'app/styles/less/' + this.appNameKebab + '.loader.less'
+				]
 			);
-			this.copyFileTplWithMultipleDestinations('app/styles/less/app.variables.less', {}, [
+			this.copyFileTplWithMultipleDestinations('app/styles/less/app.variables.less', null, [
 				'app/styles/less/' + this.appNameKebab + '.variables.less'
 			]);
 			this.copyFileTpl('app/app.js', {
