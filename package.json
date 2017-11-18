@@ -1,12 +1,12 @@
 {
     "name": "generator-altran-angular",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Use it to help you create AngularJS applications.",
     "homepage": "https://github.com/C0ZEN/generator-altran-angular",
     "author": {
         "name": "C0ZEN",
         "email": "geoffrey.testelin@gmail.com",
-        "url": "www.geoffreytestelin.comgeoffreytestelin.com"
+        "url": "www.geoffreytestelin.com"
     },
     "files": [
         "generators"
@@ -18,7 +18,6 @@
         "yeoman-generator"
     ],
     "devDependencies": {
-        "chalk": "^2.3.0",
         "coveralls": "^2.13.1",
         "eslint": "^4.1.0",
         "eslint-config-prettier": "^2.4.0",
@@ -53,9 +52,8 @@
         "testEnvironment": "node"
     },
     "scripts": {
-        "prepublish": "nsp check",
+        "prepare": "nsp check",
         "pretest": "eslint .",
-        "precommit": "lint-staged",
         "test": "jest"
     },
     "lint-staged": {
