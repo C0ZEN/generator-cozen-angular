@@ -1,5 +1,5 @@
 # generator-altran-angular 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url]
+[![Software License][license-image]](LICENSE) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url]
 > Use it to help you create AngularJS applications using the internal library for Altran projects.
 
 ## Installation
@@ -64,6 +64,7 @@ And increment the `package.json` version.
 
 MIT © [C0ZEN](www.geoffreytestelin.com)
 
+[license-image]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat
 [npm-image]: https://badge.fury.io/js/generator-altran-angular.svg
 [npm-url]: https://npmjs.org/package/generator-altran-angular
 [travis-image]: https://travis-ci.org/C0ZEN/generator-altran-angular.svg?branch=master
