@@ -1,7 +1,6 @@
 (function () {
 	'use strict';
 
-	// Const
 	const Generator       = require('yeoman-generator');
 	const chalkInstance   = require('chalk');
 	const chalk           = new chalkInstance.constructor({
@@ -16,20 +15,10 @@
 	const moment          = require('moment');
 	const mkdirp          = require('mkdirp');
 	const _               = require('lodash');
-	const colors          = {
-		orange  : '#e67e22',
-		red     : '#e74c3c',
-		blue    : '#3498db',
-		cyan    : '#1abc9c',
-		green   : '#2ecc71',
-		grey    : '#bdc3c7',
-		darkGrey: '#7f8c8d',
-		white   : '#ecf0f1',
-		navy    : '#2c3e50',
-		purple  : '#9b59b6'
-	};
+	const colors          = require('./colors.js');
+	const npm             = require('./npm.js');
+	const bower           = require('./bower.js');
 
-	// Config
 	const debug       = true;
 	const skipInstall = false;
 
@@ -39,7 +28,7 @@
 
 			this.logFnCalled = $target => {
 				if (debug) {
-					this.log(chalk.hex(colors.blue)('[' + $target + ']'), 'Called');
+					this.log(chalk.hex(colors.get('blue'))('[' + $target + ']'), 'Called');
 				}
 			};
 
@@ -47,15 +36,15 @@
 				if ($spaceBefore) {
 					this.log('');
 				}
-				this.log(chalk.hex(colors.orange).bold('>>> %s <<<\n'), upperCase($priority));
+				this.log(chalk.hex(colors.get('orange')).bold('>>> %s <<<\n'), upperCase($priority));
 			};
 
 			this.logHint = $text => {
 				if ($text) {
-					this.log(chalk.hex(colors.purple)($text + '\n'));
+					this.log(chalk.hex(colors.get('purple'))($text + '\n'));
 				}
 				else {
-					this.log(chalk.hex(colors.purple).bold('Hint:\n'));
+					this.log(chalk.hex(colors.get('purple')).bold('Hint:\n'));
 				}
 			};
 
@@ -87,6 +76,18 @@
 					mkdirp.sync($paths);
 				}
 			};
+
+			this.installNpmPackages = () => {
+				this.npmInstall(npm.getModules(), {
+					'save-dev': true
+				});
+			};
+
+			this.installBowerPackages = () => {
+				this.bowerInstall(bower.getModules(), {
+					'save-dev': false
+				});
+			};
 		}
 
 		initializing() {
@@ -94,7 +95,7 @@
 
 			moment.locale('en');
 
-			this.log(yosay('Welcome to the wonderful ' + chalk.hex(colors.red)('generator-altran-angular') + ' generator !'));
+			this.log(yosay('Welcome to the wonderful ' + chalk.hex(colors.get('red'))('generator-altran-angular') + ' generator !'));
 
 			const prompts = [
 				{
@@ -140,15 +141,15 @@
 				this.appNameUpperPython = upperPythonCase($response.appName);
 				this.log(
 					'The app name in camelCase is :',
-					chalk.hex(colors.cyan)(this.appNameCamel)
+					chalk.hex(colors.get('cyan'))(this.appNameCamel)
 				);
 				this.log(
 					'The app name in kebab-case is :',
-					chalk.hex(colors.cyan)(this.appNameKebab)
+					chalk.hex(colors.get('cyan'))(this.appNameKebab)
 				);
 				this.log(
 					'The app name in UPPER_PYTHON_CASE is :',
-					chalk.hex(colors.cyan)(this.appNameUpperPython)
+					chalk.hex(colors.get('cyan'))(this.appNameUpperPython)
 				);
 				this.log();
 			});
@@ -180,9 +181,9 @@
 			);
 
 			this.log('Current theme list :');
-			this.log(chalk.hex(colors.cyan)('origin'));
-			this.log(chalk.hex(colors.cyan)('altran-portail-france'));
-			this.log(chalk.hex(colors.cyan)('et-banking'));
+			this.log(chalk.hex(colors.get('cyan'))('origin'));
+			this.log(chalk.hex(colors.get('cyan'))('altran-portail-france'));
+			this.log(chalk.hex(colors.get('cyan'))('et-banking'));
 
 			const prompts = [
 				{
@@ -205,8 +206,8 @@
 			this.logHint('The default language of your application.');
 
 			this.log('Current lang list :');
-			this.log(chalk.hex(colors.cyan)('fr'));
-			this.log(chalk.hex(colors.cyan)('en'));
+			this.log(chalk.hex(colors.get('cyan'))('fr'));
+			this.log(chalk.hex(colors.get('cyan'))('en'));
 
 			const prompts = [
 				{
@@ -318,7 +319,7 @@
 			this.nowDate = this.now.format('DD/MM/YYYY');
 			this.nowTime = this.now.format('HH:mm');
 
-			this.log('Now :', chalk.hex(colors.cyan)(this.nowDate, this.nowTime));
+			this.log('Now :', chalk.hex(colors.get('cyan'))(this.nowDate, this.nowTime));
 			this.log();
 
 			this.logPriority('writing', true);
@@ -535,112 +536,23 @@
 			this.logPriority('install', true);
 
 			if (!skipInstall) {
-				this.npmInstall(
-					[
-						'app',
-						'autoprefixer',
-						'autoprefixer-core',
-						'browser-window',
-						'cssnano',
-						'graceful-fs',
-						'grunt',
-						'grunt-angular-file-loader',
-						'grunt-angular-templates',
-						'grunt-autoprefixer',
-						'grunt-cache-pug-compile',
-						'grunt-concurrent',
-						'grunt-contrib-clean',
-						'grunt-contrib-concat',
-						'grunt-contrib-copy',
-						'grunt-contrib-cssmin',
-						'grunt-contrib-htmlmin',
-						'grunt-contrib-imagemin',
-						'grunt-contrib-jshint',
-						'grunt-contrib-less',
-						'grunt-contrib-pug',
-						'grunt-contrib-uglify',
-						'grunt-cssnano',
-						'grunt-filerev',
-						'grunt-google-cdn',
-						'grunt-jscs',
-						'grunt-less-imports',
-						'grunt-merge-json',
-						'grunt-newer',
-						'grunt-notify',
-						'grunt-pixrem',
-						'grunt-postcss',
-						'grunt-preprocess',
-						'grunt-prettier',
-						'grunt-string-replace',
-						'grunt-svgmin',
-						'grunt-usemin',
-						'grunt-wiredep',
-						'jasmine-core',
-						'jit-grunt',
-						'jshint-stylish',
-						'karma',
-						'karma-jasmine',
-						'karma-phantomjs-launcher',
-						'less-plugin-autoprefix',
-						'minimatch',
-						'ng-simple-webrtc',
-						'phantomjs-prebuilt',
-						'pixrem',
-						'prettier',
-						'pug',
-						'pug-inheritance',
-						'time-grunt'
-					], {
-						'save-dev': true
-					}
-				);
-
-				this.bowerInstall(
-					[
-						'reset-css',
-						'jquery',
-						'angular',
-						'angular-aria',
-						'angular-animate',
-						'angular-cookies',
-						'angular-messages',
-						'angular-resource',
-						'angular-route',
-						'angular-sanitize',
-						'angular-touch',
-						'moment',
-						'angular-translate',
-						'angular-uuid-service',
-						'angular-logex',
-						'angular-ui-router',
-						'angular-translate-loader-static-files',
-						'angular-translate-loader-url',
-						'angular-translate-loader-partial',
-						'chance',
-						'angular-dynamic-locale',
-						'lodash',
-						'animate.css',
-						'angular-local-storage'
-					],
-					{
-						'save-dev': false
-					}
-				);
+				this.installNpmPackages();
+				this.installBowerPackages();
 			}
 			else {
-				this.log(chalk.hex(colors.blue)('Install was skipped.'));
+				this.log(chalk.hex(colors.get('blue'))('Install was skipped.'));
 			}
 		}
 
 		end() {
 			this.logPriority('end', true);
-			this.log(chalk.hex(colors.green)('That\'s all folks !'));
-			this.log(chalk.hex(colors.green)('Your project is ready ;)\n'));
+			this.log(chalk.hex(colors.get('green'))('That\'s all folks !'));
+			this.log(chalk.hex(colors.get('green'))('Your project is ready ;)\n'));
 			this.log(
 				'Use the',
-				chalk.hex(colors.navy).bgHex(colors.grey)('grunt-cli'),
+				chalk.hex(colors.get('navy')).bgHex(colors.get('grey'))('grunt-cli'),
 				'or',
-				chalk.hex(colors.navy).bgHex(colors.grey)('grunt serve'),
+				chalk.hex(colors.get('navy')).bgHex(colors.get('grey'))('grunt serve'),
 				'to start the server.'
 			);
 		}

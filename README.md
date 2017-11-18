@@ -1,5 +1,5 @@
 # generator-altran-angular 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url]
+[![Software License][license-image]](LICENSE) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Maintainability][code-climate-maintainability-image]][code-climate-maintainability-url] [![Test Coverage][code-climate-coverage-image]][code-climate-coverage-url]
 > Use it to help you create AngularJS applications using the internal library for Altran projects.
 
 ## Installation
@@ -64,6 +64,7 @@ And increment the `package.json` version.
 
 MIT © [C0ZEN](www.geoffreytestelin.com)
 
+[license-image]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat
 [npm-image]: https://badge.fury.io/js/generator-altran-angular.svg
 [npm-url]: https://npmjs.org/package/generator-altran-angular
 [travis-image]: https://travis-ci.org/C0ZEN/generator-altran-angular.svg?branch=master
@@ -72,3 +73,7 @@ MIT © [C0ZEN](www.geoffreytestelin.com)
 [daviddm-url]: https://david-dm.org/C0ZEN/generator-altran-angular
 [coveralls-image]: https://coveralls.io/repos/github/C0ZEN/generator-altran-angular/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/C0ZEN/generator-altran-angular?branch=master
+[code-climate-maintainability-image]: https://api.codeclimate.com/v1/badges/2820041b8e9d628be0a5/maintainability
+[code-climate-maintainability-url]: https://codeclimate.com/github/C0ZEN/generator-altran-angular/maintainability
+[code-climate-coverage-image]: https://api.codeclimate.com/v1/badges/2820041b8e9d628be0a5/test_coverage
+[code-climate-coverage-url]: https://codeclimate.com/github/C0ZEN/generator-altran-angular/test_coverage
