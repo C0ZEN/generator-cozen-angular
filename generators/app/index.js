@@ -1,32 +1,32 @@
 (function () {
-    'use strict';
+    "use strict";
 
     // Const
-    const Generator       = require('yeoman-generator');
-    const chalkInstance   = require('chalk');
+    const Generator       = require("yeoman-generator");
+    const chalkInstance   = require("chalk");
     const chalk           = new chalkInstance.constructor({
         level  : 3,
         enabled: true
     });
-    const yosay           = require('yosay');
-    const kebabCase       = require('lodash.kebabcase');
-    const camelCase       = require('camelcase');
-    const upperCase       = require('upper-case');
-    const upperPythonCase = require('case').constant;
-    const moment          = require('moment');
-    const mkdirp          = require('mkdirp');
-    const _               = require('lodash');
+    const yosay           = require("yosay");
+    const kebabCase       = require("lodash.kebabcase");
+    const camelCase       = require("camelcase");
+    const upperCase       = require("upper-case");
+    const upperPythonCase = require("case").constant;
+    const moment          = require("moment");
+    const mkdirp          = require("mkdirp");
+    const _               = require("lodash");
     const colors          = {
-        orange  : '#e67e22',
-        red     : '#e74c3c',
-        blue    : '#3498db',
-        cyan    : '#1abc9c',
-        green   : '#2ecc71',
-        grey    : '#bdc3c7',
-        darkGrey: '#7f8c8d',
-        white   : '#ecf0f1',
-        navy    : '#2c3e50',
-        purple  : '#9b59b6'
+        orange  : "#e67e22",
+        red     : "#e74c3c",
+        blue    : "#3498db",
+        cyan    : "#1abc9c",
+        green   : "#2ecc71",
+        grey    : "#bdc3c7",
+        darkGrey: "#7f8c8d",
+        white   : "#ecf0f1",
+        navy    : "#2c3e50",
+        purple  : "#9b59b6"
     };
 
     // Config
@@ -39,23 +39,23 @@
 
             this.logFnCalled = $target => {
                 if (debug) {
-                    this.log(chalk.hex(colors.blue)('[' + $target + ']'), 'Called');
+                    this.log(chalk.hex(colors.blue)("[" + $target + "]"), "Called");
                 }
             };
 
             this.logPriority = ($priority, $spaceBefore) => {
                 if ($spaceBefore) {
-                    this.log('');
+                    this.log("");
                 }
-                this.log(chalk.hex(colors.orange).bold('>>> %s <<<\n'), upperCase($priority));
+                this.log(chalk.hex(colors.orange).bold(">>> %s <<<\n"), upperCase($priority));
             };
 
             this.logHint = $text => {
                 if ($text) {
-                    this.log(chalk.hex(colors.purple)($text + '\n'));
+                    this.log(chalk.hex(colors.purple)($text + "\n"));
                 }
                 else {
-                    this.log(chalk.hex(colors.purple).bold('Hint:\n'));
+                    this.log(chalk.hex(colors.purple).bold("Hint:\n"));
                 }
             };
 
@@ -90,23 +90,23 @@
         }
 
         initializing() {
-            this.logPriority('initializing');
+            this.logPriority("initializing");
 
-            moment.locale('en');
+            moment.locale("en");
 
             this.log(
                 yosay(
-                    'Welcome to the wonderful ' +
-                    chalk.hex(colors.red)('generator-altran-angular') +
-                    ' generator !'
+                    "Welcome to the wonderful " +
+                    chalk.hex(colors.red)("generator-altran-angular") +
+                    " generator !"
                 )
             );
 
             const prompts = [
                 {
-                    type   : 'confirm',
-                    name   : 'areYouReady',
-                    message: 'Are you ready to set up your app ?',
+                    type   : "confirm",
+                    name   : "areYouReady",
+                    message: "Are you ready to set up your app ?",
                     default: true
                 }
             ];
@@ -117,25 +117,25 @@
         }
 
         prompting() {
-            this.logPriority('prompting', true);
+            this.logPriority("prompting", true);
         }
 
         appName() {
             this.logHint();
             this.logHint(
-                'The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json'
+                "The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json"
             );
-            this.logHint('Write it down in his normal syntax like <Altran Angular Generator>');
+            this.logHint("Write it down in his normal syntax like <Altran Angular Generator>");
             this.logHint(
-                'Wrong examples: <altran Angular Generator>, <altranAngularGenerator>, <altran-angular-generator>'
+                "Wrong examples: <altran Angular Generator>, <altranAngularGenerator>, <altran-angular-generator>"
             );
 
             const prompts = [
                 {
-                    type   : 'input',
-                    name   : 'appName',
-                    message: 'Name of your app :',
-                    default: 'My App'
+                    type   : "input",
+                    name   : "appName",
+                    message: "Name of your app :",
+                    default: "My App"
                 }
             ];
 
@@ -145,15 +145,15 @@
                 this.appNameKebab       = kebabCase($response.appName);
                 this.appNameUpperPython = upperPythonCase($response.appName);
                 this.log(
-                    'The app name in camelCase is :',
+                    "The app name in camelCase is :",
                     chalk.hex(colors.cyan)(this.appNameCamel)
                 );
                 this.log(
-                    'The app name in kebab-case is :',
+                    "The app name in kebab-case is :",
                     chalk.hex(colors.cyan)(this.appNameKebab)
                 );
                 this.log(
-                    'The app name in UPPER_PYTHON_CASE is :',
+                    "The app name in UPPER_PYTHON_CASE is :",
                     chalk.hex(colors.cyan)(this.appNameUpperPython)
                 );
                 this.log();
@@ -162,13 +162,13 @@
 
         appDescription() {
             this.logHint();
-            this.logHint('Just describe the purpose of your project.');
+            this.logHint("Just describe the purpose of your project.");
 
             const prompts = [
                 {
-                    type   : 'input',
-                    name   : 'appDescription',
-                    message: 'Description of your app :'
+                    type   : "input",
+                    name   : "appDescription",
+                    message: "Description of your app :"
                 }
             ];
 
@@ -180,22 +180,22 @@
 
         theme() {
             this.logHint();
-            this.logHint('The theme is a pure dependency of the Altran Angular Lib.');
+            this.logHint("The theme is a pure dependency of the Altran Angular Lib.");
             this.logHint(
-                'Enter an existing theme or enter a new one that you will create in a few.'
+                "Enter an existing theme or enter a new one that you will create in a few."
             );
 
-            this.log('Current theme list :');
-            this.log(chalk.hex(colors.cyan)('origin'));
-            this.log(chalk.hex(colors.cyan)('altran-portail-france'));
-            this.log(chalk.hex(colors.cyan)('et-banking'));
+            this.log("Current theme list :");
+            this.log(chalk.hex(colors.cyan)("origin"));
+            this.log(chalk.hex(colors.cyan)("altran-portail-france"));
+            this.log(chalk.hex(colors.cyan)("et-banking"));
 
             const prompts = [
                 {
-                    type   : 'input',
-                    name   : 'theme',
-                    message: 'Default altran-angular-lib theme :',
-                    default: 'origin',
+                    type   : "input",
+                    name   : "theme",
+                    message: "Default altran-angular-lib theme :",
+                    default: "origin",
                     store  : true
                 }
             ];
@@ -208,18 +208,18 @@
 
         lang() {
             this.logHint();
-            this.logHint('The default language of your application.');
+            this.logHint("The default language of your application.");
 
-            this.log('Current lang list :');
-            this.log(chalk.hex(colors.cyan)('fr'));
-            this.log(chalk.hex(colors.cyan)('en'));
+            this.log("Current lang list :");
+            this.log(chalk.hex(colors.cyan)("fr"));
+            this.log(chalk.hex(colors.cyan)("en"));
 
             const prompts = [
                 {
-                    type   : 'input',
-                    name   : 'lang',
-                    message: 'Default altran-angular-lib lang :',
-                    default: 'fr',
+                    type   : "input",
+                    name   : "lang",
+                    message: "Default altran-angular-lib lang :",
+                    default: "fr",
                     store  : true
                 }
             ];
@@ -233,23 +233,23 @@
         color() {
             this.logHint();
             this.logHint(
-                'The backgroundColor is the background color for the Web App Manifest.'
+                "The backgroundColor is the background color for the Web App Manifest."
             );
-            this.logHint('The value can be any valid CSS color (blue, red, ...).');
-            this.logHint('The themeColor is the background color for the search address bar.');
-            this.logHint('The value can be any hexadecimal color (#123456, #4F257B, ...).');
+            this.logHint("The value can be any valid CSS color (blue, red, ...).");
+            this.logHint("The themeColor is the background color for the search address bar.");
+            this.logHint("The value can be any hexadecimal color (#123456, #4F257B, ...).");
 
             const prompts = [
                 {
-                    type   : 'input',
-                    name   : 'backgroundColor',
-                    message: 'Background color color :',
+                    type   : "input",
+                    name   : "backgroundColor",
+                    message: "Background color color :",
                     store  : true
                 },
                 {
-                    type   : 'input',
-                    name   : 'themeColor',
-                    message: 'Theme color :',
+                    type   : "input",
+                    name   : "themeColor",
+                    message: "Theme color :",
                     store  : true
                 }
             ];
@@ -263,27 +263,27 @@
 
         author() {
             this.logHint();
-            this.logHint('Simply set up your first name and last name.');
-            this.logHint('Do not forget the uppercase ;)');
-            this.logHint('Used on the file headers.');
+            this.logHint("Simply set up your first name and last name.");
+            this.logHint("Do not forget the uppercase ;)");
+            this.logHint("Used on the file headers.");
 
             const prompts = [
                 {
-                    type    : 'input',
-                    name    : 'authorFirstName',
-                    message : 'Your first name :',
+                    type    : "input",
+                    name    : "authorFirstName",
+                    message : "Your first name :",
                     store   : true,
                     validate: $value => {
-                        return $value ? true : 'Your first name could not be empty !';
+                        return $value ? true : "Your first name could not be empty !";
                     }
                 },
                 {
-                    type    : 'input',
-                    name    : 'authorLastName',
-                    message : 'Your last name :',
+                    type    : "input",
+                    name    : "authorLastName",
+                    message : "Your last name :",
                     store   : true,
                     validate: $value => {
-                        return $value ? true : 'Your last name could not be empty !';
+                        return $value ? true : "Your last name could not be empty !";
                     }
                 }
             ];
@@ -296,79 +296,79 @@
 
         authorEmail() {
             this.logHint();
-            this.logHint('Simply set up your email.');
+            this.logHint("Simply set up your email.");
 
             const prompts = [
                 {
-                    type   : 'input',
-                    name   : 'authorEmail',
-                    message: 'Your email (altran) :',
+                    type   : "input",
+                    name   : "authorEmail",
+                    message: "Your email (altran) :",
                     default:
                     _.lowerCase(this.authorFirstName) +
-                    '.' +
+                    "." +
                     _.lowerCase(this.authorLastName) +
-                    '@altran.com'
+                    "@altran.com"
                 }
             ];
 
             return this.prompt(prompts).then($response => {
                 this.authorEmail = $response.authorEmail;
-                this.authorShort = this.authorFirstName + ' ' + this.authorLastName;
+                this.authorShort = this.authorFirstName + " " + this.authorLastName;
                 this.authorLong  =
-                    this.authorFirstName + ' ' + this.authorLastName + ' ' + this.authorEmail;
+                    this.authorFirstName + " " + this.authorLastName + " " + this.authorEmail;
                 this.log();
             });
         }
 
         configuring() {
-            this.logPriority('configuring', true);
+            this.logPriority("configuring", true);
         }
 
         writing() {
             this.now     = moment();
-            this.nowDate = this.now.format('DD/MM/YYYY');
-            this.nowTime = this.now.format('HH:mm');
+            this.nowDate = this.now.format("DD/MM/YYYY");
+            this.nowTime = this.now.format("HH:mm");
 
-            this.log('Now :', chalk.hex(colors.cyan)(this.nowDate, this.nowTime));
+            this.log("Now :", chalk.hex(colors.cyan)(this.nowDate, this.nowTime));
             this.log();
 
-            this.logPriority('writing', true);
+            this.logPriority("writing", true);
 
             // Default architecture
-            this.copyFile('.bowerrc');
-            this.copyFile('.editorconfig');
-            this.copyFile('.gitattributes');
-            this.copyFileTpl('.gitignore', {
+            this.copyFile(".bowerrc");
+            this.copyFile(".editorconfig");
+            this.copyFile(".gitattributes");
+            this.copyFileTpl(".gitignore", {
                 appNameKebab: this.appNameKebab
             });
-            this.copyFile('.jscsrc');
-            this.copyFile('.jshintrc');
-            this.copyFileTpl('bower.json', {
+            this.copyFile(".jscsrc");
+            this.copyFile(".jshintrc");
+            this.copyFileTpl("bower.json", {
                 appNameKebab: this.appNameKebab,
                 theme       : this.theme
             });
-            this.copyFile('CHANGELOG.md');
-            this.copyFile('CONTRIBUTING.md');
-            this.copyFileTpl('Gruntfile.js', {
+            this.copyFile("CHANGELOG.md");
+            this.copyFile("CONTRIBUTING.md");
+            this.copyFileTpl("Gruntfile.js", {
                 appNameCamel: this.appNameCamel,
                 appNameKebab: this.appNameKebab
             });
-            this.copyFileTpl('manifest.json', {
+            this.copyFileTpl("manifest.json", {
                 lang           : this.lang,
                 appDescription : this.appDescription,
                 appName        : this.appName,
                 backgroundColor: this.backgroundColor,
                 themeColor     : this.themeColor
             });
-            this.copyFileTpl('LICENSE.md', {
+            this.copyFileTpl("LICENSE.md", {
                 appName: this.appName
             });
-            this.copyFileTpl('package.json', {
+            this.copyFileTpl("package.json", {
                 appNameKebab  : this.appNameKebab,
                 appDescription: this.appDescription,
                 authorLong    : this.authorLong
             });
-            this.copyFileTpl('README.md', {
+            this.copyFileTpl("README.md", {
                 appName       : this.appName,
                 appDescription: this.appDescription,
                 authorShort   : this.authorShort,
@@ -376,7 +376,7 @@
             });
 
             // App architecture
-            this.copyFileTpl('app/config/providers/languageProvider.config.js', {
+            this.copyFileTpl("app/config/providers/languageProvider.config.js", {
                 appNameKebab: this.appNameKebab,
                 appNameCamel: this.appNameCamel,
                 authorShort : this.authorShort,
@@ -384,7 +384,7 @@
                 nowTime     : this.nowTime
             });
             this.copyFileTplWithMultipleDestinations(
-                'app/config/targets/config.json',
+                "app/config/targets/config.json",
                 {
                     lang        : this.lang,
                     theme       : this.theme,
@@ -392,48 +392,48 @@
                     appNameKebab: this.appNameKebab
                 },
                 [
-                    'app/config/targets/config.dev.json',
-                    'app/config/targets/config.test.json',
-                    'app/config/targets/config.prod.json',
-                    'app/config/targets/config.preprod.json'
+                    "app/config/targets/config.dev.json",
+                    "app/config/targets/config.test.json",
+                    "app/config/targets/config.prod.json",
+                    "app/config/targets/config.preprod.json"
                 ]
             );
-            this.copyFileTpl('app/config/tpls/index.tpl.html', {
+            this.copyFileTpl("app/config/tpls/index.tpl.html", {
                 appNameCamel: this.appNameCamel,
                 lang        : this.lang,
                 appNameKebab: this.appNameKebab,
                 themeColor  : this.themeColor
             });
-            this.copyFileTpl('app/config/tpls/target.config.tpl.js', {
+            this.copyFileTpl("app/config/tpls/target.config.tpl.js", {
                 appNameCamel: this.appNameCamel
             });
-            this.copyFileTpl('app/languages/en/global.json', {
+            this.copyFileTpl("app/languages/en/global.json", {
                 appNameUpperPython: this.appNameUpperPython,
                 appName           : this.appName
             });
-            this.copyFileTpl('app/languages/fr/global.json', {
+            this.copyFileTpl("app/languages/fr/global.json", {
                 appNameUpperPython: this.appNameUpperPython,
                 appName           : this.appName
             });
             this.copyFileTplWithMultipleDestinations(
-                'app/styles/less/app.less',
+                "app/styles/less/app.less",
                 {
                     theme       : this.theme,
                     appNameKebab: this.appNameKebab
                 },
-                ['app/styles/less/' + this.appNameKebab + '.less']
+                ["app/styles/less/" + this.appNameKebab + ".less"]
             );
             this.copyFileTplWithMultipleDestinations(
-                'app/styles/less/app.loader.less',
+                "app/styles/less/app.loader.less",
                 {
                     theme: this.theme
                 },
-                ['app/styles/less/' + this.appNameKebab + '.loader.less']
+                ["app/styles/less/" + this.appNameKebab + ".loader.less"]
             );
-            this.copyFileTplWithMultipleDestinations('app/styles/less/app.variables.less', {}, [
-                'app/styles/less/' + this.appNameKebab + '.variables.less'
+            this.copyFileTplWithMultipleDestinations("app/styles/less/app.variables.less", {}, [
+                "app/styles/less/" + this.appNameKebab + ".variables.less"
             ]);
-            this.copyFileTpl('app/app.js', {
+            this.copyFileTpl("app/app.js", {
                 appNameKebab: this.appNameKebab,
                 appNameCamel: this.appNameCamel,
                 authorShort : this.authorShort,
@@ -442,141 +442,141 @@
             });
 
             this.newDirectory([
-                'app/images',
-                'app/images/gif',
-                'app/images/jpg',
-                'app/images/png',
-                'app/images/svg',
-                'app/medias',
-                'app/medias/sounds',
-                'app/medias/videos',
-                'app/scripts',
-                'app/scripts/directives',
-                'app/scripts/filters',
-                'app/scripts/services',
-                'app/scripts/constants',
-                'app/styles/css',
-                'app/styles/less/override',
-                'app/views/'
+                "app/images",
+                "app/images/gif",
+                "app/images/jpg",
+                "app/images/png",
+                "app/images/svg",
+                "app/medias",
+                "app/medias/sounds",
+                "app/medias/videos",
+                "app/scripts",
+                "app/scripts/directives",
+                "app/scripts/filters",
+                "app/scripts/services",
+                "app/scripts/constants",
+                "app/styles/css",
+                "app/styles/less/override",
+                "app/views/"
             ]);
         }
 
         conflicts() {
-            this.logPriority('conflicts', true);
+            this.logPriority("conflicts", true);
         }
 
         install() {
-            this.logPriority('install', true);
+            this.logPriority("install", true);
 
             if (!skipInstall) {
                 this.npmInstall(
                     [
-                        'app',
-                        'autoprefixer',
-                        'autoprefixer-core',
-                        'browser-window',
-                        'cssnano',
-                        'graceful-fs',
-                        'grunt',
-                        'grunt-angular-file-loader',
-                        'grunt-angular-templates',
-                        'grunt-autoprefixer',
-                        'grunt-cache-pug-compile',
-                        'grunt-concurrent',
-                        'grunt-contrib-clean',
-                        'grunt-contrib-concat',
-                        'grunt-contrib-copy',
-                        'grunt-contrib-cssmin',
-                        'grunt-contrib-htmlmin',
-                        'grunt-contrib-imagemin',
-                        'grunt-contrib-jshint',
-                        'grunt-contrib-less',
-                        'grunt-contrib-pug',
-                        'grunt-contrib-uglify',
-                        'grunt-cssnano',
-                        'grunt-filerev',
-                        'grunt-google-cdn',
-                        'grunt-jscs',
-                        'grunt-less-imports',
-                        'grunt-merge-json',
-                        'grunt-newer',
-                        'grunt-notify',
-                        'grunt-pixrem',
-                        'grunt-postcss',
-                        'grunt-preprocess',
-                        'grunt-prettier',
-                        'grunt-string-replace',
-                        'grunt-svgmin',
-                        'grunt-usemin',
-                        'grunt-wiredep',
-                        'jasmine-core',
-                        'jit-grunt',
-                        'jshint-stylish',
-                        'karma',
-                        'karma-jasmine',
-                        'karma-phantomjs-launcher',
-                        'less-plugin-autoprefix',
-                        'minimatch',
-                        'ng-simple-webrtc',
-                        'phantomjs-prebuilt',
-                        'pixrem',
-                        'prettier',
-                        'pug',
-                        'pug-inheritance',
-                        'time-grunt'
+                        "app",
+                        "autoprefixer",
+                        "autoprefixer-core",
+                        "browser-window",
+                        "cssnano",
+                        "graceful-fs",
+                        "grunt",
+                        "grunt-angular-file-loader",
+                        "grunt-angular-templates",
+                        "grunt-autoprefixer",
+                        "grunt-cache-pug-compile",
+                        "grunt-concurrent",
+                        "grunt-contrib-clean",
+                        "grunt-contrib-concat",
+                        "grunt-contrib-copy",
+                        "grunt-contrib-cssmin",
+                        "grunt-contrib-htmlmin",
+                        "grunt-contrib-imagemin",
+                        "grunt-contrib-jshint",
+                        "grunt-contrib-less",
+                        "grunt-contrib-pug",
+                        "grunt-contrib-uglify",
+                        "grunt-cssnano",
+                        "grunt-filerev",
+                        "grunt-google-cdn",
+                        "grunt-jscs",
+                        "grunt-less-imports",
+                        "grunt-merge-json",
+                        "grunt-newer",
+                        "grunt-notify",
+                        "grunt-pixrem",
+                        "grunt-postcss",
+                        "grunt-preprocess",
+                        "grunt-prettier",
+                        "grunt-string-replace",
+                        "grunt-svgmin",
+                        "grunt-usemin",
+                        "grunt-wiredep",
+                        "jasmine-core",
+                        "jit-grunt",
+                        "jshint-stylish",
+                        "karma",
+                        "karma-jasmine",
+                        "karma-phantomjs-launcher",
+                        "less-plugin-autoprefix",
+                        "minimatch",
+                        "ng-simple-webrtc",
+                        "phantomjs-prebuilt",
+                        "pixrem",
+                        "prettier",
+                        "pug",
+                        "pug-inheritance",
+                        "time-grunt"
                     ],
                     {
-                        'save-dev': true
+                        "save-dev": true
                     }
                 );
 
                 this.bowerInstall(
                     [
-                        'reset-css',
-                        'jquery',
-                        'angular',
-                        'angular-aria',
-                        'angular-animate',
-                        'angular-cookies',
-                        'angular-messages',
-                        'angular-resource',
-                        'angular-route',
-                        'angular-sanitize',
-                        'angular-touch',
-                        'moment',
-                        'angular-translate',
-                        'angular-uuid-service',
-                        'angular-logex',
-                        'angular-ui-router',
-                        'angular-translate-loader-static-files',
-                        'angular-translate-loader-url',
-                        'angular-translate-loader-partial',
-                        'chance',
-                        'angular-dynamic-locale',
-                        'lodash',
-                        'animate.css',
-                        'angular-local-storage'
+                        "reset-css",
+                        "jquery",
+                        "angular",
+                        "angular-aria",
+                        "angular-animate",
+                        "angular-cookies",
+                        "angular-messages",
+                        "angular-resource",
+                        "angular-route",
+                        "angular-sanitize",
+                        "angular-touch",
+                        "moment",
+                        "angular-translate",
+                        "angular-uuid-service",
+                        "angular-logex",
+                        "angular-ui-router",
+                        "angular-translate-loader-static-files",
+                        "angular-translate-loader-url",
+                        "angular-translate-loader-partial",
+                        "chance",
+                        "angular-dynamic-locale",
+                        "lodash",
+                        "animate.css",
+                        "angular-local-storage"
                     ],
                     {
-                        'save-dev': false
+                        "save-dev": false
                     }
                 );
             }
             else {
-                this.log(chalk.hex(colors.blue)('Install was skipped.'));
+                this.log(chalk.hex(colors.blue)("Install was skipped."));
             }
         }
 
         end() {
-            this.logPriority('end', true);
+            this.logPriority("end", true);
             this.log(chalk.hex(colors.green)("That's all folks !"));
-            this.log(chalk.hex(colors.green)('Your project is ready ;)\n'));
+            this.log(chalk.hex(colors.green)("Your project is ready ;)\n"));
             this.log(
-                'Use the',
-                chalk.hex(colors.navy).bgHex(colors.grey)('grunt-cli'),
-                'or',
-                chalk.hex(colors.navy).bgHex(colors.grey)('grunt serve'),
-                'to start the server.'
+                "Use the",
+                chalk.hex(colors.navy).bgHex(colors.grey)("grunt-cli"),
+                "or",
+                chalk.hex(colors.navy).bgHex(colors.grey)("grunt serve"),
+                "to start the server."
             );
         }
     };

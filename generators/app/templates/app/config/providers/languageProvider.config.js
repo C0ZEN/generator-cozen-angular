@@ -8,15 +8,15 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    'use strict';
+    "use strict";
 
     angular
-        .module('<%= appNameCamel %>')
+        .module("<%= appNameCamel %>")
         .config(config);
 
     config.$inject = [
-        'altranLanguageProvider',
-        'config'
+        "altranLanguageProvider",
+        "config"
     ];
 
     function config(altranLanguageProvider, config) {

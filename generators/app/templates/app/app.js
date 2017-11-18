@@ -8,11 +8,11 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    'use strict';
+    "use strict";
 
     angular
-        .module('<%= appNameCamel %>', [
-            'altranLib'
+        .module("<%= appNameCamel %>", [
+            "altranLib"
         ]);
 
 })(window.angular);

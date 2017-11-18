@@ -1,0 +1,27 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6
+    },
+    "extends": [
+        "xo",
+        "eslint:recommended"
+    ],
+    "env": {
+        "jest": true,
+        "node": true
+    },
+    "rules": {
+        "strict": [
+            "error",
+            "global"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ]
+    }
+}

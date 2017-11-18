@@ -62,15 +62,6 @@
             "git add"
         ]
     },
-    "eslintConfig": {
-        "extends": [
-            "xo"
-        ],
-        "env": {
-            "jest": true,
-            "node": true
-        }
-    },
     "repository": "C0ZEN/generator-altran-angular",
     "license": "MIT"
 }

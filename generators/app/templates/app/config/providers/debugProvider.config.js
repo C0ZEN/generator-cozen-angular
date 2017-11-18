@@ -8,15 +8,15 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    'use strict';
+    "use strict";
 
     angular
-        .module('<%= appNameCamel %>')
+        .module("<%= appNameCamel %>")
         .config(config);
 
     config.$inject = [
-        'altranDebugProvider',
-        'config'
+        "altranDebugProvider",
+        "config"
     ];
 
     function config(altranDebugProvider, config) {

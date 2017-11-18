@@ -8,20 +8,20 @@
  * Version: 0.0.0
  */
 (function (angular) {
-    'use strict';
+    "use strict";
 
     angular
-        .module('<%= appNameCamel %>')
+        .module("<%= appNameCamel %>")
         .config(config);
 
     config.$inject = [
-        '$httpProvider'
+        "$httpProvider"
     ];
 
     function config($httpProvider) {
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-        $httpProvider.defaults.headers.common['Accept']       = 'application/json';
-        $httpProvider.defaults.headers.common['Content-Type'] = 'application/json';
+        delete $httpProvider.defaults.headers.common["X-Requested-With"];
+        $httpProvider.defaults.headers.common["Accept"]       = "application/json";
+        $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
     }
 
 })(window.angular);

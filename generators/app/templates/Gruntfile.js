@@ -1,94 +1,94 @@
 // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 // jshint ignore: start
-'use strict';
+"use strict";
 
 module.exports = function (grunt) {
 
-    require('time-grunt')(grunt);
-    require('jit-grunt')(grunt, {
-        useminPrepare: 'grunt-usemin',
-        ngtemplates  : 'grunt-angular-templates',
-        cdnify       : 'grunt-google-cdn'
+    require("time-grunt")(grunt);
+    require("jit-grunt")(grunt, {
+        useminPrepare: "grunt-usemin",
+        ngtemplates  : "grunt-angular-templates",
+        cdnify       : "grunt-google-cdn"
     });
 
     var appPaths = {
-        app    : require('./bower.json').appPath,
-        release: require('./bower.json').releasePath
+        app    : require("./bower.json").appPath,
+        release: require("./bower.json").releasePath
     };
 
     var globalConfig = {
-        browserslist: require('./package.json').browserslist,
-        prettier    : require('./package.json').prettier
+        browserslist: require("./package.json").browserslist,
+        prettier    : require("./package.json").prettier
     };
 
     grunt.initConfig({
         paths        : appPaths,
         config       : globalConfig,
-        currentTarget: 'toDefine',
+        currentTarget: "toDefine",
 
         watch: {
             targets   : {
                 files: [
-                    '<%%= paths.app %%>/config/targets/*.json'
+                    "<%%= paths.app %%>/config/targets/*.json"
                 ],
                 tasks: [
-                    'preprocess:dev'
+                    "preprocess:dev"
                 ]
             },
             languages : {
                 files: [
-                    '<%%= paths.app %%>/languages/**/*.json',
-                    '<%%= paths.app %%>/scripts/**/*.json',
-                    '<%%= paths.app %%>/views/**/*.json',
-                    '!<%%= paths.app %%>/languages/min/*.json'
+                    "<%%= paths.app %%>/languages/**/*.json",
+                    "<%%= paths.app %%>/scripts/**/*.json",
+                    "<%%= paths.app %%>/views/**/*.json",
+                    "!<%%= paths.app %%>/languages/min/*.json"
                 ],
                 tasks: [
-                    'languages:dev'
+                    "languages:dev"
                 ]
             },
             js        : {
                 files: [
-                    '<%%= paths.app %%>/**/*.js',
-                    'Gruntfile.js'
+                    "<%%= paths.app %%>/**/*.js",
+                    "Gruntfile.js"
                 ],
                 tasks: [
-                    'jsMin:dev',
-                    'notify:buildReady'
+                    "jsMin:dev",
+                    "notify:buildReady"
                 ]
             },
             less      : {
                 files: [
-                    '<%%= paths.app %%>/**/*.less'
+                    "<%%= paths.app %%>/**/*.less"
                 ],
                 tasks: [
-                    'less:main',
-                    'postcss:dev',
-                    'cssmin:dev',
-                    'notify:less'
+                    "less:main",
+                    "postcss:dev",
+                    "cssmin:dev",
+                    "notify:less"
                 ]
             },
             html      : {
                 files: [
-                    '<%%= paths.app %%>/**/*.html',
-                    '!<%%= paths.app %%>/index.html'
+                    "<%%= paths.app %%>/**/*.html",
+                    "!<%%= paths.app %%>/index.html"
                 ],
                 tasks: [
-                    'wiredep',
-                    'preprocess:dev',
-                    'string-replace:devIndex',
-                    'htmlmin:dev',
-                    'jsMin:dev',
-                    'notify:buildReady'
+                    "wiredep",
+                    "preprocess:dev",
+                    "string-replace:devIndex",
+                    "htmlmin:dev",
+                    "jsMin:dev",
+                    "notify:buildReady"
                 ]
             },
             livereload: {
                 options: {
-                    livereload: '<%%= connect.options.livereload %%>'
+                    livereload: "<%%= connect.options.livereload %%>"
                 },
                 files  : [
-                    '<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js',
-                    '<%%= paths.app %%>/styles/css/*.css',
-                    '<%%= paths.app %%>/images/**/*.{png,jpg,jpeg,gif,webp,svg}'
+                    "<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js",
+                    "<%%= paths.app %%>/styles/css/*.css",
+                    "<%%= paths.app %%>/images/**/*.{png,jpg,jpeg,gif,webp,svg}"
                 ]
             }
         },
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
         connect: {
             options   : {
                 port      : 9889,
-                hostname  : 'localhost',
+                hostname  : "localhost",
                 livereload: 35789
             },
             livereload: {
@@ -104,14 +104,14 @@ module.exports = function (grunt) {
                     open      : true,
                     middleware: function (connect) {
                         return [
-                            connect.static('.tmp'),
+                            connect.static(".tmp"),
                             connect().use(
-                                '/bower_components',
-                                connect.static('./bower_components')
+                                "/bower_components",
+                                connect.static("./bower_components")
                             ),
                             connect().use(
-                                '/app/styles',
-                                connect.static('./app/styles')
+                                "/app/styles",
+                                connect.static("./app/styles")
                             ),
                             connect.static(appPaths.app)
                         ];
@@ -123,11 +123,11 @@ module.exports = function (grunt) {
                     port      : 9001,
                     middleware: function (connect) {
                         return [
-                            connect.static('.tmp'),
-                            connect.static('test'),
+                            connect.static(".tmp"),
+                            connect.static("test"),
                             connect().use(
-                                '/bower_components',
-                                connect.static('./bower_components')
+                                "/bower_components",
+                                connect.static("./bower_components")
                             ),
                             connect.static(appPaths.app)
                         ];
@@ -137,23 +137,23 @@ module.exports = function (grunt) {
         },
 
         clean: {
-            server   : '.tmp',
+            server   : ".tmp",
             release  : {
                 files: [
                     {
                         dot: true,
                         src: [
-                            '.tmp',
-                            '<%%= currentTarget %%>/**/*'
+                            ".tmp",
+                            "<%%= currentTarget %%>/**/*"
                         ]
                     }
                 ]
             },
             languages: [
-                '.tmp/languages'
+                ".tmp/languages"
             ],
             devIndex : [
-                '<%%= paths.app %%>/index.html'
+                "<%%= paths.app %%>/index.html"
             ]
         },
 
@@ -162,8 +162,8 @@ module.exports = function (grunt) {
                 options: {
                     map       : true,
                     processors: [
-                        require('pixrem')(),
-                        require('autoprefixer')({
+                        require("pixrem")(),
+                        require("autoprefixer")({
                             browsers: globalConfig.browserslist,
                             cascade : true,
                             add     : true,
@@ -177,9 +177,9 @@ module.exports = function (grunt) {
                 files  : [
                     {
                         expand: true,
-                        cwd   : '<%%= paths.app %%>/styles/css',
-                        src   : '*.css',
-                        dest  : '<%%= paths.app %%>/styles/css'
+                        cwd   : "<%%= paths.app %%>/styles/css",
+                        src   : "*.css",
+                        dest  : "<%%= paths.app %%>/styles/css"
                     }
                 ]
             },
@@ -187,8 +187,8 @@ module.exports = function (grunt) {
                 options: {
                     map       : true,
                     processors: [
-                        require('pixrem')(),
-                        require('autoprefixer')({
+                        require("pixrem")(),
+                        require("autoprefixer")({
                             browsers: globalConfig.browserslist,
                             cascade : true,
                             add     : true,
@@ -200,7 +200,7 @@ module.exports = function (grunt) {
                     ]
                 },
                 files  : {
-                    '<%%= currentTarget %%>/styles/vendor.css': '<%%= currentTarget %%>/styles/vendor.css'
+                    "<%%= currentTarget %%>/styles/vendor.css": "<%%= currentTarget %%>/styles/vendor.css"
                 }
             }
         },
@@ -208,23 +208,23 @@ module.exports = function (grunt) {
         wiredep: {
             app: {
                 src       : [
-                    '<%%= paths.app %%>/config/tpls/index.tpl.html'
+                    "<%%= paths.app %%>/config/tpls/index.tpl.html"
                 ],
                 ignorePath: /\.\.\//
             }
         },
 
         useminPrepare: {
-            html   : '<%%= currentTarget %%>/index.html',
+            html   : "<%%= currentTarget %%>/index.html",
             options: {
-                dest: '<%%= currentTarget %%>',
+                dest: "<%%= currentTarget %%>",
                 flow: {
                     steps: {
                         js : [
-                            'concat'
+                            "concat"
                         ],
                         css: [
-                            'concat'
+                            "concat"
                         ]
                     }
                 }
@@ -233,7 +233,7 @@ module.exports = function (grunt) {
 
         usemin: {
             html: [
-                '<%%= currentTarget %%>/index.html'
+                "<%%= currentTarget %%>/index.html"
             ]
         },
 
@@ -245,8 +245,8 @@ module.exports = function (grunt) {
                 },
                 files  : [
                     {
-                        '<%%= paths.app %%>/styles/css/<%= appNameKebab %>.min.css': '<%%= paths.app %%>/styles/css/<%= appNameKebab %>.css',
-                        '<%%= paths.app %%>/styles/css/init-loader.min.css'        : '<%%= paths.app %%>/styles/css/init-loader.css'
+                        "<%%= paths.app %%>/styles/css/<%= appNameKebab %>.min.css": "<%%= paths.app %%>/styles/css/<%= appNameKebab %>.css",
+                        "<%%= paths.app %%>/styles/css/init-loader.min.css"        : "<%%= paths.app %%>/styles/css/init-loader.css"
                     }
                 ]
             },
@@ -257,7 +257,7 @@ module.exports = function (grunt) {
                 },
                 files  : [
                     {
-                        '<%%= currentTarget %%>/styles/vendor.css': '<%%= currentTarget %%>/styles/vendor.css'
+                        "<%%= currentTarget %%>/styles/vendor.css": "<%%= currentTarget %%>/styles/vendor.css"
                     }
                 ]
             }
@@ -273,7 +273,7 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files  : {
-                    '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.min.js': '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js'
+                    "<%%= currentTarget %%>/scripts/<%= appNameKebab %>.min.js": "<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js"
                 }
             },
             dev    : {
@@ -285,7 +285,7 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files  : {
-                    '<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js': '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js'
+                    "<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js": "<%%= paths.app %%>/scripts/<%= appNameKebab %>.js"
                 }
             },
             vendors: {
@@ -297,7 +297,7 @@ module.exports = function (grunt) {
                     sourceMap: false
                 },
                 files  : {
-                    '<%%= currentTarget %%>/scripts/vendor.js': '<%%= currentTarget %%>/scripts/vendor.js'
+                    "<%%= currentTarget %%>/scripts/vendor.js": "<%%= currentTarget %%>/scripts/vendor.js"
                 }
             }
         },
@@ -312,9 +312,9 @@ module.exports = function (grunt) {
                 files  : [
                     {
                         expand: true,
-                        cwd   : '<%%= paths.app %%>/images',
-                        src   : '**/*.{png,jpg,jpeg,gif,svg}',
-                        dest  : '<%%= currentTarget %%>/images'
+                        cwd   : "<%%= paths.app %%>/images",
+                        src   : "**/*.{png,jpg,jpeg,gif,svg}",
+                        dest  : "<%%= currentTarget %%>/images"
                     }
                 ]
             }
@@ -332,9 +332,9 @@ module.exports = function (grunt) {
                 files  : [
                     {
                         expand: true,
-                        cwd   : '<%%= paths.app %%>',
-                        src   : 'index.html',
-                        dest  : '<%%= paths.app %%>'
+                        cwd   : "<%%= paths.app %%>",
+                        src   : "index.html",
+                        dest  : "<%%= paths.app %%>"
                     }
                 ]
             },
@@ -349,9 +349,9 @@ module.exports = function (grunt) {
                 files  : [
                     {
                         expand: true,
-                        cwd   : '<%%= currentTarget %%>',
-                        src   : 'index.html',
-                        dest  : '<%%= currentTarget %%>'
+                        cwd   : "<%%= currentTarget %%>",
+                        src   : "index.html",
+                        dest  : "<%%= currentTarget %%>"
                     }
                 ]
             }
@@ -360,125 +360,125 @@ module.exports = function (grunt) {
         ngtemplates: {
             release: {
                 options: {
-                    module : '<%= appNameCamel %>',
-                    htmlmin: '<%%= htmlmin.release.options %%>'
+                    module : "<%= appNameCamel %>",
+                    htmlmin: "<%%= htmlmin.release.options %%>"
                 },
-                cwd    : '<%%= paths.app %%>',
+                cwd    : "<%%= paths.app %%>",
                 src    : [
-                    '**/*.html',
-                    '!index.html',
-                    '!config/tpls/index.tpl.html'
+                    "**/*.html",
+                    "!index.html",
+                    "!config/tpls/index.tpl.html"
                 ],
-                dest   : '.tmp/release/template-cache.js'
+                dest   : ".tmp/release/template-cache.js"
             }
         },
 
         copy: {
             styles    : {
                 expand: true,
-                cwd   : '.tmp/release/styles',
-                src   : '*.css',
-                dest  : '<%%= currentTarget %%>/styles/css'
+                cwd   : ".tmp/release/styles",
+                src   : "*.css",
+                dest  : "<%%= currentTarget %%>/styles/css"
             },
             languages : {
                 expand: true,
-                cwd   : '<%%= paths.app %%>/languages/min',
-                dest  : '<%%= currentTarget %%>/languages/',
-                src   : '*.json'
+                cwd   : "<%%= paths.app %%>/languages/min",
+                dest  : "<%%= currentTarget %%>/languages/",
+                src   : "*.json"
             },
             other     : {
                 files: [
                     {
                         expand: true,
-                        cwd   : '<%%= paths.app %%>/styles/css/',
-                        src   : 'reset.min.css',
-                        dest  : '<%%= currentTarget %%>/styles/css'
+                        cwd   : "<%%= paths.app %%>/styles/css/",
+                        src   : "reset.min.css",
+                        dest  : "<%%= currentTarget %%>/styles/css"
                     }
                 ]
             },
             release   : {
                 files: {
-                    '<%%= currentTarget %%>/styles/<%= appNameKebab %>.css'    : '<%%= paths.app %%>/styles/css/<%= appNameKebab %>.css',
-                    '<%%= currentTarget %%>/styles/<%= appNameKebab %>.min.css': '<%%= paths.app %%>/styles/css/<%= appNameKebab %>.min.css',
-                    '<%%= currentTarget %%>/styles/init-loader.css'            : '<%%= paths.app %%>/styles/css/init-loader.css',
-                    '<%%= currentTarget %%>/styles/init-loader.min.css'        : '<%%= paths.app %%>/styles/css/init-loader.min.css'
+                    "<%%= currentTarget %%>/styles/<%= appNameKebab %>.css"    : "<%%= paths.app %%>/styles/css/<%= appNameKebab %>.css",
+                    "<%%= currentTarget %%>/styles/<%= appNameKebab %>.min.css": "<%%= paths.app %%>/styles/css/<%= appNameKebab %>.min.css",
+                    "<%%= currentTarget %%>/styles/init-loader.css"            : "<%%= paths.app %%>/styles/css/init-loader.css",
+                    "<%%= currentTarget %%>/styles/init-loader.min.css"        : "<%%= paths.app %%>/styles/css/init-loader.min.css"
                 }
             },
             components: {
                 files: [
                     {
                         expand: true,
-                        cwd   : 'bower_components',
+                        cwd   : "bower_components",
                         src   : [
-                            '**/*.js',
-                            '**/*.css',
-                            '**/*.less'
+                            "**/*.js",
+                            "**/*.css",
+                            "**/*.less"
                         ],
-                        dest  : '<%%= currentTarget %%>/bower_components'
+                        dest  : "<%%= currentTarget %%>/bower_components"
                     }
                 ]
             },
             i18n      : {
                 files: {
-                    '<%%= currentTarget %%>/languages/i18n/fr.js': 'bower_components/angular-i18n/angular-locale_fr.js'
+                    "<%%= currentTarget %%>/languages/i18n/fr.js": "bower_components/angular-i18n/angular-locale_fr.js"
                 }
             }
         },
 
         concurrent: {
             server : [
-                'copy:styles'
+                "copy:styles"
             ],
             test   : [
-                'copy:styles'
+                "copy:styles"
             ],
             release: [
-                'copy:release',
-                'copy:components',
-                'imagemin:release'
+                "copy:release",
+                "copy:components",
+                "imagemin:release"
             ]
         },
 
-        'merge-json': {
+        "merge-json": {
             merge: {
                 files: [
                     {
                         expand : true,
                         flatten: false,
-                        cwd    : '<%%= paths.app %%>',
+                        cwd    : "<%%= paths.app %%>",
                         src    : [
-                            '**/*.json',
-                            '!config/targets/*.json',
-                            '!languages/min/*.json'
+                            "**/*.json",
+                            "!config/targets/*.json",
+                            "!languages/min/*.json"
                         ],
-                        dest   : '.tmp/languages',
+                        dest   : ".tmp/languages",
                         rename : function (dest, src) {
                             var lang = src.match(/[^/]+(?=\/[^/]+\.json$)/gim);
                             src      = src.match(/[^/]+(.json$)/gim);
-                            return dest + '/' + lang + '/' + src;
+                            return dest + "/" + lang + "/" + src;
                         }
                     },
                     {
                         expand : true,
                         flatten: false,
-                        cwd    : 'bower_components/altran-angular-lib/release/languages',
-                        src    : '*.json',
-                        dest   : '.tmp/languages',
+                        cwd    : "bower_components/altran-angular-lib/release/languages",
+                        src    : "*.json",
+                        dest   : ".tmp/languages",
                         rename : function (dest, src) {
-                            var lang = src.replace('.min.json', '');
-                            src      = 'altran-angular-lib.json';
-                            return dest + '/' + lang + '/' + src;
+                            var lang = src.replace(".min.json", "");
+                            src      = "altran-angular-lib.json";
+                            return dest + "/" + lang + "/" + src;
                         }
                     }
                 ]
             },
             min  : {
                 files: {
-                    '<%%= paths.app %%>/languages/min/fr.min.json': [
-                        '.tmp/languages/fr/*.json'
+                    "<%%= paths.app %%>/languages/min/fr.min.json": [
+                        ".tmp/languages/fr/*.json"
                     ],
-                    '<%%= paths.app %%>/languages/min/en.min.json': [
-                        '.tmp/languages/en/*.json'
+                    "<%%= paths.app %%>/languages/min/en.min.json": [
+                        ".tmp/languages/en/*.json"
                     ]
                 }
             }
@@ -491,8 +491,8 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files  : {
-                    '<%%= paths.app %%>/styles/css/<%= appNameKebab %>.css': '<%%= paths.app %%>/styles/less/<%= appNameKebab %>.less',
-                    '<%%= paths.app %%>/styles/css/init-loader.css'        : '<%%= paths.app %%>/styles/less/<%= appNameKebab %>.loader.less'
+                    "<%%= paths.app %%>/styles/css/<%= appNameKebab %>.css": "<%%= paths.app %%>/styles/less/<%= appNameKebab %>.less",
+                    "<%%= paths.app %%>/styles/css/init-loader.css"        : "<%%= paths.app %%>/styles/less/<%= appNameKebab %>.loader.less"
                 }
             },
             tmp : {
@@ -501,53 +501,53 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files  : {
-                    '.tmp/release/styles/<%= appNameKebab %>.css': '<%%= paths.app %%>/styles/less/<%= appNameKebab %>.less',
-                    '.tmp/release/styles/init-loader.css'        : '<%%= paths.app %%>/styles/less/<%= appNameKebab %>.loader.less'
+                    ".tmp/release/styles/<%= appNameKebab %>.css": "<%%= paths.app %%>/styles/less/<%= appNameKebab %>.less",
+                    ".tmp/release/styles/init-loader.css"        : "<%%= paths.app %%>/styles/less/<%= appNameKebab %>.loader.less"
                 }
             }
         },
 
-        'string-replace': {
+        "string-replace": {
             devIndex: {
                 options: {
                     replacements: [
                         {
                             pattern    : /(..\/..\/)/gmi,
-                            replacement: ''
+                            replacement: ""
                         }
                     ]
                 },
                 expand : true,
-                cwd    : '<%%= paths.app %%>',
-                src    : 'index.html',
-                dest   : '<%%= paths.app %%>'
+                cwd    : "<%%= paths.app %%>",
+                src    : "index.html",
+                dest   : "<%%= paths.app %%>"
             },
             index   : {
                 options: {
                     replacements: [
                         {
                             pattern    : /(..\/..\/)/gmi,
-                            replacement: ''
+                            replacement: ""
                         }
                     ]
                 },
                 expand : true,
-                cwd    : '<%%= currentTarget %%>',
-                src    : 'index.html',
-                dest   : '<%%= currentTarget %%>'
+                cwd    : "<%%= currentTarget %%>",
+                src    : "index.html",
+                dest   : "<%%= currentTarget %%>"
             },
             cssPaths: {
                 options: {
                     replacements: [
                         {
                             pattern    : /(\.\.\/)+/gmi,
-                            replacement: '../'
+                            replacement: "../"
                         }
                     ]
                 },
                 files  : {
-                    '<%%= currentTarget %%>/styles/<%= appNameKebab %>.css'    : '<%%= currentTarget %%>/styles/<%= appNameKebab %>.css',
-                    '<%%= currentTarget %%>/styles/<%= appNameKebab %>.min.css': '<%%= currentTarget %%>/styles/<%= appNameKebab %>.min.css'
+                    "<%%= currentTarget %%>/styles/<%= appNameKebab %>.css"    : "<%%= currentTarget %%>/styles/<%= appNameKebab %>.css",
+                    "<%%= currentTarget %%>/styles/<%= appNameKebab %>.min.css": "<%%= currentTarget %%>/styles/<%= appNameKebab %>.min.css"
                 }
             }
         },
@@ -557,52 +557,52 @@ module.exports = function (grunt) {
                 options: {
                     inline : true,
                     context: {
-                        config: grunt.file.read('app/config/targets/config.dev.json'),
-                        target: 'dev'
+                        config: grunt.file.read("app/config/targets/config.dev.json"),
+                        target: "dev"
                     }
                 },
                 files  : {
-                    '<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
-                    '<%%= paths.app %%>/index.html'             : '<%%= paths.app %%>/config/tpls/index.tpl.html'
+                    "<%%= paths.app %%>/config/target.config.js": "<%%= paths.app %%>/config/tpls/target.config.tpl.js",
+                    "<%%= paths.app %%>/index.html"             : "<%%= paths.app %%>/config/tpls/index.tpl.html"
                 }
             },
             test   : {
                 options: {
                     inline : true,
                     context: {
-                        config: grunt.file.read('app/config/targets/config.test.json'),
-                        target: 'test'
+                        config: grunt.file.read("app/config/targets/config.test.json"),
+                        target: "test"
                     }
                 },
                 files  : {
-                    '<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
-                    '<%%= currentTarget %%>/index.html'         : '<%%= paths.app %%>/config/tpls/index.tpl.html'
+                    "<%%= paths.app %%>/config/target.config.js": "<%%= paths.app %%>/config/tpls/target.config.tpl.js",
+                    "<%%= currentTarget %%>/index.html"         : "<%%= paths.app %%>/config/tpls/index.tpl.html"
                 }
             },
             preprod: {
                 options: {
                     inline : true,
                     context: {
-                        config: grunt.file.read('app/config/targets/config.preprod.json'),
-                        target: 'preprod'
+                        config: grunt.file.read("app/config/targets/config.preprod.json"),
+                        target: "preprod"
                     }
                 },
                 files  : {
-                    '<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
-                    '<%%= currentTarget %%>/index.html'         : '<%%= paths.app %%>/config/tpls/index.tpl.html'
+                    "<%%= paths.app %%>/config/target.config.js": "<%%= paths.app %%>/config/tpls/target.config.tpl.js",
+                    "<%%= currentTarget %%>/index.html"         : "<%%= paths.app %%>/config/tpls/index.tpl.html"
                 }
             },
             prod   : {
                 options: {
                     inline : true,
                     context: {
-                        config: grunt.file.read('app/config/targets/config.prod.json'),
-                        target: 'prod'
+                        config: grunt.file.read("app/config/targets/config.prod.json"),
+                        target: "prod"
                     }
                 },
                 files  : {
-                    '<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
-                    '<%%= currentTarget %%>/index.html'         : '<%%= paths.app %%>/config/tpls/index.tpl.html'
+                    "<%%= paths.app %%>/config/target.config.js": "<%%= paths.app %%>/config/tpls/target.config.tpl.js",
+                    "<%%= currentTarget %%>/index.html"         : "<%%= paths.app %%>/config/tpls/index.tpl.html"
                 }
             }
         },
@@ -610,61 +610,61 @@ module.exports = function (grunt) {
         concat: {
             scripts: {
                 src : [
-                    '.tmp/release/scripts/app.min.js',
-                    '.tmp/release/scripts/main.min.js'
+                    ".tmp/release/scripts/app.min.js",
+                    ".tmp/release/scripts/main.min.js"
                 ],
-                dest: '.tmp/release/scripts/<%= appNameKebab %>.min.js'
+                dest: ".tmp/release/scripts/<%= appNameKebab %>.min.js"
             },
             js     : {
                 src : [
-                    '<%%= paths.app %%>/**/*.js',
-                    '!<%%= paths.app %%>/**/*.tpl.js',
-                    '!<%%= paths.app %%>/scripts/<%= appNameKebab %>.js',
-                    '!<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js'
+                    "<%%= paths.app %%>/**/*.js",
+                    "!<%%= paths.app %%>/**/*.tpl.js",
+                    "!<%%= paths.app %%>/scripts/<%= appNameKebab %>.js",
+                    "!<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js"
                 ],
-                dest: '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js'
+                dest: "<%%= paths.app %%>/scripts/<%= appNameKebab %>.js"
             },
             release: {
                 src : [
-                    '<%%= paths.app %%>/**/*.js',
-                    '.tmp/release/template-cache.js',
-                    '!<%%= paths.app %%>/**/*.tpl.js',
-                    '!<%%= paths.app %%>/scripts/<%= appNameKebab %>.js',
-                    '!<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js'
+                    "<%%= paths.app %%>/**/*.js",
+                    ".tmp/release/template-cache.js",
+                    "!<%%= paths.app %%>/**/*.tpl.js",
+                    "!<%%= paths.app %%>/scripts/<%= appNameKebab %>.js",
+                    "!<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js"
                 ],
-                dest: '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js'
+                dest: "<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js"
             }
         },
 
         notify: {
             test      : {
                 options: {
-                    title  : '"TEST"',
-                    message: 'This is just a test !'
+                    title  : "\"TEST\"",
+                    message: "This is just a test !"
                 }
             },
             serve     : {
                 options: {
-                    title  : '"SERVE"',
-                    message: 'Task complete ! Enjoy the app !'
+                    title  : "\"SERVE\"",
+                    message: "Task complete ! Enjoy the app !"
                 }
             },
             release   : {
                 options: {
-                    title  : '"RELEASE"',
-                    message: 'Task complete !'
+                    title  : "\"RELEASE\"",
+                    message: "Task complete !"
                 }
             },
             buildReady: {
                 options: {
-                    title  : '"BUILD READY"',
-                    message: 'The last build was successful ! You can now refresh your browser.'
+                    title  : "\"BUILD READY\"",
+                    message: "The last build was successful ! You can now refresh your browser."
                 }
             },
             less      : {
                 options: {
-                    title  : '"LESS UPDATED"',
-                    message: 'LESS files are now updated'
+                    title  : "\"LESS UPDATED\"",
+                    message: "LESS files are now updated"
                 }
             }
         },
@@ -683,20 +683,20 @@ module.exports = function (grunt) {
             options: globalConfig.prettier,
             files  : {
                 src: [
-                    '<%%= paths.app %%>/**/*.js'
+                    "<%%= paths.app %%>/**/*.js"
                 ]
             }
         },
 
         release: {
             test   : {
-                target: 'test'
+                target: "test"
             },
             preprod: {
-                target: 'preprod'
+                target: "preprod"
             },
             prod   : {
-                target: 'prod'
+                target: "prod"
             }
         },
 
@@ -712,73 +712,73 @@ module.exports = function (grunt) {
     });
 
     // Start the notify system
-    grunt.loadNpmTasks('grunt-notify');
-    grunt.task.run('notify_hooks');
+    grunt.loadNpmTasks("grunt-notify");
+    grunt.task.run("notify_hooks");
 
     // Start a local node server for dev purpose
-    grunt.registerTask('serve', 'Compile then start a connect web server', function () {
+    grunt.registerTask("serve", "Compile then start a connect web server", function () {
         grunt.task.run([
-            'clean:server',
-            'wiredep',
-            'preprocess:dev',
-            'string-replace:devIndex',
-            'htmlmin:dev',
-            'jsMin:dev',
-            'less:main',
-            'languages:dev',
-            'concurrent:server',
-            'postcss:dev',
-            'cssmin:dev',
-            'connect:livereload',
-            'notify:serve',
-            'watch'
+            "clean:server",
+            "wiredep",
+            "preprocess:dev",
+            "string-replace:devIndex",
+            "htmlmin:dev",
+            "jsMin:dev",
+            "less:main",
+            "languages:dev",
+            "concurrent:server",
+            "postcss:dev",
+            "cssmin:dev",
+            "connect:livereload",
+            "notify:serve",
+            "watch"
         ]);
     });
 
     // Merge the languages
-    grunt.registerMultiTask('languages', 'Languages task to compile the .json', function () {
+    grunt.registerMultiTask("languages", "Languages task to compile the .json", function () {
 
         // Get the current target
         var target = this.target;
 
         // Run the languages task
-        if (target === 'dev') {
+        if (target === "dev") {
             grunt.task.run([
-                'clean:languages',
-                'merge-json:merge',
-                'merge-json:min'
+                "clean:languages",
+                "merge-json:merge",
+                "merge-json:min"
             ]);
         }
-        else if (target === 'release') {
+        else if (target === "release") {
             grunt.task.run([
-                'clean:languages',
-                'merge-json:merge',
-                'merge-json:min',
-                'copy:languages'
+                "clean:languages",
+                "merge-json:merge",
+                "merge-json:min",
+                "copy:languages"
             ]);
         }
     });
 
     // Create the min files for dev
-    grunt.registerMultiTask('jsMin', 'JS min task to compile the .js', function () {
+    grunt.registerMultiTask("jsMin", "JS min task to compile the .js", function () {
 
         // Get the current target
         var target = this.target;
 
         // Run the jsMin task
-        if (target === 'dev') {
+        if (target === "dev") {
             grunt.task.run([
-                'concat:js',
-                'uglify:dev',
-                'merge-json:min'
+                "concat:js",
+                "uglify:dev",
+                "merge-json:min"
             ]);
         }
-        else if (target === 'release') {
+        else if (target === "release") {
             grunt.task.run([
-                'ngtemplates:release',
-                'concat:release',
-                'uglify:release',
-                'merge-json:min'
+                "ngtemplates:release",
+                "concat:release",
+                "uglify:release",
+                "merge-json:min"
             ]);
         }
     });
@@ -786,36 +786,36 @@ module.exports = function (grunt) {
     // Create the release version
     // You can specify the env (e.g: grunt release:prod)
     // The default env is test
-    grunt.registerMultiTask('release', 'Create a new stable version', function () {
+    grunt.registerMultiTask("release", "Create a new stable version", function () {
 
         // Get the current target
         var target = this.data.target;
-        grunt.config.set('currentTarget', target);
+        grunt.config.set("currentTarget", target);
 
         // Run the release task
         grunt.task.run([
-            'clean:release',
-            'clean:devIndex',
-            'wiredep',
-            'preprocess:' + target,
-            'jsMin:release',
-            'less:main',
-            'languages:release',
-            'postcss:dev',
-            'cssmin:dev',
-            'string-replace:index',
-            'useminPrepare',
-            'usemin',
-            'concat:generated',
-            'uglify:vendors',
-            'postcss:vendors',
-            'cssmin:vendors',
-            'htmlmin:release',
-            'copy:release',
-            'copy:i18n',
-            'imagemin:release',
-            'string-replace:cssPaths',
-            'notify:release'
+            "clean:release",
+            "clean:devIndex",
+            "wiredep",
+            "preprocess:" + target,
+            "jsMin:release",
+            "less:main",
+            "languages:release",
+            "postcss:dev",
+            "cssmin:dev",
+            "string-replace:index",
+            "useminPrepare",
+            "usemin",
+            "concat:generated",
+            "uglify:vendors",
+            "postcss:vendors",
+            "cssmin:vendors",
+            "htmlmin:release",
+            "copy:release",
+            "copy:i18n",
+            "imagemin:release",
+            "string-replace:cssPaths",
+            "notify:release"
         ]);
     });
 };
