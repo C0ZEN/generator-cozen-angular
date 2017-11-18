@@ -5,7 +5,7 @@
     "forin": true,
     "freeze": true,
     "futurehostile": true,
-    "latedef": true,
+    "latedef": "nofunc",
     "maxdepth": 6,
     "maxerr": 1000,
     "maxparams": 5,
