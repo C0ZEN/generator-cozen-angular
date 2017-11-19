@@ -5,8 +5,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.1.5]
 ### Added
 - Support for code coverage between Travis and Code Climate (experimental)
+
+### Changed
+- Travis config to use the coverage properly
+- Jest config to save coverage report
+
+### Fixed
+- Removed some useless functions
+- Removed config const like debug and skipInstall which are no longer useful
+- Removed functions with if/else
+- Stuff to reach 100% of cover
 
 ## [0.1.4]
 ### Added
