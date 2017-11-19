@@ -17,6 +17,16 @@
 	});
 	const colors        = require('../colors.js');
 
+	const prompts = [
+		{
+			type   : 'input',
+			name   : 'theme',
+			message: 'Default altran-angular-lib theme :',
+			default: 'origin',
+			store  : true
+		}
+	];
+
 	module.exports = $that => {
 		$that.logHint();
 		$that.logHint('The theme is a pure dependency of the Altran Angular Lib.');
@@ -26,16 +36,6 @@
 		$that.log(chalk.hex(colors.get('cyan'))('origin'));
 		$that.log(chalk.hex(colors.get('cyan'))('altran-portail-france'));
 		$that.log(chalk.hex(colors.get('cyan'))('et-banking'));
-
-		const prompts = [
-			{
-				type   : 'input',
-				name   : 'theme',
-				message: 'Default altran-angular-lib theme :',
-				default: 'origin',
-				store  : true
-			}
-		];
 
 		return $that.prompt(prompts).then($response => {
 			$that.theme = $response.theme;

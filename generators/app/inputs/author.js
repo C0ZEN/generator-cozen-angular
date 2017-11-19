@@ -10,37 +10,43 @@
 (function () {
 	'use strict';
 
-	module.exports = $that => {
-		$that.logHint();
-		$that.logHint('Simply set up your first name and last name.');
-		$that.logHint('Do not forget the uppercase ;)');
-		$that.logHint('Used on the file headers.');
-
-		const prompts = [
-			{
-				type    : 'input',
-				name    : 'authorFirstName',
-				message : 'Your first name :',
-				store   : true,
-				validate: $value => {
-					return $value ? true : 'Your first name could not be empty !';
-				}
-			},
-			{
-				type    : 'input',
-				name    : 'authorLastName',
-				message : 'Your last name :',
-				store   : true,
-				validate: $value => {
-					return $value ? true : 'Your last name could not be empty !';
-				}
+	const prompts = [
+		{
+			type    : 'input',
+			name    : 'authorFirstName',
+			message : 'Your first name :',
+			store   : true,
+			validate: $value => {
+				return $value ? true : 'Your first name could not be empty !';
 			}
-		];
+		},
+		{
+			type    : 'input',
+			name    : 'authorLastName',
+			message : 'Your last name :',
+			store   : true,
+			validate: $value => {
+				return $value ? true : 'Your last name could not be empty !';
+			}
+		}
+	];
 
-		return $that.prompt(prompts).then($response => {
+	module.exports = class Author {
+		static set($that) {
+			$that.logHint();
+			$that.logHint('Simply set up your first name and last name.');
+			$that.logHint('Do not forget the uppercase ;)');
+			$that.logHint('Used on the file headers.');
+
+			return $that.prompt(prompts).then($response => {
+				this.onSuccess($that, $response);
+			});
+		}
+
+		static onSuccess($that, $response) {
 			$that.authorFirstName = $response.authorFirstName;
 			$that.authorLastName  = $response.authorLastName;
-		});
+		}
 	};
 
 })();

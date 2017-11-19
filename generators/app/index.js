@@ -23,6 +23,9 @@
 	const authorEmail    = require('./inputs/authorEmail.js');
 
 	const writingMain        = require('./writing/main.js');
+	const writingMarkdown    = require('./writing/markdown.js');
+	const writingLinter      = require('./writing/linter.js');
+	const writingJson        = require('./writing/json.js');
 	const writingProviders   = require('./writing/providers.js');
 	const writingDirectories = require('./writing/directories.js');
 	const writingApp         = require('./writing/app.js');
@@ -87,7 +90,7 @@
 		}
 
 		inputAppName() {
-			return appName(this);
+			return appName.set(this);
 		}
 
 		inputAppDescription() {
@@ -107,7 +110,7 @@
 		}
 
 		inputAuthor() {
-			return author(this);
+			return author.set(this);
 		}
 
 		inputAuthorEmail() {
@@ -128,6 +131,9 @@
 
 			this.logPriority('writing', true);
 			writingMain(this);
+			writingMarkdown(this);
+			writingLinter(this);
+			writingJson(this);
 			writingProviders(this);
 			writingApp(this);
 			writingTargets(this);

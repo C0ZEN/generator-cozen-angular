@@ -10,27 +10,27 @@
 (function () {
 	'use strict';
 
+	const prompts = [
+		{
+			type   : 'input',
+			name   : 'backgroundColor',
+			message: 'Background color color :',
+			store  : true
+		},
+		{
+			type   : 'input',
+			name   : 'themeColor',
+			message: 'Theme color :',
+			store  : true
+		}
+	];
+
 	module.exports = $that => {
 		$that.logHint();
 		$that.logHint('The backgroundColor is the background color for the Web App Manifest.');
 		$that.logHint('The value can be any valid CSS color (blue, red, ...).');
 		$that.logHint('The themeColor is the background color for the search address bar.');
 		$that.logHint('The value can be any hexadecimal color (#123456, #4F257B, ...).');
-
-		const prompts = [
-			{
-				type   : 'input',
-				name   : 'backgroundColor',
-				message: 'Background color color :',
-				store  : true
-			},
-			{
-				type   : 'input',
-				name   : 'themeColor',
-				message: 'Theme color :',
-				store  : true
-			}
-		];
 
 		return $that.prompt(prompts).then($response => {
 			$that.backgroundColor = $response.backgroundColor;

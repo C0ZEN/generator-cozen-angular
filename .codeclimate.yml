@@ -1,0 +1,11 @@
+plugins:
+  markdownlint:
+    enabled: true
+  eslint:
+      enabled: true
+      config:
+          config: .eslintrc
+          extensions:
+              - .js
+  csslint:
+      enabled: true
