@@ -9,7 +9,7 @@ install:
 after_script:
   - 'cat ./coverage/lcov.info | coveralls'
   - npm install -g codeclimate-test-reporter
-  - codeclimate-test-reporter < coverage/lcov.info
+  - codeclimate-test-reporter < ./coverage/lcov.info
 notifications:
   email:
     recipients:

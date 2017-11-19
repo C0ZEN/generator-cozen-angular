@@ -53,7 +53,8 @@
             "json",
             "lcov",
             "text"
-        ]
+        ],
+        "coverageDirectory": "coverage"
     },
     "scripts": {
         "prepare": "nsp check",
