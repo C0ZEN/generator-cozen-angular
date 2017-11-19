@@ -21,7 +21,7 @@
 	];
 
 	module.exports = $that => {
-		$that.logHint();
+		$that.logHintHeader();
 		$that.logHint('Simply set up your email.');
 
 		prompts[0].default = _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@altran.com';

@@ -26,7 +26,7 @@
 	];
 
 	module.exports = $that => {
-		$that.logHint();
+		$that.logHintHeader();
 		$that.logHint('The backgroundColor is the background color for the Web App Manifest.');
 		$that.logHint('The value can be any valid CSS color (blue, red, ...).');
 		$that.logHint('The themeColor is the background color for the search address bar.');

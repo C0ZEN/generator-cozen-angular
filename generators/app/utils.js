@@ -34,15 +34,10 @@
 			});
 		}
 
-		static newDirectory($that, $paths) {
-			if (_.isArray($paths)) {
-				_.forEach($paths, $path => {
-					mkdirp.sync($path);
-				});
-			}
-			else {
-				mkdirp.sync($paths);
-			}
+		static newDirectory($paths) {
+			_.forEach($paths, $path => {
+				mkdirp.sync($path);
+			});
 		}
 
 		static installNpmPackages($that) {

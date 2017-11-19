@@ -28,7 +28,7 @@
 	];
 
 	module.exports = $that => {
-		$that.logHint();
+		$that.logHintHeader();
 		$that.logHint('The theme is a pure dependency of the Altran Angular Lib.');
 		$that.logHint('Enter an existing theme or enter a new one that you will create in a few.');
 
