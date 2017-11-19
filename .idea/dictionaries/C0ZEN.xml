@@ -22,6 +22,7 @@
       <w>livereload</w>
       <w>lodash</w>
       <w>logex</w>
+      <w>markdownlint</w>
       <w>minimatch</w>
       <w>mkdirp</w>
       <w>ngtemplates</w>

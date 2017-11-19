@@ -6,6 +6,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.6]
+### Changed
+- Set up back only master build for Travis CI
+- Gruntfile refactoring of similar options configuration
+- markdownlint config
+
+### Fixed
+- Wrong Code Climate Es Lint path
+
 ## [0.1.5]
 ### Added
 - Support for code coverage between Travis and Code Climate (experimental)
