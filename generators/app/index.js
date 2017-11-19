@@ -1,28 +1,25 @@
 (function () {
 	'use strict';
 
-	const Generator       = require('yeoman-generator');
-	const chalkInstance   = require('chalk');
-	const chalk           = new chalkInstance.constructor({
+	const Generator     = require('yeoman-generator');
+	const chalkInstance = require('chalk');
+	const chalk         = new chalkInstance.constructor({
 		level  : 3,
 		enabled: true
 	});
-	const yosay           = require('yosay');
-	const kebabCase       = require('lodash.kebabcase');
-	const camelCase       = require('camelcase');
-	const upperCase       = require('upper-case');
-	const upperPythonCase = require('case').constant;
-	const moment          = require('moment');
-	const mkdirp          = require('mkdirp');
-	const _               = require('lodash');
-	const colors          = require('./colors.js');
-	const npm             = require('./npm.js');
-	const bower           = require('./bower.js');
+	const yosay         = require('yosay');
+	const upperCase     = require('upper-case');
+	const moment        = require('moment');
+	const mkdirp        = require('mkdirp');
+	const _             = require('lodash');
+	const colors        = require('./colors.js');
+	const npm           = require('./dependencies/npm.js');
+	const bower         = require('./dependencies/bower.js');
 
 	const debug       = true;
 	const skipInstall = false;
 
-	module.exports = class extends Generator {
+	class Base extends Generator {
 		constructor($args, $opts) {
 			super($args, $opts);
 
@@ -115,199 +112,32 @@
 			this.logPriority('prompting', true);
 		}
 
-		appName() {
-			this.logHint();
-			this.logHint(
-				'The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json'
-			);
-			this.logHint('Write it down in his normal syntax like <Altran Angular Generator>');
-			this.logHint(
-				'Wrong examples: <altran Angular Generator>, <altranAngularGenerator>, <altran-angular-generator>'
-			);
-
-			const prompts = [
-				{
-					type   : 'input',
-					name   : 'appName',
-					message: 'Name of your app :',
-					default: 'My App'
-				}
-			];
-
-			return this.prompt(prompts).then($response => {
-				this.appName            = $response.appName;
-				this.appNameCamel       = camelCase($response.appName);
-				this.appNameKebab       = kebabCase($response.appName);
-				this.appNameUpperPython = upperPythonCase($response.appName);
-				this.log(
-					'The app name in camelCase is :',
-					chalk.hex(colors.get('cyan'))(this.appNameCamel)
-				);
-				this.log(
-					'The app name in kebab-case is :',
-					chalk.hex(colors.get('cyan'))(this.appNameKebab)
-				);
-				this.log(
-					'The app name in UPPER_PYTHON_CASE is :',
-					chalk.hex(colors.get('cyan'))(this.appNameUpperPython)
-				);
-				this.log();
-			});
+		inputAppName() {
+			return this.appName(this);
 		}
 
-		appDescription() {
-			this.logHint();
-			this.logHint('Just describe the purpose of your project.');
-
-			const prompts = [
-				{
-					type   : 'input',
-					name   : 'appDescription',
-					message: 'Description of your app :'
-				}
-			];
-
-			return this.prompt(prompts).then($response => {
-				this.appDescription = $response.appDescription;
-				this.log();
-			});
+		inputAppDescription() {
+			return this.appDescription(this);
 		}
 
-		theme() {
-			this.logHint();
-			this.logHint('The theme is a pure dependency of the Altran Angular Lib.');
-			this.logHint(
-				'Enter an existing theme or enter a new one that you will create in a few.'
-			);
-
-			this.log('Current theme list :');
-			this.log(chalk.hex(colors.get('cyan'))('origin'));
-			this.log(chalk.hex(colors.get('cyan'))('altran-portail-france'));
-			this.log(chalk.hex(colors.get('cyan'))('et-banking'));
-
-			const prompts = [
-				{
-					type   : 'input',
-					name   : 'theme',
-					message: 'Default altran-angular-lib theme :',
-					default: 'origin',
-					store  : true
-				}
-			];
-
-			return this.prompt(prompts).then($response => {
-				this.theme = $response.theme;
-				this.log();
-			});
+		inputTheme() {
+			return this.theme(this);
 		}
 
-		lang() {
-			this.logHint();
-			this.logHint('The default language of your application.');
-
-			this.log('Current lang list :');
-			this.log(chalk.hex(colors.get('cyan'))('fr'));
-			this.log(chalk.hex(colors.get('cyan'))('en'));
-
-			const prompts = [
-				{
-					type   : 'input',
-					name   : 'lang',
-					message: 'Default altran-angular-lib lang :',
-					default: 'fr',
-					store  : true
-				}
-			];
-
-			return this.prompt(prompts).then($response => {
-				this.lang = _.lowerCase($response.lang);
-				this.log();
-			});
+		inputLang() {
+			return this.lang(this);
 		}
 
-		color() {
-			this.logHint();
-			this.logHint(
-				'The backgroundColor is the background color for the Web App Manifest.'
-			);
-			this.logHint('The value can be any valid CSS color (blue, red, ...).');
-			this.logHint('The themeColor is the background color for the search address bar.');
-			this.logHint('The value can be any hexadecimal color (#123456, #4F257B, ...).');
-
-			const prompts = [
-				{
-					type   : 'input',
-					name   : 'backgroundColor',
-					message: 'Background color color :',
-					store  : true
-				},
-				{
-					type   : 'input',
-					name   : 'themeColor',
-					message: 'Theme color :',
-					store  : true
-				}
-			];
-
-			return this.prompt(prompts).then($response => {
-				this.backgroundColor = $response.backgroundColor;
-				this.themeColor      = $response.themeColor;
-				this.log();
-			});
+		inputColor() {
+			return this.color(this);
 		}
 
-		author() {
-			this.logHint();
-			this.logHint('Simply set up your first name and last name.');
-			this.logHint('Do not forget the uppercase ;)');
-			this.logHint('Used on the file headers.');
-
-			const prompts = [
-				{
-					type    : 'input',
-					name    : 'authorFirstName',
-					message : 'Your first name :',
-					store   : true,
-					validate: $value => {
-						return $value ? true : 'Your first name could not be empty !';
-					}
-				},
-				{
-					type    : 'input',
-					name    : 'authorLastName',
-					message : 'Your last name :',
-					store   : true,
-					validate: $value => {
-						return $value ? true : 'Your last name could not be empty !';
-					}
-				}
-			];
-
-			return this.prompt(prompts).then($response => {
-				this.authorFirstName = $response.authorFirstName;
-				this.authorLastName  = $response.authorLastName;
-			});
+		inputAuthor() {
+			return this.author(this);
 		}
 
-		authorEmail() {
-			this.logHint();
-			this.logHint('Simply set up your email.');
-
-			const prompts = [
-				{
-					type   : 'input',
-					name   : 'authorEmail',
-					message: 'Your email (altran) :',
-					default: _.lowerCase(this.authorFirstName) + '.' + _.lowerCase(this.authorLastName) + '@altran.com'
-				}
-			];
-
-			return this.prompt(prompts).then($response => {
-				this.authorEmail = $response.authorEmail;
-				this.authorShort = this.authorFirstName + ' ' + this.authorLastName;
-				this.authorLong  = this.authorFirstName + ' ' + this.authorLastName + ' ' + this.authorEmail;
-				this.log();
-			});
+		inputAuthorEmail() {
+			return this.authorEmail(this);
 		}
 
 		configuring() {
@@ -556,5 +386,15 @@
 				'to start the server.'
 			);
 		}
-	};
+	}
+
+	Base.prototype.appName        = require('./inputs/appName.js');
+	Base.prototype.appDescription = require('./inputs/appDescription.js');
+	Base.prototype.theme          = require('./inputs/theme.js');
+	Base.prototype.lang           = require('./inputs/lang.js');
+	Base.prototype.color          = require('./inputs/color.js');
+	Base.prototype.author         = require('./inputs/author.js');
+	Base.prototype.authorEmail    = require('./inputs/authorEmail.js');
+
+	module.exports = Base;
 })();
