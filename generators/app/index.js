@@ -33,6 +33,7 @@
 	const writingLanguages   = require('./writing/languages.js');
 	const writingStyles      = require('./writing/styles.js');
 	const writingTpls        = require('./writing/tpls.js');
+	const writingGruntConfig = require('./writing/gruntConfig.js');
 
 	module.exports = class extends Generator {
 		constructor($args, $opts) {
@@ -115,7 +116,6 @@
 			this.now     = moment();
 			this.nowDate = this.now.format('DD/MM/YYYY');
 			this.nowTime = this.now.format('HH:mm');
-
 			this.log('Now :', chalk.hex(colors.get('cyan'))(this.nowDate, this.nowTime));
 			this.log();
 
@@ -131,6 +131,7 @@
 			writingLanguages(this);
 			writingStyles(this);
 			writingDirectories();
+			writingGruntConfig(this);
 		}
 
 		conflicts() {
@@ -142,7 +143,6 @@
 
 			utils.installNpmPackages(this);
 			utils.installBowerPackages(this);
-			this.log(chalk.hex(colors.get('blue'))('Install was skipped.'));
 		}
 
 		end() {
