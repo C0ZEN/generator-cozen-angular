@@ -110,7 +110,7 @@
 		}
 
 		inputAuthor() {
-			return author(this);
+			return author.set(this);
 		}
 
 		inputAuthorEmail() {

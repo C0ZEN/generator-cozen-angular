@@ -10,17 +10,17 @@
 (function () {
 	'use strict';
 
+	const prompts = [
+		{
+			type   : 'input',
+			name   : 'appDescription',
+			message: 'Description of your app :'
+		}
+	];
+
 	module.exports = $that => {
 		$that.logHint();
 		$that.logHint('Just describe the purpose of your project.');
-
-		const prompts = [
-			{
-				type   : 'input',
-				name   : 'appDescription',
-				message: 'Description of your app :'
-			}
-		];
 
 		return $that.prompt(prompts).then($response => {
 			$that.appDescription = $response.appDescription;
