@@ -49,9 +49,10 @@
     "jest": {
         "testEnvironment": "node",
         "collectCoverage": true,
-        "coverageFormats": [
+        "coverageReporters": [
             "json",
-            "html"
+            "lcov",
+            "text"
         ]
     },
     "scripts": {
