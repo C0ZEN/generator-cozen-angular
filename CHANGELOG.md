@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Changed
 - Set up back only master build for Travis CI
+- Gruntfile refactoring of similar options configuration
 
 ### Fixed
 - Wrong Code Climate Es Lint path

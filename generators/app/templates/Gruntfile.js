@@ -187,21 +187,7 @@ module.exports = function (grunt) {
 				]
 			},
 			vendors: {
-				options: {
-					map       : true,
-					processors: [
-						require('pixrem')(),
-						require('autoprefixer')({
-							browsers: globalConfig.browserslist,
-							cascade : true,
-							add     : true,
-							remove  : false,
-							supports: true,
-							flexbox : true,
-							grid    : true
-						})
-					]
-				},
+				options: '<%%= postcss.dev.options %%>',
 				files  : {
 					'<%%= currentTarget %%>/styles/vendor.css': '<%%= currentTarget %%>/styles/vendor.css'
 				}
@@ -342,13 +328,7 @@ module.exports = function (grunt) {
 				]
 			},
 			release: {
-				options: {
-					collapseBooleanAttributes: true,
-					collapseWhitespace       : true,
-					removeAttributeQuotes    : true,
-					removeComments           : true,
-					removeCommentsFromCDATA  : true
-				},
+				options: '<%%= htmlmin.dev.options %%>',
 				files  : [
 					{
 						expand: true,
@@ -526,14 +506,7 @@ module.exports = function (grunt) {
 				dest   : '<%%= paths.app %%>'
 			},
 			index   : {
-				options: {
-					replacements: [
-						{
-							pattern    : /(..\/..\/)/gmi,
-							replacement: ''
-						}
-					]
-				},
+				options: '<%%= string-replace.devIndex.options %%>',
 				expand : true,
 				cwd    : '<%%= currentTarget %%>',
 				src    : 'index.html',
@@ -556,9 +529,11 @@ module.exports = function (grunt) {
 		},
 
 		preprocess: {
+			options: {
+				inline: true
+			},
 			dev    : {
 				options: {
-					inline : true,
 					context: {
 						config: grunt.file.read('app/config/targets/config.dev.json'),
 						target: 'dev'
@@ -571,7 +546,6 @@ module.exports = function (grunt) {
 			},
 			test   : {
 				options: {
-					inline : true,
 					context: {
 						config: grunt.file.read('app/config/targets/config.test.json'),
 						target: 'test'
@@ -584,7 +558,6 @@ module.exports = function (grunt) {
 			},
 			preprod: {
 				options: {
-					inline : true,
 					context: {
 						config: grunt.file.read('app/config/targets/config.preprod.json'),
 						target: 'preprod'
@@ -597,7 +570,6 @@ module.exports = function (grunt) {
 			},
 			prod   : {
 				options: {
-					inline : true,
 					context: {
 						config: grunt.file.read('app/config/targets/config.prod.json'),
 						target: 'prod'
