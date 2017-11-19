@@ -34,7 +34,6 @@
 	const writingStyles      = require('./writing/styles.js');
 	const writingTpls        = require('./writing/tpls.js');
 
-	const debug       = true;
 	const skipInstall = false;
 
 	module.exports = class extends Generator {
@@ -42,9 +41,7 @@
 			super($args, $opts);
 
 			this.logFnCalled = $target => {
-				if (debug) {
-					this.log(chalk.hex(colors.get('blue'))('[' + $target + ']'), 'Called');
-				}
+				this.log(chalk.hex(colors.get('blue'))('[' + $target + ']'), 'Called');
 			};
 
 			this.logPriority = ($priority, $spaceBefore) => {
