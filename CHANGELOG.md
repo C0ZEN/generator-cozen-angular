@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- .codeclimate.yml file to configure Code Climate
 
 ## [0.1.3]
 ### Changed
