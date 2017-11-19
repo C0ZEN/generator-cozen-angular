@@ -47,7 +47,14 @@
         "yosay": "^2.0.1"
     },
     "jest": {
-        "testEnvironment": "node"
+        "testEnvironment": "node",
+        "collectCoverage": true,
+        "coverageReporters": [
+            "json",
+            "lcov",
+            "text"
+        ],
+        "coverageDirectory": "coverage"
     },
     "scripts": {
         "prepare": "nsp check",

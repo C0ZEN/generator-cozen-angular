@@ -34,18 +34,9 @@
 	const writingStyles      = require('./writing/styles.js');
 	const writingTpls        = require('./writing/tpls.js');
 
-	const debug       = true;
-	const skipInstall = false;
-
 	module.exports = class extends Generator {
 		constructor($args, $opts) {
 			super($args, $opts);
-
-			this.logFnCalled = $target => {
-				if (debug) {
-					this.log(chalk.hex(colors.get('blue'))('[' + $target + ']'), 'Called');
-				}
-			};
 
 			this.logPriority = ($priority, $spaceBefore) => {
 				if ($spaceBefore) {
@@ -55,12 +46,11 @@
 			};
 
 			this.logHint = $text => {
-				if ($text) {
-					this.log(chalk.hex(colors.get('purple'))($text + '\n'));
-				}
-				else {
-					this.log(chalk.hex(colors.get('purple')).bold('Hint:\n'));
-				}
+				this.log(chalk.hex(colors.get('purple'))($text + '\n'));
+			};
+
+			this.logHintHeader = () => {
+				this.log(chalk.hex(colors.get('purple')).bold('Hint:\n'));
 			};
 		}
 
@@ -140,7 +130,7 @@
 			writingTpls(this);
 			writingLanguages(this);
 			writingStyles(this);
-			writingDirectories(this);
+			writingDirectories();
 		}
 
 		conflicts() {
@@ -150,13 +140,9 @@
 		install() {
 			this.logPriority('install', true);
 
-			if (!skipInstall) {
-				utils.installNpmPackages(this);
-				utils.installBowerPackages(this);
-			}
-			else {
-				this.log(chalk.hex(colors.get('blue'))('Install was skipped.'));
-			}
+			utils.installNpmPackages(this);
+			utils.installBowerPackages(this);
+			this.log(chalk.hex(colors.get('blue'))('Install was skipped.'));
 		}
 
 		end() {

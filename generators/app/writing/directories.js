@@ -12,8 +12,8 @@
 
 	const utils = require('../utils.js');
 
-	module.exports = $that => {
-		utils.newDirectory($that, [
+	module.exports = () => {
+		utils.newDirectory([
 			'app/images',
 			'app/images/gif',
 			'app/images/jpg',

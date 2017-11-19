@@ -31,7 +31,7 @@
 				'.bowerrc',
 				'.editorconfig',
 				'.eslintignore',
-				'.eslintrc',
+				'.eslintrc.json',
 				'.gitattributes',
 				'.gitignore',
 				'.jscsrc',
