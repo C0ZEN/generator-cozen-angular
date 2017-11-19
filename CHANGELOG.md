@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Set up back only master build for Travis CI
+
+### Fixed
+- Wrong Code Climate Es Lint path
 
 ## [0.1.5]
 ### Added
