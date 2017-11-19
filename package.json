@@ -52,7 +52,7 @@
     "scripts": {
         "prepare": "nsp check",
         "pretest": "eslint .",
-        "test": "jest"
+        "test": "jest && npm run coverage"
     },
     "lint-staged": {
         "*.js": [
