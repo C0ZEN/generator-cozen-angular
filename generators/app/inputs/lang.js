@@ -29,7 +29,7 @@
 	];
 
 	module.exports = $that => {
-		$that.logHint();
+		$that.logHintHeader();
 		$that.logHint('The default language of your application.');
 
 		$that.log('Current lang list :');

@@ -16,7 +16,7 @@
 		utils.copyFileTpl($that, '.eslintignore', {
 			appNameKebab: $that.appNameKebab
 		});
-		utils.copyFile($that, '.eslintrc');
+		utils.copyFile($that, '.eslintrc.json');
 		utils.copyFile($that, '.jscsrc');
 		utils.copyFile($that, '.jshintrc');
 	};

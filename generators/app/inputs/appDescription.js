@@ -19,7 +19,7 @@
 	];
 
 	module.exports = $that => {
-		$that.logHint();
+		$that.logHintHeader();
 		$that.logHint('Just describe the purpose of your project.');
 
 		return $that.prompt(prompts).then($response => {

@@ -17,6 +17,7 @@
 			message : 'Your first name :',
 			store   : true,
 			validate: $value => {
+				/* istanbul ignore next */
 				return $value ? true : 'Your first name could not be empty !';
 			}
 		},
@@ -26,6 +27,7 @@
 			message : 'Your last name :',
 			store   : true,
 			validate: $value => {
+				/* istanbul ignore next */
 				return $value ? true : 'Your last name could not be empty !';
 			}
 		}
@@ -33,7 +35,7 @@
 
 	module.exports = class Author {
 		static set($that) {
-			$that.logHint();
+			$that.logHintHeader();
 			$that.logHint('Simply set up your first name and last name.');
 			$that.logHint('Do not forget the uppercase ;)');
 			$that.logHint('Used on the file headers.');

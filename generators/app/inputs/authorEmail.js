@@ -12,18 +12,19 @@
 
 	const _ = require('lodash');
 
+	const prompts = [
+		{
+			type   : 'input',
+			name   : 'authorEmail',
+			message: 'Your email (altran) :'
+		}
+	];
+
 	module.exports = $that => {
-		$that.logHint();
+		$that.logHintHeader();
 		$that.logHint('Simply set up your email.');
 
-		const prompts = [
-			{
-				type   : 'input',
-				name   : 'authorEmail',
-				message: 'Your email (altran) :',
-				default: _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@altran.com'
-			}
-		];
+		prompts[0].default = _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@altran.com';
 
 		return $that.prompt(prompts).then($response => {
 			$that.authorEmail = $response.authorEmail;
