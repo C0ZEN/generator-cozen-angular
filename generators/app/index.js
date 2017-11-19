@@ -12,9 +12,17 @@
 	const moment        = require('moment');
 	const mkdirp        = require('mkdirp');
 	const _             = require('lodash');
-	const colors        = require('./colors.js');
-	const npm           = require('./dependencies/npm.js');
-	const bower         = require('./dependencies/bower.js');
+
+	const colors         = require('./colors.js');
+	const npm            = require('./dependencies/npm.js');
+	const bower          = require('./dependencies/bower.js');
+	const appName        = require('./inputs/appName.js');
+	const appDescription = require('./inputs/appDescription.js');
+	const theme          = require('./inputs/theme.js');
+	const lang           = require('./inputs/lang.js');
+	const color          = require('./inputs/color.js');
+	const author         = require('./inputs/author.js');
+	const authorEmail    = require('./inputs/authorEmail.js');
 
 	const debug       = true;
 	const skipInstall = false;
@@ -113,31 +121,31 @@
 		}
 
 		inputAppName() {
-			return this.appName(this);
+			return appName(this);
 		}
 
 		inputAppDescription() {
-			return this.appDescription(this);
+			return appDescription(this);
 		}
 
 		inputTheme() {
-			return this.theme(this);
+			return theme(this);
 		}
 
 		inputLang() {
-			return this.lang(this);
+			return lang(this);
 		}
 
 		inputColor() {
-			return this.color(this);
+			return color(this);
 		}
 
 		inputAuthor() {
-			return this.author(this);
+			return author(this);
 		}
 
 		inputAuthorEmail() {
-			return this.authorEmail(this);
+			return authorEmail(this);
 		}
 
 		configuring() {
@@ -387,14 +395,6 @@
 			);
 		}
 	}
-
-	Base.prototype.appName        = require('./inputs/appName.js');
-	Base.prototype.appDescription = require('./inputs/appDescription.js');
-	Base.prototype.theme          = require('./inputs/theme.js');
-	Base.prototype.lang           = require('./inputs/lang.js');
-	Base.prototype.color          = require('./inputs/color.js');
-	Base.prototype.author         = require('./inputs/author.js');
-	Base.prototype.authorEmail    = require('./inputs/authorEmail.js');
 
 	module.exports = Base;
 })();
