@@ -8,6 +8,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - .codeclimate.yml file to configure Code Climate
 
+### Changed
+- writing/main.js is now split in main/markdown/linter/json files [Issue #9](https://github.com/C0ZEN/generator-altran-angular/issues/9)
+
 ## [0.1.3]
 ### Changed
 - Colors are now imported from another class
