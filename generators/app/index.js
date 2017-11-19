@@ -90,7 +90,7 @@
 		}
 
 		inputAppName() {
-			return appName(this);
+			return appName.set(this);
 		}
 
 		inputAppDescription() {
