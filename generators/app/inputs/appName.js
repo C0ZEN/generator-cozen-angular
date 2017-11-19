@@ -22,13 +22,9 @@
 
 	module.exports = $that => {
 		$that.logHint();
-		$that.logHint(
-			'The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json'
-		);
+		$that.logHint('The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json');
 		$that.logHint('Write it down in his normal syntax like <Altran Angular Generator>');
-		$that.logHint(
-			'Wrong examples: <altran Angular Generator>, <altranAngularGenerator>, <altran-angular-generator>'
-		);
+		$that.logHint('Wrong examples: <altran Angular Generator>, <altranAngularGenerator>, <altran-angular-generator>');
 
 		const prompts = [
 			{
