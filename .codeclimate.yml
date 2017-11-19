@@ -1,6 +1,13 @@
 plugins:
   markdownlint:
     enabled: true
+    checks:
+      MD009:
+        enabled: false
+      MD013:
+        enabled: false
+      MD022:
+        enabled: false
   eslint:
       enabled: true
       config:
