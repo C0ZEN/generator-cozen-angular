@@ -6,6 +6,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.3]
+### Changed
+- Colors are now imported from another class
+- Utils shortcuts methods are now imported from another class instead of been declared in the constructor
+- Inputs methods are now imported from other files as methods
+- Writing methods are now imported from other files as methods
+- Complete refactoring of the index.js file
+
 ## [0.1.2]
 ### Added
 - New badge for MIT License

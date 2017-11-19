@@ -1,0 +1,61 @@
+/**
+ * Generated header by C0ZEN for generator-altran-angular project
+ * Generated file utils on WebStorm
+ *
+ * Created by: Geoffrey "C0ZEN" Testelin
+ * Date: 19/11/2017
+ * Time: 10:01
+ * Version: 1.0.0
+ */
+(function () {
+	'use strict';
+
+	const mkdirp = require('mkdirp');
+	const _      = require('lodash');
+	const npm    = require('./dependencies/npm.js');
+	const bower  = require('./dependencies/bower.js');
+
+	module.exports = class Utils {
+		static copyFile($that, $path) {
+			$that.fs.copy($that.templatePath($path), $that.destinationPath($path));
+		}
+
+		static copyFileTpl($that, $path, $data) {
+			$that.fs.copyTpl($that.templatePath($path), $that.destinationPath($path), $data);
+		}
+
+		static copyFileTplWithMultipleDestinations($that, $path, $data, $destinations) {
+			_.forEach($destinations, $destination => {
+				$that.fs.copyTpl(
+					$that.templatePath($path),
+					$that.destinationPath($destination),
+					$data
+				);
+			});
+		}
+
+		static newDirectory($that, $paths) {
+			if (_.isArray($paths)) {
+				_.forEach($paths, $path => {
+					mkdirp.sync($path);
+				});
+			}
+			else {
+				mkdirp.sync($paths);
+			}
+		}
+
+		static installNpmPackages($that) {
+			$that.npmInstall(npm.getModules(), {
+				'save-dev': true
+			});
+		}
+
+		static installBowerPackages($that) {
+			$that.bowerInstall(bower.getModules(), {
+				'save-dev': false
+			});
+		}
+	};
+
+})();
