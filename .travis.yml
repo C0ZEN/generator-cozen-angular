@@ -13,6 +13,14 @@ notifications:
       - geoffrey.testelin@gmail.com
     on_success: always
     on_failure: always
-branches:
-  only:
-    - master
+env:
+  global:
+    - CC_TEST_REPORTER_ID=1e97983bda7953369594e886a29e4d19adb12d03d1429e23843295808154d8e2
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
