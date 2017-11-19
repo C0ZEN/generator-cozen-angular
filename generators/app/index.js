@@ -1,21 +1,17 @@
 (function () {
 	'use strict';
 
-	const Generator     = require('yeoman-generator');
-	const chalkInstance = require('chalk');
-	const chalk         = new chalkInstance.constructor({
+	const Generator      = require('yeoman-generator');
+	const chalkInstance  = require('chalk');
+	const chalk          = new chalkInstance.constructor({
 		level  : 3,
 		enabled: true
 	});
-	const yosay         = require('yosay');
-	const upperCase     = require('upper-case');
-	const moment        = require('moment');
-	const mkdirp        = require('mkdirp');
-	const _             = require('lodash');
-
+	const yosay          = require('yosay');
+	const upperCase      = require('upper-case');
+	const moment         = require('moment');
 	const colors         = require('./colors.js');
-	const npm            = require('./dependencies/npm.js');
-	const bower          = require('./dependencies/bower.js');
+	const utils          = require('./utils.js');
 	const appName        = require('./inputs/appName.js');
 	const appDescription = require('./inputs/appDescription.js');
 	const theme          = require('./inputs/theme.js');
@@ -51,47 +47,6 @@
 				else {
 					this.log(chalk.hex(colors.get('purple')).bold('Hint:\n'));
 				}
-			};
-
-			this.copyFile = $path => {
-				this.fs.copy(this.templatePath($path), this.destinationPath($path));
-			};
-
-			this.copyFileTpl = ($path, $data) => {
-				this.fs.copyTpl(this.templatePath($path), this.destinationPath($path), $data);
-			};
-
-			this.copyFileTplWithMultipleDestinations = ($path, $data, $destinations) => {
-				_.forEach($destinations, $destination => {
-					this.fs.copyTpl(
-						this.templatePath($path),
-						this.destinationPath($destination),
-						$data
-					);
-				});
-			};
-
-			this.newDirectory = $paths => {
-				if (_.isArray($paths)) {
-					_.forEach($paths, $path => {
-						mkdirp.sync($path);
-					});
-				}
-				else {
-					mkdirp.sync($paths);
-				}
-			};
-
-			this.installNpmPackages = () => {
-				this.npmInstall(npm.getModules(), {
-					'save-dev': true
-				});
-			};
-
-			this.installBowerPackages = () => {
-				this.bowerInstall(bower.getModules(), {
-					'save-dev': false
-				});
 			};
 		}
 
@@ -163,44 +118,44 @@
 			this.logPriority('writing', true);
 
 			// Default architecture
-			this.copyFile('.bowerrc');
-			this.copyFile('.editorconfig');
-			this.copyFileTpl('.eslintignore', {
+			utils.copyFile(this, '.bowerrc');
+			utils.copyFile(this, '.editorconfig');
+			utils.copyFileTpl(this, '.eslintignore', {
 				appNameKebab: this.appNameKebab
 			});
-			this.copyFile('.eslintrc');
-			this.copyFile('.gitattributes');
-			this.copyFileTpl('.gitignore', {
+			utils.copyFile(this, '.eslintrc');
+			utils.copyFile(this, '.gitattributes');
+			utils.copyFileTpl(this, '.gitignore', {
 				appNameKebab: this.appNameKebab
 			});
-			this.copyFile('.jscsrc');
-			this.copyFile('.jshintrc');
-			this.copyFileTpl('bower.json', {
+			utils.copyFile(this, '.jscsrc');
+			utils.copyFile(this, '.jshintrc');
+			utils.copyFileTpl(this, 'bower.json', {
 				appNameKebab: this.appNameKebab,
 				theme       : this.theme
 			});
-			this.copyFile('CHANGELOG.md');
-			this.copyFile('CONTRIBUTING.md');
-			this.copyFileTpl('Gruntfile.js', {
+			utils.copyFile(this, 'CHANGELOG.md');
+			utils.copyFile(this, 'CONTRIBUTING.md');
+			utils.copyFileTpl(this, 'Gruntfile.js', {
 				appNameCamel: this.appNameCamel,
 				appNameKebab: this.appNameKebab
 			});
-			this.copyFileTpl('manifest.json', {
+			utils.copyFileTpl(this, 'manifest.json', {
 				lang           : this.lang,
 				appDescription : this.appDescription,
 				appName        : this.appName,
 				backgroundColor: this.backgroundColor,
 				themeColor     : this.themeColor
 			});
-			this.copyFileTpl('LICENSE.md', {
+			utils.copyFileTpl(this, 'LICENSE.md', {
 				appName: this.appName
 			});
-			this.copyFileTpl('package.json', {
+			utils.copyFileTpl(this, 'package.json', {
 				appNameKebab  : this.appNameKebab,
 				appDescription: this.appDescription,
 				authorLong    : this.authorLong
 			});
-			this.copyFileTpl('README.md', {
+			utils.copyFileTpl(this, 'README.md', {
 				appName       : this.appName,
 				appDescription: this.appDescription,
 				authorShort   : this.authorShort,
@@ -208,84 +163,84 @@
 			});
 
 			// App architecture
-			this.copyFileTpl('app/config/providers/apiProvider.config.js', {
+			utils.copyFileTpl(this, 'app/config/providers/apiProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTpl('app/config/providers/appProvider.config.js', {
+			utils.copyFileTpl(this, 'app/config/providers/appProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTpl('app/config/providers/debugProvider.config.js', {
+			utils.copyFileTpl(this, 'app/config/providers/debugProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTpl('app/config/providers/dynamicLocaleProvider.config.js', {
+			utils.copyFileTpl(this, 'app/config/providers/dynamicLocaleProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTpl('app/config/providers/httpProvider.config.js', {
+			utils.copyFileTpl(this, 'app/config/providers/httpProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTpl('app/config/providers/languageProvider.config.js', {
+			utils.copyFileTpl(this, 'app/config/providers/languageProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTpl('app/config/providers/locationProvider.config.js', {
+			utils.copyFileTpl(this, 'app/config/providers/locationProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTpl('app/config/providers/themeProvider.config.js', {
+			utils.copyFileTpl(this, 'app/config/providers/themeProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTpl('app/config/providers/titleProvider.config.js', {
+			utils.copyFileTpl(this, 'app/config/providers/titleProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTpl('app/config/providers/translateProvider.config.js', {
+			utils.copyFileTpl(this, 'app/config/providers/translateProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTpl('app/config/providers/urlRouterProvider.config.js', {
+			utils.copyFileTpl(this, 'app/config/providers/urlRouterProvider.config.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
 				nowDate     : this.nowDate,
 				nowTime     : this.nowTime
 			});
-			this.copyFileTplWithMultipleDestinations('app/config/targets/config.json',
+			utils.copyFileTplWithMultipleDestinations(this, 'app/config/targets/config.json',
 				{
 					lang        : this.lang,
 					theme       : this.theme,
@@ -298,25 +253,24 @@
 					'app/config/targets/config.prod.json',
 					'app/config/targets/config.preprod.json'
 				]);
-			this.copyFileTpl('app/config/tpls/index.tpl.html', {
+			utils.copyFileTpl(this, 'app/config/tpls/index.tpl.html', {
 				appNameCamel: this.appNameCamel,
 				lang        : this.lang,
 				appNameKebab: this.appNameKebab,
 				themeColor  : this.themeColor
 			});
-			this.copyFileTpl('app/config/tpls/target.config.tpl.js', {
+			utils.copyFileTpl(this, 'app/config/tpls/target.config.tpl.js', {
 				appNameCamel: this.appNameCamel
 			});
-			this.copyFileTpl('app/languages/en/global.json', {
+			utils.copyFileTpl(this, 'app/languages/en/global.json', {
 				appNameUpperPython: this.appNameUpperPython,
 				appName           : this.appName
 			});
-			this.copyFileTpl('app/languages/fr/global.json', {
+			utils.copyFileTpl(this, 'app/languages/fr/global.json', {
 				appNameUpperPython: this.appNameUpperPython,
 				appName           : this.appName
 			});
-			this.copyFileTplWithMultipleDestinations(
-				'app/styles/less/app.less',
+			utils.copyFileTplWithMultipleDestinations(this, 'app/styles/less/app.less',
 				{
 					theme       : this.theme,
 					appNameKebab: this.appNameKebab
@@ -325,8 +279,7 @@
 					'app/styles/less/' + this.appNameKebab + '.less'
 				]
 			);
-			this.copyFileTplWithMultipleDestinations(
-				'app/styles/less/app.loader.less',
+			utils.copyFileTplWithMultipleDestinations(this, 'app/styles/less/app.loader.less',
 				{
 					theme: this.theme
 				},
@@ -334,10 +287,10 @@
 					'app/styles/less/' + this.appNameKebab + '.loader.less'
 				]
 			);
-			this.copyFileTplWithMultipleDestinations('app/styles/less/app.variables.less', null, [
+			utils.copyFileTplWithMultipleDestinations(this, 'app/styles/less/app.variables.less', null, [
 				'app/styles/less/' + this.appNameKebab + '.variables.less'
 			]);
-			this.copyFileTpl('app/app.js', {
+			utils.copyFileTpl(this, 'app/app.js', {
 				appNameKebab: this.appNameKebab,
 				appNameCamel: this.appNameCamel,
 				authorShort : this.authorShort,
@@ -345,7 +298,7 @@
 				nowTime     : this.nowTime
 			});
 
-			this.newDirectory([
+			utils.newDirectory(this, [
 				'app/images',
 				'app/images/gif',
 				'app/images/jpg',
@@ -374,8 +327,8 @@
 			this.logPriority('install', true);
 
 			if (!skipInstall) {
-				this.installNpmPackages();
-				this.installBowerPackages();
+				utils.installNpmPackages(this);
+				utils.installBowerPackages(this);
 			}
 			else {
 				this.log(chalk.hex(colors.get('blue'))('Install was skipped.'));
