@@ -9,25 +9,25 @@
  */
 /* eslint valid-jsdoc:"off" */
 module.exports = function (grunt) {
-	grunt.registerMultiTask('languages', 'Languages task to compile the .json', () => {
+	grunt.registerMultiTask('jsMin', 'JS min task to compile the .js', () => {
 
 		// Get the current target
 		const target = this.target;
 
-		// Run the languages task
+		// Run the jsMin task
 		if ('dev' === target) {
 			grunt.task.run([
-				'clean:languages',
-				'merge-json:merge',
+				'concat:js',
+				'uglify:dev',
 				'merge-json:min'
 			]);
 		}
 		else if ('release' === target) {
 			grunt.task.run([
-				'clean:languages',
-				'merge-json:merge',
-				'merge-json:min',
-				'copy:languages'
+				'ngtemplates:release',
+				'concat:release',
+				'uglify:release',
+				'merge-json:min'
 			]);
 		}
 	});
