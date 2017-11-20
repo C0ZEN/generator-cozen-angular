@@ -1,12 +1,12 @@
 # generator-altran-angular 
 [![Software License][license-image]](LICENSE) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Maintainability][code-climate-maintainability-image]][code-climate-maintainability-url] [![Test Coverage][code-climate-coverage-image]][code-climate-coverage-url]
-> Use it to help you create AngularJS applications using the internal library for Altran projects.
+> Use this yeoman generator to help you create AngularJS applications based to works properly with the Altran Angular Library.
 
 ## Installation
 
 If you're on Windows, do yourself a favor and use [cmder](http://cmder.net/) instead of `cmd.exe`.
 
-First, install [Yeoman](http://yeoman.io) and generator-altran-angular using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) globally and the generator-altran-angular globally using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
@@ -19,20 +19,32 @@ Then generate your new project:
 yo altran-angular
 ```
 
+Follow all the prompts to create your project.
+
+**Note:** for now, the link to `altran-angular-lib` is private. The `grunt serve` task will not works. This is a temporary situation, the lib will be pushed to the public in a few.
+
 ## Contributing
 
 Check out the [Contributing](CONTRIBUTING.md) file.
 
+## Built With
+
+* [Yeoman](http://yeoman.io/) - The Web's scaffolding tool for modern webapps
+
 ## Getting To Know Yeoman
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+* Yeoman has a heart of gold.
+* Yeoman is a person with feelings and opinions, but is very easy to work with.
+* Yeoman can be too opinionated at times but is easily convinced not to be.
+* Feel free to [learn more about Yeoman](http://yeoman.io/).
+
+## Authors
+
+* **Geoffrey Testelin** - Front-End Developer - [C0ZEN](https://github.com/C0ZEN)
 
 ## License
 
-MIT © [C0ZEN](www.geoffreytestelin.com)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 [license-image]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat
 [npm-image]: https://badge.fury.io/js/generator-altran-angular.svg
