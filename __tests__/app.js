@@ -152,5 +152,14 @@
 				'grunt/config/wiredep.js'
 			]);
 		});
+
+		it('create grunt tasks files', () => {
+			assert.file([
+				'grunt/tasks/jsMin.js',
+				'grunt/tasks/languages.js',
+				'grunt/tasks/release.js',
+				'grunt/tasks/serve.js'
+			]);
+		});
 	});
 })();

@@ -65,7 +65,8 @@
 		'pug-inheritance',
 		'time-grunt',
 		'load-grunt-config',
-		'eslint'
+		'eslint',
+		'eslint-config-xo'
 	];
 
 	module.exports = class Npm {

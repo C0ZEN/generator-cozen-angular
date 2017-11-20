@@ -8,56 +8,58 @@
  * Version: 1.0.0
  */
 /* eslint key-spacing:"off" */
-module.exports = {
-	options: {
-		inline: true
-	},
-	dev    : {
+module.exports = function (grunt) {
+	return {
 		options: {
-			context: {
-				config: grunt.file.read('app/config/targets/config.dev.json'),
-				target: 'dev'
+			inline: true
+		},
+		dev    : {
+			options: {
+				context: {
+					config: grunt.file.read('app/config/targets/config.dev.json'),
+					target: 'dev'
+				}
+			},
+			files  : {
+				'<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
+				'<%%= paths.app %%>/index.html'             : '<%%= paths.app %%>/config/tpls/index.tpl.html'
 			}
 		},
-		files  : {
-			'<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
-			'<%%= paths.app %%>/index.html'             : '<%%= paths.app %%>/config/tpls/index.tpl.html'
-		}
-	},
-	test   : {
-		options: {
-			context: {
-				config: grunt.file.read('app/config/targets/config.test.json'),
-				target: 'test'
+		test   : {
+			options: {
+				context: {
+					config: grunt.file.read('app/config/targets/config.test.json'),
+					target: 'test'
+				}
+			},
+			files  : {
+				'<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
+				'<%%= currentTarget %%>/index.html'         : '<%%= paths.app %%>/config/tpls/index.tpl.html'
 			}
 		},
-		files  : {
-			'<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
-			'<%%= currentTarget %%>/index.html'         : '<%%= paths.app %%>/config/tpls/index.tpl.html'
-		}
-	},
-	preprod: {
-		options: {
-			context: {
-				config: grunt.file.read('app/config/targets/config.preprod.json'),
-				target: 'preprod'
+		preprod: {
+			options: {
+				context: {
+					config: grunt.file.read('app/config/targets/config.preprod.json'),
+					target: 'preprod'
+				}
+			},
+			files  : {
+				'<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
+				'<%%= currentTarget %%>/index.html'         : '<%%= paths.app %%>/config/tpls/index.tpl.html'
 			}
 		},
-		files  : {
-			'<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
-			'<%%= currentTarget %%>/index.html'         : '<%%= paths.app %%>/config/tpls/index.tpl.html'
-		}
-	},
-	prod   : {
-		options: {
-			context: {
-				config: grunt.file.read('app/config/targets/config.prod.json'),
-				target: 'prod'
+		prod   : {
+			options: {
+				context: {
+					config: grunt.file.read('app/config/targets/config.prod.json'),
+					target: 'prod'
+				}
+			},
+			files  : {
+				'<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
+				'<%%= currentTarget %%>/index.html'         : '<%%= paths.app %%>/config/tpls/index.tpl.html'
 			}
-		},
-		files  : {
-			'<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
-			'<%%= currentTarget %%>/index.html'         : '<%%= paths.app %%>/config/tpls/index.tpl.html'
 		}
-	}
+	};
 };

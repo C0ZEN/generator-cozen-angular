@@ -34,6 +34,7 @@
 	const writingStyles      = require('./writing/styles.js');
 	const writingTpls        = require('./writing/tpls.js');
 	const writingGruntConfig = require('./writing/gruntConfig.js');
+	const writingGruntTasks  = require('./writing/gruntTasks.js');
 
 	module.exports = class extends Generator {
 		constructor($args, $opts) {
@@ -132,6 +133,7 @@
 			writingStyles(this);
 			writingDirectories();
 			writingGruntConfig(this);
+			writingGruntTasks(this);
 		}
 
 		conflicts() {

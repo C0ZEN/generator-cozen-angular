@@ -7,7 +7,8 @@
  * Time: 22:37
  * Version: 1.0.0
  */
+/* eslint object-curly-newline:"off" */
 module.exports = {
-	dev    : null,
-	release: null
+	dev    : {},
+	release: {}
 };
