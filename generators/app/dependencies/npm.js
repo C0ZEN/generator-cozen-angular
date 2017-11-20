@@ -63,7 +63,10 @@
 		'prettier',
 		'pug',
 		'pug-inheritance',
-		'time-grunt'
+		'time-grunt',
+		'load-grunt-config',
+		'eslint',
+		'eslint-config-xo'
 	];
 
 	module.exports = class Npm {

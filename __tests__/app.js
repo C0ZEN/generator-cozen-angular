@@ -122,5 +122,44 @@
 				'app/views'
 			]);
 		});
+
+		it('create grunt config files', () => {
+			assert.file([
+				'grunt/config/clean.js',
+				'grunt/config/concat.js',
+				'grunt/config/concurrent.js',
+				'grunt/config/connect.js',
+				'grunt/config/copy.js',
+				'grunt/config/cssmin.js',
+				'grunt/config/htmlmin.js',
+				'grunt/config/imagemin.js',
+				'grunt/config/jsMin.js',
+				'grunt/config/languages.js',
+				'grunt/config/less.js',
+				'grunt/config/merge-json.js',
+				'grunt/config/ngtemplates.js',
+				'grunt/config/notify.js',
+				'grunt/config/notify_hooks.js',
+				'grunt/config/postcss.js',
+				'grunt/config/preprocess.js',
+				'grunt/config/prettier.js',
+				'grunt/config/release.js',
+				'grunt/config/string-replace.js',
+				'grunt/config/uglify.js',
+				'grunt/config/usemin.js',
+				'grunt/config/useminPrepare.js',
+				'grunt/config/watch.js',
+				'grunt/config/wiredep.js'
+			]);
+		});
+
+		it('create grunt tasks files', () => {
+			assert.file([
+				'grunt/tasks/jsMin.js',
+				'grunt/tasks/languages.js',
+				'grunt/tasks/release.js',
+				'grunt/tasks/serve.js'
+			]);
+		});
 	});
 })();
