@@ -6,6 +6,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.7]
+### Added
+- load-grunt-config as npm dependency for the generator
+
+### Changed
+- Complete refactoring of the Gruntfile. A new folder `grunt` was created. Each config and task have now it's own folder.
+
 ## [0.1.6]
 ### Changed
 - Set up back only master build for Travis CI
