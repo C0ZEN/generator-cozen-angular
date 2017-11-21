@@ -20,8 +20,12 @@
 			$that.fs.copy($that.templatePath($path), $that.destinationPath($path));
 		}
 
-		static copyFileTpl($that, $path, $data) {
-			$that.fs.copyTpl($that.templatePath($path), $that.destinationPath($path), $data);
+		static copyFileTpl($that, $path, $data, $dest) {
+			let dest = $dest;
+			if (_.isUndefined($dest)) {
+				dest = $path;
+			}
+			$that.fs.copyTpl($that.templatePath($path), $that.destinationPath(dest), $data);
 		}
 
 		static copyFileTplWithMultipleDestinations($that, $path, $data, $destinations) {

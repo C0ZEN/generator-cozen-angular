@@ -24,11 +24,11 @@
 			backgroundColor: $that.backgroundColor,
 			themeColor     : $that.themeColor
 		});
-		utils.copyFileTpl($that, 'package.json', {
+		utils.copyFileTpl($that, '_package.json', {
 			appNameKebab  : $that.appNameKebab,
 			appDescription: $that.appDescription,
 			authorLong    : $that.authorLong
-		});
+		}, 'package.json');
 	};
 
 })();

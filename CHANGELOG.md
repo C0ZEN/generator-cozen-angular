@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.0]
+### Fixed 
+- Missing imported files error with npm due to 'package.json' file into the app folder
+
 ## [0.1.8]
 ### Added
 .npmignore file
