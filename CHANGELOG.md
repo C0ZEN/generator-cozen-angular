@@ -5,8 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+.npmignore file
+
 ### Changed
 - README.md updated
+- Updated the package.json to fix error with npm publish
 
 ## [0.1.7]
 ### Added
