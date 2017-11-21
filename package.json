@@ -1,21 +1,24 @@
 {
     "name": "generator-altran-angular",
-    "version": "0.1.7",
-    "description": "Use it to help you create AngularJS applications.",
+    "version": "0.1.8",
+    "description": "Use this yeoman generator to help you create AngularJS applications based to works properly with the Altran Angular Library.",
     "homepage": "https://github.com/C0ZEN/generator-altran-angular",
-    "author": {
-        "name": "C0ZEN",
-        "email": "geoffrey.testelin@gmail.com",
-        "url": "www.geoffreytestelin.com"
-    },
-    "files": [
-        "generators"
-    ],
-    "main": "generators/index.js",
     "keywords": [
         "altran",
         "angular",
-        "yeoman-generator"
+        "yeoman",
+        "yeoman-generator",
+        "front-end",
+        "scaffolding"
+    ],
+    "author": {
+        "name": "Geoffrey <C0ZEN> Testelin",
+        "email": "geoffrey.testelin@gmail.com",
+        "url": "www.geoffreytestelin.com"
+    },
+    "main": "generators/index.js",
+    "files": [
+        "generators"
     ],
     "devDependencies": {
         "coveralls": "^3.0.0",

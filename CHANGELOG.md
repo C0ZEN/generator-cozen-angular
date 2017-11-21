@@ -6,6 +6,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.8]
+### Added
+.npmignore file
+
+### Changed
+- README.md updated
+- Updated the package.json to fix error with npm publish
+
 ## [0.1.7]
 ### Added
 - load-grunt-config as npm dependency for the generator

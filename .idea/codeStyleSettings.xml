@@ -30,6 +30,9 @@
           <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
           <option name="OBJECT_LITERAL_WRAP" value="2" />
         </JSCodeStyleSettings>
+        <MarkdownNavigatorCodeStyleSettings>
+          <option name="RIGHT_MARGIN" value="72" />
+        </MarkdownNavigatorCodeStyleSettings>
         <codeStyleSettings language="CSS">
           <indentOptions>
             <option name="CONTINUATION_INDENT_SIZE" value="4" />

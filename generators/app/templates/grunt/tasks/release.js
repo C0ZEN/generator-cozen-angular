@@ -9,7 +9,7 @@
  */
 /* eslint valid-jsdoc:"off" */
 module.exports = function (grunt) {
-	grunt.registerMultiTask('release', 'Create a new stable version', function () {
+	grunt.registerMultiTask('release', 'Create a new stable version', () => {
 
 		// Get the current target
 		const target = this.data.target;
