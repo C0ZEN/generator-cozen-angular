@@ -1,6 +1,6 @@
 # generator-cozen-angular 
 [![Software License][license-image]](LICENSE) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Maintainability][code-climate-maintainability-image]][code-climate-maintainability-url] [![Test Coverage][code-climate-coverage-image]][code-climate-coverage-url]
-> Use this yeoman generator to help you create AngularJS applications based to works properly with the Cozen Angular Library.
+> Use this yeoman generator to help you create AngularJS applications based to works properly with the Altran Angular Library.
 
 ## Installation
 
