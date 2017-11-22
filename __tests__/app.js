@@ -2,13 +2,13 @@
 (function () {
 	'use strict';
 
-	const path      = require('path');
-	const assert    = require('yeoman-assert');
-	const helpers   = require('yeoman-test');
-	const kebabCase = require('lodash.kebabcase');
+	const path    = require('path');
+	const assert  = require('yeoman-assert');
+	const helpers = require('yeoman-test');
+	const _       = require('lodash');
 
 	const appName      = 'Test App';
-	const appNameKebab = kebabCase(appName);
+	const appNameKebab = _.kebabCase(appName);
 
 	describe('generator-cozen-angular:app', () => {
 		beforeAll(() => {
