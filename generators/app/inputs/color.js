@@ -15,22 +15,28 @@
 			type   : 'input',
 			name   : 'backgroundColor',
 			message: 'Background color color :',
+			default: 'white',
 			store  : true
 		},
 		{
 			type   : 'input',
 			name   : 'themeColor',
 			message: 'Theme color :',
+			default: '#FFFFFF',
 			store  : true
 		}
 	];
 
+	const hints = [
+		'The backgroundColor is the background color for the Web App Manifest.',
+		'The value can be any valid CSS color (blue, red, ...).',
+		'The themeColor is the background color for the search address bar.',
+		'The value can be any hexadecimal color (#123456, #4F257B, ...).'
+	];
+
 	module.exports = $that => {
 		$that.logHintHeader();
-		$that.logHint('The backgroundColor is the background color for the Web App Manifest.');
-		$that.logHint('The value can be any valid CSS color (blue, red, ...).');
-		$that.logHint('The themeColor is the background color for the search address bar.');
-		$that.logHint('The value can be any hexadecimal color (#123456, #4F257B, ...).');
+		$that.logHints(hints);
 
 		return $that.prompt(prompts).then($response => {
 			$that.backgroundColor = $response.backgroundColor;

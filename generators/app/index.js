@@ -51,6 +51,12 @@
 				this.log(chalk.hex(colors.get('purple'))($text + '\n'));
 			};
 
+			this.logHints = $texts => {
+				for (let i = 0, length = $texts.length; i < length; i++) {
+					this.logHint($texts[i]);
+				}
+			};
+
 			this.logHintHeader = () => {
 				this.log(chalk.hex(colors.get('purple')).bold('Hint:\n'));
 			};

@@ -16,9 +16,9 @@
 		utils.copyFile($that, '.bowerrc');
 		utils.copyFile($that, '.editorconfig');
 		utils.copyFile($that, '.gitattributes');
-		utils.copyFileTpl($that, '.gitignore', {
+		utils.copyFileTpl($that, '_.gitignore', {
 			appNameKebab: $that.appNameKebab
-		});
+		}, '.gitignore');
 		utils.copyFileTpl($that, 'Gruntfile.js', {
 			appNameCamel: $that.appNameCamel,
 			appNameKebab: $that.appNameKebab

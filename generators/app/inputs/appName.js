@@ -15,7 +15,7 @@
 		level  : 3,
 		enabled: true
 	});
-	const kebabCase       = require('lodash.kebabcase');
+	const _               = require('lodash');
 	const camelCase       = require('camelcase');
 	const upperPythonCase = require('case').constant;
 	const colors          = require('../colors');
@@ -29,12 +29,16 @@
 		}
 	];
 
+	const hints = [
+		'The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json',
+		'Write it down in his normal syntax like <Cozen Angular Generator>',
+		'Wrong examples: <cozen Angular Generator>, <cozenAngularGenerator>, <cozen-angular-generator>'
+	];
+
 	module.exports = class AppName {
 		static set($that) {
 			$that.logHintHeader();
-			$that.logHint('The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json');
-			$that.logHint('Write it down in his normal syntax like <Cozen Angular Generator>');
-			$that.logHint('Wrong examples: <cozen Angular Generator>, <cozenAngularGenerator>, <cozen-angular-generator>');
+			$that.logHints(hints);
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
@@ -44,7 +48,7 @@
 		static onSuccess($that, $response) {
 			$that.appName            = $response.appName;
 			$that.appNameCamel       = camelCase($response.appName);
-			$that.appNameKebab       = kebabCase($response.appName);
+			$that.appNameKebab       = _.kebabCase($response.appName);
 			$that.appNameUpperPython = upperPythonCase($response.appName);
 			$that.log(
 				'The app name in camelCase is :',

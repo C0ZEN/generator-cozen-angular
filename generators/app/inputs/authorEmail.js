@@ -20,9 +20,13 @@
 		}
 	];
 
+	const hints = [
+		'Simply set up your email.'
+	];
+
 	module.exports = $that => {
 		$that.logHintHeader();
-		$that.logHint('Simply set up your email.');
+		$that.logHints(hints);
 
 		prompts[0].default = _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@cozen.com';
 

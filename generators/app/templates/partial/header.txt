@@ -1,0 +1,6 @@
+ * Generated header by <%= authorShort %> for <%= appNameKebab %> project
+ *
+ * Created by: <%= authorShort %>
+ * Date: <%= nowDate %>
+ * Time: <%= nowTime %>
+ * Version: 0.0.0

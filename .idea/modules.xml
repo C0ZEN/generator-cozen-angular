@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/generator-altran-angular.iml" filepath="$PROJECT_DIR$/.idea/generator-altran-angular.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/generator-cozen-angular.iml" filepath="$PROJECT_DIR$/.idea/generator-cozen-angular.iml" />
     </modules>
   </component>
 </project>

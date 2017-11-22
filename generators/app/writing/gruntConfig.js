@@ -44,7 +44,10 @@
 		_.forEach(files, $file => {
 			utils.copyFileTpl($that, 'grunt/config/' + $file + '.js', {
 				appNameCamel: $that.appNameCamel,
-				appNameKebab: $that.appNameKebab
+				appNameKebab: $that.appNameKebab,
+				authorShort : $that.authorShort,
+				nowDate     : $that.nowDate,
+				nowTime     : $that.nowTime
 			});
 		});
 	};

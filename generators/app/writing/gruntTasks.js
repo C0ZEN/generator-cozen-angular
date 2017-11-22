@@ -21,7 +21,13 @@
 
 	module.exports = $that => {
 		_.forEach(files, $file => {
-			utils.copyFileTpl($that, 'grunt/tasks/' + $file + '.js', null);
+			utils.copyFileTpl($that, 'grunt/tasks/' + $file + '.js', {
+				appNameKebab: $that.appNameKebab,
+				appNameCamel: $that.appNameCamel,
+				authorShort : $that.authorShort,
+				nowDate     : $that.nowDate,
+				nowTime     : $that.nowTime
+			});
 		});
 	};
 

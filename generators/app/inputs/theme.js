@@ -27,10 +27,14 @@
 		}
 	];
 
+	const hints = [
+		'The theme is a pure dependency of the Cozen Angular Lib.',
+		'Enter an existing theme or enter a new one that you will create in a few.'
+	];
+
 	module.exports = $that => {
 		$that.logHintHeader();
-		$that.logHint('The theme is a pure dependency of the Cozen Angular Lib.');
-		$that.logHint('Enter an existing theme or enter a new one that you will create in a few.');
+		$that.logHints(hints);
 
 		$that.log('Current theme list :');
 		$that.log(chalk.hex(colors.get('cyan'))('origin'));

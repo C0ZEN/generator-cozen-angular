@@ -1,4 +1,1 @@
-/__tests__/
-/node_modules/
-/coverage/
 /generators/app/templates/partial/header.txt

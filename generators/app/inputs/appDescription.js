@@ -14,13 +14,20 @@
 		{
 			type   : 'input',
 			name   : 'appDescription',
-			message: 'Description of your app :'
+			message: 'Description of your app :',
+			default: 'This is the description for the project'
 		}
+	];
+
+	const hints = [
+		'Just describe the purpose of your project.'
 	];
 
 	module.exports = $that => {
 		$that.logHintHeader();
-		$that.logHint('Just describe the purpose of your project.');
+		$that.logHints(hints);
+
+		prompts[0].default += ' ' + $that.appName;
 
 		return $that.prompt(prompts).then($response => {
 			$that.appDescription = $response.appDescription;

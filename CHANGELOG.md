@@ -6,6 +6,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.0]
+### Changed
+- Description
+- Added _ prefix to gitignore to avoid missing file with npm
+- copyFileTpl refactoring
+- Refactoring the hints with array of hints to reduce code
+- Added partial view to generated the header
+
 ## [0.2.1]
 ### Changed
 - Code Climate badge tokens

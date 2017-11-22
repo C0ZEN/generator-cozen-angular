@@ -1,11 +1,5 @@
 /**
- * Generated header by C0ZEN for generator-cozen-angular project
- * Generated file jsMin on WebStorm
- *
- * Created by: Geoffrey "C0ZEN" Testelin
- * Date: 20/11/2017
- * Time: 21:52
- * Version: 1.0.0
+ <%- include('../../partial/header.txt') %>
  */
 /* eslint valid-jsdoc:"off" */
 module.exports = function (grunt) {
