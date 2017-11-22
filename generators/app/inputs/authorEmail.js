@@ -1,5 +1,5 @@
 /**
- * Generated header by C0ZEN for generator-altran-angular project
+ * Generated header by C0ZEN for generator-cozen-angular project
  * Generated file authorEmail on WebStorm
  *
  * Created by: Geoffrey "C0ZEN" Testelin
@@ -16,7 +16,7 @@
 		{
 			type   : 'input',
 			name   : 'authorEmail',
-			message: 'Your email (altran) :'
+			message: 'Your email (cozen) :'
 		}
 	];
 
@@ -24,7 +24,7 @@
 		$that.logHintHeader();
 		$that.logHint('Simply set up your email.');
 
-		prompts[0].default = _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@altran.com';
+		prompts[0].default = _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@cozen.com';
 
 		return $that.prompt(prompts).then($response => {
 			$that.authorEmail = $response.authorEmail;

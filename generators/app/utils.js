@@ -1,5 +1,5 @@
 /**
- * Generated header by C0ZEN for generator-altran-angular project
+ * Generated header by C0ZEN for generator-cozen-angular project
  * Generated file utils on WebStorm
  *
  * Created by: Geoffrey "C0ZEN" Testelin

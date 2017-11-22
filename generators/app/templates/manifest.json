@@ -3,7 +3,7 @@
     "name": "<%= appName %>",
     "version": "0.0.0",
     "description": "<%= appDescription %>",
-    "author": "Altran",
+    "author": "Cozen",
     "background": {
         "persistent": false
     },

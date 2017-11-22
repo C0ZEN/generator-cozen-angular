@@ -1,5 +1,5 @@
 /**
- * Generated header by C0ZEN for generator-altran-angular project
+ * Generated header by C0ZEN for generator-cozen-angular project
  * Generated file merge-json on WebStorm
  *
  * Created by: Geoffrey "C0ZEN" Testelin
@@ -30,12 +30,12 @@ module.exports = {
 			{
 				expand : true,
 				flatten: false,
-				cwd    : 'bower_components/altran-angular-lib/release/languages',
+				cwd    : 'bower_components/cozen-angular-lib/release/languages',
 				src    : '*.json',
 				dest   : '.tmp/languages',
 				rename(dest, src) {
 					const lang = src.replace('.min.json', '');
-					const ext  = 'altran-angular-lib.json';
+					const ext  = 'cozen-angular-lib.json';
 					return dest + '/' + lang + '/' + ext;
 				}
 			}
