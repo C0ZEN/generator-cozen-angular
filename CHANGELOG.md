@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Change
+- Removed npm debug log
+
+## [0.3.1]
 ### Fixed
 - Error with unresolved npm package for the test
 
