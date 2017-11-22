@@ -1,5 +1,5 @@
 /**
- * Generated header by C0ZEN for generator-altran-angular project
+ * Generated header by C0ZEN for generator-cozen-angular project
  * Generated file appName on WebStorm
  *
  * Created by: Geoffrey "C0ZEN" Testelin
@@ -33,8 +33,8 @@
 		static set($that) {
 			$that.logHintHeader();
 			$that.logHint('The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json');
-			$that.logHint('Write it down in his normal syntax like <Altran Angular Generator>');
-			$that.logHint('Wrong examples: <altran Angular Generator>, <altranAngularGenerator>, <altran-angular-generator>');
+			$that.logHint('Write it down in his normal syntax like <Cozen Angular Generator>');
+			$that.logHint('Wrong examples: <cozen Angular Generator>, <cozenAngularGenerator>, <cozen-angular-generator>');
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

@@ -61,7 +61,7 @@
 
 			moment.locale('en');
 
-			this.log(yosay('Welcome to the wonderful ' + chalk.hex(colors.get('red'))('generator-altran-angular') + ' generator !'));
+			this.log(yosay('Welcome to the wonderful ' + chalk.hex(colors.get('red'))('generator-cozen-angular') + ' generator !'));
 
 			const prompts = [
 				{

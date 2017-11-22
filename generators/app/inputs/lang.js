@@ -1,5 +1,5 @@
 /**
- * Generated header by C0ZEN for generator-altran-angular project
+ * Generated header by C0ZEN for generator-cozen-angular project
  * Generated file lang on WebStorm
  *
  * Created by: Geoffrey "C0ZEN" Testelin
@@ -22,7 +22,7 @@
 		{
 			type   : 'input',
 			name   : 'lang',
-			message: 'Default altran-angular-lib lang :',
+			message: 'Default cozen-angular-lib lang :',
 			default: 'fr',
 			store  : true
 		}

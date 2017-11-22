@@ -8,7 +8,7 @@ When you want to test your changes in local, you must run the link command:
 npm link
 ```
 
-Then you can create a new project with `yo altran-angular`.
+Then you can create a new project with `yo cozen-angular`.
 
 You can also lint and test the code:
 

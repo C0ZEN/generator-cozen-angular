@@ -1,10 +1,10 @@
 {
-    "name": "generator-altran-angular",
-    "version": "0.2.0",
-    "description": "Use this yeoman generator to help you create AngularJS applications based to works properly with the Altran Angular Library.",
-    "homepage": "https://github.com/C0ZEN/generator-altran-angular",
+    "name": "generator-cozen-angular",
+    "version": "0.2.0-a",
+    "description": "Use this yeoman generator to help you create AngularJS applications based to works properly with the Cozen Angular Library.",
+    "homepage": "https://github.com/C0ZEN/generator-cozen-angular",
     "keywords": [
-        "altran",
+        "cozen",
         "angular",
         "yeoman",
         "yeoman-generator",
@@ -73,6 +73,6 @@
             "git add"
         ]
     },
-    "repository": "C0ZEN/generator-altran-angular",
+    "repository": "C0ZEN/generator-cozen-angular",
     "license": "MIT"
 }

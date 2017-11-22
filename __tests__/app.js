@@ -10,7 +10,7 @@
 	const appName      = 'Test App';
 	const appNameKebab = kebabCase(appName);
 
-	describe('generator-altran-angular:app', () => {
+	describe('generator-cozen-angular:app', () => {
 		beforeAll(() => {
 			return helpers.run(path.join(__dirname, '../generators/app'))
 				.withPrompts({

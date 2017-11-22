@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Rename altran references to cozen.
 
 ## [0.2.0]
 ### Fixed 
@@ -53,9 +55,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - .codeclimate.yml file to configure Code Climate
 
 ### Changed
-- writing/main.js is now split in main/markdown/linter/json files [Issue #9](https://github.com/C0ZEN/generator-altran-angular/issues/9)
-- inputs/appName.js is now a class to split the method in half [Issue #10](https://github.com/C0ZEN/generator-altran-angular/issues/10)
-- inputs/author.js is now a class to split the method in half [Issue #11](https://github.com/C0ZEN/generator-altran-angular/issues/11)
+- writing/main.js is now split in main/markdown/linter/json files [Issue #9](https://github.com/C0ZEN/generator-cozen-angular/issues/9)
+- inputs/appName.js is now a class to split the method in half [Issue #10](https://github.com/C0ZEN/generator-cozen-angular/issues/10)
+- inputs/author.js is now a class to split the method in half [Issue #11](https://github.com/C0ZEN/generator-cozen-angular/issues/11)
 
 ## [0.1.3]
 ### Changed
