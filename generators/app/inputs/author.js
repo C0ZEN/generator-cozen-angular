@@ -33,12 +33,16 @@
 		}
 	];
 
+	const hints = [
+		'Simply set up your first name and last name.',
+		'Do not forget the uppercase ;)',
+		'Used on the file headers.'
+	];
+
 	module.exports = class Author {
 		static set($that) {
 			$that.logHintHeader();
-			$that.logHint('Simply set up your first name and last name.');
-			$that.logHint('Do not forget the uppercase ;)');
-			$that.logHint('Used on the file headers.');
+			$that.logHints(hints);
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

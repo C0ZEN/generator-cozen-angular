@@ -28,9 +28,13 @@
 		}
 	];
 
+	const hints = [
+		'The default language of your application.'
+	];
+
 	module.exports = $that => {
 		$that.logHintHeader();
-		$that.logHint('The default language of your application.');
+		$that.logHints(hints);
 
 		$that.log('Current lang list :');
 		$that.log(chalk.hex(colors.get('cyan'))('fr'));

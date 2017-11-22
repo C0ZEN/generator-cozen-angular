@@ -10,6 +10,7 @@
 	const yosay         = require('yosay');
 	const upperCase     = require('upper-case');
 	const moment        = require('moment');
+	const _             = require('lodash');
 
 	const colors = require('./colors.js');
 	const utils  = require('./utils.js');
@@ -49,6 +50,12 @@
 
 			this.logHint = $text => {
 				this.log(chalk.hex(colors.get('purple'))($text + '\n'));
+			};
+
+			this.logHints = $texts => {
+				_.forEach($texts, function ($text) {
+					this.logHint($text);
+				});
 			};
 
 			this.logHintHeader = () => {
