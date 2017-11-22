@@ -55,7 +55,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [daviddm-url]: https://david-dm.org/C0ZEN/generator-cozen-angular
 [coveralls-image]: https://coveralls.io/repos/github/C0ZEN/generator-cozen-angular/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/C0ZEN/generator-cozen-angular?branch=master
-[code-climate-maintainability-image]: https://api.codeclimate.com/v1/badges/2820041b8e9d628be0a5/maintainability
+[code-climate-maintainability-image]: https://api.codeclimate.com/v1/badges/f44fecff6e1c0ba26bf9/maintainability
 [code-climate-maintainability-url]: https://codeclimate.com/github/C0ZEN/generator-cozen-angular/maintainability
-[code-climate-coverage-image]: https://api.codeclimate.com/v1/badges/2820041b8e9d628be0a5/test_coverage
+[code-climate-coverage-image]: https://api.codeclimate.com/v1/badges/f44fecff6e1c0ba26bf9/test_coverage
 [code-climate-coverage-url]: https://codeclimate.com/github/C0ZEN/generator-cozen-angular/test_coverage

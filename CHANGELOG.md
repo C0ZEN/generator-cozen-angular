@@ -8,8 +8,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.2.1]
 ### Changed
-- Rename altran references to cozen.
+- Code Climate badge tokens
 
+## [0.2.1]
+### Changed
+- Rename altran references to cozen.
 
 ### Fixed 
 - Missing imported files error with npm due to 'package.json' file into the app folder
