@@ -5,10 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.2.1]
 ### Changed
 - Rename altran references to cozen.
 
-## [0.2.0]
+
 ### Fixed 
 - Missing imported files error with npm due to 'package.json' file into the app folder
 
