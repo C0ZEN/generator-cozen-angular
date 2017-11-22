@@ -10,7 +10,6 @@
 	const yosay         = require('yosay');
 	const upperCase     = require('upper-case');
 	const moment        = require('moment');
-	const _             = require('lodash');
 
 	const colors = require('./colors.js');
 	const utils  = require('./utils.js');
@@ -53,9 +52,9 @@
 			};
 
 			this.logHints = $texts => {
-				_.forEach($texts, function ($text) {
-					this.logHint($text);
-				});
+				for (let i = 0, length = $texts.length; i < length; i++) {
+					this.logHint($texts[i]);
+				}
 			};
 
 			this.logHintHeader = () => {
