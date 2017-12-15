@@ -22,11 +22,13 @@ When you are done, you can commit and publish the new npm package:
 npm publish
 ```
 
-## New npm version ?
+### Errors
+
+**New npm version ?**
 
 Keep in mind to always increment the `package.json` version before publishing.
 
-## Npm publish fails ?
+**Npm publish fails ?**
 
 If something goes wrong with `npm publish`, make sure to login yourself on npm and then fill the blanks:
 
