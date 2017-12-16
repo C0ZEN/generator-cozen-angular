@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.4.1]
+### Added
+- Docs folder, Code of conduct, issue template and pull request template by merging the master into the develop
+
 ## [0.4.0]
 ### Added
 - New constructor methods `logHintsMultiline` to print logs with break line instead of new line
