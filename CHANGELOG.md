@@ -5,8 +5,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-### Change
+### Added
+- New constructor methods `logHintsMultiline` to print logs with break line instead of new line
+
+### Changed
 - Removed npm debug log
+- Disabled `key-spacing` rule for eslint
+- Saved all prompts into the yeoman config for later usage
+- Changed `configuring` method placement in the index
+- Refactored the prompt steps to assure consistency of hints, new lines and syntax
+
+### Fixed
+- Wrong theme name `cozen-portail-france` replaced by `altran-portail-france`
 
 ## [0.3.1]
 ### Fixed

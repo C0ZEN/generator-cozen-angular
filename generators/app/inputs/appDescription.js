@@ -31,6 +31,7 @@
 
 		return $that.prompt(prompts).then($response => {
 			$that.appDescription = $response.appDescription;
+			$that.config.set('appDescription', $that.appDescription);
 			$that.log();
 		});
 	};

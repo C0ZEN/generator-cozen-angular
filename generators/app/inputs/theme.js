@@ -34,15 +34,17 @@
 
 	module.exports = $that => {
 		$that.logHintHeader();
-		$that.logHints(hints);
+		$that.logHintsMultiline(hints);
 
 		$that.log('Current theme list :');
 		$that.log(chalk.hex(colors.get('cyan'))('origin'));
-		$that.log(chalk.hex(colors.get('cyan'))('cozen-portail-france'));
+		$that.log(chalk.hex(colors.get('cyan'))('altran-portail-france'));
 		$that.log(chalk.hex(colors.get('cyan'))('et-banking'));
+		$that.log();
 
 		return $that.prompt(prompts).then($response => {
 			$that.theme = $response.theme;
+			$that.config.set('theme', $that.theme);
 			$that.log();
 		});
 	};

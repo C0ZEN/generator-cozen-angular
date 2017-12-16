@@ -34,6 +34,9 @@
 			$that.authorEmail = $response.authorEmail;
 			$that.authorShort = $that.authorFirstName + ' ' + $that.authorLastName;
 			$that.authorLong  = $that.authorFirstName + ' ' + $that.authorLastName + ' ' + $that.authorEmail;
+			$that.config.set('authorEmail', $that.authorEmail);
+			$that.config.set('authorShort', $that.authorShort);
+			$that.config.set('authorLong', $that.authorLong);
 			$that.log();
 		});
 	};

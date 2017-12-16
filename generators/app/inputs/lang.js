@@ -39,9 +39,11 @@
 		$that.log('Current lang list :');
 		$that.log(chalk.hex(colors.get('cyan'))('fr'));
 		$that.log(chalk.hex(colors.get('cyan'))('en'));
+		$that.log();
 
 		return $that.prompt(prompts).then($response => {
 			$that.lang = _.lowerCase($response.lang);
+			$that.config.set('lang', $that.lang);
 			$that.log();
 		});
 	};

@@ -42,7 +42,7 @@
 	module.exports = class Author {
 		static set($that) {
 			$that.logHintHeader();
-			$that.logHints(hints);
+			$that.logHintsMultiline(hints);
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
@@ -52,6 +52,9 @@
 		static onSuccess($that, $response) {
 			$that.authorFirstName = $response.authorFirstName;
 			$that.authorLastName  = $response.authorLastName;
+			$that.config.set('authorFirstName', $that.authorFirstName);
+			$that.config.set('authorLastName', $that.authorLastName);
+			$that.log();
 		}
 	};
 

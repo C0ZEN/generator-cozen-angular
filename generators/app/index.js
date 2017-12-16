@@ -60,6 +60,17 @@
 			this.logHintHeader = () => {
 				this.log(chalk.hex(colors.get('purple')).bold('Hint:\n'));
 			};
+
+			this.logHintsMultiline = $texts => {
+				let text = '';
+				for (let i = 0, length = $texts.length; i < length; i++) {
+					text += $texts[i];
+					if (i + 1 < length) {
+						text += '\n';
+					}
+				}
+				this.logHint(text);
+			};
 		}
 
 		initializing() {
@@ -85,6 +96,10 @@
 
 		prompting() {
 			this.logPriority('prompting', true);
+		}
+
+		configuring() {
+			this.logPriority('configuring', false);
 		}
 
 		inputAppName() {
@@ -115,16 +130,11 @@
 			return authorEmail(this);
 		}
 
-		configuring() {
-			this.logPriority('configuring', true);
-		}
-
 		writing() {
 			this.now     = moment();
 			this.nowDate = this.now.format('DD/MM/YYYY');
 			this.nowTime = this.now.format('HH:mm');
 			this.log('Now :', chalk.hex(colors.get('cyan'))(this.nowDate, this.nowTime));
-			this.log();
 
 			this.logPriority('writing', true);
 			writingMain(this);
@@ -143,7 +153,7 @@
 		}
 
 		conflicts() {
-			this.logPriority('conflicts', true);
+			this.logPriority('conflicts', false);
 		}
 
 		install() {
