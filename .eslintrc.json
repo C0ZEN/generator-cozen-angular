@@ -202,12 +202,7 @@
             "tab"
         ],
         "jsx-quotes": "error",
-        "key-spacing": [
-            "error",
-            {
-                "align": "colon"
-            }
-        ],
+        "key-spacing": "off",
         "keyword-spacing": "error",
         "line-comment-position": "error",
         "linebreak-style": "off",

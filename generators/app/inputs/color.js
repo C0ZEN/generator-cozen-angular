@@ -10,6 +10,8 @@
 (function () {
 	'use strict';
 
+	const logs = require('../../common/logs.js');
+
 	const prompts = [
 		{
 			type   : 'input',
@@ -27,20 +29,27 @@
 		}
 	];
 
-	const hints = [
-		'The backgroundColor is the background color for the Web App Manifest.',
-		'The value can be any valid CSS color (blue, red, ...).',
-		'The themeColor is the background color for the search address bar.',
-		'The value can be any hexadecimal color (#123456, #4F257B, ...).'
-	];
+	const hints = {
+		backgroundColor: [
+			'The backgroundColor is the background color for the Web App Manifest.',
+			'The value can be any valid CSS color (blue, red, ...).'
+		],
+		themeColor     : [
+			'The themeColor is the background color for the search address bar.',
+			'The value can be any hexadecimal color (#123456, #4F257B, ...).'
+		]
+	};
 
 	module.exports = $that => {
-		$that.logHintHeader();
-		$that.logHints(hints);
+		logs.hintHeader($that);
+		logs.hintsMultiline($that, hints.backgroundColor);
+		logs.hintsMultiline($that, hints.themeColor);
 
 		return $that.prompt(prompts).then($response => {
 			$that.backgroundColor = $response.backgroundColor;
 			$that.themeColor      = $response.themeColor;
+			$that.config.set('backgroundColor', $that.backgroundColor);
+			$that.config.set('themeColor', $that.themeColor);
 			$that.log();
 		});
 	};

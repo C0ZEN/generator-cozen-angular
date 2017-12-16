@@ -5,6 +5,27 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.4.0]
+### Added
+- New constructor methods `logHintsMultiline` to print logs with break line instead of new line
+- New generator `view` to create a new view in the views folder
+
+### Changed
+- Removed npm debug log
+- Disabled `key-spacing` rule for eslint
+- Saved all prompts into the yeoman config for later usage
+- Changed `configuring` method placement in the index
+- Refactored the prompt steps to assure consistency of hints, new lines and syntax
+- Moved the utils files (colors, utils) in the common folder
+- Removed the constructor and exported all the logs utils functions into a new logs module in common folder
+- Moved the partial folder in the common folder
+- Added detailed explanations on how to commit in the [CONTRIBUTING](CONTRIBUTING.md) file
+
+### Fixed
+- Wrong theme name `cozen-portail-france` replaced by `altran-portail-france`
+
+## [0.3.1]
 ### Fixed
 - Error with unresolved npm package for the test
 

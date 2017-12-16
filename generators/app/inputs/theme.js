@@ -15,7 +15,8 @@
 		level  : 3,
 		enabled: true
 	});
-	const colors        = require('../colors.js');
+	const colors        = require('../../common/colors.js');
+	const logs          = require('../../common/logs.js');
 
 	const prompts = [
 		{
@@ -33,16 +34,18 @@
 	];
 
 	module.exports = $that => {
-		$that.logHintHeader();
-		$that.logHints(hints);
+		logs.hintHeader($that);
+		logs.hintsMultiline($that, hints);
 
 		$that.log('Current theme list :');
 		$that.log(chalk.hex(colors.get('cyan'))('origin'));
-		$that.log(chalk.hex(colors.get('cyan'))('cozen-portail-france'));
+		$that.log(chalk.hex(colors.get('cyan'))('altran-portail-france'));
 		$that.log(chalk.hex(colors.get('cyan'))('et-banking'));
+		$that.log();
 
 		return $that.prompt(prompts).then($response => {
 			$that.theme = $response.theme;
+			$that.config.set('theme', $that.theme);
 			$that.log();
 		});
 	};

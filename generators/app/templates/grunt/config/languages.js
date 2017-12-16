@@ -1,5 +1,5 @@
 /**
- <%- include('../../partial/header.txt') %>
+ <%- include('../../../../common/partial/header.txt') %>
  */
 /* eslint object-curly-newline:"off" */
 module.exports = {

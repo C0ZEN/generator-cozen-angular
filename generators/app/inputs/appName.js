@@ -18,7 +18,8 @@
 	const _               = require('lodash');
 	const camelCase       = require('camelcase');
 	const upperPythonCase = require('case').constant;
-	const colors          = require('../colors');
+	const colors          = require('../../common/colors.js');
+	const logs            = require('../../common/logs.js');
 
 	const prompts = [
 		{
@@ -37,8 +38,8 @@
 
 	module.exports = class AppName {
 		static set($that) {
-			$that.logHintHeader();
-			$that.logHints(hints);
+			logs.hintHeader($that);
+			logs.hintsMultiline($that, hints);
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
@@ -50,6 +51,10 @@
 			$that.appNameCamel       = camelCase($response.appName);
 			$that.appNameKebab       = _.kebabCase($response.appName);
 			$that.appNameUpperPython = upperPythonCase($response.appName);
+			$that.config.set('appName', $that.appName);
+			$that.config.set('appNameCamel', $that.appNameCamel);
+			$that.config.set('appNameKebab', $that.appNameKebab);
+			$that.config.set('appNameUpperPython', $that.appNameUpperPython);
 			$that.log(
 				'The app name in camelCase is :',
 				chalk.hex(colors.get('cyan'))($that.appNameCamel)

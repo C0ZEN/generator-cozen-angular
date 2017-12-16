@@ -8,11 +8,11 @@
 		enabled: true
 	});
 	const yosay         = require('yosay');
-	const upperCase     = require('upper-case');
 	const moment        = require('moment');
 
-	const colors = require('./colors.js');
-	const utils  = require('./utils.js');
+	const colors = require('../common/colors.js');
+	const utils  = require('../common/utils.js');
+	const logs   = require('../common/logs.js');
 
 	const appName        = require('./inputs/appName.js');
 	const appDescription = require('./inputs/appDescription.js');
@@ -37,33 +37,8 @@
 	const writingGruntTasks  = require('./writing/gruntTasks.js');
 
 	module.exports = class extends Generator {
-		constructor($args, $opts) {
-			super($args, $opts);
-
-			this.logPriority = ($priority, $spaceBefore) => {
-				if ($spaceBefore) {
-					this.log('');
-				}
-				this.log(chalk.hex(colors.get('orange')).bold('>>> %s <<<\n'), upperCase($priority));
-			};
-
-			this.logHint = $text => {
-				this.log(chalk.hex(colors.get('purple'))($text + '\n'));
-			};
-
-			this.logHints = $texts => {
-				for (let i = 0, length = $texts.length; i < length; i++) {
-					this.logHint($texts[i]);
-				}
-			};
-
-			this.logHintHeader = () => {
-				this.log(chalk.hex(colors.get('purple')).bold('Hint:\n'));
-			};
-		}
-
 		initializing() {
-			this.logPriority('initializing');
+			logs.priority(this, 'initializing');
 
 			moment.locale('en');
 
@@ -84,7 +59,11 @@
 		}
 
 		prompting() {
-			this.logPriority('prompting', true);
+			logs.priority(this, 'prompting', true);
+		}
+
+		configuring() {
+			logs.priority(this, 'configuring', false);
 		}
 
 		inputAppName() {
@@ -115,18 +94,13 @@
 			return authorEmail(this);
 		}
 
-		configuring() {
-			this.logPriority('configuring', true);
-		}
-
 		writing() {
 			this.now     = moment();
 			this.nowDate = this.now.format('DD/MM/YYYY');
 			this.nowTime = this.now.format('HH:mm');
 			this.log('Now :', chalk.hex(colors.get('cyan'))(this.nowDate, this.nowTime));
-			this.log();
 
-			this.logPriority('writing', true);
+			logs.priority(this, 'writing', true);
 			writingMain(this);
 			writingMarkdown(this);
 			writingLinter(this);
@@ -143,18 +117,18 @@
 		}
 
 		conflicts() {
-			this.logPriority('conflicts', true);
+			logs.priority(this, 'conflicts', false);
 		}
 
 		install() {
-			this.logPriority('install', true);
+			logs.priority(this, 'install', true);
 
 			utils.installNpmPackages(this);
 			utils.installBowerPackages(this);
 		}
 
 		end() {
-			this.logPriority('end', true);
+			logs.priority(this, 'end', true);
 			this.log(chalk.hex(colors.get('green'))('That\'s all folks !'));
 			this.log(chalk.hex(colors.get('green'))('Your project is ready ;)\n'));
 			this.log(

@@ -1,5 +1,5 @@
 /**
- <%- include('../../partial/header.txt') %>
+ <%- include('../../../../common/partial/header.txt') %>
  */
 /* jscs:disable requireCamelCaseOrUpperCaseIdentifiers */
 module.exports = {

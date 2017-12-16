@@ -7,6 +7,7 @@
 /test/
 /preprod/
 /prod/
+/.yo-rc.json
 /app/config/target.config.js
 /.idea/workspace.xml
 /app/scripts/<%= appNameKebab %>.js

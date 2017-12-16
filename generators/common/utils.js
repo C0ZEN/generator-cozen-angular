@@ -12,8 +12,8 @@
 
 	const mkdirp = require('mkdirp');
 	const _      = require('lodash');
-	const npm    = require('./dependencies/npm.js');
-	const bower  = require('./dependencies/bower.js');
+	const npm    = require('../app/dependencies/npm.js');
+	const bower  = require('../app/dependencies/bower.js');
 
 	module.exports = class Utils {
 		static copyFile($that, $path) {
