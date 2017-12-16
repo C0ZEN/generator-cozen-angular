@@ -14,9 +14,9 @@
 
 	function <%= configStateName %>($stateProvider) {
 		$stateProvider
-			.state('<%= viewNameCamel %>', {
+			.state('<%= stateName %>', {
 				abstract    : true,
-				url         : '<%= viewUrl %>',
+				url         : '<%= stateUrl %>',
 				template    : '<ui-view></ui-view>',
 				controller  : '<%= controllerName %>',
 				controllerAs: 'vm'

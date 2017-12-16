@@ -12,6 +12,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Docs folder, Code of conduct, issue template and pull request template by merging the master into the develop
 - Abstract state option
+- Name state option
 
 ## [0.4.0]
 ### Added

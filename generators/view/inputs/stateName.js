@@ -1,10 +1,10 @@
 /**
  * Generated header by C0ZEN for generator-cozen-angular project
- * Generated file viewUrl on WebStorm
+ * Generated file stateName on WebStorm
  *
  * Created by: Geoffrey "C0ZEN" Testelin
  * Date: 16/12/2017
- * Time: 15:00
+ * Time: 20:39
  * Version: 1.0.0
  */
 (function () {
@@ -15,16 +15,14 @@
 	const prompts = [
 		{
 			type   : 'input',
-			name   : 'viewUrl',
-			message: 'Url of the view :',
-			default: 'view-url/:someToken'
+			name   : 'stateName',
+			message: 'Name of the state :',
+			default: 'state.name'
 		}
 	];
 
 	const hints = [
-		'The url of the view is the one visible in the browser.',
-		'It should be write as kebab-case.',
-		'You can add visible param as well'
+		'The name of the state should be on write on lowercase.'
 	];
 
 	module.exports = class AppName {
@@ -38,8 +36,8 @@
 		}
 
 		static onSuccess($that, $response) {
-			$that.viewUrl = $response.viewUrl;
-			$that.config.set('viewUrl', $that.viewUrl);
+			$that.stateName = $response.stateName;
+			$that.config.set('stateName', $that.stateName);
 			$that.log();
 		}
 	};

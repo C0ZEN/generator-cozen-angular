@@ -1,6 +1,6 @@
 /**
  * Generated header by C0ZEN for generator-cozen-angular project
- * Generated file viewAbstract on WebStorm
+ * Generated file stateAbstract on WebStorm
  *
  * Created by: Geoffrey "C0ZEN" Testelin
  * Date: 16/12/2017
@@ -15,7 +15,7 @@
 	const prompts = [
 		{
 			type   : 'confirm',
-			name   : 'viewAbstract',
+			name   : 'stateAbstract',
 			message: 'Is this an abstract state :',
 			default: false
 		}
@@ -37,8 +37,8 @@
 		}
 
 		static onSuccess($that, $response) {
-			$that.viewAbstract = $response.viewAbstract;
-			$that.config.set('viewAbstract', $that.viewAbstract);
+			$that.stateAbstract = $response.stateAbstract;
+			$that.config.set('stateAbstract', $that.stateAbstract);
 			$that.log();
 		}
 	};

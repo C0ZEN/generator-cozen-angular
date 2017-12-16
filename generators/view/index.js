@@ -21,12 +21,13 @@
 	const colors = require('../common/colors.js');
 	const logs   = require('../common/logs.js');
 
-	const isThisYou    = require('./inputs/isThisYou.js');
-	const author       = require('./inputs/author.js');
-	const authorEmail  = require('./inputs/authorEmail.js');
-	const viewName     = require('./inputs/viewName.js');
-	const viewUrl      = require('./inputs/viewUrl.js');
-	const viewAbstract = require('./inputs/viewAbstract.js');
+	const isThisYou     = require('./inputs/isThisYou.js');
+	const author        = require('./inputs/author.js');
+	const authorEmail   = require('./inputs/authorEmail.js');
+	const viewName      = require('./inputs/viewName.js');
+	const stateName     = require('./inputs/stateName.js');
+	const stateUrl      = require('./inputs/stateUrl.js');
+	const stateAbstract = require('./inputs/stateAbstract.js');
 
 	const writingJsFiles        = require('./writing/jsFiles.js');
 	const writingHtmlFiles      = require('./writing/htmlFiles.js');
@@ -83,12 +84,16 @@
 			return viewName.set(this);
 		}
 
-		inputViewUrl() {
-			return viewUrl.set(this);
+		inputStateName() {
+			return stateName.set(this);
 		}
 
-		inputViewAbstract() {
-			return viewAbstract.set(this);
+		inputStateUrl() {
+			return stateUrl.set(this);
+		}
+
+		inputStateAbstract() {
+			return stateAbstract.set(this);
 		}
 
 		writing() {

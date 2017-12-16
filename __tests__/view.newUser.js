@@ -17,7 +17,7 @@
 					authorFirstName: 'Geoffrey',
 					authorLastName : 'Testelin',
 					authorEmail    : 'geoffrey.testelin@gmail.com',
-					viewAbstract   : true
+					stateAbstract  : true
 				});
 		});
 

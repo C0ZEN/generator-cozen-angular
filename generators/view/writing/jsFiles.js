@@ -25,14 +25,15 @@
 			nowDate        : $that.nowDate,
 			nowTime        : $that.nowTime,
 			authorShort    : $that.authorShort || $that.config.get('authorShort'),
-			viewUrl        : $that.viewUrl
+			stateUrl       : $that.stateUrl,
+			stateName      : $that.stateName
 		};
 
 		utils.copyFileTpl($that, 'controller.js', config, filePrefix + 'controller.js');
 		utils.copyFileTpl($that, 'service.js', config, filePrefix + 'service.js');
 		utils.copyFileTpl($that, 'constant.js', config, filePrefix + 'constant.js');
 
-		if ($that.viewAbstract) {
+		if ($that.stateAbstract) {
 			utils.copyFileTpl($that, 'states/state.abstract.js', config, filePrefix + 'state.js');
 		}
 		else {
