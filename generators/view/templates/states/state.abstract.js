@@ -1,5 +1,5 @@
 /**
- <%- include('../../common/partial/header.txt') %>
+ <%- include('../../../common/partial/header.txt') %>
  */
 (function (angular) {
 	'use strict';
@@ -15,8 +15,9 @@
 	function <%= configStateName %>($stateProvider) {
 		$stateProvider
 			.state('<%= viewNameCamel %>', {
+				abstract    : true,
 				url         : '<%= viewUrl %>',
-				templateUrl : 'views/<%= viewNameCamel %>.template.html',
+				template    : '<ui-view></ui-view>',
 				controller  : '<%= controllerName %>',
 				controllerAs: 'vm'
 			});

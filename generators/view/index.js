@@ -21,11 +21,12 @@
 	const colors = require('../common/colors.js');
 	const logs   = require('../common/logs.js');
 
-	const isThisYou   = require('./inputs/isThisYou.js');
-	const author      = require('./inputs/author.js');
-	const authorEmail = require('./inputs/authorEmail.js');
-	const viewName    = require('./inputs/viewName.js');
-	const viewUrl     = require('./inputs/viewUrl.js');
+	const isThisYou    = require('./inputs/isThisYou.js');
+	const author       = require('./inputs/author.js');
+	const authorEmail  = require('./inputs/authorEmail.js');
+	const viewName     = require('./inputs/viewName.js');
+	const viewUrl      = require('./inputs/viewUrl.js');
+	const viewAbstract = require('./inputs/viewAbstract.js');
 
 	const writingJsFiles        = require('./writing/jsFiles.js');
 	const writingHtmlFiles      = require('./writing/htmlFiles.js');
@@ -84,6 +85,10 @@
 
 		inputViewUrl() {
 			return viewUrl.set(this);
+		}
+
+		inputViewAbstract() {
+			return viewAbstract.set(this);
 		}
 
 		writing() {

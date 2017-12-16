@@ -29,9 +29,15 @@
 		};
 
 		utils.copyFileTpl($that, 'controller.js', config, filePrefix + 'controller.js');
-		utils.copyFileTpl($that, 'state.js', config, filePrefix + 'state.js');
 		utils.copyFileTpl($that, 'service.js', config, filePrefix + 'service.js');
 		utils.copyFileTpl($that, 'constant.js', config, filePrefix + 'constant.js');
+
+		if ($that.viewAbstract) {
+			utils.copyFileTpl($that, 'states/state.abstract.js', config, filePrefix + 'state.js');
+		}
+		else {
+			utils.copyFileTpl($that, 'states/state.default.js', config, filePrefix + 'state.js');
+		}
 	};
 
 })();
