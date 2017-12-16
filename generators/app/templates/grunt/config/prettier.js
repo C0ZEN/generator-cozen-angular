@@ -1,5 +1,5 @@
 /**
- <%- include('../../partial/header.txt') %>
+ <%- include('../../../../common/partial/header.txt') %>
  */
 module.exports = {
 	options: '<%%= config.prettier %%>',
