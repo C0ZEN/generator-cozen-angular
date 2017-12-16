@@ -42,5 +42,12 @@
 				'app/views/viewName/styles/viewName.variables.less'
 			]);
 		});
+
+		it('create view languages files', () => {
+			assert.file([
+				'app/views/viewName/languages/fr.json',
+				'app/views/viewName/languages/en.json'
+			]);
+		});
 	});
 })();

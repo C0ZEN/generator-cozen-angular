@@ -10,9 +10,10 @@
 (function () {
 	'use strict';
 
-	const _         = require('lodash');
-	const camelCase = require('camelcase');
-	const logs      = require('../../common/logs.js');
+	const _               = require('lodash');
+	const camelCase       = require('camelcase');
+	const upperPythonCase = require('case').constant;
+	const logs            = require('../../common/logs.js');
 
 	const prompts = [
 		{
@@ -39,12 +40,14 @@
 		}
 
 		static onSuccess($that, $response) {
-			$that.viewName      = $response.viewName;
-			$that.viewNameCamel = camelCase($response.viewName);
-			$that.viewNameKebab = _.kebabCase($response.viewName);
+			$that.viewName            = $response.viewName;
+			$that.viewNameCamel       = camelCase($response.viewName);
+			$that.viewNameKebab       = _.kebabCase($response.viewName);
+			$that.viewNameUpperPython = upperPythonCase($response.viewName);
 			$that.config.set('viewName', $that.viewName);
 			$that.config.set('viewNameCamel', $that.viewNameCamel);
 			$that.config.set('viewNameKebab', $that.viewNameKebab);
+			$that.config.set('viewNameUpperPython', $that.viewNameUpperPython);
 			$that.log();
 		}
 	};

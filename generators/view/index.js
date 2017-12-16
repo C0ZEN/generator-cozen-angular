@@ -27,9 +27,10 @@
 	const viewName    = require('./inputs/viewName.js');
 	const viewUrl     = require('./inputs/viewUrl.js');
 
-	const writingJsFiles     = require('./writing/jsFiles.js');
-	const writingHtmlFiles   = require('./writing/htmlFiles.js');
-	const writingStylesFiles = require('./writing/stylesFiles.js');
+	const writingJsFiles        = require('./writing/jsFiles.js');
+	const writingHtmlFiles      = require('./writing/htmlFiles.js');
+	const writingStylesFiles    = require('./writing/stylesFiles.js');
+	const writingLanguagesFiles = require('./writing/languagesFiles.js');
 
 	module.exports = class extends Generator {
 		initializing() {
@@ -95,6 +96,7 @@
 			writingJsFiles(this);
 			writingHtmlFiles(this);
 			writingStylesFiles(this);
+			writingLanguagesFiles(this);
 		}
 
 		conflicts() {
