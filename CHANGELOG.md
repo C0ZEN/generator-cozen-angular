@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.4.0]
 ### Added
 - New constructor methods `logHintsMultiline` to print logs with break line instead of new line
 - New generator `view` to create a new view in the views folder

@@ -1,6 +1,6 @@
 {
     "name": "generator-cozen-angular",
-    "version": "0.3.1",
+    "version": "0.4.0",
     "description": "Use this yeoman generator to help you create AngularJS applications based to works properly with the Altran Angular Library.",
     "homepage": "https://github.com/C0ZEN/generator-cozen-angular",
     "keywords": [
