@@ -16,7 +16,20 @@ You can also lint and test the code:
 npm test
 ```
 
-When you are done, you can commit and publish the new npm package:
+When you are done, you must:
+
+- Update the [CHANGELOG](CHANGELOG.md) file (follow the **Keep a Changelog**)
+ 
+If after your commit you want to create a new tag, you must:
+
+- Update the [CHANGELOG](CHANGELOG.md) file by adding a new tag
+- Update the [Package version](package.json)
+- Commit and push your changes 
+- Checkout the master
+- Merge the develop into the master
+- Create a new tag
+- Commit and push the merge and the new tag
+- Publish the new npm package
 
 ```bash
 npm publish

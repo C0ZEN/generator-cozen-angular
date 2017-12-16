@@ -18,6 +18,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Moved the utils files (colors, utils) in the common folder
 - Removed the constructor and exported all the logs utils functions into a new logs module in common folder
 - Moved the partial folder in the common folder
+- Added detailed explanations on how to commit in the [CONTRIBUTING](CONTRIBUTING.md) file
 
 ### Fixed
 - Wrong theme name `cozen-portail-france` replaced by `altran-portail-france`
