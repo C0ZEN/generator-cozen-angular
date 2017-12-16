@@ -10,6 +10,8 @@
 (function () {
 	'use strict';
 
+	const logs = require('../../common/logs.js');
+
 	const prompts = [
 		{
 			type   : 'input',
@@ -24,8 +26,8 @@
 	];
 
 	module.exports = $that => {
-		$that.logHintHeader();
-		$that.logHints(hints);
+		logs.hintHeader($that);
+		logs.hints($that, hints);
 
 		prompts[0].default += ' ' + $that.appName;
 

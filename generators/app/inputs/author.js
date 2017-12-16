@@ -10,6 +10,8 @@
 (function () {
 	'use strict';
 
+	const logs = require('../../common/logs.js');
+
 	const prompts = [
 		{
 			type    : 'input',
@@ -41,8 +43,8 @@
 
 	module.exports = class Author {
 		static set($that) {
-			$that.logHintHeader();
-			$that.logHintsMultiline(hints);
+			logs.hintHeader($that);
+			logs.hintsMultiline($that, hints);
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

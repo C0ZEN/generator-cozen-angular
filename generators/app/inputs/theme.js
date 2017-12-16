@@ -15,7 +15,8 @@
 		level  : 3,
 		enabled: true
 	});
-	const colors        = require('../colors.js');
+	const colors        = require('../../common/colors.js');
+	const logs          = require('../../common/logs.js');
 
 	const prompts = [
 		{
@@ -33,8 +34,8 @@
 	];
 
 	module.exports = $that => {
-		$that.logHintHeader();
-		$that.logHintsMultiline(hints);
+		logs.hintHeader($that);
+		logs.hintsMultiline($that, hints);
 
 		$that.log('Current theme list :');
 		$that.log(chalk.hex(colors.get('cyan'))('origin'));

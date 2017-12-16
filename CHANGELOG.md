@@ -14,6 +14,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Saved all prompts into the yeoman config for later usage
 - Changed `configuring` method placement in the index
 - Refactored the prompt steps to assure consistency of hints, new lines and syntax
+- Moved the utils files (colors, utils) in the common folder
+- Removed the constructor and exported all the logs utils functions into a new logs module in common folder
 
 ### Fixed
 - Wrong theme name `cozen-portail-france` replaced by `altran-portail-france`

@@ -15,8 +15,9 @@
 		level  : 3,
 		enabled: true
 	});
-	const colors        = require('../colors.js');
+	const colors        = require('../../common/colors.js');
 	const _             = require('lodash');
+	const logs          = require('../../common/logs.js');
 
 	const prompts = [
 		{
@@ -33,8 +34,8 @@
 	];
 
 	module.exports = $that => {
-		$that.logHintHeader();
-		$that.logHints(hints);
+		logs.hintHeader($that);
+		logs.hints($that, hints);
 
 		$that.log('Current lang list :');
 		$that.log(chalk.hex(colors.get('cyan'))('fr'));

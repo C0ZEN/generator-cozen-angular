@@ -10,7 +10,8 @@
 (function () {
 	'use strict';
 
-	const _ = require('lodash');
+	const _    = require('lodash');
+	const logs = require('../../common/logs.js');
 
 	const prompts = [
 		{
@@ -25,8 +26,8 @@
 	];
 
 	module.exports = $that => {
-		$that.logHintHeader();
-		$that.logHints(hints);
+		logs.hintHeader($that);
+		logs.hints($that, hints);
 
 		prompts[0].default = _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@cozen.com';
 

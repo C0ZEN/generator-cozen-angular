@@ -10,6 +10,8 @@
 (function () {
 	'use strict';
 
+	const logs = require('../../common/logs.js');
+
 	const prompts = [
 		{
 			type   : 'input',
@@ -39,9 +41,9 @@
 	};
 
 	module.exports = $that => {
-		$that.logHintHeader();
-		$that.logHintsMultiline(hints.backgroundColor);
-		$that.logHintsMultiline(hints.themeColor);
+		logs.hintHeader($that);
+		logs.hintsMultiline($that, hints.backgroundColor);
+		logs.hintsMultiline($that, hints.themeColor);
 
 		return $that.prompt(prompts).then($response => {
 			$that.backgroundColor = $response.backgroundColor;

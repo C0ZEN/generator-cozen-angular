@@ -10,7 +10,7 @@
 (function () {
 	'use strict';
 
-	const utils = require('../utils.js');
+	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
 		utils.copyFileTpl($that, 'app/config/tpls/index.tpl.html', {

@@ -18,7 +18,8 @@
 	const _               = require('lodash');
 	const camelCase       = require('camelcase');
 	const upperPythonCase = require('case').constant;
-	const colors          = require('../colors');
+	const colors          = require('../../common/colors.js');
+	const logs            = require('../../common/logs.js');
 
 	const prompts = [
 		{
@@ -37,8 +38,8 @@
 
 	module.exports = class AppName {
 		static set($that) {
-			$that.logHintHeader();
-			$that.logHintsMultiline(hints);
+			logs.hintHeader($that);
+			logs.hintsMultiline($that, hints);
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
