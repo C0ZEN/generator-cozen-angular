@@ -8,6 +8,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Languages files for view generator
 
+### Changed
+- Only one file for state but conditions in it
+
 ## [0.4.1]
 ### Added
 - Docs folder, Code of conduct, issue template and pull request template by merging the master into the develop

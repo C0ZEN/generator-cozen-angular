@@ -1,8 +1,3 @@
 /__tests__/
 /node_modules/
 /coverage/
-/generators/common/partial/header.txt
-/generators/view/templates/controller.js
-/generators/view/templates/states/
-/generators/view/templates/service.js
-/generators/view/templates/constant.js
