@@ -51,6 +51,10 @@
 				'save-dev': false
 			});
 		}
+
+		static getViewsPath($that) {
+			return 'app/views/' + $that.viewPath || '';
+		}
 	};
 
 })();

@@ -25,6 +25,7 @@
 	const author        = require('./inputs/author.js');
 	const authorEmail   = require('./inputs/authorEmail.js');
 	const viewName      = require('./inputs/viewName.js');
+	const viewPath      = require('./inputs/viewPath.js');
 	const stateName     = require('./inputs/stateName.js');
 	const stateUrl      = require('./inputs/stateUrl.js');
 	const stateAbstract = require('./inputs/stateAbstract.js');
@@ -82,6 +83,10 @@
 
 		inputViewName() {
 			return viewName.set(this);
+		}
+
+		inputViewPath() {
+			return viewPath.set(this);
 		}
 
 		inputStateName() {

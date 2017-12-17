@@ -12,6 +12,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Only one file for state but conditions in it
 - Removed the check on isThisYou to increase the coverage
 - Removed the prefix `app/views` for the view tests and for the writing step
+- Refactored the path for view by adding a new input. This is not a good way to do it but I don't have any other solution due to .yo-rc.json file which rewrite the current yo path
 
 ## [0.4.1]
 ### Added
