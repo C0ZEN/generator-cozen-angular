@@ -7,12 +7,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Languages files for view generator
+- New common module for user stuff (to get firstname and lastname)
 
 ### Changed
 - Only one file for state but conditions in it
 - Removed the check on isThisYou to increase the coverage
 - Removed the prefix `app/views` for the view tests and for the writing step
 - Refactored the path for view by adding a new input. This is not a good way to do it but I don't have any other solution due to .yo-rc.json file which rewrite the current yo path
+- Removed the store option on the author input
+- The default values on the author inputs are now from the config and from git if not set
 
 ## [0.4.1]
 ### Added

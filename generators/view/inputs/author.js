@@ -11,13 +11,13 @@
 	'use strict';
 
 	const logs = require('../../common/logs.js');
+	const user = require('../../common/user.js');
 
 	const prompts = [
 		{
 			type    : 'input',
 			name    : 'authorFirstName',
 			message : 'Your first name :',
-			store   : true,
 			validate: $value => {
 				/* istanbul ignore next */
 				return $value ? true : 'Your first name could not be empty !';
@@ -27,7 +27,6 @@
 			type    : 'input',
 			name    : 'authorLastName',
 			message : 'Your last name :',
-			store   : true,
 			validate: $value => {
 				/* istanbul ignore next */
 				return $value ? true : 'Your last name could not be empty !';
@@ -46,8 +45,8 @@
 			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
 
-			prompts[0].default = $that.config.get('authorFirstName');
-			prompts[1].default = $that.config.get('authorLastName');
+			prompts[0].default = $that.config.get('authorFirstName') || user.getUserFirstname($that);
+			prompts[1].default = $that.config.get('authorLastName') || user.getUserLastname($that);
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

@@ -17,7 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'authorEmail',
-			message: 'Your email (cozen) :'
+			message: 'Your email :'
 		}
 	];
 
@@ -29,7 +29,7 @@
 		logs.hintHeader($that);
 		logs.hints($that, hints);
 
-		prompts[0].default = _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@cozen.com';
+		prompts[0].default = $that.config.get('authorEmail') || $that.user.git.email() || _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@cozen.com';
 
 		return $that.prompt(prompts).then($response => {
 			$that.authorEmail = $response.authorEmail;
