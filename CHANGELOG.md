@@ -10,6 +10,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Only one file for state but conditions in it
+- Removed the check on isThisYou to increase the coverage
+- Removed the prefix `app/views` for the view tests and for the writing step
 
 ## [0.4.1]
 ### Added

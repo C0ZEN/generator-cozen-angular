@@ -63,11 +63,7 @@
 		}
 
 		inputIsThisYou() {
-			if (this.config.get('authorFirstName')) {
-				return isThisYou.set(this);
-			}
-			this.isThisYou = false;
-			return null;
+			return isThisYou.set(this);
 		}
 
 		inputAuthor() {

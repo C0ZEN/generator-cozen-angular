@@ -51,10 +51,6 @@
 				'save-dev': false
 			});
 		}
-
-		static getViewsPath($that) {
-			return $that.env.cwd;
-		}
 	};
 
 })();

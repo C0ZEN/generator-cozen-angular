@@ -13,7 +13,7 @@
 	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
-		const filePrefix = 'app/views/' + $that.viewNameCamel + '/languages/';
+		const filePrefix = $that.viewNameCamel + '/languages/';
 		const config     = {
 			viewNameCamel      : $that.viewNameCamel,
 			viewNameKebab      : $that.viewNameKebab,

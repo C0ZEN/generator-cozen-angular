@@ -22,31 +22,31 @@
 
 		it('create view js files', () => {
 			assert.file([
-				'app/views/viewName/viewName.controller.js',
-				'app/views/viewName/viewName.state.js',
-				'app/views/viewName/viewName.service.js',
-				'app/views/viewName/viewName.constant.js'
+				'viewName/viewName.controller.js',
+				'viewName/viewName.state.js',
+				'viewName/viewName.service.js',
+				'viewName/viewName.constant.js'
 			]);
 		});
 
 		it('create view html files', () => {
 			assert.file([
-				'app/views/viewName/viewName.template.html'
+				'viewName/viewName.template.html'
 			]);
 		});
 
 		it('create view styles files', () => {
 			assert.file([
-				'app/views/viewName/styles/viewName.less',
-				'app/views/viewName/styles/viewName.mixins.less',
-				'app/views/viewName/styles/viewName.variables.less'
+				'viewName/styles/viewName.less',
+				'viewName/styles/viewName.mixins.less',
+				'viewName/styles/viewName.variables.less'
 			]);
 		});
 
 		it('create view languages files', () => {
 			assert.file([
-				'app/views/viewName/languages/fr.json',
-				'app/views/viewName/languages/en.json'
+				'viewName/languages/fr.json',
+				'viewName/languages/en.json'
 			]);
 		});
 	});
