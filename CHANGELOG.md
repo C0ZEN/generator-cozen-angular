@@ -16,6 +16,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Refactored the path for view by adding a new input. This is not a good way to do it but I don't have any other solution due to .yo-rc.json file which rewrite the current yo path
 - Removed the store option on the author input
 - The default values on the author inputs are now from the config and from git if not set
+- Readme to add a new section about the view sub-generator
 
 ## [0.4.1]
 ### Added

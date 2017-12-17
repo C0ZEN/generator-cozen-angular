@@ -19,9 +19,16 @@ Then generate your new project:
 yo cozen-angular
 ```
 
-Follow all the prompts to create your project.
+**Note:**  
+For now, the link to `cozen-angular-lib` is private.  
+The `grunt serve` task will not works.  
+This is a temporary situation, the lib will be pushed to the public in a few.
 
-**Note:** for now, the link to `cozen-angular-lib` is private. The `grunt serve` task will not works. This is a temporary situation, the lib will be pushed to the public in a few.
+To create a new view:
+
+```bash
+yo cozen-angular:view
+```
 
 ## Contributing
 
