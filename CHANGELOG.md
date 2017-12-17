@@ -5,8 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.5.2]
 ### Changed
-- Removed the Node.js 4 version from travis
+- Changed `jasmine.DEFAULT_TIMEOUT_INTERVAL` to higher value to fix the error with travis failing build on Node.js 4
 
 ## [0.5.1]
 ### Changed

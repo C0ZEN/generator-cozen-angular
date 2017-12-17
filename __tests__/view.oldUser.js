@@ -24,7 +24,7 @@
 
 		beforeEach(() => {
 			originalTimeout                  = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-			jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+			jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
 		});
 
 		afterEach(() => {
