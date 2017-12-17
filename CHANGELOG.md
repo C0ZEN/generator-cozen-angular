@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.5.0]
 ### Added
 - Languages files for view generator
 - New common module for user stuff (to get firstname and lastname)
