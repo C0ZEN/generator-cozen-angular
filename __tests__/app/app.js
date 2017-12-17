@@ -14,7 +14,7 @@
 
 	describe('generator-cozen-angular:app', () => {
 		beforeAll(() => {
-			return helpers.run(path.join(__dirname, '../generators/app'))
+			return helpers.run(path.join(__dirname, '../../generators/app'))
 				.withPrompts({
 					appName        : appName,
 					appDescription : 'Generated Test App',

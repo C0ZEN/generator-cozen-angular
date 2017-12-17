@@ -12,7 +12,7 @@
 
 	describe('generator-cozen-angular:view', () => {
 		beforeAll(() => {
-			return helpers.run(path.join(__dirname, '../generators/view'))
+			return helpers.run(path.join(__dirname, '../../generators/view'))
 				.withPrompts({
 					appName        : appName,
 					isThisYou      : false,

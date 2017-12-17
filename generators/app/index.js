@@ -55,6 +55,9 @@
 
 			return this.prompt(prompts).then($response => {
 				this.areYouReady = $response.areYouReady;
+				if (!this.areYouReady) {
+					this.env.error('You are not ready !');
+				}
 			});
 		}
 
