@@ -10,6 +10,8 @@
 	const appName      = 'Test App';
 	const appNameKebab = _.kebabCase(appName);
 
+	let originalTimeout;
+
 	describe('generator-cozen-angular:app', () => {
 		beforeAll(() => {
 			return helpers.run(path.join(__dirname, '../generators/app'))
@@ -26,24 +28,43 @@
 				});
 		});
 
+		beforeEach(() => {
+			originalTimeout                  = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+			jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+		});
+
+		afterEach(() => {
+			jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+		});
+
+		it('create config json root files', () => {
+			assert.file([
+				'.eslintrc.json',
+				'bower.json',
+				'manifest.json',
+				'package.json'
+			]);
+		});
+
+		it('create config markdown root files', () => {
+			assert.file([
+				'CHANGELOG.md',
+				'CONTRIBUTING.md',
+				'LICENSE.md',
+				'README.md'
+			]);
+		});
+
 		it('create config root files', () => {
 			assert.file([
 				'.bowerrc',
 				'.editorconfig',
 				'.eslintignore',
-				'.eslintrc.json',
 				'.gitattributes',
 				'.gitignore',
 				'.jscsrc',
 				'.jshintrc',
-				'bower.json',
-				'CHANGELOG.md',
-				'CONTRIBUTING.md',
-				'Gruntfile.js',
-				'LICENSE.md',
-				'manifest.json',
-				'package.json',
-				'README.md'
+				'Gruntfile.js'
 			]);
 		});
 

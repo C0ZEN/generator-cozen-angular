@@ -6,6 +6,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.5.1]
+### Changed
+- Split some test to fix the error with travis failing build on Node.js 4
+- Changed `jasmine.DEFAULT_TIMEOUT_INTERVAL` to higher value to fix the error with travis failing build on Node.js 4
+
 ## [0.5.0]
 ### Added
 - Languages files for view generator

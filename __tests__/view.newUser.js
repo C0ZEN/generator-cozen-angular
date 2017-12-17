@@ -8,6 +8,8 @@
 
 	const appName = 'Test View for new user';
 
+	let originalTimeout;
+
 	describe('generator-cozen-angular:view', () => {
 		beforeAll(() => {
 			return helpers.run(path.join(__dirname, '../generators/view'))
@@ -19,6 +21,15 @@
 					authorEmail    : 'geoffrey.testelin@gmail.com',
 					stateAbstract  : true
 				});
+		});
+
+		beforeEach(() => {
+			originalTimeout                  = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+			jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+		});
+
+		afterEach(() => {
+			jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
 		});
 
 		it('create view js files', () => {
