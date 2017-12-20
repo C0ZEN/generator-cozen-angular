@@ -38,5 +38,11 @@
         "singleQuote": true,
         "trailingComma": "es5",
         "bracketSpacing": false
+    },
+    "yoCallbackConfig": {
+        "appName": "<%= appName %>",
+        "appNameCamel": "<%= appNameCamel %>",
+        "appNameKebab": "<%= appNameKebab %>",
+        "appNameUpperPython": "<%= appNameUpperPython %>"
     }
 }

@@ -20,6 +20,7 @@
 
 	const colors = require('../common/colors.js');
 	const logs   = require('../common/logs.js');
+	const utils  = require('../common/utils.js');
 
 	const isThisYou     = require('../common/inputs/isThisYou.js');
 	const author        = require('../common/inputs/author.js');
@@ -37,15 +38,17 @@
 
 	module.exports = class extends Generator {
 		initializing() {
-			logs.priority(this, 'initializing');
+			logs.priority(this, 'initializing', true);
 
 			moment.locale('en');
+
+			utils.updateConfigWithCallbackConfig(this);
 
 			const prompts = [
 				{
 					type   : 'confirm',
 					name   : 'areYouReady',
-					message: 'Are you ready to set up a new view for the ' + this.config.get('appNameCamel') + ' app ?',
+					message: 'Are you ready to set up a new view for the ' + this.config.get('appName') + ' app ?',
 					default: true
 				}
 			];
@@ -74,6 +77,7 @@
 			if (!this.isThisYou) {
 				return author.set(this);
 			}
+			/* istanbul ignore next */
 			return null;
 		}
 
@@ -81,6 +85,7 @@
 			if (!this.isThisYou) {
 				return authorEmail(this);
 			}
+			/* istanbul ignore next */
 			return null;
 		}
 

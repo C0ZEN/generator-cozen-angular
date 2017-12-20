@@ -1,0 +1,19 @@
+<%- include('../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.filter('<%= filterName %>', <%= filterName %>);
+
+	<%= filterName %>.$inject = [];
+
+	function <%= filterName %>() {
+		return <%= filterName %>Filter;
+
+		function <%= filterName %>Filter($items) {
+            return $items;
+        }
+	}
+
+})(window.angular);

@@ -24,10 +24,34 @@ For now, the link to `cozen-angular-lib` is private.
 The `grunt serve` task will not works.  
 This is a temporary situation, the lib will be pushed to the public in a few.
 
+To update or create a new generator config:
+
+```bash
+yo cozen-angular:config
+```
+
 To create a new view:
 
 ```bash
 yo cozen-angular:view
+```
+
+To create a new service:
+
+```bash
+yo cozen-angular:service
+```
+
+To create a new controller:
+
+```bash
+yo cozen-angular:controller
+```
+
+To create a new filter:
+
+```bash
+yo cozen-angular:filter
 ```
 
 ## Contributing

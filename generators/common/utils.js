@@ -16,6 +16,13 @@
 	const npm    = require('../app/dependencies/npm.js');
 	const bower  = require('../app/dependencies/bower.js');
 
+	const callbackConfigKeys = [
+		'appName',
+		'appNameCamel',
+		'appNameKebab',
+		'appNameUpperPython'
+	];
+
 	module.exports = class Utils {
 		static copyFile($that, $path) {
 			$that.fs.copy($that.templatePath($path), $that.destinationPath($path));
@@ -59,6 +66,22 @@
 
 		static getViewsPath($that) {
 			return 'app/views/' + $that.viewPath || '';
+		}
+
+		static updateConfigWithCallbackConfig($that) {
+			_.forEach(callbackConfigKeys, $key => {
+				$that.config.set($key, $that.config.get($key) || this.getConfigCallbackProperty($that, $key));
+			});
+		}
+
+		static getConfigCallbackProperty($that, $key) {
+			let property = '';
+			const file   = $that.fs.readJSON(path.join(process.cwd(), 'package.json'));
+			if (file && _.isObject(file.yoCallbackConfig) && $key in file.yoCallbackConfig) {
+				/* istanbul ignore next */
+				property = file.yoCallbackConfig[$key];
+			}
+			return property;
 		}
 	};
 

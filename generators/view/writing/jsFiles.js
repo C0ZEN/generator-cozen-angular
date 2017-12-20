@@ -33,8 +33,8 @@
 
 		utils.copyFileTplFrom($that, 'controller.txt', config, filePrefix + 'controller.js');
 		utils.copyFileTplFrom($that, 'service.txt', config, filePrefix + 'service.js');
-		utils.copyFileTpl($that, 'constant.txt', config, filePrefix + 'constant.js');
-		utils.copyFileTpl($that, 'state.txt', config, filePrefix + 'state.js');
+		utils.copyFileTplFrom($that, 'constant.txt', config, filePrefix + 'constant.js');
+		utils.copyFileTplFrom($that, 'state.txt', config, filePrefix + 'state.js');
 	};
 
 })();
