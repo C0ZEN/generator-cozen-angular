@@ -10,6 +10,7 @@
 (function () {
 	'use strict';
 
+	const path   = require('path');
 	const mkdirp = require('mkdirp');
 	const _      = require('lodash');
 	const npm    = require('../app/dependencies/npm.js');
@@ -22,6 +23,10 @@
 
 		static copyFileTpl($that, $path, $data, $dest) {
 			$that.fs.copyTpl($that.templatePath($path), $dest || $path, $data);
+		}
+
+		static copyFileTplFrom($that, $path, $data, $dest) {
+			$that.fs.copyTpl(path.join(__dirname, 'templates', $path), $dest || $path, $data);
 		}
 
 		static copyFileTplWithMultipleDestinations($that, $path, $data, $destinations) {

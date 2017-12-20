@@ -39,6 +39,8 @@
         "window": true,
         "describe": true,
         "beforeAll": true,
-        "it": true
+        "it": true,
+        "process": true,
+        "__dirname": true
     }
 }

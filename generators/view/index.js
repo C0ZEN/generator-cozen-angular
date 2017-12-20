@@ -21,9 +21,9 @@
 	const colors = require('../common/colors.js');
 	const logs   = require('../common/logs.js');
 
-	const isThisYou     = require('./inputs/isThisYou.js');
-	const author        = require('./inputs/author.js');
-	const authorEmail   = require('./inputs/authorEmail.js');
+	const isThisYou     = require('../common/inputs/isThisYou.js');
+	const author        = require('../common/inputs/author.js');
+	const authorEmail   = require('../common/inputs/authorEmail.js');
 	const viewName      = require('./inputs/viewName.js');
 	const viewPath      = require('./inputs/viewPath.js');
 	const stateName     = require('./inputs/stateName.js');

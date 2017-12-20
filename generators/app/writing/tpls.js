@@ -19,9 +19,9 @@
 			appNameKebab: $that.appNameKebab,
 			themeColor  : $that.themeColor
 		});
-		utils.copyFileTpl($that, 'app/config/tpls/target.config.tpl.js', {
+		utils.copyFileTpl($that, 'app/config/tpls/target.config.tpl.txt', {
 			appNameCamel: $that.appNameCamel
-		});
+		}, 'app/config/tpls/target.config.tpl.js');
 	};
 
 })();

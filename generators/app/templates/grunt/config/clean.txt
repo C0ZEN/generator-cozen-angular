@@ -1,0 +1,22 @@
+<%- include('../../../../common/partial/header.txt') %>
+/* eslint key-spacing:"off" */
+module.exports = {
+	server   : '.tmp',
+	release  : {
+		files: [
+			{
+				dot: true,
+				src: [
+					'.tmp',
+					'<%%= currentTarget %%>/**/*'
+				]
+			}
+		]
+	},
+	languages: [
+		'.tmp/languages'
+	],
+	devIndex : [
+		'<%%= paths.app %%>/index.html'
+	]
+};

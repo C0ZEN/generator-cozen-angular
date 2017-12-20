@@ -5,8 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.6.0]
 ### Changed
 - When the user say that he is not ready, the generator will now stop working
+- All js files are now txt files to avoid IDE and Lint errors
+- Rewrite the partial header to avoid space problems
+- Added new sub-generator `service`
+- Added new sub-generator `controller`
 
 ## [0.5.2]
 ### Changed

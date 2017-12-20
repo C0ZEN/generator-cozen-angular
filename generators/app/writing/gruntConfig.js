@@ -42,13 +42,13 @@
 
 	module.exports = $that => {
 		_.forEach(files, $file => {
-			utils.copyFileTpl($that, 'grunt/config/' + $file + '.js', {
+			utils.copyFileTpl($that, 'grunt/config/' + $file + '.txt', {
 				appNameCamel: $that.appNameCamel,
 				appNameKebab: $that.appNameKebab,
 				authorShort : $that.authorShort,
 				nowDate     : $that.nowDate,
 				nowTime     : $that.nowTime
-			});
+			}, 'grunt/config/' + $file + '.js');
 		});
 	};
 

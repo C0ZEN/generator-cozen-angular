@@ -19,10 +19,10 @@
 		utils.copyFileTpl($that, '_.gitignore', {
 			appNameKebab: $that.appNameKebab
 		}, '.gitignore');
-		utils.copyFileTpl($that, 'Gruntfile.js', {
+		utils.copyFileTpl($that, 'Gruntfile.txt', {
 			appNameCamel: $that.appNameCamel,
 			appNameKebab: $that.appNameKebab
-		});
+		}, 'Gruntfile.js');
 	};
 
 })();

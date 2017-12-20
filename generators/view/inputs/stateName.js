@@ -22,7 +22,7 @@
 	];
 
 	const hints = [
-		'The name of the state should be on write on lowercase.'
+		'The name of the state should be write on lowercase.'
 	];
 
 	module.exports = class AppName {
