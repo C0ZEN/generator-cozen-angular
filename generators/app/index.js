@@ -38,7 +38,7 @@
 
 	module.exports = class extends Generator {
 		initializing() {
-			logs.priority(this, 'initializing');
+			logs.priority(this, 'initializing', true);
 
 			moment.locale('en');
 

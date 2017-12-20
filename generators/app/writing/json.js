@@ -25,9 +25,12 @@
 			themeColor     : $that.themeColor
 		});
 		utils.copyFileTpl($that, '_package.json', {
-			appNameKebab  : $that.appNameKebab,
-			appDescription: $that.appDescription,
-			authorLong    : $that.authorLong
+			appName           : $that.appName,
+			appNameCamel      : $that.appNameCamel,
+			appNameKebab      : $that.appNameKebab,
+			appNameUpperPython: $that.appNameUpperPython,
+			appDescription    : $that.appDescription,
+			authorLong        : $that.authorLong
 		}, 'package.json');
 	};
 
