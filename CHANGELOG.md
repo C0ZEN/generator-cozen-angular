@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+## [0.7.0]
 ### Added 
 - Space before INITIALIZING step
 - Config in the package to globalize the common data (appName) to avoid requesting it when the `.yo-rc.json` file is not present locally (which is often due to gitignore - in a good way -). So know we can assume that there is a global config and a local config.
