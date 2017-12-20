@@ -4,7 +4,7 @@
  *
  * Created by: Geoffrey "C0ZEN" Testelin
  * Date: 20/12/2017
- * Time: 11:40
+ * Time: 19:56
  * Version: 1.0.0
  */
 (function () {
@@ -25,10 +25,10 @@
 	const isThisYou   = require('../common/inputs/isThisYou.js');
 	const author      = require('../common/inputs/author.js');
 	const authorEmail = require('../common/inputs/authorEmail.js');
-	const serviceName = require('./inputs/serviceName.js');
-	const servicePath = require('./inputs/servicePath.js');
+	const filterName  = require('./inputs/filterName.js');
+	const filterPath  = require('./inputs/filterPath.js');
 
-	const writingServiceFile = require('./writing/serviceFile.js');
+	const writingFilterFile = require('./writing/filterFile.js');
 
 	module.exports = class extends Generator {
 		initializing() {
@@ -42,7 +42,7 @@
 				{
 					type   : 'confirm',
 					name   : 'areYouReady',
-					message: 'Are you ready to set up a new service for the ' + this.config.get('appName') + ' app ?',
+					message: 'Are you ready to set up a new filter for the ' + this.config.get('appName') + ' app ?',
 					default: true
 				}
 			];
@@ -83,12 +83,12 @@
 			return null;
 		}
 
-		inputServiceName() {
-			return serviceName.set(this);
+		inputFilterName() {
+			return filterName.set(this);
 		}
 
-		inputServicePath() {
-			return servicePath.set(this);
+		inputFilterPath() {
+			return filterPath.set(this);
 		}
 
 		writing() {
@@ -97,7 +97,7 @@
 			this.nowTime = this.now.format('HH:mm');
 			this.log('Now :', chalk.hex(colors.get('cyan'))(this.nowDate, this.nowTime));
 
-			writingServiceFile(this);
+			writingFilterFile(this);
 
 			logs.priority(this, 'writing', true);
 		}
@@ -112,7 +112,7 @@
 
 		end() {
 			logs.priority(this, 'end', false);
-			this.log(chalk.hex(colors.get('green'))('Your service is ready ;)'));
+			this.log(chalk.hex(colors.get('green'))('Your filter is ready ;)'));
 		}
 	};
 

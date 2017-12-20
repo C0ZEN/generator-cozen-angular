@@ -71,6 +71,7 @@
 			if (!this.isThisYou) {
 				return author.set(this);
 			}
+			/* istanbul ignore next */
 			return null;
 		}
 
@@ -78,6 +79,7 @@
 			if (!this.isThisYou) {
 				return authorEmail(this);
 			}
+			/* istanbul ignore next */
 			return null;
 		}
 

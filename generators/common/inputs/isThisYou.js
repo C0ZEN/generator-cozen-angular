@@ -35,14 +35,13 @@
 
 				return $that.prompt(prompts).then($response => {
 					this.onSuccess($that, $response);
-				}).catch(() => {
-					this.onError($that);
 				});
 			}
 			this.onError($that);
 			return null;
 		}
 
+		/* istanbul ignore next */
 		static onSuccess($that, $response) {
 			$that.isThisYou = $response.isThisYou;
 			$that.log();
