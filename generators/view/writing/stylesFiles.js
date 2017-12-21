@@ -31,6 +31,7 @@
 		utils.copyFileTpl($that, 'styles/variables.less', config, filePrefix + 'variables.less');
 
 		const styleFilePath = path.join(process.cwd(), 'app/styles/less', $that.config.get('appNameKebab') + '.less');
+
 		/* istanbul ignore if */
 		if ($that.fs.exists(styleFilePath)) {
 			write();

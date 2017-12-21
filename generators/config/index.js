@@ -22,6 +22,8 @@
 
 	const appName = require('./inputs/appName.js');
 
+	const writingCallbackConfig = require('./writing/callbackConfig.js');
+
 	module.exports = class extends Generator {
 		initializing() {
 			logs.priority(this, 'initializing', true);
@@ -57,6 +59,8 @@
 
 		writing() {
 			logs.priority(this, 'writing', false);
+
+			writingCallbackConfig(this);
 		}
 
 		conflicts() {
