@@ -28,7 +28,8 @@
 			authorShort    : $that.authorShort || $that.config.get('authorShort'),
 			stateUrl       : $that.stateUrl,
 			stateName      : $that.stateName,
-			stateAbstract  : $that.stateAbstract
+			stateAbstract  : $that.stateAbstract,
+			currentVersion : $that.currentVersion
 		};
 
 		utils.copyFileTplFrom($that, 'controller.txt', config, filePrefix + 'controller.js');

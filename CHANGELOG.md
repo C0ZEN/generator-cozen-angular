@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- New methods to manage the package.json file read and write added into config module
+
 ### Changed
 - Changed the hint path for filter, controller and service sub-generators
 - Created a new utils config module to handle stuff about the callback config

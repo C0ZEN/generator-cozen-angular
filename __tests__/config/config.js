@@ -27,5 +27,7 @@
 		});
 
 		it('update the app name');
+
+		it('update the callback config in the package json file');
 	});
 })();

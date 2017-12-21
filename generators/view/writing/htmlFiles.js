@@ -16,12 +16,13 @@
 		const viewsPath  = utils.getViewsPath($that);
 		const filePrefix = viewsPath + $that.viewNameCamel + '/' + $that.viewNameCamel + '.';
 		const config     = {
-			viewNameCamel: $that.viewNameCamel,
-			viewNameKebab: $that.viewNameKebab,
-			appNameKebab : $that.config.get('appNameKebab'),
-			nowDate      : $that.nowDate,
-			nowTime      : $that.nowTime,
-			authorShort  : $that.authorShort || $that.config.get('authorShort')
+			viewNameCamel : $that.viewNameCamel,
+			viewNameKebab : $that.viewNameKebab,
+			appNameKebab  : $that.config.get('appNameKebab'),
+			nowDate       : $that.nowDate,
+			nowTime       : $that.nowTime,
+			authorShort   : $that.authorShort || $that.config.get('authorShort'),
+			currentVersion: $that.currentVersion
 		};
 
 		utils.copyFileTpl($that, 'template.html', config, filePrefix + 'template.html');

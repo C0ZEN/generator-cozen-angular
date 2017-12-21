@@ -10,25 +10,20 @@
 (function () {
 	'use strict';
 
-	const path = require('path');
-	const _    = require('lodash');
+	const config = require('../../common/config.js');
 
 	module.exports = $that => {
 
-		const packagePath = path.join(process.cwd(), 'package.json');
-
 		/* istanbul ignore if */
-		if ($that.fs.exists(packagePath)) {
-			const packageFile = $that.fs.readJSON(packagePath);
-			if (packageFile) {
-				packageFile.yoCallbackConfig = {
-					appName           : $that.appName,
-					appNameCamel      : $that.appNameCamel,
-					appNameKebab      : $that.appNameKebab,
-					appNameUpperPython: $that.appNameUpperPython
-				};
-				$that.fs.writeJSON(packagePath, packageFile);
-			}
+		const packageFile = config.getPackage($that);
+		if (packageFile) {
+			packageFile.yoCallbackConfig = {
+				appName           : $that.appName,
+				appNameCamel      : $that.appNameCamel,
+				appNameKebab      : $that.appNameKebab,
+				appNameUpperPython: $that.appNameUpperPython
+			};
+			config.updatePackage($that, packageFile);
 		}
 	};
 

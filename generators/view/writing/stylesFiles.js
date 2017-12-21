@@ -18,12 +18,13 @@
 		const viewsPath  = utils.getViewsPath($that);
 		const filePrefix = viewsPath + $that.viewNameCamel + '/styles/' + $that.viewNameCamel + '.';
 		const config     = {
-			viewNameCamel: $that.viewNameCamel,
-			viewNameKebab: $that.viewNameKebab,
-			appNameKebab : $that.config.get('appNameKebab'),
-			nowDate      : $that.nowDate,
-			nowTime      : $that.nowTime,
-			authorShort  : $that.authorShort || $that.config.get('authorShort')
+			viewNameCamel : $that.viewNameCamel,
+			viewNameKebab : $that.viewNameKebab,
+			appNameKebab  : $that.config.get('appNameKebab'),
+			nowDate       : $that.nowDate,
+			nowTime       : $that.nowTime,
+			authorShort   : $that.authorShort || $that.config.get('authorShort'),
+			currentVersion: $that.currentVersion
 		};
 
 		utils.copyFileTpl($that, 'styles/main.less', config, filePrefix + 'less');

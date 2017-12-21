@@ -16,12 +16,13 @@
 		const defaultPath = 'scripts/filters';
 		const filePrefix  = 'app/' + ($that.filterPath || defaultPath) + '/' + $that.filterName + '.';
 		const config      = {
-			appNameCamel: $that.config.get('appNameCamel'),
-			appNameKebab: $that.config.get('appNameKebab'),
-			filterName  : $that.filterName + 'Filter',
-			nowDate     : $that.nowDate,
-			nowTime     : $that.nowTime,
-			authorShort : $that.authorShort || $that.config.get('authorShort')
+			appNameCamel  : $that.config.get('appNameCamel'),
+			appNameKebab  : $that.config.get('appNameKebab'),
+			filterName    : $that.filterName + 'Filter',
+			nowDate       : $that.nowDate,
+			nowTime       : $that.nowTime,
+			authorShort   : $that.authorShort || $that.config.get('authorShort'),
+			currentVersion: $that.currentVersion
 		};
 
 		utils.copyFileTplFrom($that, 'filter.txt', config, filePrefix + 'filter.js');

@@ -29,11 +29,12 @@
 	module.exports = $that => {
 		_.forEach(providers, $provider => {
 			utils.copyFileTpl($that, 'app/config/providers/' + $provider + '.config.txt', {
-				appNameKebab: $that.appNameKebab,
-				appNameCamel: $that.appNameCamel,
-				authorShort : $that.authorShort,
-				nowDate     : $that.nowDate,
-				nowTime     : $that.nowTime
+				appNameKebab  : $that.appNameKebab,
+				appNameCamel  : $that.appNameCamel,
+				authorShort   : $that.authorShort,
+				nowDate       : $that.nowDate,
+				nowTime       : $that.nowTime,
+				currentVersion: $that.currentVersion
 			}, 'app/config/providers/' + $provider + '.config.js');
 		});
 	};

@@ -25,16 +25,40 @@
 			_.forEach(callbackConfigKeys, $key => {
 				$that.config.set($key, $that.config.get($key) || this.getCallbackProperty($that, $key));
 			});
+
+			const packageFile = this.getPackage($that);
+			if (packageFile) {
+				$that.currentVersion = packageFile.version || '0.0.0';
+			}
 		}
 
 		static getCallbackProperty($that, $key) {
-			let property = '';
-			const file   = $that.fs.readJSON(path.join(process.cwd(), 'package.json'));
+			let property      = '';
+			const packageFile = this.getPackage($that);
+
 			/* istanbul ignore if */
-			if (file && _.isObject(file.yoCallbackConfig) && $key in file.yoCallbackConfig) {
-				property = file.yoCallbackConfig[$key];
+			if (packageFile && _.isObject(packageFile.yoCallbackConfig) && $key in packageFile.yoCallbackConfig) {
+				property = packageFile.yoCallbackConfig[$key];
 			}
 			return property;
+		}
+
+		static getPackagePath() {
+			return path.join(process.cwd(), 'package.json');
+		}
+
+		static getPackage($that) {
+			const packagePath = this.getPackagePath();
+
+			/* istanbul ignore if */
+			if ($that.fs.exists(packagePath)) {
+				return $that.fs.readJSON(packagePath);
+			}
+			return null;
+		}
+
+		static updatePackage($that, $data) {
+			$that.fs.writeJSON(this.getPackagePath(), $data);
 		}
 	};
 

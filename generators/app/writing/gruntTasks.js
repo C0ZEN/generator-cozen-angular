@@ -22,11 +22,12 @@
 	module.exports = $that => {
 		_.forEach(files, $file => {
 			utils.copyFileTpl($that, 'grunt/tasks/' + $file + '.txt', {
-				appNameKebab: $that.appNameKebab,
-				appNameCamel: $that.appNameCamel,
-				authorShort : $that.authorShort,
-				nowDate     : $that.nowDate,
-				nowTime     : $that.nowTime
+				appNameKebab  : $that.appNameKebab,
+				appNameCamel  : $that.appNameCamel,
+				authorShort   : $that.authorShort,
+				nowDate       : $that.nowDate,
+				nowTime       : $that.nowTime,
+				currentVersion: $that.currentVersion
 			}, 'grunt/tasks/' + $file + '.js');
 		});
 	};

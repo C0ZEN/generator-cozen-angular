@@ -51,6 +51,7 @@
 
 		configuring() {
 			logs.priority(this, 'configuring', false);
+			this.currentVersion = '0.0.0';
 		}
 
 		inputAppName() {

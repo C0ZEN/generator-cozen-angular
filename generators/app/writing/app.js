@@ -14,11 +14,12 @@
 
 	module.exports = $that => {
 		utils.copyFileTpl($that, 'app/app.txt', {
-			appNameKebab: $that.appNameKebab,
-			appNameCamel: $that.appNameCamel,
-			authorShort : $that.authorShort,
-			nowDate     : $that.nowDate,
-			nowTime     : $that.nowTime
+			appNameKebab  : $that.appNameKebab,
+			appNameCamel  : $that.appNameCamel,
+			authorShort   : $that.authorShort,
+			nowDate       : $that.nowDate,
+			nowTime       : $that.nowTime,
+			currentVersion: $that.currentVersion
 		}, 'app/app.js');
 	};
 
