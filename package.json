@@ -60,7 +60,7 @@
     },
     "scripts": {
         "prepare": "nsp check",
-        "pretest": "eslint .",
+        "pretest": "eslint . --fix",
         "test": "jest"
     },
     "lint-staged": {

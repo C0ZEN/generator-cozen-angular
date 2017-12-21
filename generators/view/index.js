@@ -20,7 +20,7 @@
 
 	const colors = require('../common/colors.js');
 	const logs   = require('../common/logs.js');
-	const utils  = require('../common/utils.js');
+	const config = require('../common/config.js');
 
 	const isThisYou     = require('../common/inputs/isThisYou.js');
 	const author        = require('../common/inputs/author.js');
@@ -42,7 +42,7 @@
 
 			moment.locale('en');
 
-			utils.updateConfigWithCallbackConfig(this);
+			config.updateWithCallback(this);
 
 			const prompts = [
 				{
@@ -74,6 +74,7 @@
 		}
 
 		inputAuthor() {
+			/* istanbul ignore next */
 			if (!this.isThisYou) {
 				return author.set(this);
 			}
@@ -82,6 +83,7 @@
 		}
 
 		inputAuthorEmail() {
+			/* istanbul ignore next */
 			if (!this.isThisYou) {
 				return authorEmail(this);
 			}

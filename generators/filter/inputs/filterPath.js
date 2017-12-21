@@ -23,7 +23,7 @@
 
 	const hints = [
 		'This will allow you to override the default path for the filter',
-		'By default, it is: app/scripts/filters'
+		'By default, it is: scripts/filters'
 	];
 
 	module.exports = class AppName {

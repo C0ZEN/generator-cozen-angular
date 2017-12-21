@@ -23,7 +23,7 @@
 
 	const hints = [
 		'This will allow you to override the default path for the controller',
-		'By default, it is: app/scripts/controllers'
+		'By default, it is: scripts/controllers'
 	];
 
 	module.exports = class AppName {

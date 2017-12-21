@@ -23,7 +23,7 @@
 
 	const hints = [
 		'This will allow you to override the default path for the service',
-		'By default, it is: app/scripts/services'
+		'By default, it is: scripts/services'
 	];
 
 	module.exports = class AppName {

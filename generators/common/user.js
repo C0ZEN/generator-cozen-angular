@@ -21,6 +21,7 @@
 			let user = this.getUser($that);
 			if (user) {
 				user = user.split(' ');
+				/* istanbul ignore if */
 				if (1 < user.length) {
 					return _.last(user);
 				}

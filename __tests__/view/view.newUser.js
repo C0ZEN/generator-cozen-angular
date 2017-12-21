@@ -61,5 +61,11 @@
 				'app/views/viewName/languages/en.json'
 			]);
 		});
+
+		it('create main less file', () => {
+			assert.file([
+				'app/styles/less/' + appName + '.less'
+			]);
+		});
 	});
 })();

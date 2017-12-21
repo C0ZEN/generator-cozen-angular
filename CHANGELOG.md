@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Changed the hint path for filter, controller and service sub-generators
+- Created a new utils config module to handle stuff about the callback config
+
 ## [0.7.0]
 ### Added 
 - Space before INITIALIZING step
