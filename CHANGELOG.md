@@ -15,6 +15,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - The config sub-task will now update the package file as well to store the callback config
 - The version in the header is now based on the package version
 
+### Fixed
+- Error with state template (string instead of fn in config declaration)
+
 ## [0.7.0]
 ### Added 
 - Space before INITIALIZING step
