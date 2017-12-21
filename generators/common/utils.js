@@ -58,7 +58,7 @@
 		}
 
 		static getViewsPath($that) {
-			return 'app/views/' + $that.viewPath || '';
+			return 'views/' + $that.viewPath || '';
 		}
 	};
 

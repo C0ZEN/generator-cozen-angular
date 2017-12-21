@@ -14,7 +14,7 @@
 
 	module.exports = $that => {
 		const viewsPath  = utils.getViewsPath($that);
-		const filePrefix = viewsPath + $that.viewNameCamel + '/' + $that.viewNameCamel + '.';
+		const filePrefix = 'app/' + viewsPath + $that.viewNameCamel + '/' + $that.viewNameCamel + '.';
 		const config     = {
 			viewNameCamel  : $that.viewNameCamel,
 			appNameCamel   : $that.config.get('appNameCamel'),
@@ -29,7 +29,8 @@
 			stateUrl       : $that.stateUrl,
 			stateName      : $that.stateName,
 			stateAbstract  : $that.stateAbstract,
-			currentVersion : $that.currentVersion
+			currentVersion : $that.currentVersion,
+			viewPath       : viewsPath + $that.viewNameCamel + '/'
 		};
 
 		utils.copyFileTplFrom($that, 'controller.txt', config, filePrefix + 'controller.js');

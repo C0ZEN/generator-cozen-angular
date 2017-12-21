@@ -17,6 +17,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Error with state template (string instead of fn in config declaration)
+- Error with static template path in state template
 
 ## [0.7.0]
 ### Added 

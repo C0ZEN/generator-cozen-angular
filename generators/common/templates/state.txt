@@ -15,7 +15,7 @@
 			.state('<%= stateName %>', {
 				<% if (stateAbstract) { %> abstract : true, <% } %>
 				url         : '<%= stateUrl %>',
-				<% if (!stateAbstract) { %> templateUrl : 'views/<%= viewNameCamel %>.template.html', <% } %>
+				<% if (!stateAbstract) { %> templateUrl : '<%= viewPath %><%= viewNameCamel %>.template.html', <% } %>
 				<% if (stateAbstract) { %> template : '<ui-view></ui-view>', <% } %>
 				controller  : '<%= controllerName %>',
 				controllerAs: 'vm'
