@@ -13,6 +13,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Created a new utils config module to handle stuff about the callback config
 - The view sub-generator will now automatically update the main less file for import
 - The config sub-task will now update the package file as well to store the callback config
+- The version in the header is now based on the package version
 
 ## [0.7.0]
 ### Added 
