@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Changed the hint path for filter, controller and service sub-generators
 - Created a new utils config module to handle stuff about the callback config
+- The view sub-generator will now automatically update the main less file for import
 
 ## [0.7.0]
 ### Added 
