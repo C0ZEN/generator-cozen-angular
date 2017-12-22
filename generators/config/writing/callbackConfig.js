@@ -14,8 +14,9 @@
 
 	module.exports = $that => {
 
-		/* istanbul ignore if */
 		const packageFile = config.getPackage($that);
+
+		/* istanbul ignore if */
 		if (packageFile) {
 			packageFile.yoCallbackConfig = {
 				appName           : $that.appName,

@@ -27,6 +27,8 @@
 			});
 
 			const packageFile = this.getPackage($that);
+
+			/* istanbul ignore if */
 			if (packageFile) {
 				$that.currentVersion = packageFile.version || '0.0.0';
 			}
@@ -57,6 +59,7 @@
 			return null;
 		}
 
+		/* istanbul ignore next */
 		static updatePackage($that, $data) {
 			$that.fs.writeJSON(this.getPackagePath(), $data);
 		}

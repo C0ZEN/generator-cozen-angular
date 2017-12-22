@@ -21,7 +21,7 @@
 			controllerName: $that.controllerName + 'Controller',
 			nowDate       : $that.nowDate,
 			nowTime       : $that.nowTime,
-			authorShort   : $that.authorShort || $that.config.get('authorShort'),
+			authorShort   : $that.config.get('authorShort'),
 			currentVersion: $that.currentVersion
 		};
 

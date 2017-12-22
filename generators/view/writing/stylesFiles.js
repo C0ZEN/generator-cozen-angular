@@ -23,7 +23,7 @@
 			appNameKebab  : $that.config.get('appNameKebab'),
 			nowDate       : $that.nowDate,
 			nowTime       : $that.nowTime,
-			authorShort   : $that.authorShort || $that.config.get('authorShort'),
+			authorShort   : $that.config.get('authorShort'),
 			currentVersion: $that.currentVersion
 		};
 
@@ -45,7 +45,7 @@
 		function write() {
 			let styleFile = $that.fs.read(styleFilePath);
 			styleFile += '\n';
-			styleFile += '@import (less) "../../views/' + $that.viewPath || '';
+			styleFile += '@import (less) "../../views/' + $that.viewPath;
 			styleFile += $that.mainDirectory + '/styles/' + $that.viewNameCamel + '.less';
 			$that.fs.write(styleFilePath, styleFile);
 		}

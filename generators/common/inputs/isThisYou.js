@@ -26,11 +26,11 @@
 			if ($that.config.get('authorEmail')) {
 				logs.hintHeader($that);
 
-				prompts[0].message += $that.config.get('authorFirstName');
+				prompts[0].message += $that.config.get('authorFirstName') || '';
 				prompts[0].message += ' ';
-				prompts[0].message += $that.config.get('authorLastName');
+				prompts[0].message += $that.config.get('authorLastName') || '';
 				prompts[0].message += ' <';
-				prompts[0].message += $that.config.get('authorEmail');
+				prompts[0].message += $that.config.get('authorEmail') || '';
 				prompts[0].message += '> ?';
 
 				return $that.prompt(prompts).then($response => {

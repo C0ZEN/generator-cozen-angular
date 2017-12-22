@@ -25,7 +25,7 @@
 			constantName   : $that.viewNameCamel + 'Constant',
 			nowDate        : $that.nowDate,
 			nowTime        : $that.nowTime,
-			authorShort    : $that.authorShort || $that.config.get('authorShort'),
+			authorShort    : $that.config.get('authorShort'),
 			stateUrl       : $that.stateUrl,
 			stateName      : $that.stateName,
 			stateAbstract  : $that.stateAbstract,

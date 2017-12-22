@@ -19,13 +19,17 @@
 
 		static getUserFirstname($that) {
 			let user = this.getUser($that);
+
+			/* istanbul ignore if */
 			if (user) {
 				user = user.split(' ');
+
 				/* istanbul ignore if */
 				if (1 < user.length) {
 					return _.last(user);
 				}
 			}
+
 			/* istanbul ignore next */
 			return null;
 		}
@@ -37,6 +41,7 @@
 				user.pop();
 				return user.join(' ');
 			}
+
 			/* istanbul ignore next */
 			return null;
 		}
