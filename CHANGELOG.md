@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.7.4]
+### Changed
+- Docs styles and colors
+
 ## [0.7.3]
 ### Added
 - Link to GitHub for the docs

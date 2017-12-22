@@ -1,5 +1,3 @@
----
----
 @import "{{ site.theme }}";
 
 /// VARIABLES ///
@@ -27,17 +25,20 @@ $color-belize-hole : #2980B9;
 }
 // Links color
 a {
-  color : $color-turquoise;
+  color : $color-peter-river;
   &:hover, &:focus, &:active {
-    color : $color-green-sea;
+    color : $color-belize-hole;
   }
 }
 // Btn color
 .btn {
-  border-color     : $color-clouds;
+  border-color     : fade-out($color-clouds, 0.2);
   background-color : fade-out($color-clouds, 0.9);
+  color            : $color-clouds;
   &:hover, &:focus, &:active {
-    background-color : fade-out($color-clouds, 0.7);
+    border-color     : fade-out($color-clouds, 0.1);
+    background-color : fade-out($color-clouds, 0.8);
+    color            : $color-clouds;
   }
 }
 // Blockquote color
