@@ -5,8 +5,6 @@
 	const path    = require('path');
 	const helpers = require('yeoman-test');
 
-	let originalTimeout;
-
 	describe('generator-cozen-angular:view', () => {
 		beforeAll(() => {
 			return helpers
@@ -17,15 +15,6 @@
 				.on('error', function ($error) {
 					console.log('Error !', $error);
 				});
-		});
-
-		beforeEach(() => {
-			originalTimeout                  = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-			jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
-		});
-
-		afterEach(() => {
-			jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
 		});
 
 		it('is not ready');

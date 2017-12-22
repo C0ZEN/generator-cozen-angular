@@ -10,8 +10,6 @@
 	const appName      = 'Test App';
 	const appNameKebab = _.kebabCase(appName);
 
-	let originalTimeout;
-
 	describe('generator-cozen-angular:app', () => {
 		beforeAll(() => {
 			return helpers.run(path.join(__dirname, '../../generators/app'))
@@ -26,15 +24,6 @@
 					authorLastName : 'Testelin',
 					authorEmail    : 'geoffrey.testelin@gmail.com'
 				});
-		});
-
-		beforeEach(() => {
-			originalTimeout                  = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-			jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
-		});
-
-		afterEach(() => {
-			jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
 		});
 
 		it('create config json root files', () => {

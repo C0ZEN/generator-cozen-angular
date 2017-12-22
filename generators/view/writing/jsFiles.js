@@ -14,7 +14,7 @@
 
 	module.exports = $that => {
 		const viewsPath  = utils.getViewsPath($that);
-		const filePrefix = 'app/' + viewsPath + $that.viewNameCamel + '/' + $that.viewNameCamel + '.';
+		const filePrefix = 'app/' + viewsPath + $that.mainDirectory + '/' + $that.viewNameCamel + '.';
 		const config     = {
 			viewNameCamel  : $that.viewNameCamel,
 			appNameCamel   : $that.config.get('appNameCamel'),

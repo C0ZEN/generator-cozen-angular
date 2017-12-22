@@ -8,8 +8,6 @@
 
 	const appName = 'Test Service';
 
-	let originalTimeout;
-
 	describe('generator-cozen-angular:service', () => {
 		beforeAll(() => {
 			return helpers.run(path.join(__dirname, '../../generators/service'))
@@ -20,15 +18,6 @@
 					authorLastName : 'Testelin',
 					authorEmail    : 'geoffrey.testelin@gmail.com'
 				});
-		});
-
-		beforeEach(() => {
-			originalTimeout                  = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-			jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
-		});
-
-		afterEach(() => {
-			jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
 		});
 
 		it('create service js file', () => {

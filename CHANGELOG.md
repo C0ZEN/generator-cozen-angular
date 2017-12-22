@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- New sub-generator view input `mainDirectory`. This is useful when you want to create a view with different file prefix and angular prefix than the directory name. e.g: login/authenticationLogin.service.js
+
+### Removed
+- Jasmine timeout stuff in the tests
 
 ## [0.7.1]
 ### Added

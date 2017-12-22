@@ -25,8 +25,9 @@
 	];
 
 	const hints = [
-		'The name of the view will be used to create a folder on your current path.',
-		'All generated files have references to this name, so choose it properly.'
+		'The name of the view will be used to create a prefix for each files name.',
+		'All angular files will also have this as prefix like <viewNameController>, <viewNameService>, ...',
+		'So all generated files have references to this name, so choose it properly.'
 	];
 
 	module.exports = class AppName {

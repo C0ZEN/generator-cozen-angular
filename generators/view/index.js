@@ -25,6 +25,7 @@
 	const isThisYou     = require('../common/inputs/isThisYou.js');
 	const author        = require('../common/inputs/author.js');
 	const authorEmail   = require('../common/inputs/authorEmail.js');
+	const mainDirectory = require('./inputs/mainDirectory.js');
 	const viewName      = require('./inputs/viewName.js');
 	const viewPath      = require('./inputs/viewPath.js');
 	const stateName     = require('./inputs/stateName.js');
@@ -89,6 +90,10 @@
 			}
 			/* istanbul ignore next */
 			return null;
+		}
+
+		inputMainDirectory() {
+			return mainDirectory.set(this);
 		}
 
 		inputViewName() {
