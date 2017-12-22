@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Link to GitHub for the docs
+- Link to the beautiful documentation on the readme
+
+### Changed
+- Favicon
 
 ## [0.7.2]
 ### Added
