@@ -1,5 +1,5 @@
 # generator-cozen-angular 
-[![Software License][license-image]](LICENSE) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Maintainability][code-climate-maintainability-image]][code-climate-maintainability-url] [![Test Coverage][code-climate-coverage-image]][code-climate-coverage-url]
+[![Software License][license-image]](LICENSE) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![devDependencies Status][daviddm-dev-image]][daviddm-dev-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Maintainability][code-climate-maintainability-image]][code-climate-maintainability-url] [![Test Coverage][code-climate-coverage-image]][code-climate-coverage-url]
 > Use this yeoman generator to help you create AngularJS applications based to works properly with the Altran Angular Library.
 
 ## Installation
@@ -86,8 +86,10 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [npm-url]: https://npmjs.org/package/generator-cozen-angular
 [travis-image]: https://travis-ci.org/C0ZEN/generator-cozen-angular.svg?branch=master
 [travis-url]: https://travis-ci.org/C0ZEN/generator-cozen-angular
-[daviddm-image]: https://david-dm.org/C0ZEN/generator-cozen-angular.svg?theme=shields.io
+[daviddm-image]: https://david-dm.org/C0ZEN/generator-cozen-angular/status.svg
 [daviddm-url]: https://david-dm.org/C0ZEN/generator-cozen-angular
+[daviddm-dev-image]: https://david-dm.org/C0ZEN/generator-cozen-angular/dev-status.svg
+[daviddm-dev-url]: https://david-dm.org/C0ZEN/generator-cozen-angular?type=dev
 [coveralls-image]: https://coveralls.io/repos/github/C0ZEN/generator-cozen-angular/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/C0ZEN/generator-cozen-angular?branch=master
 [code-climate-maintainability-image]: https://api.codeclimate.com/v1/badges/f44fecff6e1c0ba26bf9/maintainability

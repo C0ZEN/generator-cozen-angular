@@ -10,6 +10,8 @@
 	const appName      = 'Test App';
 	const appNameKebab = _.kebabCase(appName);
 
+	jest.setTimeout(30000);
+
 	describe('generator-cozen-angular:app', () => {
 		beforeAll(() => {
 			return helpers.run(path.join(__dirname, '../../generators/app'))

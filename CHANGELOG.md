@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Dev dependencies badge
+
+### Changed
+- Jest and Jest-CLI npm version
+
+### Fixed
+- Error with Jest new version (fewer timeout)
 
 ## [0.7.8]
 ### Changed
