@@ -7,7 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Grunt
-- Grunt tasks to create a release easily and automatically
+- Grunt tasks to create a release easily and automatically (run test, change version, publish, commit and tag)
 
 ### Changed
 - Docs styles and colors
