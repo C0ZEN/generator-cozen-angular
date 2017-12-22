@@ -35,9 +35,9 @@ a {
 // Btn color
 .btn {
   border-color     : $color-clouds;
-  background-color : fade-out($color-clouds, 90);
+  background-color : fade-out($color-clouds, 0.9);
   &:hover, &:focus, &:active {
-    background-color : fade-out($color-clouds, 70);
+    background-color : fade-out($color-clouds, 0.7);
   }
 }
 // Blockquote color
