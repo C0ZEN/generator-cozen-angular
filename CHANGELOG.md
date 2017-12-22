@@ -12,6 +12,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Favicon
 - References to Altran on the Jekyll config file
+- Docs styles and colors
 
 ### Fixed
 - Wrong import less path for view sub-generator
