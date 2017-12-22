@@ -6,13 +6,13 @@
 	const assert  = require('yeoman-assert');
 	const helpers = require('yeoman-test');
 
-	const appName = 'Test View for old user';
+	const appName = 'test';
 
 	describe('generator-cozen-angular:view', () => {
 		beforeAll(() => {
 			return helpers.run(path.join(__dirname, '../../generators/view'))
 				.withPrompts({
-					appName        : appName,
+					appName,
 					isThisYou      : true,
 					authorFirstName: 'Geoffrey',
 					authorLastName : 'Testelin',
@@ -22,37 +22,37 @@
 
 		it('create view js files', () => {
 			assert.file([
-				'app/views/viewName/viewName.controller.js',
-				'app/views/viewName/viewName.state.js',
-				'app/views/viewName/viewName.service.js',
-				'app/views/viewName/viewName.constant.js'
+				'app/views/mainDirectory/viewName.controller.js',
+				'app/views/mainDirectory/viewName.state.js',
+				'app/views/mainDirectory/viewName.service.js',
+				'app/views/mainDirectory/viewName.constant.js'
 			]);
 		});
 
 		it('create view html files', () => {
 			assert.file([
-				'app/views/viewName/viewName.template.html'
+				'app/views/mainDirectory/viewName.template.html'
 			]);
 		});
 
 		it('create view styles files', () => {
 			assert.file([
-				'app/views/viewName/styles/viewName.less',
-				'app/views/viewName/styles/viewName.mixins.less',
-				'app/views/viewName/styles/viewName.variables.less'
+				'app/views/mainDirectory/styles/viewName.less',
+				'app/views/mainDirectory/styles/viewName.mixins.less',
+				'app/views/mainDirectory/styles/viewName.variables.less'
 			]);
 		});
 
 		it('create view languages files', () => {
 			assert.file([
-				'app/views/viewName/languages/fr.json',
-				'app/views/viewName/languages/en.json'
+				'app/views/mainDirectory/languages/fr.json',
+				'app/views/mainDirectory/languages/en.json'
 			]);
 		});
 
-		it('create main less file', () => {
+		it('create or update main less file', () => {
 			assert.file([
-				'app/styles/less/' + appName + '.less'
+				'app/styles/less/main.less'
 			]);
 		});
 	});

@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Grunt
+- Grunt tasks to create a release easily and automatically
+
+### Changed
+- Docs styles and colors
+
+### Fixed
+- Timeout errors with Travis CI
+- View test by adding default path for less main file when there is no config
 
 ## [0.7.4]
 ### Changed
