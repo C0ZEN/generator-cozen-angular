@@ -46,7 +46,7 @@
 			let styleFile = $that.fs.read(styleFilePath);
 			styleFile += '\n';
 			styleFile += '@import (less) "../../views/' + $that.viewPath || '';
-			styleFile += $that.viewNameCamel + '/styles/' + $that.viewNameCamel + '.less';
+			styleFile += $that.mainDirectory + '/styles/' + $that.viewNameCamel + '.less';
 			$that.fs.write(styleFilePath, styleFile);
 		}
 	};

@@ -13,6 +13,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Favicon
 - References to Altran on the Jekyll config file
 
+### Fixed
+- Wrong import less path for view sub-generator
+
 ## [0.7.2]
 ### Added
 - New sub-generator view input `mainDirectory`. This is useful when you want to create a view with different file prefix and angular prefix than the directory name. e.g: login/authenticationLogin.service.js
