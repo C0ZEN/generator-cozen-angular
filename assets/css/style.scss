@@ -1,13 +1,14 @@
+---
+---
 @import "{{ site.theme }}";
 
 /// VARIABLES ///
-
-// Colors
 $color-midnight-blue : #2C3E50;
 $color-peter-river : #3498DB;
 $color-turquoise : #1ABC9C;
 $color-green-sea : #16A085;
 $color-clouds : #ECF0F1;
+$color-belize-hole : #2980B9;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Titles color
@@ -17,7 +18,7 @@ $color-clouds : #ECF0F1;
 .main-content h4,
 .main-content h5,
 .main-content h6 {
-  color : $color-peter-river;
+  color : $color-belize-hole;
 }
 // Override the page header background
 .page-header {
@@ -33,14 +34,17 @@ a {
 }
 // Btn color
 .btn {
-  border-color     : $color-clouds;
-  background-color : fade_out($color-clouds, 90);
+  border-color     : fade-out($color-clouds, 0.2);
+  background-color : fade-out($color-clouds, 0.9);
+  color            : $color-clouds;
   &:hover, &:focus, &:active {
-    background-color : fade_out($color-clouds, 70);
+    border-color     : fade-out($color-clouds, 0.1);
+    background-color : fade-out($color-clouds, 0.8);
+    color            : $color-clouds;
   }
 }
 // Blockquote color
 .main-content blockquote {
-  border-left : 0.3rem solid $color-peter-river;
+  border-left : 0.3rem solid $color-turquoise;
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
