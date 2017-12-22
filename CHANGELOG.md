@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Favicon
+- References to Altran on the Jekyll config file
 
 ## [0.7.2]
 ### Added
