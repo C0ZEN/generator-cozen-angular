@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.7.5]
 ### Added
 - Grunt
 - Grunt tasks to create a release easily and automatically (run test, change version, publish, commit and tag)
