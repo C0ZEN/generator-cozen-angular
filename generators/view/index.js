@@ -36,6 +36,7 @@
 	const writingHtmlFiles      = require('./writing/htmlFiles.js');
 	const writingStylesFiles    = require('./writing/stylesFiles.js');
 	const writingLanguagesFiles = require('./writing/languagesFiles.js');
+	const writinMainLessFile    = require('./writing/mainLessFile.js');
 
 	module.exports = class extends Generator {
 		initializing() {
@@ -127,6 +128,7 @@
 			writingHtmlFiles(this);
 			writingStylesFiles(this);
 			writingLanguagesFiles(this);
+			writinMainLessFile(this);
 		}
 
 		conflicts() {

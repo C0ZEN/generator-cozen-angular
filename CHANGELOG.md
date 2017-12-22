@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Configuration for Jest to notify and show verbose tests 
+
+### Fixed
+[Issue #27](https://github.com/C0ZEN/generator-cozen-angular/issues/27)
 
 ## [0.7.7]
 ### Changed
