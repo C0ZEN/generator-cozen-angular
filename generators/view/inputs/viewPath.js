@@ -35,6 +35,12 @@
 
 	module.exports = class AppName {
 		static set($that) {
+
+			hints.preview = [
+				'You set that the main directory is "' + $that.mainDirectory + '"',
+				'The current destination will be "app/views/' + $that.mainDirectory + '"'
+			];
+
 			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints.whatIsIt);
 			logs.hintsMultiline($that, hints.example);
