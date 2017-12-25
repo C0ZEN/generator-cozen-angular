@@ -54,6 +54,12 @@ To create a new filter:
 yo cozen-angular:filter
 ```
 
+To create a new constant:
+
+```bash
+yo cozen-angular:constant
+```
+
 ## Contributing
 
 Check out the [Contributing](CONTRIBUTING.md) file.
