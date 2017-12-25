@@ -33,21 +33,28 @@
 		'Enter an existing theme or enter a new one that you will create in a few.'
 	];
 
-	module.exports = $that => {
-		logs.hintHeader($that);
-		logs.hintsMultiline($that, hints);
+	module.exports = class Theme {
+		static set($that) {
 
-		$that.log('Current theme list :');
-		$that.log(chalk.hex(colors.get('cyan'))('origin'));
-		$that.log(chalk.hex(colors.get('cyan'))('altran-portail-france'));
-		$that.log(chalk.hex(colors.get('cyan'))('et-banking'));
-		$that.log();
+			logs.hintHeader($that);
+			logs.hintsMultiline($that, hints);
 
-		return $that.prompt(prompts).then($response => {
+			$that.log('Current theme list :');
+			$that.log(chalk.hex(colors.get('cyan'))('origin'));
+			$that.log(chalk.hex(colors.get('cyan'))('altran-portail-france'));
+			$that.log(chalk.hex(colors.get('cyan'))('et-banking'));
+			$that.log();
+
+			return $that.prompt(prompts).then($response => {
+				this.onSuccess($that, $response);
+			});
+		}
+
+		static onSuccess($that, $response) {
 			$that.theme = $response.theme;
 			$that.config.set('theme', $that.theme);
 			$that.log();
-		});
+		}
 	};
 
 })();

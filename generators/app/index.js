@@ -75,19 +75,19 @@
 		}
 
 		inputAppDescription() {
-			return appDescription(this);
+			return appDescription.set(this);
 		}
 
 		inputTheme() {
-			return theme(this);
+			return theme.set(this);
 		}
 
 		inputLang() {
-			return lang(this);
+			return lang.set(this);
 		}
 
 		inputColor() {
-			return color(this);
+			return color.set(this);
 		}
 
 		inputAuthor() {
@@ -95,7 +95,7 @@
 		}
 
 		inputAuthorEmail() {
-			return authorEmail(this);
+			return authorEmail.set(this);
 		}
 
 		writing() {

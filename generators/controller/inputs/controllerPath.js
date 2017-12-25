@@ -26,7 +26,7 @@
 		'By default, it is: scripts/controllers'
 	];
 
-	module.exports = class AppName {
+	module.exports = class ControllerPath {
 		static set($that) {
 			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);

@@ -25,13 +25,19 @@
 		'Simply set up your email.'
 	];
 
-	module.exports = $that => {
-		logs.hintHeader($that);
-		logs.hints($that, hints);
+	module.exports = class AuthorEmail {
+		static set($that) {
+			logs.hintHeader($that);
+			logs.hints($that, hints);
 
-		prompts[0].default = $that.config.get('authorEmail') || $that.user.git.email() || _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@cozen.com';
+			prompts[0].default = $that.config.get('authorEmail') || $that.user.git.email() || _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@cozen.com';
 
-		return $that.prompt(prompts).then($response => {
+			return $that.prompt(prompts).then($response => {
+				this.onSuccess($that, $response);
+			});
+		}
+
+		static onSuccess($that, $response) {
 			$that.authorEmail = $response.authorEmail;
 			$that.authorShort = $that.authorFirstName + ' ' + $that.authorLastName;
 			$that.authorLong  = $that.authorFirstName + ' ' + $that.authorLastName + ' ' + $that.authorEmail;
@@ -39,7 +45,7 @@
 			$that.config.set('authorShort', $that.authorShort);
 			$that.config.set('authorLong', $that.authorLong);
 			$that.log();
-		});
+		}
 	};
 
 })();

@@ -85,5 +85,6 @@
         ]
     },
     "repository": "C0ZEN/generator-cozen-angular",
-    "license": "MIT"
+    "license": "MIT",
+    "jestJasmineTimeout": 30000
 }

@@ -1,10 +1,10 @@
 /**
  * Generated header by C0ZEN for generator-cozen-angular project
- * Generated file appDescription on WebStorm
+ * Generated file constantName on WebStorm
  *
  * Created by: Geoffrey "C0ZEN" Testelin
- * Date: 18/11/2017
- * Time: 23:19
+ * Date: 25/12/2017
+ * Time: 21:07
  * Version: 1.0.0
  */
 (function () {
@@ -15,22 +15,20 @@
 	const prompts = [
 		{
 			type   : 'input',
-			name   : 'appDescription',
-			message: 'Description of your app :',
-			default: 'This is the description for the project'
+			name   : 'constantName',
+			message: 'Name of the filter :',
+			default: 'constantName'
 		}
 	];
 
 	const hints = [
-		'Just describe the purpose of your project.'
+		'The name of the constant should be write on camelCase.'
 	];
 
-	module.exports = class AppDescription {
+	module.exports = class ConstantName {
 		static set($that) {
 			logs.hintHeader($that);
-			logs.hints($that, hints);
-
-			prompts[0].default += ' ' + $that.appName;
+			logs.hintsMultiline($that, hints);
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
@@ -38,8 +36,8 @@
 		}
 
 		static onSuccess($that, $response) {
-			$that.appDescription = $response.appDescription;
-			$that.config.set('appDescription', $that.appDescription);
+			$that.constantName = $response.constantName;
+			$that.config.set('constantName', $that.constantName);
 			$that.log();
 		}
 	};

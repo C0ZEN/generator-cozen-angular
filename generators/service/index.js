@@ -79,7 +79,7 @@
 		inputAuthorEmail() {
 			/* istanbul ignore next */
 			if (!this.isThisYou) {
-				return authorEmail(this);
+				return authorEmail.set(this);
 			}
 			/* istanbul ignore next */
 			return null;
@@ -114,7 +114,7 @@
 
 		end() {
 			logs.priority(this, 'end', false);
-			this.log(chalk.hex(colors.get('green'))('Your service is ready ;)'));
+			this.log(chalk.hex(colors.get('green'))('Your service file is ready ;)'));
 		}
 	};
 

@@ -25,7 +25,7 @@
 		'The name of the service should be write on camelCase.'
 	];
 
-	module.exports = class AppName {
+	module.exports = class ServiceName {
 		static set($that) {
 			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);

@@ -8,7 +8,7 @@
 
 	const appName = 'Test Filter';
 
-	let originalTimeout;
+	jest.setTimeout(require('../../package.json').jestJasmineTimeout);
 
 	describe('generator-cozen-angular:filter', () => {
 		beforeAll(() => {
@@ -20,15 +20,6 @@
 					authorLastName : 'Testelin',
 					authorEmail    : 'geoffrey.testelin@gmail.com'
 				});
-		});
-
-		beforeEach(() => {
-			originalTimeout                  = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-			jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
-		});
-
-		afterEach(() => {
-			jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
 		});
 
 		it('create filter js file', () => {

@@ -7,6 +7,8 @@
 
 	const appName = 'Test Config';
 
+	jest.setTimeout(require('../../package.json').jestJasmineTimeout);
+
 	describe('generator-cozen-angular:config', () => {
 		beforeAll(() => {
 			return helpers.run(path.join(__dirname, '../../generators/config'))

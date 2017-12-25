@@ -5,8 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- New sub-generator `constant` to create a constant file
+
 ### Changed
 - Hint for the view path
+- Renamed most of the module names to match with the file name
+- Refactored some input files to bring consistency over generators
+- Added new jest config property to change globally the jasmine timeout
 
 ## [0.7.9]
 ### Added

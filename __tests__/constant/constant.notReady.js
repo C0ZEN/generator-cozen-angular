@@ -7,9 +7,9 @@
 
 	jest.setTimeout(require('../../package.json').jestJasmineTimeout);
 
-	describe('generator-cozen-angular:controller', () => {
+	describe('generator-cozen-angular:constant', () => {
 		beforeAll(() => {
-			return helpers.run(path.join(__dirname, '../../generators/controller'))
+			return helpers.run(path.join(__dirname, '../../generators/constant'))
 				.withPrompts({
 					areYouReady: false
 				})

@@ -8,6 +8,8 @@
 
 	const appName = 'Test Service';
 
+	jest.setTimeout(require('../../package.json').jestJasmineTimeout);
+
 	describe('generator-cozen-angular:service', () => {
 		beforeAll(() => {
 			return helpers.run(path.join(__dirname, '../../generators/service'))

@@ -40,18 +40,24 @@
 		]
 	};
 
-	module.exports = $that => {
-		logs.hintHeader($that);
-		logs.hintsMultiline($that, hints.backgroundColor);
-		logs.hintsMultiline($that, hints.themeColor);
+	module.exports = class Color {
+		static set($that) {
+			logs.hintHeader($that);
+			logs.hintsMultiline($that, hints.backgroundColor);
+			logs.hintsMultiline($that, hints.themeColor);
 
-		return $that.prompt(prompts).then($response => {
+			return $that.prompt(prompts).then($response => {
+				this.onSuccess($that, $response);
+			});
+		}
+
+		static onSuccess($that, $response) {
 			$that.backgroundColor = $response.backgroundColor;
 			$that.themeColor      = $response.themeColor;
 			$that.config.set('backgroundColor', $that.backgroundColor);
 			$that.config.set('themeColor', $that.themeColor);
 			$that.log();
-		});
+		}
 	};
 
 })();

@@ -21,7 +21,7 @@
 		}
 	];
 
-	module.exports = class AppName {
+	module.exports = class IsThisYou {
 		static set($that) {
 			if ($that.config.get('authorEmail')) {
 				logs.hintHeader($that);

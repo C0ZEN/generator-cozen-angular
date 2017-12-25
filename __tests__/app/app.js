@@ -10,7 +10,7 @@
 	const appName      = 'Test App';
 	const appNameKebab = _.kebabCase(appName);
 
-	jest.setTimeout(30000);
+	jest.setTimeout(require('../../package.json').jestJasmineTimeout);
 
 	describe('generator-cozen-angular:app', () => {
 		beforeAll(() => {

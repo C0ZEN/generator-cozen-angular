@@ -1,10 +1,10 @@
 /**
  * Generated header by C0ZEN for generator-cozen-angular project
- * Generated file appDescription on WebStorm
+ * Generated file constantPath on WebStorm
  *
  * Created by: Geoffrey "C0ZEN" Testelin
- * Date: 18/11/2017
- * Time: 23:19
+ * Date: 25/12/2017
+ * Time: 21:08
  * Version: 1.0.0
  */
 (function () {
@@ -15,22 +15,21 @@
 	const prompts = [
 		{
 			type   : 'input',
-			name   : 'appDescription',
-			message: 'Description of your app :',
-			default: 'This is the description for the project'
+			name   : 'constantPath',
+			message: 'Path of the constant :',
+			default: ''
 		}
 	];
 
 	const hints = [
-		'Just describe the purpose of your project.'
+		'This will allow you to override the default path for the constant',
+		'By default, it is: scripts/constants'
 	];
 
-	module.exports = class AppDescription {
+	module.exports = class ConstantPath {
 		static set($that) {
 			logs.hintHeader($that);
-			logs.hints($that, hints);
-
-			prompts[0].default += ' ' + $that.appName;
+			logs.hintsMultiline($that, hints);
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
@@ -38,8 +37,8 @@
 		}
 
 		static onSuccess($that, $response) {
-			$that.appDescription = $response.appDescription;
-			$that.config.set('appDescription', $that.appDescription);
+			$that.constantPath = $response.constantPath;
+			$that.config.set('constantPath', $that.constantPath);
 			$that.log();
 		}
 	};

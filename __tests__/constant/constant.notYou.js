@@ -10,21 +10,21 @@
 
 	jest.setTimeout(require('../../package.json').jestJasmineTimeout);
 
-	describe('generator-cozen-angular:filter', () => {
+	describe('generator-cozen-angular:constant', () => {
 		beforeAll(() => {
-			return helpers.run(path.join(__dirname, '../../generators/filter'))
+			return helpers.run(path.join(__dirname, '../../generators/constant'))
 				.withPrompts({
 					appName        : appName,
-					isThisYou      : true,
+					isThisYou      : false,
 					authorFirstName: 'Geoffrey',
 					authorLastName : 'Testelin',
 					authorEmail    : 'geoffrey.testelin@gmail.com'
 				});
 		});
 
-		it('create filter js file', () => {
+		it('create constant js file', () => {
 			assert.file([
-				'app/scripts/filters/filterName.filter.js'
+				'app/scripts/constants/constantName.constant.js'
 			]);
 		});
 	});

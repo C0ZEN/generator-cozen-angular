@@ -26,7 +26,7 @@
 		'By default, it is: scripts/filters'
 	];
 
-	module.exports = class AppName {
+	module.exports = class FilterPath {
 		static set($that) {
 			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);

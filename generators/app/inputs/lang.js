@@ -33,20 +33,27 @@
 		'The default language of your application.'
 	];
 
-	module.exports = $that => {
-		logs.hintHeader($that);
-		logs.hints($that, hints);
+	module.exports = class Lang {
+		static set($that) {
 
-		$that.log('Current lang list :');
-		$that.log(chalk.hex(colors.get('cyan'))('fr'));
-		$that.log(chalk.hex(colors.get('cyan'))('en'));
-		$that.log();
+			logs.hintHeader($that);
+			logs.hints($that, hints);
 
-		return $that.prompt(prompts).then($response => {
+			$that.log('Current lang list :');
+			$that.log(chalk.hex(colors.get('cyan'))('fr'));
+			$that.log(chalk.hex(colors.get('cyan'))('en'));
+			$that.log();
+
+			return $that.prompt(prompts).then($response => {
+				this.onSuccess($that, $response);
+			});
+		}
+
+		static onSuccess($that, $response) {
 			$that.lang = _.lowerCase($response.lang);
 			$that.config.set('lang', $that.lang);
 			$that.log();
-		});
+		}
 	};
 
 })();

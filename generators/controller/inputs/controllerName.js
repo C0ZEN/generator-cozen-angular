@@ -25,7 +25,7 @@
 		'The name of the controller should be write on camelCase.'
 	];
 
-	module.exports = class AppName {
+	module.exports = class ControllerName {
 		static set($that) {
 			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);

@@ -5,6 +5,8 @@
 	const path    = require('path');
 	const helpers = require('yeoman-test');
 
+	jest.setTimeout(require('../../package.json').jestJasmineTimeout);
+
 	describe('generator-cozen-angular:app', () => {
 		beforeAll(() => {
 			return helpers

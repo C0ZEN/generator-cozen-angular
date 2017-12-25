@@ -26,7 +26,7 @@
 		'By default, it is: scripts/services'
 	];
 
-	module.exports = class AppName {
+	module.exports = class ServicePath {
 		static set($that) {
 			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);

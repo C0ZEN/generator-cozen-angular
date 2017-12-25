@@ -8,6 +8,8 @@
 
 	const appName = 'Test Controller';
 
+	jest.setTimeout(require('../../package.json').jestJasmineTimeout);
+
 	describe('generator-cozen-angular:controller', () => {
 		beforeAll(() => {
 			return helpers.run(path.join(__dirname, '../../generators/controller'))
