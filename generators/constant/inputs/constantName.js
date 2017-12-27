@@ -16,7 +16,7 @@
 		{
 			type   : 'input',
 			name   : 'constantName',
-			message: 'Name of the filter :',
+			message: 'Name of the constant :',
 			default: 'constantName'
 		}
 	];

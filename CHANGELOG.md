@@ -8,6 +8,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Readme to add stuff about the new sub-generator `constant`
 
+### Fixed
+- Wrong input hint text (constant sub-generator)
+
 ## [0.8.0]
 ### Added
 - New sub-generator `constant` to create a constant file
