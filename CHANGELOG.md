@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Wrong input hint text (constant sub-generator)
+- Wrong constant name
 
 ## [0.8.0]
 ### Added
