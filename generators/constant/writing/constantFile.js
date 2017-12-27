@@ -18,7 +18,7 @@
 		const config      = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),
-			constantName  : $that.constantName + 'Constant',
+			constantName  : $that.constantName + 'Constants',
 			nowDate       : $that.nowDate,
 			nowTime       : $that.nowTime,
 			authorShort   : $that.config.get('authorShort'),
