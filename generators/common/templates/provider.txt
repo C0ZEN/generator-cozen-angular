@@ -1,0 +1,19 @@
+<%- include('../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.provider('<%= providerName %>', <%= providerName %>Provider);
+
+	<%= providerName %>Provider.$inject = [];
+
+	function <%= providerName %>Provider() {
+		this.$get = altranDatePicker;
+
+        function <%= providerName %>() {
+            return {};
+        }
+	}
+
+})(window.angular);

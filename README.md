@@ -60,6 +60,12 @@ To create a new constant:
 yo cozen-angular:constant
 ```
 
+To create a new provider:
+
+```bash
+yo cozen-angular:provider
+```
+
 ## Contributing
 
 Check out the [Contributing](CONTRIBUTING.md) file.
