@@ -14,7 +14,15 @@
 
 	module.exports = $that => {
 
-		const styleFilePath = path.join(process.cwd(), 'app/styles/less', $that.config.get('appNameKebab') || 'main.less');
+		let styleFilePath = '';
+
+		/* istanbul ignore next */
+		if ($that.config.get('appNameKebab')) {
+			styleFilePath = path.join(process.cwd(), 'app/styles/less', $that.config.get('appNameKebab') + '.less');
+		}
+		else {
+			styleFilePath = path.join(process.cwd(), 'app/styles/less', 'main.less');
+		}
 
 		/* istanbul ignore if */
 		if ($that.fs.exists(styleFilePath)) {
@@ -26,11 +34,10 @@
 		}
 
 		function write() {
-			let styleFile = $that.fs.read(styleFilePath);
-			styleFile += '\n';
-			styleFile += '@import (less) "../../views/' + $that.viewPath;
-			styleFile += $that.mainDirectory + '/styles/' + $that.viewNameCamel + '.less';
-			$that.fs.write(styleFilePath, styleFile);
+			let importLine = '@import (less) "../../views/';
+			importLine += path.join($that.viewPath, $that.mainDirectory, 'styles', $that.viewNameCamel + '.less";');
+			importLine     = importLine.replace(/\\/g, '/');
+			$that.fs.append(styleFilePath, importLine);
 		}
 	};
 

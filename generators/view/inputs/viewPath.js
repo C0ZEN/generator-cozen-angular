@@ -23,13 +23,12 @@
 
 	const hints = {
 		whatIsIt: [
-			'The path of the view is the path after the views folder.',
-			'By default, a view will be added to "app/views" folder'
+			'The path of the view is the path after the views folder.'
 		],
 		example : [
 			'Example:',
 			'If you want to create the view "app/views/authentication", let this field empty.',
-			'If you want to create the view "app/views/authentication/login", this fields should be "login/"'
+			'If you want to create the view "app/views/authentication/login", this fields should be "login"'
 		]
 	};
 

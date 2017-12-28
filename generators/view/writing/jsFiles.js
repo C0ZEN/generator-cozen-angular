@@ -13,8 +13,7 @@
 	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
-		const viewsPath  = utils.getViewsPath($that);
-		const filePrefix = 'app/' + viewsPath + $that.mainDirectory + '/' + $that.viewNameCamel + '.';
+		const filePath = utils.getViewsPath($that);
 		const config     = {
 			viewNameCamel  : $that.viewNameCamel,
 			appNameCamel   : $that.config.get('appNameCamel'),
@@ -30,13 +29,13 @@
 			stateName      : $that.stateName,
 			stateAbstract  : $that.stateAbstract,
 			currentVersion : $that.currentVersion,
-			viewPath       : viewsPath + $that.viewNameCamel + '/'
+			viewPath       : filePath + $that.viewNameCamel + '/'
 		};
 
-		utils.copyFileTplFrom($that, 'controller.txt', config, filePrefix + 'controller.js');
-		utils.copyFileTplFrom($that, 'service.txt', config, filePrefix + 'service.js');
-		utils.copyFileTplFrom($that, 'constant.txt', config, filePrefix + 'constant.js');
-		utils.copyFileTplFrom($that, 'state.txt', config, filePrefix + 'state.js');
+		utils.copyFileTplFrom($that, 'controller.txt', config, filePath + '.controller.js');
+		utils.copyFileTplFrom($that, 'service.txt', config, filePath + '.service.js');
+		utils.copyFileTplFrom($that, 'constant.txt', config, filePath + '.constant.js');
+		utils.copyFileTplFrom($that, 'state.txt', config, filePath + '.state.js');
 	};
 
 })();

@@ -13,9 +13,8 @@
 	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
-		const viewsPath  = utils.getViewsPath($that);
-		const filePrefix = 'app/' + viewsPath + $that.mainDirectory + '/' + $that.viewNameCamel + '.';
-		const config     = {
+		const filePath = utils.getViewsPath($that);
+		const config   = {
 			viewNameCamel : $that.viewNameCamel,
 			viewNameKebab : $that.viewNameKebab,
 			appNameKebab  : $that.config.get('appNameKebab'),
@@ -25,7 +24,7 @@
 			currentVersion: $that.currentVersion
 		};
 
-		utils.copyFileTpl($that, 'template.html', config, filePrefix + 'template.html');
+		utils.copyFileTpl($that, 'template.html', config, filePath + '.template.html');
 	};
 
 })();

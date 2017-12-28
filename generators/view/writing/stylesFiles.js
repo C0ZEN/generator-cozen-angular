@@ -13,9 +13,8 @@
 	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
-		const viewsPath  = utils.getViewsPath($that);
-		const filePrefix = 'app/' + viewsPath + $that.mainDirectory + '/styles/' + $that.viewNameCamel + '.';
-		const config     = {
+		const filePath = utils.getViewsPath($that, true);
+		const config   = {
 			viewNameCamel : $that.viewNameCamel,
 			viewNameKebab : $that.viewNameKebab,
 			appNameKebab  : $that.config.get('appNameKebab'),
@@ -25,9 +24,9 @@
 			currentVersion: $that.currentVersion
 		};
 
-		utils.copyFileTpl($that, 'styles/main.less', config, filePrefix + 'less');
-		utils.copyFileTpl($that, 'styles/mixins.less', config, filePrefix + 'mixins.less');
-		utils.copyFileTpl($that, 'styles/variables.less', config, filePrefix + 'variables.less');
+		utils.copyFileTpl($that, 'styles/main.less', config, filePath + '/styles/' + $that.viewNameCamel + '.less');
+		utils.copyFileTpl($that, 'styles/mixins.less', config, filePath + '/styles/' + $that.viewNameCamel + '.mixins.less');
+		utils.copyFileTpl($that, 'styles/variables.less', config, filePath + '/styles/' + $that.viewNameCamel + '.variables.less');
 	};
 
 })();

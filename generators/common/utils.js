@@ -57,8 +57,11 @@
 			});
 		}
 
-		static getViewsPath($that) {
-			return 'views/' + $that.viewPath || '';
+		static getViewsPath($that, $shorter) {
+			if ($shorter) {
+				return path.join(process.cwd(), 'app/views', $that.viewPath || '', $that.mainDirectory);
+			}
+			return path.join(process.cwd(), 'app/views', $that.viewPath || '', $that.mainDirectory, $that.viewNameCamel);
 		}
 	};
 

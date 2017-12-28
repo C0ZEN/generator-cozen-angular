@@ -20,9 +20,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Added the default path as default value for the constant path
 - Added the default path as default value for the controller path
 - Refactored the path constructor for most of the sub-generators
+- Changed the default path for the `view` sub-generator
+- Refactored the path constructor for the `view` sub-generator
+- Append a new line in the main.less file instead of write
 
 ### Fixed
 - Error with wrong variable in the provider template
+- Wrong path to edit the main.less file
+- Wrong content for the path of the main.less file
 
 ### Removed
 - Default callback path for the provider when the custom path is empty

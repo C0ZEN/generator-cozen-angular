@@ -13,8 +13,7 @@
 	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
-		const viewsPath  = utils.getViewsPath($that);
-		const filePrefix = 'app/' + viewsPath + $that.mainDirectory + '/languages/';
+		const filePath = utils.getViewsPath($that, true);
 		const config     = {
 			viewNameCamel      : $that.viewNameCamel,
 			viewNameKebab      : $that.viewNameKebab,
@@ -26,8 +25,8 @@
 			currentVersion     : $that.currentVersion
 		};
 
-		utils.copyFileTpl($that, 'languages/fr.json', config, filePrefix + 'fr.json');
-		utils.copyFileTpl($that, 'languages/en.json', config, filePrefix + 'en.json');
+		utils.copyFileTpl($that, 'languages/fr.json', config, filePath + '/languages/fr.json');
+		utils.copyFileTpl($that, 'languages/en.json', config, filePath + '/languages/en.json');
 	};
 
 })();
