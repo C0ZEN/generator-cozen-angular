@@ -13,9 +13,8 @@
 	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
-		const defaultPath = 'scripts/constants';
-		const filePrefix  = 'app/' + ($that.constantPath || defaultPath) + '/' + $that.constantName + '.';
-		const config      = {
+		const filePrefix = 'app/' + $that.constantPath + '/' + $that.fileName + '.';
+		const config     = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),
 			constantName  : $that.constantName + 'Constants',
@@ -25,7 +24,7 @@
 			currentVersion: $that.currentVersion
 		};
 
-		utils.copyFileTplFrom($that, 'constant.txt', config, filePrefix + 'constant.js');
+		utils.copyFileTplFrom($that, 'constant.txt', config, filePrefix + 'constants.js');
 	};
 
 })();

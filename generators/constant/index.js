@@ -27,6 +27,7 @@
 	const authorEmail = require('../common/inputs/authorEmail.js');
 	const constantName  = require('./inputs/constantName.js');
 	const constantPath  = require('./inputs/constantPath.js');
+	const fileName  = require('./inputs/fileName.js');
 
 	const writingConstantFile = require('./writing/constantFile.js');
 
@@ -93,6 +94,10 @@
 			return constantPath.set(this);
 		}
 
+		inputFileName() {
+			return fileName.set(this);
+		}
+
 		writing() {
 			this.now     = moment();
 			this.nowDate = this.now.format('DD/MM/YYYY');
@@ -114,7 +119,7 @@
 
 		end() {
 			logs.priority(this, 'end', false);
-			this.log(chalk.hex(colors.get('green'))('Your constant file is ready ;)'));
+			this.log(chalk.hex(colors.get('green'))('Your constant is ready ;)'));
 		}
 	};
 
