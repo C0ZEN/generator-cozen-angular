@@ -13,9 +13,8 @@
 	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
-		const defaultPath = 'scripts/providers';
-		const filePrefix  = 'app/' + ($that.providerPath || defaultPath) + '/' + $that.providerName + '.';
-		const config      = {
+		const filePrefix = 'app/' + $that.providerPath + '/' + $that.fileName + '.';
+		const config     = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),
 			providerName  : $that.providerName,

@@ -27,6 +27,7 @@
 	const authorEmail  = require('../common/inputs/authorEmail.js');
 	const providerName = require('./inputs/providerName.js');
 	const providerPath = require('./inputs/providerPath.js');
+	const fileName     = require('./inputs/fileName.js');
 
 	const writingProviderFile = require('./writing/providerFile.js');
 
@@ -93,6 +94,10 @@
 			return providerPath.set(this);
 		}
 
+		inputFileName() {
+			return fileName.set(this);
+		}
+
 		writing() {
 			this.now     = moment();
 			this.nowDate = this.now.format('DD/MM/YYYY');
@@ -114,7 +119,7 @@
 
 		end() {
 			logs.priority(this, 'end', false);
-			this.log(chalk.hex(colors.get('green'))('Your provider file is ready ;)'));
+			this.log(chalk.hex(colors.get('green'))('Your provider is ready ;)'));
 		}
 	};
 
