@@ -9,7 +9,7 @@
 	<%= providerName %>Provider.$inject = [];
 
 	function <%= providerName %>Provider() {
-		this.$get = altranDatePicker;
+		this.$get = <%= providerName %>;
 
         function <%= providerName %>() {
             return {};

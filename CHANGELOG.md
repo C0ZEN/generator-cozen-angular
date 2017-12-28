@@ -8,6 +8,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Partial header to add the name of the generator
 
+### Fixed
+- Error with wrong variable in the provider template
+
 ## [0.9.0]
 ### Added
 - New sub-generator `provider`
