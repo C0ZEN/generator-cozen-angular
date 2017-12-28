@@ -38,7 +38,7 @@
 			let property      = '';
 			const packageFile = this.getPackage($that);
 
-			/* istanbul ignore if */
+			/* istanbul ignore next */
 			if (packageFile && _.isObject(packageFile.yoCallbackConfig) && $key in packageFile.yoCallbackConfig) {
 				property = packageFile.yoCallbackConfig[$key];
 			}

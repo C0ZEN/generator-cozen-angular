@@ -17,13 +17,12 @@
 			type   : 'input',
 			name   : 'servicePath',
 			message: 'Path of the service :',
-			default: ''
+			default: 'scripts/services'
 		}
 	];
 
 	const hints = [
-		'This will allow you to override the default path for the service',
-		'By default, it is: scripts/services'
+		'This will allow you to override the default path for the service'
 	];
 
 	module.exports = class ServicePath {

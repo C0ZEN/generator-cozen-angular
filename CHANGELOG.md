@@ -19,6 +19,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Added the default path as default value for the filter path
 - Added the default path as default value for the constant path
 - Added the default path as default value for the controller path
+- Refactored the path constructor for most of the sub-generators
 
 ### Fixed
 - Error with wrong variable in the provider template

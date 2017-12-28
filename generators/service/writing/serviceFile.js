@@ -11,10 +11,11 @@
 	'use strict';
 
 	const utils = require('../../common/utils.js');
+	const path  = require('path');
 
 	module.exports = $that => {
-		const filePrefix = 'app/' + $that.servicePath + '/' + $that.fileName + '.';
-		const config     = {
+		const filePath = path.join('app', $that.servicePath, $that.fileName + '.service.js');
+		const config   = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),
 			serviceName   : $that.serviceName + 'Service',
@@ -24,7 +25,7 @@
 			currentVersion: $that.currentVersion
 		};
 
-		utils.copyFileTplFrom($that, 'service.txt', config, filePrefix + 'service.js');
+		utils.copyFileTplFrom($that, 'service.txt', config, filePath);
 	};
 
 })();

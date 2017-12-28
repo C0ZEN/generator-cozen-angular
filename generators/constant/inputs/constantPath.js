@@ -17,13 +17,12 @@
 			type   : 'input',
 			name   : 'constantPath',
 			message: 'Path of the constant :',
-			default: ''
+			default: 'scripts/constants'
 		}
 	];
 
 	const hints = [
-		'This will allow you to override the default path for the constant',
-		'By default, it is: scripts/constants'
+		'This will allow you to override the default path for the constant'
 	];
 
 	module.exports = class ConstantPath {

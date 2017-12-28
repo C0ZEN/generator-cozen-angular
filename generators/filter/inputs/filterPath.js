@@ -17,13 +17,12 @@
 			type   : 'input',
 			name   : 'filterPath',
 			message: 'Path of the filter :',
-			default: ''
+			default: 'scripts/filters'
 		}
 	];
 
 	const hints = [
-		'This will allow you to override the default path for the filter',
-		'By default, it is: scripts/filters'
+		'This will allow you to override the default path for the filter'
 	];
 
 	module.exports = class FilterPath {

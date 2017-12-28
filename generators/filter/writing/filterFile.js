@@ -11,10 +11,11 @@
 	'use strict';
 
 	const utils = require('../../common/utils.js');
+	const path  = require('path');
 
 	module.exports = $that => {
-		const filePrefix = 'app/' + $that.filterPath + '/' + $that.fileName + '.';
-		const config     = {
+		const filePath = path.join('app', $that.filterPath, $that.fileName + '.filter.js');
+		const config   = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),
 			filterName    : $that.filterName + 'Filter',
@@ -24,7 +25,7 @@
 			currentVersion: $that.currentVersion
 		};
 
-		utils.copyFileTplFrom($that, 'filter.txt', config, filePrefix + 'filter.js');
+		utils.copyFileTplFrom($that, 'filter.txt', config, filePath);
 	};
 
 })();

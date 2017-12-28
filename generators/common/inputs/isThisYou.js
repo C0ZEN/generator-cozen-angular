@@ -23,6 +23,8 @@
 
 	module.exports = class IsThisYou {
 		static set($that) {
+
+			/* istanbul ignore next */
 			if ($that.config.get('authorEmail')) {
 				logs.hintHeader($that);
 

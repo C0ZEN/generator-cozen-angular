@@ -11,10 +11,11 @@
 	'use strict';
 
 	const utils = require('../../common/utils.js');
+	const path  = require('path');
 
 	module.exports = $that => {
-		const filePrefix = 'app/' + $that.controllerPath + '/' + $that.fileName + '.';
-		const config     = {
+		const filePath = path.join('app', $that.controllerPath, $that.fileName + '.controller.js');
+		const config   = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),
 			controllerName: $that.controllerName + 'Controller',
@@ -24,7 +25,7 @@
 			currentVersion: $that.currentVersion
 		};
 
-		utils.copyFileTplFrom($that, 'controller.txt', config, filePrefix + 'controller.js');
+		utils.copyFileTplFrom($that, 'controller.txt', config, filePath);
 	};
 
 })();

@@ -11,10 +11,11 @@
 	'use strict';
 
 	const utils = require('../../common/utils.js');
+	const path  = require('path');
 
 	module.exports = $that => {
-		const filePrefix = 'app/' + $that.constantPath + '/' + $that.fileName + '.';
-		const config     = {
+		const filePath = path.join('app', $that.constantPath, $that.fileName + '.constant.js');
+		const config   = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),
 			constantName  : $that.constantName + 'Constants',
@@ -24,7 +25,7 @@
 			currentVersion: $that.currentVersion
 		};
 
-		utils.copyFileTplFrom($that, 'constant.txt', config, filePrefix + 'constants.js');
+		utils.copyFileTplFrom($that, 'constant.txt', config, filePath);
 	};
 
 })();
