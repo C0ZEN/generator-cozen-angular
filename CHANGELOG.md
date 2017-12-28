@@ -10,6 +10,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Changelog
+- The lang input is now a list instead of a textbox
+- The theme input is now a list instead of a textbox
 
 ## [0.10.0]
 ### Added

@@ -10,22 +10,28 @@
 (function () {
 	'use strict';
 
-	const chalkInstance = require('chalk');
-	const chalk         = new chalkInstance.constructor({
-		level  : 3,
-		enabled: true
-	});
-	const colors        = require('../../common/colors.js');
-	const _             = require('lodash');
-	const logs          = require('../../common/logs.js');
+	const _               = require('lodash');
+	const logs            = require('../../common/logs.js');
+	const longerGenerator = 2;
 
 	const prompts = [
 		{
-			type   : 'input',
+			type   : 'list',
 			name   : 'lang',
-			message: 'Default cozen-angular-lib lang :',
-			default: 'fr',
-			store  : true
+			message: 'Select a language:',
+			choices: [
+				{
+					name   : logs.choice('fr', 'français', longerGenerator),
+					value  : 'fr',
+					short  : 'fr',
+					checked: true
+				},
+				{
+					name : logs.choice('en', 'english', longerGenerator),
+					value: 'en',
+					short: 'en'
+				}
+			]
 		}
 	];
 
@@ -38,11 +44,6 @@
 
 			logs.hintHeader($that);
 			logs.hints($that, hints);
-
-			$that.log('Current lang list :');
-			$that.log(chalk.hex(colors.get('cyan'))('fr'));
-			$that.log(chalk.hex(colors.get('cyan'))('en'));
-			$that.log();
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

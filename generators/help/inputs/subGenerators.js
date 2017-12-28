@@ -15,15 +15,15 @@
 
 	const prompts = [
 		{
-			name   : 'subGenerators',
 			type   : 'list',
+			name   : 'subGenerators',
 			message: 'Select a sub-generator:',
 			choices: [
 				{
 					name   : logs.choice('app', 'create a new project', longerGenerator),
 					value  : 'app',
-					checked: true,
-					short  : 'app'
+					short  : 'app',
+					checked: true
 				},
 				{
 					name : logs.choice('config', 'update or create the configuration file for the whole project', longerGenerator),

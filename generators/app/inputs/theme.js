@@ -10,27 +10,37 @@
 (function () {
 	'use strict';
 
-	const chalkInstance = require('chalk');
-	const chalk         = new chalkInstance.constructor({
-		level  : 3,
-		enabled: true
-	});
-	const colors        = require('../../common/colors.js');
-	const logs          = require('../../common/logs.js');
+	const logs            = require('../../common/logs.js');
+	const longerGenerator = 21;
 
 	const prompts = [
 		{
-			type   : 'input',
+			type   : 'list',
 			name   : 'theme',
-			message: 'Default cozen-angular-lib theme :',
-			default: 'origin',
-			store  : true
+			message: 'Select a theme:',
+			choices: [
+				{
+					name   : logs.choice('origin', 'Default theme #legacy', longerGenerator),
+					value  : 'origin',
+					short  : 'origin',
+					checked: true
+				},
+				{
+					name : logs.choice('altran-portail-france', 'Altran portail project', longerGenerator),
+					value: 'altran-portail-france',
+					short: 'altran-portail-france'
+				},
+				{
+					name : logs.choice('et-banking', 'Eurotunnel project', longerGenerator),
+					value: 'et-banking',
+					short: 'et-banking'
+				}
+			]
 		}
 	];
 
 	const hints = [
-		'The theme is a pure dependency of the Cozen Angular Lib.',
-		'Enter an existing theme or enter a new one that you will create in a few.'
+		'The theme is a pure dependency of the Altran Angular Lib.'
 	];
 
 	module.exports = class Theme {
@@ -38,12 +48,6 @@
 
 			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
-
-			$that.log('Current theme list :');
-			$that.log(chalk.hex(colors.get('cyan'))('origin'));
-			$that.log(chalk.hex(colors.get('cyan'))('altran-portail-france'));
-			$that.log(chalk.hex(colors.get('cyan'))('et-banking'));
-			$that.log();
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
