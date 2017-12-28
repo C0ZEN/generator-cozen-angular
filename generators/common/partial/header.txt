@@ -1,5 +1,6 @@
 /**
  * Generated header by <%= authorShort %> for <%= appNameKebab %> project
+ * Created with: generator-cozen-angular
  *
  * Created by: <%= authorShort %>
  * Date: <%= nowDate %>
