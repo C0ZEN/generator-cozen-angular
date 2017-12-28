@@ -13,9 +13,8 @@
 	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
-		const defaultPath = 'scripts/filters';
-		const filePrefix  = 'app/' + ($that.filterPath || defaultPath) + '/' + $that.filterName + '.';
-		const config      = {
+		const filePrefix = 'app/' + $that.filterPath + '/' + $that.fileName + '.';
+		const config     = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),
 			filterName    : $that.filterName + 'Filter',

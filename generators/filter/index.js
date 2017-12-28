@@ -27,6 +27,7 @@
 	const authorEmail = require('../common/inputs/authorEmail.js');
 	const filterName  = require('./inputs/filterName.js');
 	const filterPath  = require('./inputs/filterPath.js');
+	const fileName    = require('./inputs/fileName.js');
 
 	const writingFilterFile = require('./writing/filterFile.js');
 
@@ -93,6 +94,10 @@
 			return filterPath.set(this);
 		}
 
+		inputFileName() {
+			return fileName.set(this);
+		}
+
 		writing() {
 			this.now     = moment();
 			this.nowDate = this.now.format('DD/MM/YYYY');
@@ -114,7 +119,7 @@
 
 		end() {
 			logs.priority(this, 'end', false);
-			this.log(chalk.hex(colors.get('green'))('Your filter file is ready ;)'));
+			this.log(chalk.hex(colors.get('green'))('Your filter is ready ;)'));
 		}
 	};
 
