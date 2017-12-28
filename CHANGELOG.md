@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.10.0]
 ### Added
 - New input `fileName` for the provider to customize the name of the file
 - New input `fileName` for the service to customize the name of the file
