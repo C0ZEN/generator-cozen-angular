@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - New input `fileName` for the service to customize the name of the file
 - New input `fileName` for the filter to customize the name of the file
 - New input `fileName` for the constant to customize the name of the file
+- New input `fileName` for the controller to customize the name of the file
 
 ### Changed
 - Partial header to add the name of the generator
@@ -17,6 +18,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Added the default path as default value for the service path
 - Added the default path as default value for the filter path
 - Added the default path as default value for the constant path
+- Added the default path as default value for the controller path
 
 ### Fixed
 - Error with wrong variable in the provider template
@@ -26,6 +28,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Default callback path for the service when the custom path is empty
 - Default callback path for the filter when the custom path is empty
 - Default callback path for the constant when the custom path is empty
+- Default callback path for the controller when the custom path is empty
 
 ## [0.9.0]
 ### Added

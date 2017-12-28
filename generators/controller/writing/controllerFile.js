@@ -13,9 +13,8 @@
 	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
-		const defaultPath = 'scripts/controllers';
-		const filePrefix  = 'app/' + ($that.controllerPath || defaultPath) + '/' + $that.controllerName + '.';
-		const config      = {
+		const filePrefix = 'app/' + $that.controllerPath + '/' + $that.fileName + '.';
+		const config     = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),
 			controllerName: $that.controllerName + 'Controller',
