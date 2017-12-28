@@ -50,6 +50,27 @@
 			}
 			this.hint($that, text);
 		}
+
+		static arrow() {
+			return chalk.hex(colors.get('orange'))(' >>> ');
+		}
+
+		static choiceHint($text) {
+			return this.arrow() + chalk.hex(colors.get('purple'))($text);
+		}
+
+		static choice($option, $text, $longerGenerator) {
+			return this.addWhitespaces($option, $longerGenerator) + this.choiceHint($text);
+		}
+
+		static addWhitespaces($text, $maxlength) {
+			const textLength = $text.length;
+			let text         = $text;
+			for (let i = 0; i < $maxlength - textLength; i++) {
+				text += ' ';
+			}
+			return text;
+		}
 	};
 
 })();

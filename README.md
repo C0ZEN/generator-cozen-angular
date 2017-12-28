@@ -16,13 +16,19 @@ npm install -g generator-cozen-angular
 Then generate your new project:
 
 ```bash
-yo cozen-angular
+yo cozen-angular [--skip-install]
 ```
 
 **Note:**  
 For now, the link to `cozen-angular-lib` is private.  
 The `grunt serve` task will not works.  
 This is a temporary situation, the lib will be pushed to the public in a few.
+
+To list all sub-generators and run them faster:
+
+```bash
+yo cozen-angular:help
+```
 
 To create or update a new generator config:
 
