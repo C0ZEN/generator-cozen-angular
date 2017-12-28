@@ -27,6 +27,7 @@
 	const authorEmail = require('../common/inputs/authorEmail.js');
 	const serviceName = require('./inputs/serviceName.js');
 	const servicePath = require('./inputs/servicePath.js');
+	const fileName    = require('./inputs/fileName.js');
 
 	const writingServiceFile = require('./writing/serviceFile.js');
 
@@ -93,6 +94,10 @@
 			return servicePath.set(this);
 		}
 
+		inputFileName() {
+			return fileName.set(this);
+		}
+
 		writing() {
 			this.now     = moment();
 			this.nowDate = this.now.format('DD/MM/YYYY');
@@ -114,7 +119,7 @@
 
 		end() {
 			logs.priority(this, 'end', false);
-			this.log(chalk.hex(colors.get('green'))('Your service file is ready ;)'));
+			this.log(chalk.hex(colors.get('green'))('Your service is ready ;)'));
 		}
 	};
 

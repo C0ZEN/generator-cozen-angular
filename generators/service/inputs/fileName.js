@@ -4,7 +4,7 @@
  *
  * Created by: Geoffrey "C0ZEN" Testelin
  * Date: 28/12/2017
- * Time: 19:07
+ * Time: 19:20
  * Version: 1.0.0
  */
 (function () {
@@ -23,7 +23,7 @@
 	const hints = [
 		'This is the name of the file - only the prefix - in camelCase.',
 		'We will automatically add the type and the extension as <fileName>.<type>.<extension>',
-		'Example: myFileName.provider.js'
+		'Example: myFileName.service.js'
 	];
 
 	module.exports = class FileName {
@@ -31,7 +31,7 @@
 			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
 
-			prompts[0].default = $that.providerName;
+			prompts[0].default = $that.serviceName;
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

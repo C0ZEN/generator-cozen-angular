@@ -7,16 +7,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - New input `fileName` for the provider to customize the name of the file
+- New input `fileName` for the service to customize the name of the file
 
 ### Changed
 - Partial header to add the name of the generator
 - Added the default path as default value for the provider path
+- Added the default path as default value for the service path
 
 ### Fixed
 - Error with wrong variable in the provider template
 
 ### Removed
 - Default callback path for the provider when the custom path is empty
+- Default callback path for the service when the custom path is empty
 
 ## [0.9.0]
 ### Added
