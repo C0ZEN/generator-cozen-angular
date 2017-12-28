@@ -24,7 +24,7 @@ For now, the link to `cozen-angular-lib` is private.
 The `grunt serve` task will not works.  
 This is a temporary situation, the lib will be pushed to the public in a few.
 
-To update or create a new generator config:
+To create or update a new generator config:
 
 ```bash
 yo cozen-angular:config
