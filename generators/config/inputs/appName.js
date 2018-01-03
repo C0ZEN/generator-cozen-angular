@@ -38,7 +38,6 @@
 
 	module.exports = class AppName {
 		static set($that) {
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
 
 			return $that.prompt(prompts).then($response => {

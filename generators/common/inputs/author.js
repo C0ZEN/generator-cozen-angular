@@ -42,7 +42,6 @@
 
 	module.exports = class Author {
 		static set($that) {
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
 
 			prompts[0].default = $that.config.get('authorFirstName') || user.getUserFirstname($that);

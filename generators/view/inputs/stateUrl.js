@@ -10,27 +10,28 @@
 (function () {
 	'use strict';
 
-	const logs = require('../../common/logs.js');
+	const logs  = require('../../common/logs.js');
+	const utils = require('../../common/utils.js');
 
 	const prompts = [
 		{
 			type   : 'input',
 			name   : 'stateUrl',
-			message: 'Url of the state :',
-			default: 'state-url/:someToken'
+			message: 'Url of the state :'
 		}
 	];
 
 	const hints = [
 		'The url of the view is the one visible in the browser.',
-		'It should be write as kebab-case.',
-		'You can add visible param as well'
+		'You can add visible param as well like "url/:param".',
+		utils.namingConvention('1')
 	];
 
-	module.exports = class AppName {
+	module.exports = class StateUrl {
 		static set($that) {
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $that.viewNameKebab;
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

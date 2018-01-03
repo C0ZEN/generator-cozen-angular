@@ -46,7 +46,6 @@
 	module.exports = class Theme {
 		static set($that) {
 
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
 
 			return $that.prompt(prompts).then($response => {

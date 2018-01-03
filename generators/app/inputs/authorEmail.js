@@ -27,7 +27,6 @@
 
 	module.exports = class AuthorEmail {
 		static set($that) {
-			logs.hintHeader($that);
 			logs.hints($that, hints);
 
 			prompts[0].default = $that.config.get('authorEmail') || $that.user.git.email() || _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@cozen.com';

@@ -36,10 +36,6 @@
 			}
 		}
 
-		static hintHeader($that) {
-			$that.log(chalk.hex(colors.get('purple')).bold('Hint:\n'));
-		}
-
 		static hintsMultiline($that, $texts) {
 			let text = '';
 			for (let i = 0, length = $texts.length; i < length; i++) {

@@ -42,7 +42,6 @@
 
 	module.exports = class Color {
 		static set($that) {
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints.backgroundColor);
 			logs.hintsMultiline($that, hints.themeColor);
 

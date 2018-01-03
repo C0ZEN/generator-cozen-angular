@@ -72,7 +72,6 @@
 		static set($that) {
 
 			$that.log();
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
 
 			return $that.prompt(prompts).then($response => {

@@ -21,6 +21,7 @@
 	const colors = require('../common/colors.js');
 	const logs   = require('../common/logs.js');
 	const config = require('../common/config.js');
+	const utils  = require('../common/utils.js');
 
 	const isThisYou     = require('../common/inputs/isThisYou.js');
 	const author        = require('../common/inputs/author.js');
@@ -31,12 +32,13 @@
 	const stateName     = require('./inputs/stateName.js');
 	const stateUrl      = require('./inputs/stateUrl.js');
 	const stateAbstract = require('./inputs/stateAbstract.js');
+	const stateParent   = require('./inputs/stateParent.js');
 
 	const writingJsFiles        = require('./writing/jsFiles.js');
 	const writingHtmlFiles      = require('./writing/htmlFiles.js');
 	const writingStylesFiles    = require('./writing/stylesFiles.js');
 	const writingLanguagesFiles = require('./writing/languagesFiles.js');
-	const writinMainLessFile    = require('./writing/mainLessFile.js');
+	const writingMainLessFile   = require('./writing/mainLessFile.js');
 
 	module.exports = class extends Generator {
 		initializing() {
@@ -50,7 +52,7 @@
 				{
 					type   : 'confirm',
 					name   : 'areYouReady',
-					message: 'Are you ready to set up a new view for the ' + this.config.get('appName') + ' app ?',
+					message: 'Are you ready to set up a new view for the ' + utils.getAppName(this) + ' app ?',
 					default: true
 				}
 			];
@@ -117,6 +119,10 @@
 			return stateAbstract.set(this);
 		}
 
+		inputStateParent() {
+			return stateParent.set(this);
+		}
+
 		writing() {
 			this.now     = moment();
 			this.nowDate = this.now.format('DD/MM/YYYY');
@@ -128,7 +134,7 @@
 			writingHtmlFiles(this);
 			writingStylesFiles(this);
 			writingLanguagesFiles(this);
-			writinMainLessFile(this);
+			writingMainLessFile(this);
 		}
 
 		conflicts() {

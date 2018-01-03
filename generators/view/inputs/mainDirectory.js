@@ -10,7 +10,8 @@
 (function () {
 	'use strict';
 
-	const logs = require('../../common/logs.js');
+	const logs  = require('../../common/logs.js');
+	const utils = require('../../common/utils.js');
 
 	const prompts = [
 		{
@@ -22,12 +23,12 @@
 	];
 
 	const hints = [
-		'This is the name of the main directory created by the generator.'
+		'This is the name of the main directory created by the generator.',
+		utils.namingConvention('0')
 	];
 
-	module.exports = class AppName {
+	module.exports = class MainDirectory {
 		static set($that) {
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
 
 			return $that.prompt(prompts).then($response => {

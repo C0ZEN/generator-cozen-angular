@@ -14,6 +14,7 @@
 	const camelCase       = require('camelcase');
 	const upperPythonCase = require('case').constant;
 	const logs            = require('../../common/logs.js');
+	const utils           = require('../../common/utils.js');
 
 	const prompts = [
 		{
@@ -27,12 +28,11 @@
 	const hints = [
 		'The name of the view will be used to create a prefix for each files name.',
 		'All angular files will also have this as prefix like <viewNameController>, <viewNameService>, ...',
-		'So all generated files have references to this name, so choose it properly.'
+		utils.namingConvention('5')
 	];
 
-	module.exports = class AppName {
+	module.exports = class ViewName {
 		static set($that) {
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
 
 			return $that.prompt(prompts).then($response => {

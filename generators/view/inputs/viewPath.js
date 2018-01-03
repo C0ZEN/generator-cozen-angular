@@ -23,26 +23,26 @@
 
 	const hints = {
 		whatIsIt: [
-			'The path of the view is the path after the views folder.'
+			'The path of the view is the path after the views folder and before the main directory.'
 		],
 		example : [
 			'Example:',
 			'If you want to create the view "app/views/authentication", let this field empty.',
-			'If you want to create the view "app/views/authentication/login", this fields should be "login"'
+			'If you want to create the view "app/views/authentication/login", this fields should be "login".'
 		]
 	};
 
-	module.exports = class AppName {
+	module.exports = class ViewPath {
 		static set($that) {
 
 			hints.preview = [
-				'You set that the main directory is "' + $that.mainDirectory + '"',
-				'The current destination will be "app/views/' + $that.mainDirectory + '"'
+				'You set that the main directory is "' + $that.mainDirectory + '".',
+				'The current destination will be "app/views/' + $that.mainDirectory + '".'
 			];
 
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints.whatIsIt);
 			logs.hintsMultiline($that, hints.example);
+			logs.hintsMultiline($that, hints.preview);
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

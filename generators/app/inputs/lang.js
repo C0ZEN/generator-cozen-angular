@@ -42,7 +42,6 @@
 	module.exports = class Lang {
 		static set($that) {
 
-			logs.hintHeader($that);
 			logs.hints($that, hints);
 
 			return $that.prompt(prompts).then($response => {

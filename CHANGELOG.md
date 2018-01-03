@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- New input `stateParent` for the `view` sub-generator
+
+### Changed
+- Text for hints
+- Default values
+- The app name is now colored on the generators which display it
+- Refactored the `view` sub-generator
+
+### Removed
+- Hints log header
 
 ## [0.11.0]
 ### Added

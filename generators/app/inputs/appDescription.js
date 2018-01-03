@@ -27,7 +27,6 @@
 
 	module.exports = class AppDescription {
 		static set($that) {
-			logs.hintHeader($that);
 			logs.hints($that, hints);
 
 			prompts[0].default += ' ' + $that.appName;

@@ -26,9 +26,8 @@
 		'Use it only as a parent of a state.'
 	];
 
-	module.exports = class AppName {
+	module.exports = class StateAbstract {
 		static set($that) {
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
 
 			return $that.prompt(prompts).then($response => {

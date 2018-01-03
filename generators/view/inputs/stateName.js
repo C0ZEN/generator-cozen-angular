@@ -10,25 +10,28 @@
 (function () {
 	'use strict';
 
-	const logs = require('../../common/logs.js');
+	const logs  = require('../../common/logs.js');
+	const utils = require('../../common/utils.js');
 
 	const prompts = [
 		{
 			type   : 'input',
 			name   : 'stateName',
-			message: 'Name of the state :',
-			default: 'state.name'
+			message: 'Name of the state :'
 		}
 	];
 
 	const hints = [
-		'The name of the state should be write on lowercase.'
+		'This is the name of your state.',
+		'If this view has a parent, don\'t forget to mention it as "parent.stateName".',
+		utils.namingConvention('5')
 	];
 
-	module.exports = class AppName {
+	module.exports = class StateName {
 		static set($that) {
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $that.viewNameCamel;
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

@@ -13,10 +13,10 @@
 	function <%= configStateName %>($stateProvider) {
 		$stateProvider
 			.state('<%= stateName %>', {
-				<% if (stateAbstract) { %> abstract : true, <% } %>
-				url         : '<%= stateUrl %>',
-				<% if (!stateAbstract) { %> templateUrl : '<%= viewPath %><%= viewNameCamel %>.template.html', <% } %>
-				<% if (stateAbstract) { %> template : '<ui-view></ui-view>', <% } %>
+			    <% if (stateAbstract) { %>abstract    : true,<% } %>
+			    <% if (stateParent) { %>parent      : '<%= stateParent %>',<% } %>
+                url         : '<%= stateUrl %>',
+				templateUrl : '<%= viewPath %>.template.html',
 				controller  : '<%= controllerName %>',
 				controllerAs: 'vm'
 			});

@@ -10,11 +10,17 @@
 (function () {
 	'use strict';
 
-	const path   = require('path');
-	const mkdirp = require('mkdirp');
-	const _      = require('lodash');
-	const npm    = require('../app/dependencies/npm.js');
-	const bower  = require('../app/dependencies/bower.js');
+	const chalkInstance = require('chalk');
+	const chalk         = new chalkInstance.constructor({
+		level  : 3,
+		enabled: true
+	});
+	const colors        = require('./colors.js');
+	const path          = require('path');
+	const mkdirp        = require('mkdirp');
+	const _             = require('lodash');
+	const npm           = require('../app/dependencies/npm.js');
+	const bower         = require('../app/dependencies/bower.js');
 
 	module.exports = class Utils {
 		static copyFile($that, $path) {
@@ -57,11 +63,40 @@
 			});
 		}
 
-		static getViewsPath($that, $shorter) {
+		static getViewsPath($that, $shorter, $noAppPrefix) {
+			const prefix = $noAppPrefix ? '' : 'app';
 			if ($shorter) {
-				return path.join(process.cwd(), 'app/views', $that.viewPath || '', $that.mainDirectory);
+				return path.join(prefix, 'views', $that.viewPath || '', $that.mainDirectory);
 			}
-			return path.join(process.cwd(), 'app/views', $that.viewPath || '', $that.mainDirectory, $that.viewNameCamel);
+			return path.join(prefix, 'views', $that.viewPath || '', $that.mainDirectory, $that.viewNameCamel);
+		}
+
+		static namingConvention($convention) {
+			return 'Naming convention: ' + chalk.hex(colors.get('orange'))(this.namingConventionAlias($convention));
+		}
+
+		static namingConventionAlias($alias) {
+			const alias = $alias.toString();
+			switch (alias) {
+				case '0':
+					return 'camelCase';
+				case '1':
+					return 'kebab-case';
+				case '2':
+					return 'PascalCase';
+				case '3':
+					return 'snake_case';
+				case '4':
+					return 'SNAKE_CASE';
+				case '5':
+					return 'camelCase.with.optional.dots';
+				default:
+					return alias;
+			}
+		}
+
+		static getAppName($that) {
+			return chalk.hex(colors.get('orange'))($that.config.get('appName'));
 		}
 	};
 

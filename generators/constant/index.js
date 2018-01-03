@@ -21,13 +21,14 @@
 	const colors = require('../common/colors.js');
 	const logs   = require('../common/logs.js');
 	const config = require('../common/config.js');
+	const utils  = require('../common/utils.js');
 
-	const isThisYou   = require('../common/inputs/isThisYou.js');
-	const author      = require('../common/inputs/author.js');
-	const authorEmail = require('../common/inputs/authorEmail.js');
-	const constantName  = require('./inputs/constantName.js');
-	const constantPath  = require('./inputs/constantPath.js');
-	const fileName  = require('./inputs/fileName.js');
+	const isThisYou    = require('../common/inputs/isThisYou.js');
+	const author       = require('../common/inputs/author.js');
+	const authorEmail  = require('../common/inputs/authorEmail.js');
+	const constantName = require('./inputs/constantName.js');
+	const constantPath = require('./inputs/constantPath.js');
+	const fileName     = require('./inputs/fileName.js');
 
 	const writingConstantFile = require('./writing/constantFile.js');
 
@@ -43,7 +44,7 @@
 				{
 					type   : 'confirm',
 					name   : 'areYouReady',
-					message: 'Are you ready to set up a new constant for the ' + this.config.get('appName') + ' app ?',
+					message: 'Are you ready to set up a new constant for the ' + utils.getAppName(this) + ' app ?',
 					default: true
 				}
 			];

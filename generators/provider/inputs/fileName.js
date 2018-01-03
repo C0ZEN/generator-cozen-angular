@@ -28,7 +28,6 @@
 
 	module.exports = class FileName {
 		static set($that) {
-			logs.hintHeader($that);
 			logs.hintsMultiline($that, hints);
 
 			prompts[0].default = $that.providerName;
