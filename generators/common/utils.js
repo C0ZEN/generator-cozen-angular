@@ -77,6 +77,8 @@
 
 		static namingConventionAlias($alias) {
 			const alias = $alias.toString();
+
+			/* istanbul ignore next */
 			switch (alias) {
 				case '0':
 					return 'camelCase';

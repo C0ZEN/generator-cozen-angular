@@ -26,18 +26,18 @@
 
 		/* istanbul ignore if */
 		if ($that.fs.exists(styleFilePath)) {
-			write();
+			write(styleFilePath);
 		}
 		else {
 			$that.fs.write(styleFilePath, '');
-			write();
+			write(styleFilePath);
 		}
 
-		function write() {
+		function write($styleFilePath) {
 			let importLine = '@import (less) "../../views/';
-			importLine += path.join($that.viewPath, $that.mainDirectory, 'styles', $that.viewNameCamel + '.less";');
+			importLine += path.join($that.viewPath || '', $that.mainDirectory, 'styles', $that.viewNameCamel + '.less";');
 			importLine     = importLine.replace(/\\/g, '/');
-			$that.fs.append(styleFilePath, importLine);
+			$that.fs.append($styleFilePath, importLine);
 		}
 	};
 

@@ -10,8 +10,6 @@
 (function () {
 	'use strict';
 
-	const logs = require('../logs.js');
-
 	const prompts = [
 		{
 			type   : 'confirm',

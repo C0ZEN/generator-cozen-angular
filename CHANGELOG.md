@@ -20,6 +20,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Refactored the `provider` sub-generator
 - Refactored the `service` sub-generator
 
+### Fixed
+- Error with `undefined` path instead of string with `mainLessFile` writing for `view` sub-generator
+
 ### Removed
 - Hints log header
 
