@@ -16,13 +16,13 @@
 		{
 			type   : 'input',
 			name   : 'providerPath',
-			message: 'Path of the provider :',
-			default: 'scripts/providers'
+			message: 'Path of the provider:',
+			default: 'app/scripts/providers'
 		}
 	];
 
 	const hints = [
-		'This will allow you to override the default path for the provider'
+		'This will allow you to override the default path for the provider.'
 	];
 
 	module.exports = class ProviderPath {

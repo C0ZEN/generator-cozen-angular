@@ -10,19 +10,21 @@
 (function () {
 	'use strict';
 
-	const logs = require('../../common/logs.js');
+	const logs  = require('../../common/logs.js');
+	const utils = require('../../common/utils.js');
 
 	const prompts = [
 		{
 			type   : 'input',
 			name   : 'providerName',
-			message: 'Name of the provider :',
+			message: 'Name of the provider:',
 			default: 'providerName'
 		}
 	];
 
 	const hints = [
-		'The name of the provider should be write on camelCase.'
+		'The name of the provider.',
+		utils.namingConvention('0')
 	];
 
 	module.exports = class ProviderName {
