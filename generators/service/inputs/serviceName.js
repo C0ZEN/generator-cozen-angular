@@ -10,19 +10,21 @@
 (function () {
 	'use strict';
 
-	const logs = require('../../common/logs.js');
+	const logs  = require('../../common/logs.js');
+	const utils = require('../../common/utils.js');
 
 	const prompts = [
 		{
 			type   : 'input',
 			name   : 'serviceName',
-			message: 'Name of the service :',
+			message: 'Name of the service:',
 			default: 'serviceName'
 		}
 	];
 
 	const hints = [
-		'The name of the service should be write on camelCase.'
+		'The name of the service.',
+		utils.namingConvention('0')
 	];
 
 	module.exports = class ServiceName {

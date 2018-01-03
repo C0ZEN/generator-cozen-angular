@@ -14,7 +14,7 @@
 	const path  = require('path');
 
 	module.exports = $that => {
-		const filePath = path.join('app', $that.servicePath, $that.fileName + '.service.js');
+		const filePath = path.join($that.servicePath, $that.fileName + '.service.js');
 		const config   = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),
