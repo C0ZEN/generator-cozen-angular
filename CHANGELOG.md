@@ -15,6 +15,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Refactored the `view` sub-generator
 - Refactored the `config` sub-generator
 - Refactored the `constant` sub-generator
+- Refactored the `controller` sub-generator
 
 ### Removed
 - Hints log header

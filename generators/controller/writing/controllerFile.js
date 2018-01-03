@@ -14,7 +14,7 @@
 	const path  = require('path');
 
 	module.exports = $that => {
-		const filePath = path.join('app', $that.controllerPath, $that.fileName + '.controller.js');
+		const filePath = path.join($that.controllerPath, $that.fileName + '.controller.js');
 		const config   = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),

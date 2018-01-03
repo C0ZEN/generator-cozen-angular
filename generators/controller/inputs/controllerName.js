@@ -10,19 +10,21 @@
 (function () {
 	'use strict';
 
-	const logs = require('../../common/logs.js');
+	const logs  = require('../../common/logs.js');
+	const utils = require('../../common/utils.js');
 
 	const prompts = [
 		{
 			type   : 'input',
 			name   : 'controllerName',
-			message: 'Name of the controller :',
+			message: 'Name of the controller:',
 			default: 'controllerName'
 		}
 	];
 
 	const hints = [
-		'The name of the controller should be write on camelCase.'
+		'The name of the controller.',
+		utils.namingConvention('0')
 	];
 
 	module.exports = class ControllerName {

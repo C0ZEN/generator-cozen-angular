@@ -16,13 +16,13 @@
 		{
 			type   : 'input',
 			name   : 'controllerPath',
-			message: 'Path of the controller :',
-			default: 'scripts/controllers'
+			message: 'Path of the controller:',
+			default: 'app/scripts/controllers'
 		}
 	];
 
 	const hints = [
-		'This will allow you to override the default path for the controller'
+		'This will allow you to override the default path for the controller.'
 	];
 
 	module.exports = class ControllerPath {
