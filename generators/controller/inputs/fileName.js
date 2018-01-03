@@ -23,8 +23,8 @@
 
 	const hints = [
 		'This is the name of the file - only the prefix -.',
-		'We will automatically add the type and the extension as <fileName>.<type>.<extension>',
-		'Example: myFileName.controller.js',
+		'We will automatically add the type and the extension as <fileName>.<type>.<extension>.',
+		'Example: myFileName.controller.js.',
 		utils.namingConvention('0')
 	];
 

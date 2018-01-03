@@ -10,19 +10,21 @@
 (function () {
 	'use strict';
 
-	const logs = require('../../common/logs.js');
+	const logs  = require('../../common/logs.js');
+	const utils = require('../../common/utils.js');
 
 	const prompts = [
 		{
 			type   : 'input',
 			name   : 'filterName',
-			message: 'Name of the filter :',
+			message: 'Name of the filter:',
 			default: 'filterName'
 		}
 	];
 
 	const hints = [
-		'The name of the filter should be write on camelCase.'
+		'The name of the filter.',
+		utils.namingConvention('0')
 	];
 
 	module.exports = class FilterName {
