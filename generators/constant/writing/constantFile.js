@@ -14,7 +14,7 @@
 	const path  = require('path');
 
 	module.exports = $that => {
-		const filePath = path.join('app', $that.constantPath, $that.fileName + '.constant.js');
+		const filePath = path.join($that.constantPath, $that.fileName + '.constant.js');
 		const config   = {
 			appNameCamel  : $that.config.get('appNameCamel'),
 			appNameKebab  : $that.config.get('appNameKebab'),

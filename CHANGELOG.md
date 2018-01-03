@@ -14,6 +14,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - The app name is now colored on the generators which display it
 - Refactored the `view` sub-generator
 - Refactored the `config` sub-generator
+- Refactored the `constant` sub-generator
 
 ### Removed
 - Hints log header

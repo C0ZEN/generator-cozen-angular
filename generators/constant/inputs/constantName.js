@@ -10,19 +10,21 @@
 (function () {
 	'use strict';
 
-	const logs = require('../../common/logs.js');
+	const logs  = require('../../common/logs.js');
+	const utils = require('../../common/utils.js');
 
 	const prompts = [
 		{
 			type   : 'input',
 			name   : 'constantName',
-			message: 'Name of the constant :',
+			message: 'Name of the constant:',
 			default: 'constantName'
 		}
 	];
 
 	const hints = [
-		'The name of the constant should be write on camelCase.'
+		'The name of the constant.',
+		utils.namingConvention('0')
 	];
 
 	module.exports = class ConstantName {
