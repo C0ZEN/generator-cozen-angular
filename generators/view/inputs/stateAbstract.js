@@ -16,7 +16,7 @@
 		{
 			type   : 'confirm',
 			name   : 'stateAbstract',
-			message: 'Is this an abstract state :',
+			message: 'Is this an abstract state:',
 			default: false
 		}
 	];

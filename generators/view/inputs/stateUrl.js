@@ -17,7 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'stateUrl',
-			message: 'Url of the state :'
+			message: 'Url of the state:'
 		}
 	];
 

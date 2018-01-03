@@ -10,17 +10,23 @@
 (function () {
 	'use strict';
 
+	const chalkInstance   = require('chalk');
+	const chalk           = new chalkInstance.constructor({
+		level  : 3,
+		enabled: true
+	});
 	const _               = require('lodash');
 	const camelCase       = require('camelcase');
 	const upperPythonCase = require('case').constant;
 	const logs            = require('../../common/logs.js');
 	const utils           = require('../../common/utils.js');
+	const colors          = require('../../common/colors.js');
 
 	const prompts = [
 		{
 			type   : 'input',
 			name   : 'viewName',
-			message: 'Name of the view :',
+			message: 'Name of the view:',
 			default: 'viewName'
 		}
 	];
@@ -49,6 +55,18 @@
 			$that.config.set('viewNameCamel', $that.viewNameCamel);
 			$that.config.set('viewNameKebab', $that.viewNameKebab);
 			$that.config.set('viewNameUpperPython', $that.viewNameUpperPython);
+			$that.log(
+				'The view name in camelCase is:',
+				chalk.hex(colors.get('cyan'))($that.viewNameCamel)
+			);
+			$that.log(
+				'The view name in kebab-case is:',
+				chalk.hex(colors.get('cyan'))($that.viewNameKebab)
+			);
+			$that.log(
+				'The view name in UPPER_PYTHON_CASE is:',
+				chalk.hex(colors.get('cyan'))($that.viewNameUpperPython)
+			);
 			$that.log();
 		}
 	};

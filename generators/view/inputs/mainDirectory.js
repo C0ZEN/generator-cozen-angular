@@ -17,7 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'mainDirectory',
-			message: 'Name of the main directory :',
+			message: 'Name of the main directory:',
 			default: 'mainDirectory'
 		}
 	];

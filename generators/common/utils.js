@@ -90,6 +90,8 @@
 					return 'SNAKE_CASE';
 				case '5':
 					return 'camelCase.with.optional.dots';
+				case '6':
+					return 'Classic text';
 				default:
 					return alias;
 			}

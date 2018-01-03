@@ -16,8 +16,7 @@
 		{
 			type   : 'input',
 			name   : 'viewPath',
-			message: 'Path of the view :',
-			default: ''
+			message: 'Path of the view:'
 		}
 	];
 

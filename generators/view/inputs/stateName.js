@@ -17,7 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'stateName',
-			message: 'Name of the state :'
+			message: 'Name of the state:'
 		}
 	];
 

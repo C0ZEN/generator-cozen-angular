@@ -20,20 +20,21 @@
 	const upperPythonCase = require('case').constant;
 	const colors          = require('../../common/colors.js');
 	const logs            = require('../../common/logs.js');
+	const utils           = require('../../common/utils.js');
 
 	const prompts = [
 		{
 			type   : 'input',
 			name   : 'appName',
-			message: 'Name of your app :',
+			message: 'Name of your app:',
 			default: 'My App'
 		}
 	];
 
 	const hints = [
-		'The name of the app will be used as angular module name and at any other location where the project need a name like package.json or bower.json',
-		'Write it down in his normal syntax like <Cozen Angular Generator>',
-		'Wrong examples: <cozen Angular Generator>, <cozenAngularGenerator>, <cozen-angular-generator>'
+		'The name of the app will be used as angular module name and at any other location where the project need a name.',
+		'Like package.json or bower.json.',
+		utils.namingConvention('6')
 	];
 
 	module.exports = class AppName {
@@ -55,15 +56,15 @@
 			$that.config.set('appNameKebab', $that.appNameKebab);
 			$that.config.set('appNameUpperPython', $that.appNameUpperPython);
 			$that.log(
-				'The app name in camelCase is :',
+				'The app name in camelCase is:',
 				chalk.hex(colors.get('cyan'))($that.appNameCamel)
 			);
 			$that.log(
-				'The app name in kebab-case is :',
+				'The app name in kebab-case is:',
 				chalk.hex(colors.get('cyan'))($that.appNameKebab)
 			);
 			$that.log(
-				'The app name in UPPER_PYTHON_CASE is :',
+				'The app name in UPPER_PYTHON_CASE is:',
 				chalk.hex(colors.get('cyan'))($that.appNameUpperPython)
 			);
 			$that.log();

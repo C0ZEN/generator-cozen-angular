@@ -17,7 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'stateParent',
-			message: 'Does the state have a parent ? His name :'
+			message: 'Does the state have a parent ? His name:'
 		}
 	];
 

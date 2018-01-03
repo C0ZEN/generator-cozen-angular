@@ -13,6 +13,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Default values
 - The app name is now colored on the generators which display it
 - Refactored the `view` sub-generator
+- Refactored the `config` sub-generator
 
 ### Removed
 - Hints log header
