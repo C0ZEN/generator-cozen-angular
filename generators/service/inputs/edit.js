@@ -15,7 +15,6 @@
 	const serviceName = require('./serviceName.js');
 	const servicePath = require('./servicePath.js');
 	const fileName    = require('./fileName.js');
-	const validate    = require('./validate.js');
 
 	const prompts = [
 		{

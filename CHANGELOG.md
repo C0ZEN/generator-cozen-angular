@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.12.1]
 ### Added
 - New npm dependency `q` to create deferred 
 - New npm dependency `slash` to rewrite a path with slash instead of backslash
