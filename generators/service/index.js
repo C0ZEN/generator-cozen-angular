@@ -29,6 +29,7 @@
 	const serviceName = require('./inputs/serviceName.js');
 	const servicePath = require('./inputs/servicePath.js');
 	const fileName    = require('./inputs/fileName.js');
+	const validate    = require('./inputs/validate.js');
 
 	const writingServiceFile = require('./writing/serviceFile.js');
 
@@ -97,6 +98,10 @@
 
 		inputFileName() {
 			return fileName.set(this);
+		}
+
+		inputValidate() {
+			return validate.set(this);
 		}
 
 		writing() {

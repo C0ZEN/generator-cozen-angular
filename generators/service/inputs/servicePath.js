@@ -16,8 +16,7 @@
 		{
 			type   : 'input',
 			name   : 'servicePath',
-			message: 'Path of the service:',
-			default: 'app/scripts/services'
+			message: 'Path of the service:'
 		}
 	];
 
@@ -26,8 +25,10 @@
 	];
 
 	module.exports = class ServicePath {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.servicePath : 'app/scripts/services';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

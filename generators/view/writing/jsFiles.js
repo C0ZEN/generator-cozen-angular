@@ -11,6 +11,7 @@
 	'use strict';
 
 	const utils = require('../../common/utils.js');
+	const slash = require('slash');
 
 	module.exports = $that => {
 		const filePath = utils.getViewsPath($that);
@@ -30,7 +31,7 @@
 			stateAbstract  : $that.stateAbstract,
 			stateParent    : $that.stateParent,
 			currentVersion : $that.currentVersion,
-			viewPath       : utils.getViewsPath($that, false, true).replace(/\\/g, '/')
+			viewPath       : slash(utils.getViewsPath($that, false, true))
 		};
 
 		utils.copyFileTplFrom($that, 'controller.txt', config, filePath + '.controller.js');

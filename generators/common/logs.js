@@ -59,13 +59,17 @@
 			return this.addWhitespaces($option, $longerGenerator) + this.choiceHint($text);
 		}
 
-		static addWhitespaces($text, $maxlength) {
+		static addWhitespaces($text, $maxLength) {
 			const textLength = $text.length;
 			let text         = $text;
-			for (let i = 0; i < $maxlength - textLength; i++) {
+			for (let i = 0; i < $maxLength - textLength; i++) {
 				text += ' ';
 			}
 			return text;
+		}
+
+		static value($text) {
+			return chalk.hex(colors.get('orange'))($text);
 		}
 	};
 

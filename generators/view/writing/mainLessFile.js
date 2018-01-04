@@ -10,7 +10,8 @@
 (function () {
 	'use strict';
 
-	const path = require('path');
+	const path  = require('path');
+	const slash = require('slash');
 
 	module.exports = $that => {
 
@@ -35,8 +36,7 @@
 
 		function write($styleFilePath) {
 			let importLine = '@import (less) "../../views/';
-			importLine += path.join($that.viewPath || '', $that.mainDirectory, 'styles', $that.viewNameCamel + '.less";');
-			importLine     = importLine.replace(/\\/g, '/');
+			importLine += slash(path.join($that.viewPath || '', $that.mainDirectory, 'styles', $that.viewNameCamel + '.less";'));
 			$that.fs.append($styleFilePath, importLine);
 		}
 	};

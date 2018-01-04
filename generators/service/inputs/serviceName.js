@@ -17,8 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'serviceName',
-			message: 'Name of the service:',
-			default: 'serviceName'
+			message: 'Name of the service:'
 		}
 	];
 
@@ -28,8 +27,10 @@
 	];
 
 	module.exports = class ServiceName {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.serviceName : 'serviceName';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
