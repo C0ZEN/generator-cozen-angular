@@ -1,0 +1,14 @@
+/**
+ * Generated header by <%= authorShort %> for <%= appNameKebab %> project
+ * Created with: generator-cozen-angular
+ *
+ * Created by: <%= authorShort %>
+ * Date: <%= nowDate %>
+ * Time: <%= nowTime %>
+ * Version: <%= currentVersion %>
+ *
+ * @ngdoc service
+ * @name <%= appNameKebab %>.<%= serviceName %>
+ * @description
+ *
+ */
