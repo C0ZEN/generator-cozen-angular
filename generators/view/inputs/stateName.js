@@ -31,7 +31,7 @@
 		static set($that) {
 			logs.hintsMultiline($that, hints);
 
-			prompts[0].default = $that.viewNameCamel;
+			prompts[0].default = '/' + $that.viewNameCamel;
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
