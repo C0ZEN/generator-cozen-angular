@@ -21,7 +21,7 @@
 	const colors = require('../common/colors.js');
 	const logs   = require('../common/logs.js');
 	const config = require('../common/config.js');
-	const utils = require('../common/utils.js');
+	const utils  = require('../common/utils.js');
 
 	const isThisYou    = require('../common/inputs/isThisYou.js');
 	const author       = require('../common/inputs/author.js');
@@ -29,6 +29,7 @@
 	const providerName = require('./inputs/providerName.js');
 	const providerPath = require('./inputs/providerPath.js');
 	const fileName     = require('./inputs/fileName.js');
+	const validate     = require('./inputs/validate.js');
 
 	const writingProviderFile = require('./writing/providerFile.js');
 
@@ -97,6 +98,10 @@
 
 		inputFileName() {
 			return fileName.set(this);
+		}
+
+		inputValidate() {
+			return validate.set(this);
 		}
 
 		writing() {

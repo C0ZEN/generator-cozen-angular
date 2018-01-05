@@ -10,11 +10,11 @@
 (function () {
 	'use strict';
 
-	const _               = require('lodash');
-	const logs            = require('../../common/logs.js');
-	const longerGenerator = 2;
+	const _    = require('lodash');
+	const logs = require('../../common/logs.js');
 
-	const prompts = [
+	const longerGenerator = 2;
+	const prompts         = [
 		{
 			type   : 'list',
 			name   : 'lang',
