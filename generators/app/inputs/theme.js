@@ -10,10 +10,10 @@
 (function () {
 	'use strict';
 
-	const logs            = require('../../common/logs.js');
-	const longerGenerator = 21;
+	const logs = require('../../common/logs.js');
 
-	const prompts = [
+	const longerGenerator = 21;
+	const prompts         = [
 		{
 			type   : 'list',
 			name   : 'theme',

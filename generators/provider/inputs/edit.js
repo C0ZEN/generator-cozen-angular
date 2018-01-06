@@ -3,20 +3,20 @@
  * Generated file edit on WebStorm
  *
  * Created by: Geoffrey "C0ZEN" Testelin
- * Date: 04/01/2018
- * Time: 22:39
- * Version: 1.0.0
+ * Date: 05/01/2018
+ * Time: 17:22
+ * Version: 0.12.3
  */
 (function () {
 	'use strict';
 
-	const logs        = require('../../common/logs.js');
-	const q           = require('q');
-	const serviceName = require('./serviceName.js');
-	const servicePath = require('./servicePath.js');
-	const fileName    = require('./fileName.js');
+	const logs         = require('../../common/logs.js');
+	const q            = require('q');
+	const providerName = require('./providerName.js');
+	const providerPath = require('./providerPath.js');
+	const fileName     = require('./fileName.js');
 
-	const longerGenerator = 12;
+	const longerGenerator = 13;
 	const prompts         = [
 		{
 			type   : 'list',
@@ -24,8 +24,8 @@
 			message: 'Choose a value to edit:',
 			choices: [
 				{
-					value  : 'serviceName',
-					short  : 'serviceName',
+					value  : 'providerName',
+					short  : 'providerName',
 					checked: true
 				},
 				{
@@ -33,8 +33,8 @@
 					short: 'fileName'
 				},
 				{
-					value: 'servicePath',
-					short: 'servicePath'
+					value: 'providerPath',
+					short: 'providerPath'
 				}
 			]
 		}
@@ -50,9 +50,9 @@
 
 			logs.hintsMultiline($that, hints);
 
-			prompts[0].choices[0].name = logs.choice('Service name', $that.serviceName + 'Service', longerGenerator);
+			prompts[0].choices[0].name = logs.choice('Provider name', $that.providerName + 'Provider', longerGenerator);
 			prompts[0].choices[1].name = logs.choice('File name', $that.fileName, longerGenerator);
-			prompts[0].choices[2].name = logs.choice('File path', $that.servicePath, longerGenerator);
+			prompts[0].choices[2].name = logs.choice('File path', $that.providerPath, longerGenerator);
 
 			$that.prompt(prompts).then($response => {
 				onSuccess($response);
@@ -64,14 +64,14 @@
 				$that.log();
 
 				switch ($response.edit) {
-					case 'serviceName':
-						deferred.resolve(serviceName.set($that, true));
+					case 'providerName':
+						deferred.resolve(providerName.set($that, true));
 						break;
 					case 'fileName':
 						deferred.resolve(fileName.set($that, true));
 						break;
-					case 'servicePath':
-						deferred.resolve(servicePath.set($that, true));
+					case 'providerPath':
+						deferred.resolve(providerPath.set($that, true));
 						break;
 					default:
 						break;

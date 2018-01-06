@@ -16,8 +16,7 @@
 		{
 			type   : 'input',
 			name   : 'providerPath',
-			message: 'Path of the provider:',
-			default: 'app/scripts/providers'
+			message: 'Path of the provider:'
 		}
 	];
 
@@ -26,8 +25,10 @@
 	];
 
 	module.exports = class ProviderPath {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.providerPath : 'app/scripts/providers';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
