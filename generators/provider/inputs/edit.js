@@ -50,9 +50,9 @@
 
 			logs.hintsMultiline($that, hints);
 
-			prompts[0].choices[0].name = logs.choice('Provider name', $that.providerName, longerGenerator);
+			prompts[0].choices[0].name = logs.choice('Provider name', $that.providerName + 'Provider', longerGenerator);
 			prompts[0].choices[1].name = logs.choice('File name', $that.fileName, longerGenerator);
-			prompts[0].choices[2].name = logs.choice('File path', $that.filePath, longerGenerator);
+			prompts[0].choices[2].name = logs.choice('File path', $that.providerPath, longerGenerator);
 
 			$that.prompt(prompts).then($response => {
 				onSuccess($response);

@@ -17,8 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'providerName',
-			message: 'Name of the provider:',
-			default: 'providerName'
+			message: 'Name of the provider:'
 		}
 	];
 
@@ -28,8 +27,10 @@
 	];
 
 	module.exports = class ProviderName {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.providerName : 'providerName';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

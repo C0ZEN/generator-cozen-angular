@@ -16,25 +16,23 @@
 	const servicePath = require('./servicePath.js');
 	const fileName    = require('./fileName.js');
 
-	const prompts = [
+	const longerGenerator = 12;
+	const prompts         = [
 		{
 			type   : 'list',
 			name   : 'edit',
 			message: 'Choose a value to edit:',
 			choices: [
 				{
-					name   : 'Service name',
 					value  : 'serviceName',
 					short  : 'serviceName',
 					checked: true
 				},
 				{
-					name : 'File name',
 					value: 'fileName',
 					short: 'fileName'
 				},
 				{
-					name : 'File path',
 					value: 'servicePath',
 					short: 'servicePath'
 				}
@@ -51,6 +49,10 @@
 			const deferred = q.defer();
 
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].choices[0].name = logs.choice('Service name', $that.serviceName + 'Service', longerGenerator);
+			prompts[0].choices[1].name = logs.choice('File name', $that.fileName, longerGenerator);
+			prompts[0].choices[2].name = logs.choice('File path', $that.servicePath, longerGenerator);
 
 			$that.prompt(prompts).then($response => {
 				onSuccess($response);

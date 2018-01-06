@@ -7,6 +7,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - New partial service file
+- New input `validate` to preview and confirm the creation of a provider
+- New input `edit` called when validate is false. Used to list inputs that could be edited. On select, execute the input with the default value as the value from the config. On submit, restart to with `validate` input.
+
+### Changed
+- Choices UI for the `servcie` sub-generator
 
 ## [0.12.3]
 ### Changed
