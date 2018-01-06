@@ -50,6 +50,7 @@
 
 			logs.hintsMultiline($that, hints);
 
+			/* eslint no-magic-numbers:"off" */
 			prompts[0].choices[0].name = logs.choice('Service name', $that.serviceName + 'Service', longerGenerator);
 			prompts[0].choices[1].name = logs.choice('File name', $that.fileName, longerGenerator);
 			prompts[0].choices[2].name = logs.choice('File path', $that.servicePath, longerGenerator);

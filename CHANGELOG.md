@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.12.4]
 ### Added
 - New partial service file
 - New input `validate` to preview and confirm the creation of a provider
