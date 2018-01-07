@@ -10,11 +10,11 @@
 (function () {
 	'use strict';
 
-	const logs         = require('../../common/logs.js');
-	const q            = require('q');
+	const logs       = require('../../common/logs.js');
+	const q          = require('q');
 	const filterName = require('./filterName.js');
 	const filterPath = require('./filterPath.js');
-	const fileName     = require('./fileName.js');
+	const fileName   = require('./fileName.js');
 
 	const longerGenerator = 13;
 	const prompts         = [

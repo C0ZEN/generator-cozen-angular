@@ -17,8 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'constantName',
-			message: 'Name of the constant:',
-			default: 'constantName'
+			message: 'Name of the constant:'
 		}
 	];
 
@@ -28,8 +27,10 @@
 	];
 
 	module.exports = class ConstantName {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.constantName : 'constantName';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

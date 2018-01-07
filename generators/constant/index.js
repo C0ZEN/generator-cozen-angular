@@ -29,6 +29,7 @@
 	const constantName = require('./inputs/constantName.js');
 	const constantPath = require('./inputs/constantPath.js');
 	const fileName     = require('./inputs/fileName.js');
+	const validate     = require('./inputs/validate.js');
 
 	const writingConstantFile = require('./writing/constantFile.js');
 
@@ -97,6 +98,10 @@
 
 		inputFileName() {
 			return fileName.set(this);
+		}
+
+		inputValidate() {
+			return validate.set(this);
 		}
 
 		writing() {

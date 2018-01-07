@@ -16,8 +16,7 @@
 		{
 			type   : 'input',
 			name   : 'constantPath',
-			message: 'Path of the constant:',
-			default: 'app/scripts/constants'
+			message: 'Path of the constant:'
 		}
 	];
 
@@ -26,8 +25,10 @@
 	];
 
 	module.exports = class ConstantPath {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.constantPath : 'app/scripts/constants';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
