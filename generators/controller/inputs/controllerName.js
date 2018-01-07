@@ -17,8 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'controllerName',
-			message: 'Name of the controller:',
-			default: 'controllerName'
+			message: 'Name of the controller:'
 		}
 	];
 
@@ -28,8 +27,10 @@
 	];
 
 	module.exports = class ControllerName {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.controllerName : 'controllerName';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

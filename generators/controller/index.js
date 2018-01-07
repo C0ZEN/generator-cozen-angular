@@ -29,6 +29,7 @@
 	const controllerName = require('./inputs/controllerName.js');
 	const controllerPath = require('./inputs/controllerPath.js');
 	const fileName       = require('./inputs/fileName.js');
+	const validate       = require('./inputs/validate.js');
 
 	const writingControllerFile = require('./writing/controllerFile.js');
 
@@ -97,6 +98,10 @@
 
 		inputFileName() {
 			return fileName.set(this);
+		}
+
+		inputValidate() {
+			return validate.set(this);
 		}
 
 		writing() {

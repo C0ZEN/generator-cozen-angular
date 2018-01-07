@@ -16,8 +16,7 @@
 		{
 			type   : 'input',
 			name   : 'controllerPath',
-			message: 'Path of the controller:',
-			default: 'app/scripts/controllers'
+			message: 'Path of the controller:'
 		}
 	];
 
@@ -26,8 +25,10 @@
 	];
 
 	module.exports = class ControllerPath {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.controllerPath : 'app/scripts/controllers';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

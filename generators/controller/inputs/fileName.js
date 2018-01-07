@@ -29,10 +29,10 @@
 	];
 
 	module.exports = class FileName {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
 
-			prompts[0].default = $that.controllerName;
+			prompts[0].default = $defaultFromMemory ? $that.fileName : $that.controllerName;
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
