@@ -16,8 +16,7 @@
 		{
 			type   : 'input',
 			name   : 'filterPath',
-			message: 'Path of the filter:',
-			default: 'app/scripts/filters'
+			message: 'Path of the filter:'
 		}
 	];
 
@@ -26,8 +25,10 @@
 	];
 
 	module.exports = class FilterPath {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.filterPath : 'app/scripts/filters';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

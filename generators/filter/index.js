@@ -29,6 +29,7 @@
 	const filterName  = require('./inputs/filterName.js');
 	const filterPath  = require('./inputs/filterPath.js');
 	const fileName    = require('./inputs/fileName.js');
+	const validate    = require('./inputs/validate.js');
 
 	const writingFilterFile = require('./writing/filterFile.js');
 
@@ -97,6 +98,10 @@
 
 		inputFileName() {
 			return fileName.set(this);
+		}
+
+		inputValidate() {
+			return validate.set(this);
 		}
 
 		writing() {

@@ -17,8 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'filterName',
-			message: 'Name of the filter:',
-			default: 'filterName'
+			message: 'Name of the filter:'
 		}
 	];
 
@@ -28,8 +27,10 @@
 	];
 
 	module.exports = class FilterName {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.filterName : 'filterName';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
