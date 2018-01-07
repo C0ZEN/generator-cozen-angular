@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.12.5]
 ### Added
 - New input `validate` to preview and confirm the creation of a filter
 - New input `edit` called when validate is false. Used to list inputs that could be edited. On select, execute the input with the default value as the value from the config. On submit, restart to with `validate` input.
