@@ -12,6 +12,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - `method_lines` [#39](https://github.com/C0ZEN/generator-cozen-angular/issues/39)
 - `method_lines` [#37](https://github.com/C0ZEN/generator-cozen-angular/issues/37)
 - `method_lines` [#31](https://github.com/C0ZEN/generator-cozen-angular/issues/31)
+- `method_lines` [#38](https://github.com/C0ZEN/generator-cozen-angular/issues/38)
 
 ## [0.12.8]
 ### Added
