@@ -80,42 +80,42 @@
 			prompts[0].choices[6].name = logs.choice('State parent', $that.stateParent, longerGenerator);
 
 			$that.prompt(prompts).then($response => {
-				onSuccess($response);
+				Edit.onSuccess($that, $response, deferred);
 			});
 
-			function onSuccess($response) {
-				$that.edit = $response.edit;
-				$that.config.set('edit', $that.edit);
-				$that.log();
-
-				switch ($response.edit) {
-					case 'mainDirectory':
-						deferred.resolve(mainDirectory.set($that, true));
-						break;
-					case 'viewName':
-						deferred.resolve(viewName.set($that, true));
-						break;
-					case 'viewPath':
-						deferred.resolve(viewPath.set($that, true));
-						break;
-					case 'stateName':
-						deferred.resolve(stateName.set($that, true));
-						break;
-					case 'stateUrl':
-						deferred.resolve(stateUrl.set($that, true));
-						break;
-					case 'stateAbstract':
-						deferred.resolve(stateAbstract.set($that, true));
-						break;
-					case 'stateParent':
-						deferred.resolve(stateParent.set($that, true));
-						break;
-					default:
-						break;
-				}
-			}
-
 			return deferred.promise;
+		}
+
+		static onSuccess($that, $response, $deferred) {
+			$that.edit = $response.edit;
+			$that.config.set('edit', $that.edit);
+			$that.log();
+
+			switch ($response.edit) {
+				case 'mainDirectory':
+					$deferred.resolve(mainDirectory.set($that, true));
+					break;
+				case 'viewName':
+					$deferred.resolve(viewName.set($that, true));
+					break;
+				case 'viewPath':
+					$deferred.resolve(viewPath.set($that, true));
+					break;
+				case 'stateName':
+					$deferred.resolve(stateName.set($that, true));
+					break;
+				case 'stateUrl':
+					$deferred.resolve(stateUrl.set($that, true));
+					break;
+				case 'stateAbstract':
+					$deferred.resolve(stateAbstract.set($that, true));
+					break;
+				case 'stateParent':
+					$deferred.resolve(stateParent.set($that, true));
+					break;
+				default:
+					break;
+			}
 		}
 	};
 
