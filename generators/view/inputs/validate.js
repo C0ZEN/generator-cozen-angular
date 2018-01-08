@@ -36,7 +36,7 @@
 				'State url: ' + logs.value($that.stateUrl),
 				'State abstract: ' + logs.value($that.stateAbstract),
 				'State parent: ' + logs.value($that.stateParent),
-				'Complete path: ' + logs.value(slash(path.join('app/views', $that.viewPath, $that.mainDirectory, $that.viewName + '.*')))
+				'Complete path: ' + logs.value(slash(path.join('app/views', $that.viewPath || '', $that.mainDirectory, $that.viewName + '.*')))
 			];
 
 			logs.hintsMultiline($that, hints);
