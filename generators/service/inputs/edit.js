@@ -56,7 +56,7 @@
 			prompts[0].choices[2].name = logs.choice('File path', $that.servicePath, longerGenerator);
 
 			$that.prompt(prompts).then($response => {
-				Edit.onSuccess(, $that$response, deferred);
+				Edit.onSuccess($that, $response, deferred);
 			});
 
 			return deferred.promise;
