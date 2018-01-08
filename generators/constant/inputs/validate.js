@@ -40,25 +40,25 @@
 			prompts[0].default = $that.constantName;
 
 			$that.prompt(prompts).then($response => {
-				onSuccess($response);
+				Validate.onSuccess($that, $response, deferred);
 			});
 
-			function onSuccess($response) {
-				$that.validate = $response.validate;
-				$that.config.set('validate', $that.validate);
-				$that.log();
-
-				if (!$response.validate) {
-					edit.set($that).then(() => {
-						deferred.resolve(Validate.set($that));
-					});
-				}
-				else {
-					deferred.resolve($response.validate);
-				}
-			}
-
 			return deferred.promise;
+		}
+
+		static onSuccess($that, $response, $deferred) {
+			$that.validate = $response.validate;
+			$that.config.set('validate', $that.validate);
+			$that.log();
+
+			if (!$response.validate) {
+				edit.set($that).then(() => {
+					$deferred.resolve(Validate.set($that));
+				});
+			}
+			else {
+				$deferred.resolve($response.validate);
+			}
 		}
 	};
 

@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- `method_lines` [#40](https://github.com/C0ZEN/generator-cozen-angular/issues/40)
 
 ## [0.12.8]
 ### Added
