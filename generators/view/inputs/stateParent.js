@@ -35,10 +35,12 @@
 	};
 
 	module.exports = class StateParent {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints.description);
 			logs.hintsMultiline($that, hints.example);
 			logs.hint($that, utils.namingConvention('5'));
+
+			prompts[0].default = $defaultFromMemory ? $that.stateParent : null;
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

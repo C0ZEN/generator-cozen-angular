@@ -33,6 +33,7 @@
 	const stateUrl      = require('./inputs/stateUrl.js');
 	const stateAbstract = require('./inputs/stateAbstract.js');
 	const stateParent   = require('./inputs/stateParent.js');
+	const validate      = require('./inputs/validate.js');
 
 	const writingJsFiles        = require('./writing/jsFiles.js');
 	const writingHtmlFiles      = require('./writing/htmlFiles.js');
@@ -121,6 +122,10 @@
 
 		inputStateParent() {
 			return stateParent.set(this);
+		}
+
+		inputValidate() {
+			return validate.set(this);
 		}
 
 		writing() {

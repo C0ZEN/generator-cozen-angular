@@ -32,8 +32,7 @@
 	};
 
 	module.exports = class ViewPath {
-		static set($that) {
-
+		static set($that, $defaultFromMemory) {
 			hints.preview = [
 				'You set that the main directory is "' + $that.mainDirectory + '".',
 				'The current destination will be "app/views/' + $that.mainDirectory + '".'
@@ -42,6 +41,8 @@
 			logs.hintsMultiline($that, hints.whatIsIt);
 			logs.hintsMultiline($that, hints.example);
 			logs.hintsMultiline($that, hints.preview);
+
+			prompts[0].default = $defaultFromMemory ? $that.viewPath : null;
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

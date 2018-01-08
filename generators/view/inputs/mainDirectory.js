@@ -17,8 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'mainDirectory',
-			message: 'Name of the main directory:',
-			default: 'mainDirectory'
+			message: 'Name of the main directory:'
 		}
 	];
 
@@ -28,8 +27,10 @@
 	];
 
 	module.exports = class MainDirectory {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.mainDirectory : 'mainDirectory';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

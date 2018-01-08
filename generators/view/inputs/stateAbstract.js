@@ -16,8 +16,7 @@
 		{
 			type   : 'confirm',
 			name   : 'stateAbstract',
-			message: 'Is this an abstract state:',
-			default: false
+			message: 'Is this an abstract state:'
 		}
 	];
 
@@ -27,8 +26,10 @@
 	];
 
 	module.exports = class StateAbstract {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.stateAbstract : false;
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

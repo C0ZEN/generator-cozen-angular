@@ -26,8 +26,7 @@
 		{
 			type   : 'input',
 			name   : 'viewName',
-			message: 'Name of the view:',
-			default: 'viewName'
+			message: 'Name of the view:'
 		}
 	];
 
@@ -38,8 +37,10 @@
 	];
 
 	module.exports = class ViewName {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.viewName : 'viewName';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

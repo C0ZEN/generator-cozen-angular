@@ -28,10 +28,10 @@
 	];
 
 	module.exports = class StateName {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
 
-			prompts[0].default = '/' + $that.viewNameCamel;
+			prompts[0].default = $defaultFromMemory ? $that.stateName : $that.viewNameCamel;
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
