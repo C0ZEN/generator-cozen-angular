@@ -56,30 +56,30 @@
 			prompts[0].choices[2].name = logs.choice('File path', $that.controllerPath, longerGenerator);
 
 			$that.prompt(prompts).then($response => {
-				onSuccess($response);
+				Edit.onSuccess($that, $response, deferred);
 			});
 
-			function onSuccess($response) {
-				$that.edit = $response.edit;
-				$that.config.set('edit', $that.edit);
-				$that.log();
-
-				switch ($response.edit) {
-					case 'controllerName':
-						deferred.resolve(controllerName.set($that, true));
-						break;
-					case 'fileName':
-						deferred.resolve(fileName.set($that, true));
-						break;
-					case 'controllerPath':
-						deferred.resolve(controllerPath.set($that, true));
-						break;
-					default:
-						break;
-				}
-			}
-
 			return deferred.promise;
+		}
+
+		static onSuccess($that, $response, $deferred) {
+			$that.edit = $response.edit;
+			$that.config.set('edit', $that.edit);
+			$that.log();
+
+			switch ($response.edit) {
+				case 'controllerName':
+					$deferred.resolve(controllerName.set($that, true));
+					break;
+				case 'fileName':
+					$deferred.resolve(fileName.set($that, true));
+					break;
+				case 'controllerPath':
+					$deferred.resolve(controllerPath.set($that, true));
+					break;
+				default:
+					break;
+			}
 		}
 	};
 
