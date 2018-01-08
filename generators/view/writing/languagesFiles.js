@@ -25,8 +25,8 @@
 			currentVersion     : $that.currentVersion
 		};
 
-		utils.copyFileTpl($that, 'languages/fr.json', config, filePath + '/languages/fr.json');
-		utils.copyFileTpl($that, 'languages/en.json', config, filePath + '/languages/en.json');
+		utils.copyFileTpl($that, 'languages/fr.json', config, filePath + '/languages/fr/fr.json');
+		utils.copyFileTpl($that, 'languages/en.json', config, filePath + '/languages/en/en.json');
 	};
 
 })();

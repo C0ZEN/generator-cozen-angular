@@ -48,8 +48,8 @@
 
 		it('create view languages files', () => {
 			assert.file([
-				'app/views/mainDirectory/languages/fr.json',
-				'app/views/mainDirectory/languages/en.json'
+				'app/views/mainDirectory/languages/fr/fr.json',
+				'app/views/mainDirectory/languages/en/en.json'
 			]);
 		});
 
