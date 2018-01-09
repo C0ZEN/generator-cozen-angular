@@ -52,6 +52,7 @@
 			$that.viewNameCamel       = camelCase($response.viewName);
 			$that.viewNameKebab       = _.kebabCase($response.viewName);
 			$that.viewNameUpperPython = upperPythonCase($response.viewName);
+			$that.viewNameDotted      = $that.viewNameCamel.replace(/-/g, '.');
 			$that.config.set('viewName', $that.viewName);
 			$that.config.set('viewNameCamel', $that.viewNameCamel);
 			$that.config.set('viewNameKebab', $that.viewNameKebab);

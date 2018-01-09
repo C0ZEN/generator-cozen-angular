@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Default value for the name of the state is now write with dots for `view` sub-generator
 
 ## [0.12.11]
 ### Changed
