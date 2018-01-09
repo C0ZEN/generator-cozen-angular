@@ -23,6 +23,7 @@
 
 	const hints = [
 		'The name of the controller.',
+		'We will add a prefix: "Controller"',
 		utils.namingConvention('0')
 	];
 

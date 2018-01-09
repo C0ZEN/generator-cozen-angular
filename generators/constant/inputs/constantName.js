@@ -23,6 +23,7 @@
 
 	const hints = [
 		'The name of the constant.',
+		'We will add a prefix: "Constant"',
 		utils.namingConvention('0')
 	];
 

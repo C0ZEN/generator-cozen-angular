@@ -36,7 +36,7 @@
 
 		function write($styleFilePath) {
 			let importLine = '@import (less) "../../views/';
-			importLine += slash(path.join($that.viewPath || '', $that.mainDirectory, 'styles', $that.viewNameCamel + '.less";'));
+			importLine += slash(path.join($that.viewPath || '', $that.mainDirectory, 'styles', $that.fileNames + '.less";'));
 			$that.fs.append($styleFilePath, importLine);
 		}
 	};

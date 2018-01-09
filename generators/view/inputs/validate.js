@@ -30,13 +30,14 @@
 			const deferred = q.defer();
 			const hints    = [
 				'Main directory: ' + logs.value($that.mainDirectory),
+				'File names: ' + logs.value($that.fileNames),
 				'View name: ' + logs.value($that.viewName),
 				'View path: ' + logs.value($that.viewPath),
 				'State name: ' + logs.value($that.stateName),
 				'State url: ' + logs.value($that.stateUrl),
 				'State abstract: ' + logs.value($that.stateAbstract),
 				'State parent: ' + logs.value($that.stateParent),
-				'Complete path: ' + logs.value(slash(path.join('app/views', $that.viewPath || '', $that.mainDirectory, $that.viewName + '.*')))
+				'Complete path: ' + logs.value(slash(path.join('app/views', $that.viewPath || '', $that.mainDirectory, $that.fileNames + '.*')))
 			];
 
 			logs.hintsMultiline($that, hints);

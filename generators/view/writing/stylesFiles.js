@@ -24,9 +24,9 @@
 			currentVersion: $that.currentVersion
 		};
 
-		utils.copyFileTpl($that, 'styles/main.less', config, filePath + '/styles/' + $that.viewNameCamel + '.less');
-		utils.copyFileTpl($that, 'styles/mixins.less', config, filePath + '/styles/' + $that.viewNameCamel + '.mixins.less');
-		utils.copyFileTpl($that, 'styles/variables.less', config, filePath + '/styles/' + $that.viewNameCamel + '.variables.less');
+		utils.copyFileTpl($that, 'styles/main.less', config, filePath + '/styles/' + $that.fileNames + '.less');
+		utils.copyFileTpl($that, 'styles/mixins.less', config, filePath + '/styles/' + $that.fileNames + '.mixins.less');
+		utils.copyFileTpl($that, 'styles/variables.less', config, filePath + '/styles/' + $that.fileNames + '.variables.less');
 	};
 
 })();

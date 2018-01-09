@@ -5,8 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- New input `fileNames` for the `view` sub-generator to specify the name of the files (instead of viewName)
+
 ### Changed
 - Default value for the name of the state is now write with dots for `view` sub-generator
+- Changed hints for most of the sub-generators Angular names
 
 ## [0.12.11]
 ### Changed

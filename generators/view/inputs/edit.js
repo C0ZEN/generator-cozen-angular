@@ -13,6 +13,7 @@
 	const logs          = require('../../common/logs.js');
 	const q             = require('q');
 	const mainDirectory = require('./mainDirectory.js');
+	const fileNames     = require('./fileNames.js');
 	const viewName      = require('./viewName.js');
 	const viewPath      = require('./viewPath.js');
 	const stateName     = require('./stateName.js');
@@ -31,6 +32,10 @@
 					value  : 'mainDirectory',
 					short  : 'mainDirectory',
 					checked: true
+				},
+				{
+					value: 'fileNames',
+					short: 'fileNames'
 				},
 				{
 					value: 'viewName',
@@ -72,12 +77,13 @@
 
 			/* eslint no-magic-numbers:"off" */
 			prompts[0].choices[0].name = logs.choice('Main directory', $that.mainDirectory, longerGenerator);
-			prompts[0].choices[1].name = logs.choice('View name', $that.viewName, longerGenerator);
-			prompts[0].choices[2].name = logs.choice('View path', $that.viewPath, longerGenerator);
-			prompts[0].choices[3].name = logs.choice('State name', $that.stateName, longerGenerator);
-			prompts[0].choices[4].name = logs.choice('State url', $that.stateUrl, longerGenerator);
-			prompts[0].choices[5].name = logs.choice('State abstract', $that.stateAbstract, longerGenerator);
-			prompts[0].choices[6].name = logs.choice('State parent', $that.stateParent, longerGenerator);
+			prompts[0].choices[1].name = logs.choice('File names', $that.fileNames, longerGenerator);
+			prompts[0].choices[2].name = logs.choice('View name', $that.viewName, longerGenerator);
+			prompts[0].choices[3].name = logs.choice('View path', $that.viewPath, longerGenerator);
+			prompts[0].choices[4].name = logs.choice('State name', $that.stateName, longerGenerator);
+			prompts[0].choices[5].name = logs.choice('State url', $that.stateUrl, longerGenerator);
+			prompts[0].choices[6].name = logs.choice('State abstract', $that.stateAbstract, longerGenerator);
+			prompts[0].choices[7].name = logs.choice('State parent', $that.stateParent, longerGenerator);
 
 			$that.prompt(prompts).then($response => {
 				Edit.onSuccess($that, $response, deferred);
@@ -94,6 +100,9 @@
 			switch ($response.edit) {
 				case 'mainDirectory':
 					$deferred.resolve(mainDirectory.set($that, true));
+					break;
+				case 'fileNames':
+					$deferred.resolve(fileNames.set($that, true));
 					break;
 				case 'viewName':
 					$deferred.resolve(viewName.set($that, true));

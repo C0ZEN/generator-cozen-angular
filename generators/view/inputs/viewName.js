@@ -31,16 +31,15 @@
 	];
 
 	const hints = [
-		'The name of the view will be used to create a prefix for each files name.',
-		'All angular files will also have this as prefix like <viewNameController>, <viewNameService>, ...',
-		utils.namingConvention('5')
+		'All angular files will have this as prefix like <viewNameController>, <viewNameService>, ...',
+		utils.namingConvention('0')
 	];
 
 	module.exports = class ViewName {
 		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
 
-			prompts[0].default = $defaultFromMemory ? $that.viewName : $that.mainDirectory;
+			prompts[0].default = $defaultFromMemory ? $that.viewName : $that.fileNamesCamel;
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
@@ -52,7 +51,6 @@
 			$that.viewNameCamel       = camelCase($response.viewName);
 			$that.viewNameKebab       = _.kebabCase($response.viewName);
 			$that.viewNameUpperPython = upperPythonCase($response.viewName);
-			$that.viewNameDotted      = $that.viewNameCamel.replace(/-/g, '.');
 			$that.config.set('viewName', $that.viewName);
 			$that.config.set('viewNameCamel', $that.viewNameCamel);
 			$that.config.set('viewNameKebab', $that.viewNameKebab);

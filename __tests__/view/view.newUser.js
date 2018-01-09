@@ -20,30 +20,31 @@
 					authorLastName : 'Testelin',
 					authorEmail    : 'geoffrey.testelin@gmail.com',
 					stateAbstract  : true,
-					viewName       : 'viewName'
+					viewName       : 'viewName',
+					fileNames      : 'view'
 				});
 		});
 
 		it('create view js files', () => {
 			assert.file([
-				'app/views/mainDirectory/viewName.controller.js',
-				'app/views/mainDirectory/viewName.state.js',
-				'app/views/mainDirectory/viewName.service.js',
-				'app/views/mainDirectory/viewName.constant.js'
+				'app/views/mainDirectory/view.controller.js',
+				'app/views/mainDirectory/view.state.js',
+				'app/views/mainDirectory/view.service.js',
+				'app/views/mainDirectory/view.constant.js'
 			]);
 		});
 
 		it('create view html files', () => {
 			assert.file([
-				'app/views/mainDirectory/viewName.template.html'
+				'app/views/mainDirectory/view.template.html'
 			]);
 		});
 
 		it('create view styles files', () => {
 			assert.file([
-				'app/views/mainDirectory/styles/viewName.less',
-				'app/views/mainDirectory/styles/viewName.mixins.less',
-				'app/views/mainDirectory/styles/viewName.variables.less'
+				'app/views/mainDirectory/styles/view.less',
+				'app/views/mainDirectory/styles/view.mixins.less',
+				'app/views/mainDirectory/styles/view.variables.less'
 			]);
 		});
 

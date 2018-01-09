@@ -68,7 +68,7 @@
 			if ($shorter) {
 				return path.join(prefix, 'views', $that.viewPath || '', $that.mainDirectory);
 			}
-			return path.join(prefix, 'views', $that.viewPath || '', $that.mainDirectory, $that.viewNameCamel);
+			return path.join(prefix, 'views', $that.viewPath || '', $that.mainDirectory, $that.fileNames);
 		}
 
 		static namingConvention($convention) {

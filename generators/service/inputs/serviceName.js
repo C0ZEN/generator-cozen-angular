@@ -23,6 +23,7 @@
 
 	const hints = [
 		'The name of the service.',
+		'We will add a prefix: "Service"',
 		utils.namingConvention('0')
 	];
 

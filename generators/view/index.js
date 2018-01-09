@@ -27,6 +27,7 @@
 	const author        = require('../common/inputs/author.js');
 	const authorEmail   = require('../common/inputs/authorEmail.js');
 	const mainDirectory = require('./inputs/mainDirectory.js');
+	const fileNames     = require('./inputs/fileNames.js');
 	const viewName      = require('./inputs/viewName.js');
 	const viewPath      = require('./inputs/viewPath.js');
 	const stateName     = require('./inputs/stateName.js');
@@ -98,6 +99,10 @@
 
 		inputMainDirectory() {
 			return mainDirectory.set(this);
+		}
+
+		inputFileNames() {
+			return fileNames.set(this);
 		}
 
 		inputViewName() {

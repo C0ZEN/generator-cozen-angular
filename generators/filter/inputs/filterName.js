@@ -23,6 +23,7 @@
 
 	const hints = [
 		'The name of the filter.',
+		'We will add a prefix: "Filter"',
 		utils.namingConvention('0')
 	];
 
