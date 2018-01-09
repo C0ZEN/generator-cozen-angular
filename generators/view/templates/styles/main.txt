@@ -1,0 +1,6 @@
+@import (less) "<%= fileNames %>.mixins.less";
+@import (less) "<%= fileNames %>.variables.less";
+
+<%= viewNameKebab %> {
+
+}

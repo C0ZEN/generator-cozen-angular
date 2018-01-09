@@ -21,12 +21,13 @@
 			nowDate       : $that.nowDate,
 			nowTime       : $that.nowTime,
 			authorShort   : $that.config.get('authorShort'),
-			currentVersion: $that.currentVersion
+			currentVersion: $that.currentVersion,
+			fileNames     : $that.fileNames
 		};
 
-		utils.copyFileTpl($that, 'styles/main.less', config, filePath + '/styles/' + $that.fileNames + '.less');
-		utils.copyFileTpl($that, 'styles/mixins.less', config, filePath + '/styles/' + $that.fileNames + '.mixins.less');
-		utils.copyFileTpl($that, 'styles/variables.less', config, filePath + '/styles/' + $that.fileNames + '.variables.less');
+		utils.copyFileTpl($that, 'styles/main.txt', config, filePath + '/styles/' + $that.fileNames + '.less');
+		utils.copyFileTpl($that, 'styles/mixins.txt', config, filePath + '/styles/' + $that.fileNames + '.mixins.less');
+		utils.copyFileTpl($that, 'styles/variables.txt', config, filePath + '/styles/' + $that.fileNames + '.variables.less');
 	};
 
 })();

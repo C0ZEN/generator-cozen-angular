@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Templates extension renamed to .txt for all files for `view` sub-generator 
+
+### Fixed
+- The path to imported less files is now the right one for `view` sub-generator 
 
 ## [0.12.12]
 ### Added

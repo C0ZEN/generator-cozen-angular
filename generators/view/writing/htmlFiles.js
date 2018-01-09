@@ -24,7 +24,7 @@
 			currentVersion: $that.currentVersion
 		};
 
-		utils.copyFileTpl($that, 'template.html', config, filePath + '.template.html');
+		utils.copyFileTpl($that, 'template.txt', config, filePath + '.template.html');
 	};
 
 })();
