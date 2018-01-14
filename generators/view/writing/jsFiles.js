@@ -16,22 +16,23 @@
 	module.exports = $that => {
 		const filePath = utils.getViewsPath($that);
 		const config   = {
-			viewNameCamel  : $that.viewNameCamel,
-			appNameCamel   : $that.config.get('appNameCamel'),
-			appNameKebab   : $that.config.get('appNameKebab'),
-			controllerName : $that.viewNameCamel + 'Controller',
-			configStateName: $that.viewNameCamel + 'State',
-			serviceName    : $that.viewNameCamel + 'Service',
-			constantName   : $that.viewNameCamel + 'Constant',
-			nowDate        : $that.nowDate,
-			nowTime        : $that.nowTime,
-			authorShort    : $that.config.get('authorShort'),
-			stateUrl       : $that.stateUrl,
-			stateName      : $that.stateName,
-			stateAbstract  : $that.stateAbstract,
-			stateParent    : $that.stateParent,
-			currentVersion : $that.currentVersion,
-			viewPath       : slash(utils.getViewsPath($that, false, true))
+			viewNameCamel     : $that.viewNameCamel,
+			appNameCamel      : $that.config.get('appNameCamel'),
+			appNameKebab      : $that.config.get('appNameKebab'),
+			controllerName    : $that.viewNameCamel + 'Controller',
+			configStateName   : $that.viewNameCamel + 'State',
+			serviceName       : $that.viewNameCamel + 'Service',
+			constantName      : $that.viewNameCamel + 'Constant',
+			nowDate           : $that.nowDate,
+			nowTime           : $that.nowTime,
+			authorShort       : $that.config.get('authorShort'),
+			stateUrl          : $that.stateUrl,
+			stateName         : $that.stateName,
+			stateAbstract     : $that.stateAbstract,
+			stateParent       : $that.stateParent,
+			currentVersion    : $that.currentVersion,
+			viewPath          : slash(utils.getViewsPath($that, false, true)),
+			subscribeAndNotify: false
 		};
 
 		utils.copyFileTplFrom($that, 'controller.txt', config, filePath + '.controller.js');

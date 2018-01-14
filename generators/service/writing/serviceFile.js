@@ -16,13 +16,14 @@
 	module.exports = $that => {
 		const filePath = path.join($that.servicePath, $that.fileName + '.service.js');
 		const config   = {
-			appNameCamel  : $that.config.get('appNameCamel'),
-			appNameKebab  : $that.config.get('appNameKebab'),
-			serviceName   : $that.serviceName + 'Service',
-			nowDate       : $that.nowDate,
-			nowTime       : $that.nowTime,
-			authorShort   : $that.config.get('authorShort'),
-			currentVersion: $that.currentVersion
+			appNameCamel      : $that.config.get('appNameCamel'),
+			appNameKebab      : $that.config.get('appNameKebab'),
+			serviceName       : $that.serviceName + 'Service',
+			nowDate           : $that.nowDate,
+			nowTime           : $that.nowTime,
+			authorShort       : $that.config.get('authorShort'),
+			currentVersion    : $that.currentVersion,
+			subscribeAndNotify: $that.subscribeAndNotify
 		};
 
 		utils.copyFileTplFrom($that, 'service.txt', config, filePath);

@@ -32,7 +32,8 @@
 				'Service name: ' + logs.value($that.serviceName + 'Service'),
 				'File name: ' + logs.value($that.fileName),
 				'File path: ' + logs.value($that.servicePath),
-				'Complete path: ' + logs.value(slash(path.join($that.servicePath, $that.fileName + '.service.js')))
+				'Complete path: ' + logs.value(slash(path.join($that.servicePath, $that.fileName + '.service.js'))),
+				'Subscribe and notify: ' + logs.value($that.subscribeAndNotify)
 			];
 
 			logs.hintsMultiline($that, hints);

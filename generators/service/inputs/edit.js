@@ -10,13 +10,14 @@
 (function () {
 	'use strict';
 
-	const logs        = require('../../common/logs.js');
-	const q           = require('q');
-	const serviceName = require('./serviceName.js');
-	const servicePath = require('./servicePath.js');
-	const fileName    = require('./fileName.js');
+	const logs               = require('../../common/logs.js');
+	const q                  = require('q');
+	const serviceName        = require('./serviceName.js');
+	const servicePath        = require('./servicePath.js');
+	const fileName           = require('./fileName.js');
+	const subscribeAndNotify = require('./subscribeAndNotify.js');
 
-	const longerGenerator = 12;
+	const longerGenerator = 20;
 	const prompts         = [
 		{
 			type   : 'list',
@@ -35,6 +36,10 @@
 				{
 					value: 'servicePath',
 					short: 'servicePath'
+				},
+				{
+					value: 'subscribeAndNotify',
+					short: 'subscribeAndNotify'
 				}
 			]
 		}
@@ -54,6 +59,7 @@
 			prompts[0].choices[0].name = logs.choice('Service name', $that.serviceName + 'Service', longerGenerator);
 			prompts[0].choices[1].name = logs.choice('File name', $that.fileName, longerGenerator);
 			prompts[0].choices[2].name = logs.choice('File path', $that.servicePath, longerGenerator);
+			prompts[0].choices[3].name = logs.choice('Subscribe and notify', $that.subscribeAndNotify, longerGenerator);
 
 			$that.prompt(prompts).then($response => {
 				Edit.onSuccess($that, $response, deferred);
@@ -76,6 +82,9 @@
 					break;
 				case 'servicePath':
 					$deferred.resolve(servicePath.set($that, true));
+					break;
+				case 'subscribeAndNotify':
+					$deferred.resolve(subscribeAndNotify.set($that, true));
 					break;
 				default:
 					break;

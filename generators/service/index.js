@@ -23,13 +23,14 @@
 	const config = require('../common/config.js');
 	const utils  = require('../common/utils.js');
 
-	const isThisYou   = require('../common/inputs/isThisYou.js');
-	const author      = require('../common/inputs/author.js');
-	const authorEmail = require('../common/inputs/authorEmail.js');
-	const serviceName = require('./inputs/serviceName.js');
-	const servicePath = require('./inputs/servicePath.js');
-	const fileName    = require('./inputs/fileName.js');
-	const validate    = require('./inputs/validate.js');
+	const isThisYou          = require('../common/inputs/isThisYou.js');
+	const author             = require('../common/inputs/author.js');
+	const authorEmail        = require('../common/inputs/authorEmail.js');
+	const serviceName        = require('./inputs/serviceName.js');
+	const servicePath        = require('./inputs/servicePath.js');
+	const fileName           = require('./inputs/fileName.js');
+	const subscribeAndNotify = require('./inputs/subscribeAndNotify.js');
+	const validate           = require('./inputs/validate.js');
 
 	const writingServiceFile = require('./writing/serviceFile.js');
 
@@ -98,6 +99,10 @@
 
 		inputFileName() {
 			return fileName.set(this);
+		}
+
+		inputSubscribeAndNotify() {
+			return subscribeAndNotify.set(this);
 		}
 
 		inputValidate() {

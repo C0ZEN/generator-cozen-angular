@@ -4,7 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## ToDo
+- Replace `uglify` task by `babel` to compile es6
+- Change the structure for the configuration file to match the one in the lib
+- Add all the providers from the lib to cover 100% configuration
+- Added new generator for directive
+
 ## [Unreleased]
+### Added
+- ToDo section in the changelog
+- New input `subscribeAndNotify` for the `service` sub-generator
+
+### Changed
+- `service.txt` template to add subscribe and notify stuff
 
 ## [0.12.13]
 ### Changed
