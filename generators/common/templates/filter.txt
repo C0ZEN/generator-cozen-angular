@@ -1,4 +1,10 @@
-<%- include('../../common/partial/header.txt') %>
+<%- include('../../common/partial/header.unfinished.txt') %>
+ * @ngdoc filter
+ * @name <%= appNameCamel %>.filter:<%= filterName %>
+ * @function
+ * @description
+ *
+ */
 (function (angular) {
 	'use strict';
 

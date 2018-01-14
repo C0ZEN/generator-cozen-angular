@@ -7,8 +7,3 @@
  * Time: <%= nowTime %>
  * Version: <%= currentVersion %>
  *
- * @ngdoc service
- * @name <%= appNameKebab %>.<%= serviceName %>
- * @description
- *
- */

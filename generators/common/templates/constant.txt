@@ -1,4 +1,9 @@
-<%- include('../../common/partial/header.txt') %>
+<%- include('../../common/partial/header.unfinished.txt') %>
+ * @ngdoc constant
+ * @name <%= appNameCamel %>.constant:<%= constantName %>
+ * @description
+ *
+ */
 (function (angular) {
 	'use strict';
 

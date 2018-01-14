@@ -1,4 +1,10 @@
-<%- include('../../common/partial/header.service.txt') %>
+<%- include('../../common/partial/header.unfinished.txt') %>
+ * @ngdoc service
+ * @name <%= appNameCamel %>.<%= serviceName %>
+ * <% if (subscribeAndNotify) { %>@requires $rootScope<% } %>
+ * @description
+ *
+ */
 (function (angular) {
 	'use strict';
 
@@ -13,7 +19,7 @@
 	function <%= serviceName %>(<% if (subscribeAndNotify) { %>$rootScope<% } %>) {
 		return {
 		    <% if (subscribeAndNotify) { %>subscribe,<% } %>
-		    <% if (subscribeAndNotify) { %>notify,<% } %>
+            <% if (subscribeAndNotify) { %>notify<% } %>
 		};<% if (subscribeAndNotify) { %>
 
 		function subscribe($scope, $callback) {

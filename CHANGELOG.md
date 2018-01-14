@@ -13,6 +13,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+### Changed
+- Ngdoc for most of the templates
+
+### Removed
+- Removed some istanbul ignore
 
 ## [0.12.14]
 ### Added
