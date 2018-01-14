@@ -9,10 +9,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Change the structure for the configuration file to match the one in the lib
 - Add all the providers from the lib to cover 100% configuration
 - Add new generator for directive
-- Add ngdoc for all the angular elements
 - Add more coverage
 
 ## [Unreleased]
+### Changed
+- `inquirer-command-prompt` version
 
 ## [0.12.15]
 ### Changed
