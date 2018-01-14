@@ -8,9 +8,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Replace `uglify` task by `babel` to compile es6
 - Change the structure for the configuration file to match the one in the lib
 - Add all the providers from the lib to cover 100% configuration
-- Added new generator for directive
+- Add new generator for directive
+- Add ngdoc for all the angular elements
+- Add more coverage
 
 ## [Unreleased]
+
+## [0.12.14]
 ### Added
 - ToDo section in the changelog
 - New input `subscribeAndNotify` for the `service` sub-generator
