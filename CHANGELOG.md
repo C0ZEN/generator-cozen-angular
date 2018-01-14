@@ -13,6 +13,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+
+## [0.12.15]
 ### Changed
 - Ngdoc for most of the templates
 
