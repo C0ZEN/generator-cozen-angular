@@ -18,7 +18,7 @@
 				prefix: config.useStaticFilesLoader.prefix,
 				suffix: config.useStaticFilesLoader.suffix
 			})
-			.preferredLanguage(config.defaultLanguage);
+			.preferredLanguage(config.languages.defaultLanguage);
 	}
 
 })(window.angular);

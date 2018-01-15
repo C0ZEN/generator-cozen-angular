@@ -1,0 +1,23 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranWorkflowProvider',
+		'config'
+	];
+
+	function provider(altranWorkflowProvider, config) {
+		altranWorkflowProvider
+			.enableLog(config.directives.workflow.debug)
+			.readonly(config.directives.workflow.readonly)
+			.auto(config.directives.workflow.auto)
+			.allowUndoneStep(config.directives.workflow.allowUndoneStep)
+			.hop(config.directives.workflow.hop);
+	}
+
+})(window.angular);

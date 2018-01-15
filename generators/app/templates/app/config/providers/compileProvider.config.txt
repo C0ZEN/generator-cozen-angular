@@ -1,0 +1,20 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'$compileProvider',
+		'config'
+	];
+
+	function provider($compileProvider, config) {
+		$compileProvider
+            .debugInfoEnabled(config.debug.compile)
+            .aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|file|blob):/);
+	}
+
+})(window.angular);

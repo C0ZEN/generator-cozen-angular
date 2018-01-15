@@ -13,7 +13,8 @@
 
 	function provider(altranLanguageProvider, config) {
 		altranLanguageProvider
-			.setCurrent(config.defaultLanguage);
+			.setCurrent(config.languages.defaultLanguage)
+			.logsEnabled(config.debug.logs.language.enabled);
 	}
 
 })(window.angular);

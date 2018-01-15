@@ -1,0 +1,37 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranInputProvider',
+		'config'
+	];
+
+	function provider(altranInputProvider, config) {
+		altranInputProvider
+			.minLength(config.directives.form.input.minLength)
+			.maxLength(config.directives.form.input.maxLength)
+			.required(config.directives.form.input.required)
+			.defaultType(config.directives.form.input.defaultType)
+			.spellcheck(config.directives.form.input.spellcheck)
+			.autocomplete(config.directives.form.input.autocomplete)
+			.modelLengthType(config.directives.form.input.modelLengthType)
+			.validDesign(config.directives.form.input.validDesign)
+			.invalidDesign(config.directives.form.input.invalidDesign)
+			.passwordLowercase(config.directives.form.input.password.lowercase)
+			.passwordUppercase(config.directives.form.input.password.uppercase)
+			.passwordNumber(config.directives.form.input.password.number)
+			.passwordSpecialChar(config.directives.form.input.password.specialChar)
+			.passwordMinLength(config.directives.form.input.password.minLength)
+			.min(config.directives.form.input.min)
+			.max(config.directives.form.input.max)
+			.autoFocus(config.directives.form.input.autoFocus)
+			.defaultSize(config.directives.form.input.defaultSize)
+			.numberArrows(config.directives.form.input.numberArrows);
+	}
+
+})(window.angular);

@@ -1,0 +1,24 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranRadioProvider',
+		'config'
+	];
+
+	function provider(altranRadioProvider, config) {
+		altranRadioProvider
+			.validDesign(config.directives.form.radio.validDesign)
+			.invalidDesign(config.directives.form.radio.invalidDesign)
+			.defaultSize(config.directives.form.radio.defaultSize)
+			.allowEmptyGroupRadio(config.directives.form.radio.allowEmptyGroupRadio)
+			.animationIn(config.directives.form.radio.animation.in)
+			.animationOut(config.directives.form.radio.animation.out);
+	}
+
+})(window.angular);

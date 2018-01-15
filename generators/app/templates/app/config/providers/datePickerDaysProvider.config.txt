@@ -7,14 +7,13 @@
 		.config(provider);
 
 	provider.$inject = [
-		'altranThemeProvider',
+		'altranDatePickerDaysProvider',
 		'config'
 	];
 
-	function provider(altranThemeProvider, config) {
-		altranThemeProvider
-			.setCurrent(config.themes.defaultTheme)
-			.logsEnabled(config.debug.logs.theme.enabled);
+	function provider(altranDatePickerDaysProvider, config) {
+		altranDatePickerDaysProvider
+			.format(config.directives.form.datePicker.days.format);
 	}
 
 })(window.angular);

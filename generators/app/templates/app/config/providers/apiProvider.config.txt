@@ -13,7 +13,7 @@
 
 	function provider(altranApiProvider, config) {
 		altranApiProvider
-			.baseUrl(config.baseUrl);
+			.baseUrl(config.api.baseUrl);
 	}
 
 })(window.angular);

@@ -1,0 +1,23 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranBtnProvider',
+		'config'
+	];
+
+	function provider(altranBtnProvider, config) {
+		altranBtnProvider
+			.enableLog(config.directives.btn.debug)
+			.isFat(config.directives.btn.isFat)
+			.defaultType(config.directives.btn.defaultType)
+			.defaultSize(config.directives.btn.defaultSize)
+			.isClickable(config.directives.btn.isClickable);
+	}
+
+})(window.angular);

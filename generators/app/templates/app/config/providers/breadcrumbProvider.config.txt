@@ -7,14 +7,14 @@
 		.config(provider);
 
 	provider.$inject = [
-		'altranThemeProvider',
+		'altranBreadcrumbProvider',
 		'config'
 	];
 
-	function provider(altranThemeProvider, config) {
-		altranThemeProvider
-			.setCurrent(config.themes.defaultTheme)
-			.logsEnabled(config.debug.logs.theme.enabled);
+	function provider(altranBreadcrumbProvider, config) {
+		altranBreadcrumbProvider
+			.enableLog(config.directives.breadcrumb.debug)
+			.defaultSize(config.directives.breadcrumb.defaultSize);
 	}
 
 })(window.angular);

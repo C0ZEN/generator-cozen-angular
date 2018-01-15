@@ -1,0 +1,30 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranTextareaProvider',
+		'config'
+	];
+
+	function provider(altranTextareaProvider, config) {
+		altranTextareaProvider
+			.minLength(config.directives.form.textarea.minLength)
+			.maxLength(config.directives.form.textarea.maxLength)
+			.required(config.directives.form.textarea.required)
+			.spellcheck(config.directives.form.textarea.spellcheck)
+			.autocomplete(config.directives.form.textarea.autocomplete)
+			.modelLengthType(config.directives.form.textarea.modelLengthType)
+			.validDesign(config.directives.form.textarea.validDesign)
+			.invalidDesign(config.directives.form.textarea.invalidDesign)
+			.autoFocus(config.directives.form.textarea.autoFocus)
+			.rows(config.directives.form.textarea.rows)
+			.elastic(config.directives.form.textarea.elastic)
+			.defaultSize(config.directives.form.textarea.defaultSize);
+	}
+
+})(window.angular);

@@ -1,0 +1,21 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranLoaderProvider',
+		'config'
+	];
+
+	function provider(altranLoaderProvider, config) {
+		altranLoaderProvider
+			.enableLog(config.directives.loader.debug)
+			.defaultType(config.directives.loader.defaultType)
+			.defaultSize(config.directives.loader.defaultSize);
+	}
+
+})(window.angular);

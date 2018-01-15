@@ -1,0 +1,28 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranModalProvider',
+		'config'
+	];
+
+	function provider(altranModalProvider, config) {
+		altranModalProvider
+			.enableLog(config.directives.modal.debug)
+			.defaultType(config.directives.modal.defaultType)
+			.escapeToClose(config.directives.modal.escapeToClose)
+			.clickOutsideToClose(config.directives.modal.clickOutsideToClose)
+			.closeBtn(config.directives.modal.closeBtn)
+			.animationIn(config.directives.modal.animation.in)
+			.animationOut(config.directives.modal.animation.out)
+			.closeOnStateChange(config.directives.modal.closeOnStateChange)
+			.soundIn(config.directives.modal.sound.in)
+			.autoSizing(config.directives.modal.autoSizing);
+	}
+
+})(window.angular);

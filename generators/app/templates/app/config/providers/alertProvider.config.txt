@@ -1,0 +1,37 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranAlertProvider',
+		'config'
+	];
+
+	function provider(altranAlertProvider, config) {
+		altranAlertProvider
+			.enableLog(config.directives.alert.debug)
+			.defaultType(config.directives.alert.defaultType)
+			.defaultSize(config.directives.alert.defaultSize)
+			.isClickable(config.directives.alert.isClickable)
+			.animationIn(config.directives.alert.animation.in)
+			.animationOut(config.directives.alert.animation.out)
+			.closeBtn(config.directives.alert.closeBtn)
+			.timeout(config.directives.alert.timeout)
+			.closeOnStateChange(config.directives.alert.closeOnStateChange)
+			.prefixDefault(config.directives.alert.prefix.default)
+			.prefixInfo(config.directives.alert.prefix.info)
+			.prefixSuccess(config.directives.alert.prefix.success)
+			.prefixWarning(config.directives.alert.prefix.warning)
+			.prefixError(config.directives.alert.prefix.error)
+			.svgIconLeftDefault(config.directives.alert.svgIconLeft.default)
+			.svgIconLeftInfo(config.directives.alert.svgIconLeft.info)
+			.svgIconLeftSuccess(config.directives.alert.svgIconLeft.success)
+			.svgIconLeftWarning(config.directives.alert.svgIconLeft.warning)
+			.svgIconLeftError(config.directives.alert.svgIconLeft.error);
+	}
+
+})(window.angular);

@@ -1,6 +1,4 @@
 {
-    "defaultLanguage": "<%= lang %>",
-    "theme": "<%= theme %>",
     "useStaticFilesLoader": {
         "prefix": "languages/min/",
         "suffix": ".min.json"
@@ -10,18 +8,373 @@
         "requireBase": false
     },
     "hashPrefix": "!",
-    "baseUrl": "http://exemple.com/",
-    "target": "dev",
-    "compile": true,
-    "logs": {
-        "enabled": true
-    },
     "useSanitizeValueStrategy": "sanitizeParameters",
     "localeLocationPattern": "bower_components/angular-i18n/angular-locale_{{locale}}.js",
-    "defaultTitle": "<%= appName %>",
-    "urlOtherwise": "",
+    "api": {
+        "baseUrl": "http://exemple.com/"
+    },
+    "deferred": {
+        "errorOnUnhandledRejections": true,
+        "reject": {
+            "defaultCode": 200
+        }
+    },
+    "title": {
+        "defaultTitle": "<%= appName %>",
+        "separator": " - "
+    },
     "app": {
         "version": "0.0.0",
-        "name": "<%= appNameKebab %>"
+        "name": "<%= appNameKebab %>",
+        "target": "dev"
+    },
+    "debug": {
+        "compile": true,
+        "logs": {
+            "enabled": true,
+            "enhancedColors": true,
+            "format": "[hh:mm:sss]",
+            "separator": " ",
+            "classNameBefore": "[",
+            "classNameAfter": "]",
+            "restrictedMethods": [
+                "info",
+                "warn",
+                "error",
+                "debug",
+                "log"
+            ],
+            "exceptions": {
+                "enabled": true
+            },
+            "http": {
+                "enabled": true,
+                "enhanced": true
+            },
+            "language": {
+                "enabled": true
+            },
+            "test": {
+                "enabled": true
+            },
+            "theme": {
+                "enabled": true
+            },
+            "init": true
+        }
+    },
+    "languages": {
+        "defaultLanguage": "<%= lang %>"
+    },
+    "themes": {
+        "defaultTheme": "<%= theme %>"
+    },
+    "directives": {
+        "btn": {
+            "debug": true,
+            "isFat": false,
+            "defaultType": "default",
+            "defaultSize": "normal",
+            "isClickable": true
+        },
+        "btnLazyTest": {
+            "debug": true,
+            "icon": {
+                "class": "fa-font"
+            },
+            "position": {
+                "top": "8px",
+                "left": "8px"
+            },
+            "service": {
+                "lang": "en",
+                "gender": "male",
+                "domain": "cozen.com",
+                "length": 5,
+                "syllables": 3,
+                "word": "drow",
+                "prefix": "Mrs.",
+                "password": "Soleil123",
+                "words": 15
+            }
+        },
+        "tabs": {
+            "debug": true,
+            "autoSelect": false,
+            "multipleSelect": false,
+            "areFat": false,
+            "size": "normal"
+        },
+        "loader": {
+            "debug": true,
+            "defaultType": "spinner",
+            "defaultSize": "normal"
+        },
+        "modal": {
+            "debug": true,
+            "escapeToClose": true,
+            "clickOutsideToClose": true,
+            "closeBtn": true,
+            "animation": {
+                "in": "zoomIn",
+                "out": "zoomOut"
+            },
+            "defaultType": "default",
+            "closeOnStateChange": true,
+            "sound": {
+                "in": null
+            },
+            "autoSizing": false
+        },
+        "form": {
+            "debug": true,
+            "submitOnEnter": true,
+            "input": {
+                "minLength": 1,
+                "maxLength": 80,
+                "required": false,
+                "defaultType": "text",
+                "spellcheck": true,
+                "autocomplete": true,
+                "modelLengthType": "onFocus",
+                "validDesign": "alwaysIfModel",
+                "invalidDesign": "alwaysIfModel",
+                "autoFocus": false,
+                "password": {
+                    "lowercase": true,
+                    "uppercase": true,
+                    "number": true,
+                    "specialChar": true,
+                    "minLength": 6
+                },
+                "min": 0,
+                "max": 100,
+                "defaultSize": "normal",
+                "numberArrows": true
+            },
+            "textarea": {
+                "minLength": 1,
+                "maxLength": 80,
+                "required": false,
+                "spellcheck": true,
+                "autocomplete": true,
+                "modelLengthType": "onFocus",
+                "validDesign": "alwaysIfModel",
+                "invalidDesign": "alwaysIfModel",
+                "autoFocus": false,
+                "rows": 2,
+                "elastic": true,
+                "defaultSize": "normal"
+            },
+            "dropdown": {
+                "required": false,
+                "validDesign": "alwaysIfModel",
+                "invalidDesign": "alwaysIfModel",
+                "defaultSize": "normal",
+                "multiple": false,
+                "closeOnSelect": true,
+                "autoCloseOthers": true,
+                "clickOutsideToClose": true,
+                "escapeToClose": true,
+                "animation": {
+                    "in": "fadeInUp",
+                    "out": null
+                },
+                "iconLeft": null,
+                "iconRight": "sort-down",
+                "btn": {
+                    "autoClose": true
+                },
+                "item": {
+                    "iconRight": null,
+                    "iconRightWhenSelected": "check"
+                },
+                "search": false,
+                "maxHeight": 300
+            },
+            "radio": {
+                "validDesign": "alwaysIfModel",
+                "invalidDesign": "alwaysIfModel",
+                "defaultSize": "normal",
+                "allowEmptyGroupRadio": true,
+                "animation": {
+                    "in": "zoomIn",
+                    "out": "zoomOut"
+                }
+            },
+            "datePicker": {
+                "required": false,
+                "validDesign": "alwaysIfModel",
+                "invalidDesign": "alwaysIfModel",
+                "defaultSize": "normal",
+                "closeOnSelect": false,
+                "autoCloseOthers": true,
+                "clickOutsideToClose": true,
+                "escapeToClose": true,
+                "animation": {
+                    "in": "fadeInUp",
+                    "out": null
+                },
+                "iconLeft": null,
+                "iconRight": "sort-down",
+                "mod": "days",
+                "format": "shortDate",
+                "days": {
+                    "format": "d"
+                },
+                "week": {
+                    "visible": true,
+                    "format": "dd"
+                },
+                "header": {
+                    "visible": true,
+                    "previousBtn": {
+                        "visible": true,
+                        "iconName": "chevron-left",
+                        "imgSrc": null
+                    },
+                    "nextBtn": {
+                        "visible": true,
+                        "iconName": "chevron-right",
+                        "imgSrc": null
+                    },
+                    "activeCalendarDay": {
+                        "visible": true,
+                        "format": "longDateWithoutDay"
+                    }
+                },
+                "months": {
+                    "format": "MMMM"
+                },
+                "years": {
+                    "format": "yyyy"
+                }
+            },
+            "toggle": {
+                "validDesign": "alwaysIfModel",
+                "invalidDesign": "alwaysIfModel",
+                "size": "normal",
+                "default": false,
+                "reversed": false
+            }
+        },
+        "workflow": {
+            "debug": true,
+            "readonly": false,
+            "auto": false,
+            "allowUndoneStep": true,
+            "hop": null,
+            "item": {
+                "defaultSize": "normal",
+                "defaultType": "later",
+                "labels": {
+                    "done": "WORKFLOW.DONE",
+                    "current": "WORKFLOW.CURRENT",
+                    "later": "WORKFLOW.LATER"
+                }
+            }
+        },
+        "breadcrumb": {
+            "debug": true,
+            "defaultSize": "normal",
+            "item": {
+                "clickable": false,
+                "disabled": false
+            }
+        },
+        "breadcrumbAuto": {
+            "defaultLabel": "BREADCRUMB.UNKNOWN"
+        },
+        "card": {
+            "debug": true,
+            "linkConfig": {
+                "target": "_self"
+            }
+        },
+        "altImage": {
+            "config": {
+                "src": "",
+                "title": "",
+                "alt": "COMMON.UNKNOWN"
+            }
+        },
+        "alert": {
+            "debug": true,
+            "defaultType": "default",
+            "defaultSize": "normal",
+            "isClickable": false,
+            "animation": {
+                "in": "fadeInUp",
+                "out": null
+            },
+            "closeBtn": true,
+            "timeout": 0,
+            "closeOnStateChange": false,
+            "prefix": {
+                "default": null,
+                "info": "COMMON.INFO_:",
+                "success": "COMMON.SUCCESS_:",
+                "warning": "COMMON.WARNING_:",
+                "error": "COMMON.ERROR_:"
+            },
+            "svgIconLeft": {
+                "default": null,
+                "info": "info",
+                "success": "success",
+                "warning": "warning",
+                "error": "error"
+            },
+            "floating": {
+                "defaultType": "default",
+                "defaultSize": "normal",
+                "isClickable": false,
+                "animation": {
+                    "in": "fadeInDown",
+                    "out": "zoomOut"
+                },
+                "closeBtn": true,
+                "timeout": 8000,
+                "closeOnStateChange": false,
+                "prefix": {
+                    "default": null,
+                    "info": "COMMON.INFO_:",
+                    "success": "COMMON.SUCCESS_:",
+                    "warning": "COMMON.WARNING_:",
+                    "error": "COMMON.ERROR_:"
+                },
+                "svgIconLeft": {
+                    "default": null,
+                    "info": "info",
+                    "success": "success",
+                    "warning": "warning",
+                    "error": "error"
+                }
+            }
+        }
+    },
+    "keyboard": {
+        "debug": true
+    },
+    "state": {
+        "debug": true,
+        "trace": true
+    },
+    "icons": {
+        "debug": true,
+        "svg": {
+            "customList": {}
+        }
+    },
+    "media": {
+        "sound": {
+            "enabled": true
+        }
+    },
+    "numberFormatConfig": {
+        "localeMatcher": "best fit",
+        "style": "currency",
+        "currency": "EUR",
+        "currencyDisplay": "symbol",
+        "useGrouping": true
     }
 }

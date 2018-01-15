@@ -13,17 +13,51 @@
 	const utils     = require('../../common/utils.js');
 	const _         = require('lodash');
 	const providers = [
-		'apiProvider',
-		'appProvider',
-		'debugProvider',
-		'dynamicLocaleProvider',
-		'httpProvider',
-		'languageProvider',
-		'locationProvider',
-		'themeProvider',
-		'titleProvider',
-		'translateProvider',
-		'urlRouterProvider'
+		'alertFloating',
+		'alert',
+		'api',
+		'app',
+		'breadcrumbAuto',
+		'breadcrumbItem',
+		'breadcrumb',
+		'btn',
+		'card',
+		'compile',
+		'datePickerDays',
+		'datePickerHeader',
+		'datePickerMonths',
+		'datePicker',
+		'datePickerWeek',
+		'datePickerYears',
+		'debug',
+		'dropdown',
+		'dynamicLocale',
+		'form',
+		'http',
+		'input',
+		'keyboard',
+		'language',
+		'loader',
+		'localStorage',
+		'location',
+		'logEx',
+		'media',
+		'modal',
+		'moment',
+		'numberFormat',
+		'q',
+		'radio',
+		'state',
+		'svg',
+		'tabs',
+		'test',
+		'textarea',
+		'theme',
+		'title',
+		'toggle',
+		'translate',
+		'workflowItem',
+		'workflow'
 	];
 
 	module.exports = $that => {
@@ -35,7 +69,7 @@
 				nowDate       : $that.nowDate,
 				nowTime       : $that.nowTime,
 				currentVersion: $that.currentVersion
-			}, 'app/config/providers/' + $provider + '.config.js');
+			}, 'app/config/providers/' + $provider + 'Provider.config.js');
 		});
 	};
 

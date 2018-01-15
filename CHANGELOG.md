@@ -12,8 +12,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+### Added
+- A lot of new provider config files to cover all the providers from AAL
+
 ### Changed
 - `inquirer-command-prompt` version
+- Config file
 
 ## [0.12.15]
 ### Changed

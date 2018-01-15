@@ -7,14 +7,14 @@
 		.config(provider);
 
 	provider.$inject = [
-		'altranThemeProvider',
+		'altranCardProvider',
 		'config'
 	];
 
-	function provider(altranThemeProvider, config) {
-		altranThemeProvider
-			.setCurrent(config.themes.defaultTheme)
-			.logsEnabled(config.debug.logs.theme.enabled);
+	function provider(altranCardProvider, config) {
+		altranCardProvider
+			.enableLog(config.directives.card.debug)
+			.linkConfig(config.directives.card.linkConfig);
 	}
 
 })(window.angular);

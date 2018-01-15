@@ -1,0 +1,22 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'localStorageServiceProvider',
+		'config'
+	];
+
+	function provider(localStorageServiceProvider, config) {
+		localStorageServiceProvider
+            .setPrefix(config.app.name)
+            .setStorageType('localStorage')
+            .setDefaultToCookie(false)
+            .setNotify(false, false);
+	}
+
+})(window.angular);

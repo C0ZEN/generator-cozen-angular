@@ -1,0 +1,21 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranWorkflowItemProvider',
+		'config'
+	];
+
+	function provider(altranWorkflowItemProvider, config) {
+		altranWorkflowItemProvider
+			.defaultSize(config.directives.workflow.item.defaultSize)
+			.defaultType(config.directives.workflow.item.defaultType)
+			.labels(config.directives.workflow.item.labels);
+	}
+
+})(window.angular);

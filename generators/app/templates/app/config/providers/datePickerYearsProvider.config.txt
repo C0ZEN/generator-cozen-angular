@@ -7,13 +7,13 @@
 		.config(provider);
 
 	provider.$inject = [
-		'$urlRouterProvider',
+		'altranDatePickerYearsProvider',
 		'config'
 	];
 
-	function provider($urlRouterProvider, config) {
-		$urlRouterProvider
-			.otherwise(config.urlOtherwise);
+	function provider(altranDatePickerYearsProvider, config) {
+		altranDatePickerYearsProvider
+			.format(config.directives.form.datePicker.years.format);
 	}
 
 })(window.angular);

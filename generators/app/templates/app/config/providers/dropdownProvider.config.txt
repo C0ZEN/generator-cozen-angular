@@ -1,0 +1,36 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranDropdownProvider',
+		'config'
+	];
+
+	function provider(altranDropdownProvider, config) {
+		altranDropdownProvider
+			.required(config.directives.form.dropdown.required)
+			.validDesign(config.directives.form.dropdown.validDesign)
+			.invalidDesign(config.directives.form.dropdown.invalidDesign)
+			.defaultSize(config.directives.form.dropdown.defaultSize)
+			.multiple(config.directives.form.dropdown.multiple)
+			.closeOnSelect(config.directives.form.dropdown.closeOnSelect)
+			.autoCloseOthers(config.directives.form.dropdown.autoCloseOthers)
+			.clickOutsideToClose(config.directives.form.dropdown.clickOutsideToClose)
+			.escapeToClose(config.directives.form.dropdown.escapeToClose)
+			.animationIn(config.directives.form.dropdown.animation.in)
+			.animationOut(config.directives.form.dropdown.animation.out)
+			.iconLeft(config.directives.form.dropdown.iconLeft)
+			.iconRight(config.directives.form.dropdown.iconRight)
+			.btnAutoClose(config.directives.form.dropdown.btn.autoClose)
+			.itemIconRight(config.directives.form.dropdown.item.iconRight)
+			.itemIconRightWhenSelected(config.directives.form.dropdown.item.iconRightWhenSelected)
+			.search(config.directives.form.dropdown.search)
+			.maxHeight(config.directives.form.dropdown.maxHeight);
+	}
+
+})(window.angular);

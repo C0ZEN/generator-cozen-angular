@@ -1,0 +1,20 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranBreadcrumbItemProvider',
+		'config'
+	];
+
+	function provider(altranBreadcrumbItemProvider, config) {
+		altranBreadcrumbItemProvider
+			.clickable(config.directives.breadcrumb.item.clickable)
+			.disabled(config.directives.breadcrumb.item.disabled);
+	}
+
+})(window.angular);

@@ -1,0 +1,23 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranTabsProvider',
+		'config'
+	];
+
+	function provider(altranTabsProvider, config) {
+		altranTabsProvider
+			.enableLog(config.directives.tabs.debug)
+			.autoSelect(config.directives.tabs.autoSelect)
+			.multipleSelect(config.directives.tabs.multipleSelect)
+			.areFat(config.directives.tabs.areFat)
+			.size(config.directives.tabs.size);
+	}
+
+})(window.angular);

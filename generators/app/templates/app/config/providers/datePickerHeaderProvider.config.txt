@@ -1,0 +1,27 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranDatePickerHeaderProvider',
+		'config'
+	];
+
+	function provider(altranDatePickerHeaderProvider, config) {
+		altranDatePickerHeaderProvider
+			.visible(config.directives.form.datePicker.header.visible)
+			.previousBtnVisible(config.directives.form.datePicker.header.previousBtn.visible)
+			.previousBtnIconName(config.directives.form.datePicker.header.previousBtn.name)
+			.previousBtnImgSrc(config.directives.form.datePicker.header.previousBtn.imgSrc)
+			.nextBtnVisible(config.directives.form.datePicker.header.nextBtn.visible)
+			.nextBtnIconName(config.directives.form.datePicker.header.nextBtn.name)
+			.nextBtnImgSrc(config.directives.form.datePicker.header.nextBtn.imgSrc)
+			.activeCalendarDayVisible(config.directives.form.datePicker.header.activeCalendarDay.visible)
+			.activeCalendarDayFormat(config.directives.form.datePicker.header.activeCalendarDay.format);
+	}
+
+})(window.angular);

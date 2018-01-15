@@ -1,0 +1,31 @@
+<%- include('../../../../../common/partial/header.txt') %>
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.config(provider);
+
+	provider.$inject = [
+		'altranDatePickerProvider',
+		'config'
+	];
+
+	function provider(altranDatePickerProvider, config) {
+		altranDatePickerProvider
+			.required(config.directives.form.datePicker.required)
+			.validDesign(config.directives.form.datePicker.validDesign)
+			.invalidDesign(config.directives.form.datePicker.invalidDesign)
+			.defaultSize(config.directives.form.datePicker.defaultSize)
+			.closeOnSelect(config.directives.form.datePicker.closeOnSelect)
+			.autoCloseOthers(config.directives.form.datePicker.autoCloseOthers)
+			.escapeToClose(config.directives.form.datePicker.escapeToClose)
+			.animationIn(config.directives.form.datePicker.animation.in)
+			.animationOut(config.directives.form.datePicker.animation.out)
+			.iconLeft(config.directives.form.datePicker.iconLeft)
+			.iconRight(config.directives.form.datePicker.iconRight)
+			.mod(config.directives.form.datePicker.mod)
+			.format(config.directives.form.datePicker.format);
+	}
+
+})(window.angular);

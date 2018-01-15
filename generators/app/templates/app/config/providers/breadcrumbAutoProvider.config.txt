@@ -7,14 +7,13 @@
 		.config(provider);
 
 	provider.$inject = [
-		'altranThemeProvider',
+		'altranBreadcrumbAutoProvider',
 		'config'
 	];
 
-	function provider(altranThemeProvider, config) {
-		altranThemeProvider
-			.setCurrent(config.themes.defaultTheme)
-			.logsEnabled(config.debug.logs.theme.enabled);
+	function provider(altranBreadcrumbAutoProvider, config) {
+		altranBreadcrumbAutoProvider
+			.defaultLabel(config.directives.breadcrumbAuto.defaultLabel);
 	}
 
 })(window.angular);
