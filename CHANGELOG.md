@@ -22,6 +22,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Package.json to add lint for eslint
 - The release now run `npm lint` before creating the release
 
+### Fixed
+- Removed uglify and added babel and npm-command as files for the `app` sub-generator
+- Wrong AAL dependency link for the `app` sub-generator
+
 ## [0.12.16]
 ### Added
 - A lot of new provider config files to cover all the providers from AAL
