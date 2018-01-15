@@ -12,6 +12,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+
+## [0.12.16]
 ### Added
 - A lot of new provider config files to cover all the providers from AAL
 
