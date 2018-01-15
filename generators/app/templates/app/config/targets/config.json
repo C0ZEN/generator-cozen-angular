@@ -248,7 +248,8 @@
                 },
                 "years": {
                     "format": "yyyy"
-                }
+                },
+                "modelFormat": "iso-string"
             },
             "toggle": {
                 "validDesign": "alwaysIfModel",

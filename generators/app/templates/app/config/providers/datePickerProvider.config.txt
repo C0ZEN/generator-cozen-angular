@@ -25,7 +25,8 @@
 			.iconLeft(config.directives.form.datePicker.iconLeft)
 			.iconRight(config.directives.form.datePicker.iconRight)
 			.mod(config.directives.form.datePicker.mod)
-			.format(config.directives.form.datePicker.format);
+			.format(config.directives.form.datePicker.format)
+			.modelFormat(config.directives.form.datePicker.modelFormat);
 	}
 
 })(window.angular);
