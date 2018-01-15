@@ -12,6 +12,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+
+## [0.12.17]
 ### Added
 - New value in the config according to the new AAL release
 - New grunt config `babel` to replace uglify
