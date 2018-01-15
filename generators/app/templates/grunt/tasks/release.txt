@@ -9,6 +9,7 @@ module.exports = function (grunt) {
 
 		// Run the release task
 		grunt.task.run([
+		    'npm-command:lint',
 			'clean:release',
 			'clean:devIndex',
 			'wiredep',
@@ -22,7 +23,7 @@ module.exports = function (grunt) {
 			'useminPrepare',
 			'usemin',
 			'concat:generated',
-			'uglify:vendors',
+			'concat:vendors',
 			'postcss:vendors',
 			'cssmin:vendors',
 			'htmlmin:release',

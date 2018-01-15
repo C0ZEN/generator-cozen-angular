@@ -11,6 +11,7 @@
 /app/config/target.config.js
 /.idea/workspace.xml
 /app/scripts/<%= appNameKebab %>.js
+/app/scripts/<%= appNameKebab %>.js.map
 /app/scripts/<%= appNameKebab %>.min.js
 /app/scripts/<%= appNameKebab %>.min.js.map
 /app/styles/css/<%= appNameKebab %>.css

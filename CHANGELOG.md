@@ -14,6 +14,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - New value in the config according to the new AAL release
+- New grunt config `babel` to replace uglify
+- New grunt config `npm-command` to execute a npm command in the grunt process
+
+### Changed
+- After each concat, `babel` grunt task will parse the code
+- Package.json to add lint for eslint
+- The release now run `npm lint` before creating the release
 
 ## [0.12.16]
 ### Added

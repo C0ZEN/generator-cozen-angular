@@ -1,0 +1,47 @@
+<%- include('../../../../common/partial/header.txt') %>
+/* eslint key-spacing:"off" */
+/* jscs:disable requireCamelCaseOrUpperCaseIdentifiers */
+module.exports = {
+    options  : {
+		sourceMap: true,
+		minified : false,
+        compact  : false,
+        comments : true,
+		presets  : [
+			'env'
+		]
+	},
+	release  : {
+		files: {
+			'<%%= currentTarget %%>/scripts/<%= appNameKebab %>.min.js': '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js'
+		}
+	},
+	dev      : {
+		files: {
+			'<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js': '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js'
+		}
+	},
+	vendors  : {
+        options: {
+            sourceMap: false
+        },
+        files  : {
+            '<%%= currentTarget %%>/scripts/vendor.js': '<%%= currentTarget %%>/scripts/vendor.js'
+        }
+    },
+    concatScripts: {
+        files  : {
+            '.tmp/release/scripts/<%= appNameKebab %>.min.js': '.tmp/release/scripts/<%= appNameKebab %>.min.js'
+        }
+    },
+    concatJs     : {
+        files  : {
+            '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js': '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js'
+        }
+    },
+    concatRelease: {
+        files  : {
+            '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js': '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js'
+        }
+    }
+};

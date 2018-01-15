@@ -32,7 +32,6 @@
 		'grunt-contrib-jshint',
 		'grunt-contrib-less',
 		'grunt-contrib-pug',
-		'grunt-contrib-uglify',
 		'grunt-cssnano',
 		'grunt-filerev',
 		'grunt-google-cdn',
@@ -66,7 +65,11 @@
 		'time-grunt',
 		'load-grunt-config',
 		'eslint',
-		'eslint-config-xo'
+		'eslint-config-xo',
+		'babel-core',
+		'babel-preset-env',
+		'grunt-babel',
+		'grunt-npm-command'
 	];
 
 	module.exports = class Npm {
