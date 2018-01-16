@@ -12,6 +12,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+### Added
+- The `app` sub-generator will run the command `npm install` to make sure that all dependencies are good
+
 ### Fixed
 - Babel grunt task syntax
 - Wrong context for arrow functions with grunt tasks

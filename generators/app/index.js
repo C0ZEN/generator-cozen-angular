@@ -129,6 +129,9 @@
 
 			utils.installNpmPackages(this);
 			utils.installBowerPackages(this);
+			this.spawnCommand('npm', [
+				'install'
+			]);
 		}
 
 		end() {
