@@ -1,47 +1,47 @@
-<%- include('../../../../common/partial/header.txt') %>
+<%- include('../../../../common/partial/header.txt') %%>
 /* eslint key-spacing:"off" */
 /* jscs:disable requireCamelCaseOrUpperCaseIdentifiers */
 module.exports = {
-    options  : {
+	options      : {
 		sourceMap: true,
 		minified : false,
-        compact  : false,
-        comments : true,
+		compact  : false,
+		comments : true,
 		presets  : [
 			'env'
 		]
 	},
-	release  : {
+	release      : {
 		files: {
-			'<%%= currentTarget %%>/scripts/<%= appNameKebab %>.min.js': '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js'
+			'<%%= currentTarget %%>/scripts/my-app.min.js': '<%%= currentTarget %%>/scripts/my-app.js'
 		}
 	},
-	dev      : {
+	dev          : {
 		files: {
-			'<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js': '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js'
+			'<%%= paths.app %%>/scripts/my-app.min.js': '<%%= paths.app %%>/scripts/my-app.js'
 		}
 	},
-	vendors  : {
-        options: {
-            sourceMap: false
-        },
-        files  : {
-            '<%%= currentTarget %%>/scripts/vendor.js': '<%%= currentTarget %%>/scripts/vendor.js'
-        }
-    },
-    concatScripts: {
-        files  : {
-            '.tmp/release/scripts/<%= appNameKebab %>.min.js': '.tmp/release/scripts/<%= appNameKebab %>.min.js'
-        }
-    },
-    concatJs     : {
-        files  : {
-            '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js': '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js'
-        }
-    },
-    concatRelease: {
-        files  : {
-            '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js': '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js'
-        }
-    }
+	vendors      : {
+		options: {
+			sourceMap: false
+		},
+		files  : {
+			'<%%= currentTarget %%>/scripts/vendor.js': '<%%= currentTarget %%>/scripts/vendor.js'
+		}
+	},
+	concatScripts: {
+		files: {
+			'.tmp/release/scripts/my-app.min.js': '.tmp/release/scripts/my-app.min.js'
+		}
+	},
+	concatJs     : {
+		files: {
+			'<%%= paths.app %%>/scripts/my-app.js': '<%%= paths.app %%>/scripts/my-app.js'
+		}
+	},
+	concatRelease: {
+		files: {
+			'<%%= currentTarget %%>/scripts/my-app.js': '<%%= currentTarget %%>/scripts/my-app.js'
+		}
+	}
 };

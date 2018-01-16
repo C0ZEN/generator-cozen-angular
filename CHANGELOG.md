@@ -12,6 +12,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+### Fixed
+- Babel grunt task syntax
+- Wrong context for arrow functions with grunt tasks
 
 ## [0.12.17]
 ### Added

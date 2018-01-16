@@ -4,7 +4,7 @@ module.exports = function (grunt) {
 	grunt.registerMultiTask('release', 'Create a new stable version', () => {
 
 		// Get the current target
-		const target = this.data.target;
+		const target = this.task.current.data.target;
 		grunt.config.set('currentTarget', target);
 
 		// Run the release task
