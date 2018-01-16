@@ -12,6 +12,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+
+## [0.12.18]
 ### Added
 - The `app` sub-generator will run the command `npm install` to make sure that all dependencies are good
 - Welcome message in the index
