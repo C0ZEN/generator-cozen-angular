@@ -12,18 +12,31 @@ module.exports = {
 		]
 	},
 	release      : {
-		files: {
+		options: {
+			minified: true,
+			compact : true,
+			comments: false
+		},
+		files  : {
 			'<%%= currentTarget %%>/scripts/my-app.min.js': '<%%= currentTarget %%>/scripts/my-app.js'
 		}
 	},
 	dev          : {
-		files: {
+		options: {
+			minified: true,
+			compact : true,
+			comments: false
+		},
+		files  : {
 			'<%%= paths.app %%>/scripts/my-app.min.js': '<%%= paths.app %%>/scripts/my-app.js'
 		}
 	},
 	vendors      : {
 		options: {
-			sourceMap: false
+			sourceMap: false,
+			minified : true,
+			compact  : true,
+			comments : false
 		},
 		files  : {
 			'<%%= currentTarget %%>/scripts/vendor.js': '<%%= currentTarget %%>/scripts/vendor.js'
