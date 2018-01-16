@@ -34,8 +34,7 @@
 		'angular-dynamic-locale',
 		'lodash',
 		'animate.css',
-		'angular-local-storage',
-		'http://GIT-30V-DCFR-02.pproject.altran.com/digital_project/altran-angular-lib.git'
+		'angular-local-storage'
 	];
 
 	module.exports = class Bower {
