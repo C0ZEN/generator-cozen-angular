@@ -10,25 +10,14 @@
 (function () {
 	'use strict';
 
-	const utils     = require('../../common/utils.js');
-	const _         = require('lodash');
-	const providers = [
-		'alertFloating',
-		'alert',
+	const utils         = require('../../common/utils.js');
+	const _             = require('lodash');
+	const rootProviders = [
 		'api',
 		'app',
-		'breadcrumbAuto',
-		'breadcrumbItem',
-		'breadcrumb',
 		'btn',
 		'card',
 		'compile',
-		'datePickerDays',
-		'datePickerHeader',
-		'datePickerMonths',
-		'datePicker',
-		'datePickerWeek',
-		'datePickerYears',
 		'debug',
 		'dropdown',
 		'dynamicLocale',
@@ -55,13 +44,34 @@
 		'theme',
 		'title',
 		'toggle',
-		'translate',
-		'workflowItem',
-		'workflow'
+		'translate'
 	];
+	const providers     = {
+		alert     : [
+			'alertFloating',
+			'alert'
+		],
+		breadcrumb: [
+			'breadcrumbAuto',
+			'breadcrumbItem',
+			'breadcrumb'
+		],
+		datePicker: [
+			'datePickerDays',
+			'datePickerHeader',
+			'datePickerMonths',
+			'datePicker',
+			'datePickerWeek',
+			'datePickerYears'
+		],
+		workflow  : [
+			'workflowItem',
+			'workflow'
+		]
+	};
 
 	module.exports = $that => {
-		_.forEach(providers, $provider => {
+		_.forEach(rootProviders, $provider => {
 			utils.copyFileTpl($that, 'app/config/providers/' + $provider + 'Provider.config.txt', {
 				appNameKebab  : $that.appNameKebab,
 				appNameCamel  : $that.appNameCamel,
@@ -70,6 +80,18 @@
 				nowTime       : $that.nowTime,
 				currentVersion: $that.currentVersion
 			}, 'app/config/providers/' + $provider + 'Provider.config.js');
+		});
+		_.forEach(providers, ($list, $listName) => {
+			_.forEach($list, $provider => {
+				utils.copyFileTpl($that, 'app/config/providers/' + $listName + '/' + $provider + 'Provider.config.txt', {
+					appNameKebab  : $that.appNameKebab,
+					appNameCamel  : $that.appNameCamel,
+					authorShort   : $that.authorShort,
+					nowDate       : $that.nowDate,
+					nowTime       : $that.nowTime,
+					currentVersion: $that.currentVersion
+				}, 'app/config/providers/' + $listName + '/' + $provider + 'Provider.config.js');
+			});
 		});
 	};
 

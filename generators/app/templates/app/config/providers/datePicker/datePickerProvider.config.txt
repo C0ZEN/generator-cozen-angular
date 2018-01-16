@@ -1,4 +1,4 @@
-<%- include('../../../../../common/partial/header.txt') %>
+<%- include('../../../../../../common/partial/header.txt') %>
 (function (angular) {
 	'use strict';
 
