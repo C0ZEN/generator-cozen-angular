@@ -18,6 +18,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Path for common providers to add them in sub-folders
+- Readme to update the cmder section and app section
 
 ### Fixed
 - Babel grunt task syntax

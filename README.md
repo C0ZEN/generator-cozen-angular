@@ -4,7 +4,8 @@
 
 ## Installation
 
-If you're on Windows, do yourself a favor and use [cmder](http://cmder.net/) instead of `cmd.exe`.
+If you're on Windows, do yourself a favor and use [cmder](http://cmder.net/) instead of `cmd.exe`.  
+Checkout this [documentation](https://c0zen.github.io/angular-wiki/cmder/install/) to install it.
 
 First, install [Yeoman](http://yeoman.io) globally and the generator-cozen-angular globally using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
@@ -19,8 +20,22 @@ Then generate your new project:
 yo cozen-angular [--skip-install]
 ```
 
+After the successful run of the app generator, you should ensure that all dependencies are properly installed.  
+Just run this command, which will also update the bower dependencies:
+
+```bash
+npm install
+```
+
+After that, your projects is ready.  
+You can start the local server:
+
+```bash
+grunt serve
+```
+
 **Note:**  
-For now, the link to `cozen-angular-lib` is private.  
+For now, the link to `altran-angular-lib` is private.  
 The `grunt serve` task will not works.  
 This is a temporary situation, the lib will be pushed to the public in a few.
 
