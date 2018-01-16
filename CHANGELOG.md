@@ -19,6 +19,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Babel grunt task syntax
 - Wrong context for arrow functions with grunt tasks
 - Added missing key `debug` for the alert floating provider
+- Error with closing tag in `babel` grunt config file
 
 ## [0.12.17]
 ### Added
