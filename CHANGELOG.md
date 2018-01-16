@@ -21,6 +21,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Added missing key `debug` for the alert floating provider
 - Error with closing tag in `babel` grunt config file
 - Missing bower dependencies
+- Wrong `target` config path for `app` provider config file
 
 ## [0.12.17]
 ### Added

@@ -15,7 +15,7 @@
 		altranAppProvider
 			.version(config.app.version)
 			.name(config.app.name)
-			.target(config.target);
+			.target(config.app.target);
 	}
 
 })(window.angular);
