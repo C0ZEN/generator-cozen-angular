@@ -20,6 +20,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Wrong context for arrow functions with grunt tasks
 - Added missing key `debug` for the alert floating provider
 - Error with closing tag in `babel` grunt config file
+- Missing bower dependencies
 
 ## [0.12.17]
 ### Added
