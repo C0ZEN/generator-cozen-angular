@@ -59,7 +59,7 @@
 
 		static installBowerPackages($that) {
 			$that.bowerInstall(bower.getModules(), {
-				'save-dev': true
+				'save': true
 			});
 		}
 
