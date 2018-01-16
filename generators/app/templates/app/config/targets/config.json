@@ -326,6 +326,7 @@
                 "error": "error"
             },
             "floating": {
+                "debug": true,
                 "defaultType": "default",
                 "defaultSize": "normal",
                 "isClickable": false,
