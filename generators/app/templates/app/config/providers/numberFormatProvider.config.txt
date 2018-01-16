@@ -7,27 +7,17 @@
 		.config(provider);
 
 	provider.$inject = [
-		'altranDebugProvider',
+		'altranNumberFormatProvider',
 		'config'
 	];
 
-	function provider(altranDebugProvider, config) {
-		altranDebugProvider
-			.compile(config.debug.compile)
-			.logsEnabled(config.debug.logs.enabled)
-			.logsEnhancedColors(config.debug.logs.enhancedColors)
-			.logsFormat(config.debug.logs.format)
-			.logsSeparator(config.debug.logs.separator)
-			.logsClassNameBefore(config.debug.logs.classNameBefore)
-			.logsClassNameAfter(config.debug.logs.classNameAfter)
-			.logsRestrictedMethods(config.debug.logs.restrictedMethods)
-			.logsExceptionsEnabled(config.debug.logs.exceptions.enabled)
-			.logsHttpEnabled(config.debug.logs.http.enabled)
-			.logsHttpEnhanced(config.debug.logs.exceptions.enhanced)
-			.logsLanguageEnabled(config.debug.logs.language.enabled)
-			.logsTestEnabled(config.debug.logs.test.enabled)
-			.logsThemeEnabled(config.debug.logs.theme.enabled)
-			.logsInit(config.debug.logs.init);
+	function provider(altranNumberFormatProvider, config) {
+		altranNumberFormatProvider
+			.localeMatcher(config.numberFormatConfig.localeMatcher)
+			.style(config.numberFormatConfig.style)
+			.currency(config.numberFormatConfig.currency)
+			.currencyDisplay(config.numberFormatConfig.currencyDisplay)
+			.useGrouping(config.numberFormatConfig.useGrouping);
 	}
 
 })(window.angular);

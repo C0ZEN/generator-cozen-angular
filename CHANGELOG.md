@@ -30,6 +30,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Wrong `target` config path for `app` provider config file
 - `logsHttpEnhanced` method will now use the correct path of the config for the `debug` provider config file
 - All bower dependencies added as dependencies instead of dev dependencies
+- `numberFormat` provider config file was not the good one
 
 ## [0.12.17]
 ### Added
