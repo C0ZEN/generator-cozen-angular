@@ -23,7 +23,7 @@
 			.logsRestrictedMethods(config.debug.logs.restrictedMethods)
 			.logsExceptionsEnabled(config.debug.logs.exceptions.enabled)
 			.logsHttpEnabled(config.debug.logs.http.enabled)
-			.logsHttpEnhanced(config.debug.logs.exceptions.enhanced)
+			.logsHttpEnhanced(config.debug.logs.http.enhanced)
 			.logsLanguageEnabled(config.debug.logs.language.enabled)
 			.logsTestEnabled(config.debug.logs.test.enabled)
 			.logsThemeEnabled(config.debug.logs.theme.enabled)

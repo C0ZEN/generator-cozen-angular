@@ -22,6 +22,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Error with closing tag in `babel` grunt config file
 - Missing bower dependencies
 - Wrong `target` config path for `app` provider config file
+- `logsHttpEnhanced` method will now use the correct path of the config for the `debug` provider config file
 
 ## [0.12.17]
 ### Added
