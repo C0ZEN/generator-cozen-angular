@@ -9,6 +9,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+### Added
+- New input `all` to choice between include or not the AAL bower dependency in the `app` generator
 
 ## [0.13.0]
 ### Added

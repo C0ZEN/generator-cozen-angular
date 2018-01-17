@@ -13,10 +13,11 @@
 	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
-		utils.copyFileTpl($that, 'bower.json', {
+		utils.copyFileTpl($that, 'bower.json.txt', {
 			appNameKebab: $that.appNameKebab,
-			theme       : $that.theme
-		});
+			theme       : $that.theme,
+			aal         : $that.aalBowerDependency
+		}, 'bower.json');
 		utils.copyFileTpl($that, 'manifest.json', {
 			lang           : $that.lang,
 			appDescription : $that.appDescription,

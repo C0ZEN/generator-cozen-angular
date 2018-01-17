@@ -21,6 +21,7 @@
 	const color          = require('./inputs/color.js');
 	const author         = require('./inputs/author.js');
 	const authorEmail    = require('./inputs/authorEmail.js');
+	const aal            = require('./inputs/aal.js');
 
 	const writingMain        = require('./writing/main.js');
 	const writingMarkdown    = require('./writing/markdown.js');
@@ -96,6 +97,10 @@
 
 		inputAuthorEmail() {
 			return authorEmail.set(this);
+		}
+
+		inputAal() {
+			return aal.set(this);
 		}
 
 		writing() {
