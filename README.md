@@ -87,6 +87,12 @@ To create a new provider:
 yo cozen-angular:provider
 ```
 
+To create a new state:
+
+```bash
+yo cozen-angular:state
+```
+
 ## Contributing
 
 Check out the [Contributing](CONTRIBUTING.md) file.

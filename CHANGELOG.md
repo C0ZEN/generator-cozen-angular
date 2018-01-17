@@ -5,13 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## ToDo
-- Replace `uglify` task by `babel` to compile es6
-- Change the structure for the configuration file to match the one in the lib
-- Add all the providers from the lib to cover 100% configuration
 - Add new generator for directive
 - Add more coverage
 
 ## [Unreleased]
+### Added
+- New sub-generator `state`
 
 ## [0.12.18]
 ### Added

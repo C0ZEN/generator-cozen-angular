@@ -59,6 +59,11 @@
 					name : logs.choice('view', 'create a view', longerGenerator),
 					value: 'view',
 					short: 'view'
+				},
+				{
+					name : logs.choice('state', 'create an angular state', longerGenerator),
+					value: 'state',
+					short: 'state'
 				}
 			]
 		}

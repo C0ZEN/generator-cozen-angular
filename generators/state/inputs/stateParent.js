@@ -3,9 +3,9 @@
  * Generated file stateParent on WebStorm
  *
  * Created by: Geoffrey "C0ZEN" Testelin
- * Date: 03/01/2018
- * Time: 20:58
- * Version: 0.11.0
+ * Date: 17/01/2018
+ * Time: 10:22
+ * Version: 0.12.18
  */
 (function () {
 	'use strict';

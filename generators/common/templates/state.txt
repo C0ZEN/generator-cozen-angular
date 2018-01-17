@@ -16,9 +16,10 @@
 			    <% if (stateAbstract) { %>abstract    : true,<% } %>
 			    <% if (stateParent) { %>parent      : '<%= stateParent %>',<% } %>
                 url         : '<%= stateUrl %>',
-				templateUrl : '<%= viewPath %>.template.html',
-				controller  : '<%= controllerName %>',
-				controllerAs: 'vm'
+				<% if (viewPath) { %>templateUrl : '<%= viewPath %>.template.html',<% } %>
+				<% if (!viewPath) { %>template : '<ui-view></ui-view>',<% } %>
+				<% if (controllerName) { %>controller  : '<%= controllerName %>',<% } %>
+				<% if (controllerName) { %>controllerAs: 'vm'<% } %>
 			});
 	}
 
