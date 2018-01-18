@@ -9,6 +9,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+### Added
+- New input `validate` for the `app` generator to edit the values
 
 ## [0.13.1]
 ### Added

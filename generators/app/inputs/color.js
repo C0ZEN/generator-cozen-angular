@@ -17,14 +17,12 @@
 			type   : 'input',
 			name   : 'backgroundColor',
 			message: 'Background color color :',
-			default: 'white',
 			store  : true
 		},
 		{
 			type   : 'input',
 			name   : 'themeColor',
 			message: 'Theme color :',
-			default: '#FFFFFF',
 			store  : true
 		}
 	];
@@ -41,9 +39,12 @@
 	};
 
 	module.exports = class Color {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints.backgroundColor);
 			logs.hintsMultiline($that, hints.themeColor);
+
+			prompts[0].default = $defaultFromMemory ? $that.backgroundColor : 'white';
+			prompts[1].default = $defaultFromMemory ? $that.themeColor : '#FFFFFF';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

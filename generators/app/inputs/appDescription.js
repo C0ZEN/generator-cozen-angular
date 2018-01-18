@@ -16,8 +16,7 @@
 		{
 			type   : 'input',
 			name   : 'appDescription',
-			message: 'Description of your app :',
-			default: 'This is the description for the project'
+			message: 'Description of your app :'
 		}
 	];
 
@@ -26,10 +25,10 @@
 	];
 
 	module.exports = class AppDescription {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hints($that, hints);
 
-			prompts[0].default += ' ' + $that.appName;
+			prompts[0].default = $defaultFromMemory ? $that.appDescription : 'This is the description for the project ' + $that.appName;
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

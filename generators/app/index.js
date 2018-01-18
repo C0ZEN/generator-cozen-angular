@@ -22,6 +22,7 @@
 	const author         = require('./inputs/author.js');
 	const authorEmail    = require('./inputs/authorEmail.js');
 	const aal            = require('./inputs/aal.js');
+	const validate       = require('./inputs/validate.js');
 
 	const writingMain        = require('./writing/main.js');
 	const writingMarkdown    = require('./writing/markdown.js');
@@ -101,6 +102,10 @@
 
 		inputAal() {
 			return aal.set(this);
+		}
+
+		inputValidate() {
+			return validate.set(this);
 		}
 
 		writing() {

@@ -26,10 +26,10 @@
 	];
 
 	module.exports = class AuthorEmail {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hints($that, hints);
 
-			prompts[0].default = $that.config.get('authorEmail') || $that.user.git.email() || _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@cozen.com';
+			prompts[0].default = $defaultFromMemory ? $that.authorEmail : $that.config.get('authorEmail') || $that.user.git.email() || _.lowerCase($that.authorFirstName) + '.' + _.lowerCase($that.authorLastName) + '@cozen.com';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

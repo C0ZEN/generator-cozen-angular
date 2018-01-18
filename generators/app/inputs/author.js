@@ -41,11 +41,11 @@
 	];
 
 	module.exports = class Author {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
 
-			prompts[0].default = $that.config.get('authorFirstName') || user.getUserFirstname($that);
-			prompts[1].default = $that.config.get('authorLastName') || user.getUserLastname($that);
+			prompts[0].default = $defaultFromMemory ? $that.authorFirstName : $that.config.get('authorFirstName') || user.getUserFirstname($that);
+			prompts[1].default = $defaultFromMemory ? $that.authorLastName : $that.config.get('authorLastName') || user.getUserLastname($that);
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

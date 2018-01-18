@@ -10,6 +10,7 @@
 (function () {
 	'use strict';
 
+	const _    = require('lodash');
 	const logs = require('../../common/logs.js');
 
 	const longerGenerator = 21;
@@ -20,10 +21,9 @@
 			message: 'Select a theme:',
 			choices: [
 				{
-					name   : logs.choice('origin', 'Default theme #legacy', longerGenerator),
-					value  : 'origin',
-					short  : 'origin',
-					checked: true
+					name : logs.choice('origin', 'Default theme #legacy', longerGenerator),
+					value: 'origin',
+					short: 'origin'
 				},
 				{
 					name : logs.choice('altran-portail-france', 'Altran portail project', longerGenerator),
@@ -44,9 +44,17 @@
 	];
 
 	module.exports = class Theme {
-		static set($that) {
-
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			if ($defaultFromMemory) {
+				prompts[0].choices[0].checked = true;
+			}
+			else {
+				_.forEach(prompts[0].choices, $choice => {
+					$choice.checked = $choice.value === $that.theme;
+				});
+			}
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

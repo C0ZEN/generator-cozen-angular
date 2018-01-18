@@ -25,8 +25,7 @@
 		{
 			type   : 'input',
 			name   : 'appName',
-			message: 'Name of your app :',
-			default: 'My App'
+			message: 'Name of your app :'
 		}
 	];
 
@@ -37,8 +36,10 @@
 	];
 
 	module.exports = class AppName {
-		static set($that) {
+		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
+
+			prompts[0].default = $defaultFromMemory ? $that.appName : 'My App';
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);

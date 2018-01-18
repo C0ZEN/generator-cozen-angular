@@ -21,10 +21,9 @@
 			message: 'Select a language:',
 			choices: [
 				{
-					name   : logs.choice('fr', 'français', longerGenerator),
-					value  : 'fr',
-					short  : 'fr',
-					checked: true
+					name : logs.choice('fr', 'français', longerGenerator),
+					value: 'fr',
+					short: 'fr'
 				},
 				{
 					name : logs.choice('en', 'english', longerGenerator),
@@ -40,9 +39,17 @@
 	];
 
 	module.exports = class Lang {
-		static set($that) {
-
+		static set($that, $defaultFromMemory) {
 			logs.hints($that, hints);
+
+			if ($defaultFromMemory) {
+				prompts[0].choices[0].checked = true;
+			}
+			else {
+				_.forEach(prompts[0].choices, $choice => {
+					$choice.checked = $choice.value === $that.lang;
+				});
+			}
 
 			return $that.prompt(prompts).then($response => {
 				this.onSuccess($that, $response);
