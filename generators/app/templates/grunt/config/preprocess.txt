@@ -52,6 +52,24 @@ module.exports = function (grunt) {
 				'<%%= paths.app %%>/config/target.config.js': '<%%= paths.app %%>/config/tpls/target.config.tpl.js',
 				'<%%= currentTarget %%>/index.html'         : '<%%= paths.app %%>/config/tpls/index.tpl.html'
 			}
-		}
+		},
+		manifest   : {
+            options: {
+                context: {
+                    config: require('../../package.json')
+                }
+            },
+            src    : '<%%= paths.app %%>/config/tpls/manifest.tpl.json',
+            dest   : '<%%= currentTarget %%>/manifest.json'
+        },
+        devManifest: {
+            options: {
+                context: {
+                    config: require('../../package.json')
+                }
+            },
+            src    : '<%%= paths.app %%>/config/tpls/manifest.tpl.json',
+            dest   : '<%%= paths.app %%>/manifest.json'
+        }
 	};
 };

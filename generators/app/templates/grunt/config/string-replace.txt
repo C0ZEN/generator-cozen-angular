@@ -35,5 +35,17 @@ module.exports = {
 			'<%%= currentTarget %%>/styles/<%= appNameKebab %>.css'    : '<%%= currentTarget %%>/styles/<%= appNameKebab %>.css',
 			'<%%= currentTarget %%>/styles/<%= appNameKebab %>.min.css': '<%%= currentTarget %%>/styles/<%= appNameKebab %>.min.css'
 		}
-	}
+	},
+	changelog: {
+        src    : 'CHANGELOG.md',
+        dest   : 'CHANGELOG.md',
+        options: {
+            replacements: [
+                {
+                    pattern    : /(\#\# \[Unreleased\])/g, // eslint-disable-line
+                    replacement: '## [Unreleased]\n\n## [<%%= newVersion %%>]'
+                }
+            ]
+        }
+    }
 };

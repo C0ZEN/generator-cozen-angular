@@ -16,7 +16,11 @@
       <w>filerev</w>
       <w>flexbox</w>
       <w>gitattributes</w>
+      <w>gitcheckout</w>
       <w>gitignore</w>
+      <w>gitmerge</w>
+      <w>gitpush</w>
+      <w>gittag</w>
       <w>htmlmin</w>
       <w>imagemin</w>
       <w>jshintrc</w>

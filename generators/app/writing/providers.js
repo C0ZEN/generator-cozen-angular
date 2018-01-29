@@ -10,31 +10,34 @@
 (function () {
 	'use strict';
 
-	const utils         = require('../../common/utils.js');
-	const _             = require('lodash');
-	const rootProviders = [
+	const utils           = require('../../common/utils.js');
+	const _               = require('lodash');
+	const globalProviders = [
+		'compile',
+		'dynamicLocale',
+		'http',
+		'localStorage',
+		'location',
+		'logEx',
+		'moment',
+		'q',
+		'translate'
+	];
+	const rootProviders   = [
 		'api',
 		'app',
 		'btn',
 		'card',
-		'compile',
 		'debug',
 		'dropdown',
-		'dynamicLocale',
 		'form',
-		'http',
 		'input',
 		'keyboard',
 		'language',
 		'loader',
-		'localStorage',
-		'location',
-		'logEx',
 		'media',
 		'modal',
-		'moment',
 		'numberFormat',
-		'q',
 		'radio',
 		'state',
 		'svg',
@@ -43,10 +46,9 @@
 		'textarea',
 		'theme',
 		'title',
-		'toggle',
-		'translate'
+		'toggle'
 	];
-	const providers     = {
+	const providers       = {
 		alert     : [
 			'alertFloating',
 			'alert'
@@ -71,7 +73,7 @@
 	};
 
 	module.exports = $that => {
-		_.forEach(rootProviders, $provider => {
+		_.forEach(globalProviders, $provider => {
 			utils.copyFileTpl($that, 'app/config/providers/' + $provider + 'Provider.config.txt', {
 				appNameKebab  : $that.appNameKebab,
 				appNameCamel  : $that.appNameCamel,
@@ -81,18 +83,30 @@
 				currentVersion: $that.currentVersion
 			}, 'app/config/providers/' + $provider + 'Provider.config.js');
 		});
-		_.forEach(providers, ($list, $listName) => {
-			_.forEach($list, $provider => {
-				utils.copyFileTpl($that, 'app/config/providers/' + $listName + '/' + $provider + 'Provider.config.txt', {
+		if ($that.aalBowerDependency) {
+			_.forEach(rootProviders, $provider => {
+				utils.copyFileTpl($that, 'app/config/providers/' + $provider + 'Provider.config.txt', {
 					appNameKebab  : $that.appNameKebab,
 					appNameCamel  : $that.appNameCamel,
 					authorShort   : $that.authorShort,
 					nowDate       : $that.nowDate,
 					nowTime       : $that.nowTime,
 					currentVersion: $that.currentVersion
-				}, 'app/config/providers/' + $listName + '/' + $provider + 'Provider.config.js');
+				}, 'app/config/providers/' + $provider + 'Provider.config.js');
 			});
-		});
+			_.forEach(providers, ($list, $listName) => {
+				_.forEach($list, $provider => {
+					utils.copyFileTpl($that, 'app/config/providers/' + $listName + '/' + $provider + 'Provider.config.txt', {
+						appNameKebab  : $that.appNameKebab,
+						appNameCamel  : $that.appNameCamel,
+						authorShort   : $that.authorShort,
+						nowDate       : $that.nowDate,
+						nowTime       : $that.nowTime,
+						currentVersion: $that.currentVersion
+					}, 'app/config/providers/' + $listName + '/' + $provider + 'Provider.config.js');
+				});
+			});
+		}
 	};
 
 })();

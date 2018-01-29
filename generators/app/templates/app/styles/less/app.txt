@@ -1,0 +1,3 @@
+<% if (aal) { %>@import (less) "../../../bower_components/altran-angular-lib/release/styles/less/mixins/mixins.import.less";
+@import (less) "../../../bower_components/altran-angular-lib/release/styles/less/themes/<%= theme %>.less";<% } %>
+@import (less) "<%= appNameKebab %>.variables.less";

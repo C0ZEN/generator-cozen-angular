@@ -13,7 +13,8 @@ module.exports = function (grunt) {
 
 	const globalConfig = {
 		browserslist: require('./package.json').browserslist,
-		prettier    : require('./package.json').prettier
+		prettier    : require('./package.json').prettier,
+		version     : require('./package.json').version
 	};
 
 	const targets = {
@@ -42,14 +43,18 @@ module.exports = function (grunt) {
 			}
 		},
 		data      : {
-			paths        : appPaths,
-			config       : globalConfig,
-			currentTarget: 'toDefine',
-			targets
+			paths           : appPaths,
+			config          : globalConfig,
+			currentTarget   : 'toDefine',
+            newVersion      : 'toDefine',
+            newVersionTarget: 'toDefine',
+            version         : 'toDefine',
+            targets
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-notify');
+	grunt.loadNpmTasks('grunt-git');
 
 	grunt.task.run('notify_hooks');
 };

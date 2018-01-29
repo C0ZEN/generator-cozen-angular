@@ -22,6 +22,14 @@
 		utils.copyFileTpl($that, 'app/config/tpls/target.config.tpl.txt', {
 			appNameCamel: $that.appNameCamel
 		}, 'app/config/tpls/target.config.tpl.js');
+		utils.copyFileTpl($that, 'app/config/tpls/manifest.tpl.json', {
+			lang           : $that.lang,
+			appDescription : $that.appDescription,
+			appName        : $that.appName,
+			backgroundColor: $that.backgroundColor,
+			themeColor     : $that.themeColor,
+			authorShort    : $that.authorShort
+		});
 	};
 
 })();

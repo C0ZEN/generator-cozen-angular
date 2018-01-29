@@ -66,8 +66,8 @@
 					short: 'authorEmail'
 				},
 				{
-					value: 'aal',
-					short: 'aal'
+					value: 'aalBowerDependency',
+					short: 'aalBowerDependency'
 				}
 			]
 		}

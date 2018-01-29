@@ -1,0 +1,13 @@
+<%- include('../../../../common/partial/header.txt') %>
+/* eslint valid-jsdoc:"off" */
+module.exports = {
+	develop: {
+		options: {
+			verbose : true,
+			branch  : 'develop',
+			message : 'Release <%%= newVersion %%>',
+			noCommit: false,
+			strategy: 'recursive'
+		}
+	}
+};

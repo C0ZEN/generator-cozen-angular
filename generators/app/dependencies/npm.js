@@ -69,7 +69,11 @@
 		'babel-core',
 		'babel-preset-env',
 		'grunt-babel',
-		'grunt-npm-command'
+		'grunt-npm-command',
+		'grunt-prompt',
+		'grunt-if',
+		'grunt-git',
+		'grunt-bump'
 	];
 
 	module.exports = class Npm {

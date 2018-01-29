@@ -18,13 +18,6 @@
 			theme       : $that.theme,
 			aal         : $that.aalBowerDependency
 		}, 'bower.json');
-		utils.copyFileTpl($that, 'manifest.json', {
-			lang           : $that.lang,
-			appDescription : $that.appDescription,
-			appName        : $that.appName,
-			backgroundColor: $that.backgroundColor,
-			themeColor     : $that.themeColor
-		});
 		utils.copyFileTpl($that, '_package.json', {
 			appName           : $that.appName,
 			appNameCamel      : $that.appNameCamel,

@@ -19,8 +19,17 @@
 			authorShort   : $that.authorShort,
 			nowDate       : $that.nowDate,
 			nowTime       : $that.nowTime,
-			currentVersion: $that.currentVersion
+			currentVersion: $that.currentVersion,
+			aal           : $that.aalBowerDependency
 		}, 'app/app.js');
+		utils.copyFileTpl($that, 'app/scripts/constants/vendors.constant.txt', {
+			appNameKebab  : $that.appNameKebab,
+			appNameCamel  : $that.appNameCamel,
+			authorShort   : $that.authorShort,
+			nowDate       : $that.nowDate,
+			nowTime       : $that.nowTime,
+			currentVersion: $that.currentVersion
+		}, 'app/scripts/constants/vendors.constant.js');
 	};
 
 })();

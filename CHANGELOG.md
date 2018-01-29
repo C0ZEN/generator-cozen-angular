@@ -9,10 +9,24 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+### Added
+- A lot of new grunt files and npm dependencies to auto create a release with auto tag
+
+### Changed
+- Manifest content in the app generator
+- The manifest is now generated from tpls
+- The `author` in the manifest is the same that the one creating the app
+- Changelog content in the app generator
+- `app` and `app.loader` less files does not import the aal files if aal option is false for the app generator
+- `app.js` file does not import altranLib as dependency if aal option is false for the app generator
+- Removed all aal providers when aal option is false for the app generator
+
+### Fixed
+- Error with UI of AAL in app generator
 
 ## [0.14.1]
 ### Fixed
-- Notify method is not correctly placed into the service template file #42
+- Notify method is not correctly placed into the service template file [#42](https://github.com/C0ZEN/generator-cozen-angular/issues/42)
 
 ## [0.14.0]
 ### Added

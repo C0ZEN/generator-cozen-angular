@@ -1,0 +1,14 @@
+<%- include('../../../../common/partial/header.txt') %>
+/* eslint valid-jsdoc:"off" */
+module.exports = {
+	release: {
+		options: {
+			verbose  : true,
+			tag      : '<%%= newVersion %%>',
+			message  : 'Version <%%= newVersion %%>',
+			remove   : false,
+			annotated: false,
+			force    : false
+		}
+	}
+};

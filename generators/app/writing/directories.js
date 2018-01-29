@@ -26,7 +26,6 @@
 			'app/scripts/directives',
 			'app/scripts/filters',
 			'app/scripts/services',
-			'app/scripts/constants',
 			'app/scripts/providers',
 			'app/styles/css',
 			'app/styles/less/override',

@@ -6,6 +6,7 @@ module.exports = function (grunt) {
 			'clean:server',
 			'wiredep',
 			'preprocess:dev',
+			'preprocess:devManifest',
 			'string-replace:devIndex',
 			'htmlmin:dev',
 			'jsMin:dev',

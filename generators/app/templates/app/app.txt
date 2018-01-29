@@ -4,7 +4,20 @@
 
 	angular
 		.module('<%= appNameCamel %>', [
-			'altranLib'
+		    'ngAnimate',
+            'ngAria',
+            'ngCookies',
+            'ngMessages',
+            'ngResource',
+            'ngRoute',
+            'ngSanitize',
+            'ngTouch',
+            'ui.router',
+            'pascalprecht.translate',
+            'tmh.dynamicLocale',
+            'LocalStorageModule',
+            'log.ex.uo',
+			<% if (aal) { %>'altranLib'<% } %>
 		]);
 
 })(window.angular);

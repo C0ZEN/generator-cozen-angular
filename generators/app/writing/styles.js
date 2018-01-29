@@ -15,10 +15,11 @@
 	module.exports = $that => {
 		utils.copyFileTplWithMultipleDestinations(
 			$that,
-			'app/styles/less/app.less',
+			'app/styles/less/app.txt',
 			{
 				theme       : $that.theme,
-				appNameKebab: $that.appNameKebab
+				appNameKebab: $that.appNameKebab,
+				aal         : $that.aalBowerDependency
 			},
 			[
 				'app/styles/less/' + $that.appNameKebab + '.less'
@@ -26,9 +27,10 @@
 		);
 		utils.copyFileTplWithMultipleDestinations(
 			$that,
-			'app/styles/less/app.loader.less',
+			'app/styles/less/app.loader.txt',
 			{
-				theme: $that.theme
+				theme: $that.theme,
+				aal  : $that.aalBowerDependency
 			},
 			[
 				'app/styles/less/' + $that.appNameKebab + '.loader.less'
