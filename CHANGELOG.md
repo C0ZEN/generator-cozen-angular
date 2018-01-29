@@ -10,6 +10,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.14.0]
+### Added
+- CODE_OF_CONDUCT.md for app generator
+- ISSUE_TEMPLATE.md for app generator
+- PULL_REQUEST_TEMPLATE.md for app generator
+  				
 ## [0.13.2]
 ### Added
 - New input `validate` for the `app` generator to edit the values

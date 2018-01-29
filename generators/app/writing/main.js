@@ -23,6 +23,9 @@
 			appNameCamel: $that.appNameCamel,
 			appNameKebab: $that.appNameKebab
 		}, 'Gruntfile.js');
+		utils.copyFile($that, 'CODE_OF_CONDUCT.md');
+		utils.copyFile($that, 'ISSUE_TEMPLATE.md');
+		utils.copyFile($that, 'PULL_REQUEST_TEMPLATE.md');
 	};
 
 })();

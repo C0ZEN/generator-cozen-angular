@@ -55,7 +55,10 @@
 				'.gitignore',
 				'.jscsrc',
 				'.jshintrc',
-				'Gruntfile.js'
+				'Gruntfile.js',
+				'CODE_OF_CONDUCT.md',
+				'ISSUE_TEMPLATE.md',
+				'PULL_REQUEST_TEMPLATE.md'
 			]);
 		});
 
