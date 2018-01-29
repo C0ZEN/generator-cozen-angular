@@ -16,10 +16,13 @@
 	    <% if (subscribeAndNotify) { %>'$rootScope'<% } %>
 	];
 
-	function <%= serviceName %>(<% if (subscribeAndNotify) { %>$rootScope<% } %>) {
-		return {
-		    <% if (subscribeAndNotify) { %>subscribe,<% } %>
-            <% if (subscribeAndNotify) { %>notify<% } %>
+	function <%= serviceName %>(<% if (subscribeAndNotify) { %>$rootScope<% } %>) {<% if (subscribeAndNotify) { %>
+	    const methods = {
+	        notify
+	    };
+
+		<% } %>return {
+		    <% if (subscribeAndNotify) { %>subscribe<% } %>
 		};<% if (subscribeAndNotify) { %>
 
 		function subscribe($scope, $callback) {

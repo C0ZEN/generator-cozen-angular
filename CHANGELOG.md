@@ -10,6 +10,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.14.1]
+### Fixed
+- Notify method is not correctly placed into the service template file #42
+
 ## [0.14.0]
 ### Added
 - CODE_OF_CONDUCT.md for app generator
