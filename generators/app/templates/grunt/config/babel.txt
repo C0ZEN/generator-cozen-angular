@@ -18,7 +18,7 @@ module.exports = {
 			comments: false
 		},
 		files  : {
-			'<%%= currentTarget %%>/scripts/my-app.min.js': '<%%= currentTarget %%>/scripts/my-app.js'
+			'<%%= currentTarget %%>/scripts/<%= appNameKebab %>.min.js': '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js'
 		}
 	},
 	dev          : {
@@ -28,7 +28,7 @@ module.exports = {
 			comments: false
 		},
 		files  : {
-			'<%%= paths.app %%>/scripts/my-app.min.js': '<%%= paths.app %%>/scripts/my-app.js'
+			'<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js': '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js'
 		}
 	},
 	vendors      : {
@@ -44,17 +44,17 @@ module.exports = {
 	},
 	concatScripts: {
 		files: {
-			'.tmp/release/scripts/my-app.min.js': '.tmp/release/scripts/my-app.min.js'
+			'.tmp/release/scripts/<%= appNameKebab %>.min.js': '.tmp/release/scripts/<%= appNameKebab %>.min.js'
 		}
 	},
 	concatJs     : {
 		files: {
-			'<%%= paths.app %%>/scripts/my-app.js': '<%%= paths.app %%>/scripts/my-app.js'
+			'<%%= paths.app %%>/scripts/<%= appNameKebab %>.js': '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js'
 		}
 	},
 	concatRelease: {
 		files: {
-			'<%%= currentTarget %%>/scripts/my-app.js': '<%%= currentTarget %%>/scripts/my-app.js'
+			'<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js': '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js'
 		}
 	}
 };

@@ -23,6 +23,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Error with UI of AAL in app generator
+- The file path used into babel grunt task is now replaced by a generated path matching the appName set in the app generator to avoid error with wrong file name
 
 ## [0.14.1]
 ### Fixed
