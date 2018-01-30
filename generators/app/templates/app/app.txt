@@ -16,8 +16,8 @@
             'pascalprecht.translate',
             'tmh.dynamicLocale',
             'LocalStorageModule',
-            'log.ex.uo',
-			<% if (aal) { %>'altranLib'<% } %>
+            'log.ex.uo'<% if (aal) { %>,
+			'altranLib'<% } %>
 		]);
 
 })(window.angular);
