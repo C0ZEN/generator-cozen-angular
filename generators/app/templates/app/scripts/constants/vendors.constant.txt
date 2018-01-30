@@ -4,6 +4,6 @@
 
     angular
         .module('<%= appNameCamel %>')
-        .constant('moment', moment});
+        .constant('moment', moment);
 
 })(window.angular);
