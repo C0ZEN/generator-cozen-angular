@@ -13,9 +13,12 @@
 	const utils = require('../../common/utils.js');
 	const _     = require('lodash');
 	const files = [
+		'internal.bump',
+		'internal.changelogRequired',
 		'jsMin',
 		'languages',
 		'release',
+		'releaseBump',
 		'serve'
 	];
 

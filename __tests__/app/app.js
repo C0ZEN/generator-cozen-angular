@@ -174,13 +174,20 @@
 
 		it('create grunt config files', () => {
 			assert.file([
+				'grunt/config/babel.js',
+				'grunt/config/bump.js',
 				'grunt/config/clean.js',
 				'grunt/config/concat.js',
 				'grunt/config/concurrent.js',
 				'grunt/config/connect.js',
 				'grunt/config/copy.js',
 				'grunt/config/cssmin.js',
+				'grunt/config/gitcheckout.js',
+				'grunt/config/gitmerge.js',
+				'grunt/config/gitpush.js',
+				'grunt/config/gittag.js',
 				'grunt/config/htmlmin.js',
+				'grunt/config/if.js',
 				'grunt/config/imagemin.js',
 				'grunt/config/jsMin.js',
 				'grunt/config/languages.js',
@@ -189,13 +196,13 @@
 				'grunt/config/ngtemplates.js',
 				'grunt/config/notify.js',
 				'grunt/config/notify_hooks.js',
+				'grunt/config/npm-command.js',
 				'grunt/config/postcss.js',
 				'grunt/config/preprocess.js',
 				'grunt/config/prettier.js',
+				'grunt/config/prompt.js',
 				'grunt/config/release.js',
 				'grunt/config/string-replace.js',
-				'grunt/config/babel.js',
-				'grunt/config/npm-command.js',
 				'grunt/config/usemin.js',
 				'grunt/config/useminPrepare.js',
 				'grunt/config/watch.js',
@@ -205,9 +212,12 @@
 
 		it('create grunt tasks files', () => {
 			assert.file([
+				'grunt/tasks/internal.bump.js',
+				'grunt/tasks/internal.changelogRequired.js',
 				'grunt/tasks/jsMin.js',
 				'grunt/tasks/languages.js',
 				'grunt/tasks/release.js',
+				'grunt/tasks/releaseBump.js',
 				'grunt/tasks/serve.js'
 			]);
 		});
