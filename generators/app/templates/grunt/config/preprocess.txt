@@ -8,8 +8,9 @@ module.exports = function (grunt) {
 		dev    : {
 			options: {
 				context: {
-					config: grunt.file.read('app/config/targets/config.dev.json'),
-					target: 'dev'
+					config    : grunt.file.read('app/config/targets/config.dev.json'),
+					configJson: grunt.file.readJSON('app/config/targets/config.dev.json'),
+					target    : 'dev'
 				}
 			},
 			files  : {
@@ -20,8 +21,9 @@ module.exports = function (grunt) {
 		test   : {
 			options: {
 				context: {
-					config: grunt.file.read('app/config/targets/config.test.json'),
-					target: 'test'
+					config    : grunt.file.read('app/config/targets/config.test.json'),
+					configJson: grunt.file.readJSON('app/config/targets/config.test.json'),
+					target    : 'test'
 				}
 			},
 			files  : {
@@ -32,8 +34,9 @@ module.exports = function (grunt) {
 		preprod: {
 			options: {
 				context: {
-					config: grunt.file.read('app/config/targets/config.preprod.json'),
-					target: 'preprod'
+					config    : grunt.file.read('app/config/targets/config.preprod.json'),
+					configJson: grunt.file.readJSON('app/config/targets/config.preprod.json'),
+					target    : 'preprod'
 				}
 			},
 			files  : {
@@ -44,8 +47,9 @@ module.exports = function (grunt) {
 		prod   : {
 			options: {
 				context: {
-					config: grunt.file.read('app/config/targets/config.prod.json'),
-					target: 'prod'
+					config    : grunt.file.read('app/config/targets/config.prod.json'),
+					configJson: grunt.file.readJSON('app/config/targets/config.prod.json'),
+					target    : 'prod'
 				}
 			},
 			files  : {
@@ -56,7 +60,7 @@ module.exports = function (grunt) {
 		manifest   : {
             options: {
                 context: {
-                    config: require('../../package.json')
+                    config: grunt.file.readJSON('package.json')
                 }
             },
             src    : '<%%= paths.app %%>/config/tpls/manifest.tpl.json',
@@ -65,7 +69,7 @@ module.exports = function (grunt) {
         devManifest: {
             options: {
                 context: {
-                    config: require('../../package.json')
+                    config: grunt.file.readJSON('package.json')
                 }
             },
             src    : '<%%= paths.app %%>/config/tpls/manifest.tpl.json',

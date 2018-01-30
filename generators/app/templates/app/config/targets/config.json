@@ -26,7 +26,8 @@
     "app": {
         "version": "0.0.0",
         "name": "<%= appNameKebab %>",
-        "target": "dev"
+        "target": "dev",
+        "canonicalUrl": "http://exemple.com/"
     },
     "debug": {
         "compile": true,

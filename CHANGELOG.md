@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - A lot of new grunt files and npm dependencies to auto create a release with auto tag
+- Header meta canonical for index on app generator
 
 ### Changed
 - Manifest content in the app generator
@@ -20,6 +21,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - `app` and `app.loader` less files does not import the aal files if aal option is false for the app generator
 - `app.js` file does not import altranLib as dependency if aal option is false for the app generator
 - Removed all aal providers when aal option is false for the app generator
+- Preprocess grunt task config to add target config as json object into index for app generator
 
 ### Fixed
 - Error with UI of AAL in app generator
