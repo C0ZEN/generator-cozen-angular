@@ -27,6 +27,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Error with UI of AAL in app generator
 - The file path used into babel grunt task is now replaced by a generated path matching the appName set in the app generator to avoid error with wrong file name
 - Removed bracket into vendors.constant file which where causing crash during grunt serve task for the app generator
+- Error with grunt config task npm-command which should run lint but now run test and the test script in the package was reworked
 
 ## [0.14.1]
 ### Fixed

@@ -18,9 +18,8 @@
     },
     "scripts": {
         "update-dependencies": "ncu -m npm -u -x grunt-contrib-connect grunt-contrib-watch && ncu -m bower -u",
-        "test": "karma start test\\karma.conf.js",
-        "postinstall": "bower update",
-        "lint": "eslint . --fix"
+        "test": "eslint . --fix",
+        "postinstall": "bower update"
     },
     "build": {
         "appId": "hr.creaticon.eatodo",
