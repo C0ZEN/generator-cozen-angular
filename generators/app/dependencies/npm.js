@@ -73,7 +73,8 @@
 		'grunt-prompt',
 		'grunt-if',
 		'grunt-git',
-		'grunt-bump'
+		'grunt-bump',
+		'grunt-force-task'
 	];
 
 	module.exports = class Npm {
