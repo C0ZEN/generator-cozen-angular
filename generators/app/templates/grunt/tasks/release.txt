@@ -3,8 +3,8 @@
 module.exports = function (grunt) {
 	grunt.registerTask('release', 'Choose a target', () => {
 		grunt.task.run([
-		    'prompt:chooseTarget',
-		    'internal.release'
+			'prompt:chooseTarget',
+			'internal.release'
 		]);
 	});
 };
