@@ -17,7 +17,7 @@
 		{
 			type    : 'input',
 			name    : 'authorFirstName',
-			message : 'Your first name :',
+			message : 'Your first name:',
 			validate: $value => {
 				/* istanbul ignore next */
 				return $value ? true : 'Your first name could not be empty !';
@@ -26,7 +26,7 @@
 		{
 			type    : 'input',
 			name    : 'authorLastName',
-			message : 'Your last name :',
+			message : 'Your last name:',
 			validate: $value => {
 				/* istanbul ignore next */
 				return $value ? true : 'Your last name could not be empty !';

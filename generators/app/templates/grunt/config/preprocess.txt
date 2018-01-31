@@ -74,6 +74,24 @@ module.exports = function (grunt) {
             },
             src    : '<%%= paths.app %%>/config/tpls/manifest.tpl.json',
             dest   : '<%%= paths.app %%>/manifest.json'
+        },
+        structuredData   : {
+            options: {
+                context: {
+                    config: grunt.file.readJSON('package.json')
+                }
+            },
+            src    : '<%%= paths.app %%>/config/tpls/structured-data.tpl.json',
+            dest   : '<%%= currentTarget %%>/structured-data.json'
+        },
+        devStructuredData: {
+            options: {
+                context: {
+                    config: grunt.file.readJSON('package.json')
+                }
+            },
+            src    : '<%%= paths.app %%>/config/tpls/structured-data.tpl.json',
+            dest   : '<%%= paths.app %%>/structured-data.json'
         }
 	};
 };

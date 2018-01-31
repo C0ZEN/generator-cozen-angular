@@ -12,6 +12,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - A lot of new grunt files and npm dependencies to auto create a release with auto tag
 - Header meta canonical for index on app generator
+- New input twitterName for the app generator
+- New file structured-data for the app generator
+- A lot of new meta data for the app generator
 
 ### Changed
 - Manifest content in the app generator

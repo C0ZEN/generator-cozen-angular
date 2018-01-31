@@ -59,6 +59,8 @@
 		static onSuccess($that, $response) {
 			$that.lang = _.lowerCase($response.lang);
 			$that.config.set('lang', $that.lang);
+			$that.langExtended = _.lowerCase($response.lang) + '_' + _.upperCase($response.lang);
+			$that.config.set('langExtended', $that.langExtended);
 			$that.log();
 		}
 	};

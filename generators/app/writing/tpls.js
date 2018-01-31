@@ -14,10 +14,16 @@
 
 	module.exports = $that => {
 		utils.copyFileTpl($that, 'app/config/tpls/index.tpl.html', {
-			appNameCamel: $that.appNameCamel,
-			lang        : $that.lang,
-			appNameKebab: $that.appNameKebab,
-			themeColor  : $that.themeColor
+			appNameCamel  : $that.appNameCamel,
+			lang          : $that.lang,
+			appNameKebab  : $that.appNameKebab,
+			themeColor    : $that.themeColor,
+			appDescription: $that.appDescription,
+			authorShort   : $that.authorShort,
+			langExtended  : $that.langExtended,
+			appName       : $that.appName,
+			twitterName   : $that.twitterName,
+			twitterAdded  : $that.twitterAdded
 		});
 		utils.copyFileTpl($that, 'app/config/tpls/target.config.tpl.txt', {
 			appNameCamel: $that.appNameCamel
@@ -30,6 +36,11 @@
 			themeColor     : $that.themeColor,
 			authorShort    : $that.authorShort
 		});
+		utils.copyFileTpl($that, 'app/config/tpls/structured-data.tpl.txt', {
+			appName       : $that.appName,
+			appDescription: $that.appDescription,
+			authorShort   : $that.authorShort
+		}, 'app/config/tpls/structured-data.json');
 	};
 
 })();

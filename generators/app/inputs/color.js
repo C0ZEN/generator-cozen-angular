@@ -16,13 +16,13 @@
 		{
 			type   : 'input',
 			name   : 'backgroundColor',
-			message: 'Background color color :',
+			message: 'Background color color:',
 			store  : true
 		},
 		{
 			type   : 'input',
 			name   : 'themeColor',
-			message: 'Theme color :',
+			message: 'Theme color:',
 			store  : true
 		}
 	];

@@ -1,0 +1,23 @@
+{
+    "name"            : "<%= appName %>",
+    "description"     : "<%= appDescription %>",
+    "author"          : {
+        "@type": "Person",
+        "name" : "<%= authorShort %>"
+    },
+    "@type"           : "WebSite",
+    "url"             : "<!-- @echo configJson.app.canonicalUrl -->",
+    "image"           : null,
+    "publisher"       : {
+        "@type": "Organization",
+        "logo": {
+            "@type": "ImageObject",
+            "url"  : null
+        },
+        "name" : "<%= appName %>"
+    },
+    "headline"        : "<%= appDescription %>",
+    "dateModified"    : null,
+    "datePublished"   : null,
+    "@context"        : "http://schema.org"
+}

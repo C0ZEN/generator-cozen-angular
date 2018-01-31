@@ -7,8 +7,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible"
               content="IE=9; IE=8; IE=7; IE=EDGE"/>
-        <meta name="description"
-              content="">
         <meta name="viewport"
               content="width=device-width, initial-scale=1">
         <link rel="manifest"
@@ -17,6 +15,31 @@
               content="<%= themeColor %>"/>
         <link rel="canonical"
               href="<!-- @echo configJson.app.canonicalUrl -->">
+        <meta property="og:url"
+              content="<!-- @echo configJson.app.canonicalUrl -->">
+        <meta property="og:title"
+              content="<%= appName %>">
+        <meta name="author"
+              content="<%= authorShort %>">
+        <meta property="og:locale"
+              content="<%= langExtended %>">
+        <meta name="description"
+              content="<%= appDescription %>">
+        <meta property="og:description"
+              content="<%= appDescription %>">
+        <meta property="og:site_name"
+              content="<%= appName %>">
+        <% if (twitterAdded) { %>
+        <meta name="twitter:card"
+              content="summary">
+        <meta name="twitter:site"
+              content="@<%= twitterName %>">
+        <meta name="twitter:creator"
+              content="@<%= twitterName %>">
+        <% } %>
+        <script type="application/ld+json"
+                src="structured-data.json">
+        </script>
 
         <!-- build:css(.) styles/vendor.css-->
         <!-- bower:css-->

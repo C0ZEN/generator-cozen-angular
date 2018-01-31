@@ -86,7 +86,8 @@
 				'app/config/targets/config.prod.json',
 				'app/config/tpls/index.tpl.html',
 				'app/config/tpls/target.config.tpl.js',
-				'app/config/tpls/manifest.tpl.json'
+				'app/config/tpls/manifest.tpl.json',
+				'app/config/tpls/structured-data.tpl.json'
 			]);
 		});
 

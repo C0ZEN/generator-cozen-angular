@@ -22,6 +22,7 @@
 	const author         = require('./inputs/author.js');
 	const authorEmail    = require('./inputs/authorEmail.js');
 	const aal            = require('./inputs/aal.js');
+	const twitterName    = require('./inputs/twitterName.js');
 	const validate       = require('./inputs/validate.js');
 
 	const writingMain        = require('./writing/main.js');
@@ -102,6 +103,10 @@
 
 		inputAal() {
 			return aal.set(this);
+		}
+
+		inputTwitterName() {
+			return twitterName.set(this);
 		}
 
 		inputValidate() {

@@ -36,7 +36,8 @@
 				'Author first name: ' + logs.value($that.authorFirstName),
 				'Author last name: ' + logs.value($that.authorLastName),
 				'Author email: ' + logs.value($that.authorEmail),
-				'AAL bower dependency: ' + logs.value($that.aalBowerDependency)
+				'AAL bower dependency: ' + logs.value($that.aalBowerDependency),
+				'Twitter name: ' + logs.value($that.twitterName)
 			];
 
 			logs.hintsMultiline($that, hints);

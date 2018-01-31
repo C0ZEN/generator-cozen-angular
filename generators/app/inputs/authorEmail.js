@@ -17,7 +17,7 @@
 		{
 			type   : 'input',
 			name   : 'authorEmail',
-			message: 'Your email :'
+			message: 'Your email:'
 		}
 	];
 

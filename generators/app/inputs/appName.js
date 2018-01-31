@@ -25,7 +25,7 @@
 		{
 			type   : 'input',
 			name   : 'appName',
-			message: 'Name of your app :'
+			message: 'Name of your app:'
 		}
 	];
 

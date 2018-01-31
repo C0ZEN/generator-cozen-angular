@@ -16,7 +16,7 @@
 		{
 			type   : 'input',
 			name   : 'appDescription',
-			message: 'Description of your app :'
+			message: 'Description of your app:'
 		}
 	];
 
