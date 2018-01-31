@@ -25,6 +25,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - `app.js` file does not import altranLib as dependency if aal option is false for the app generator
 - Removed all aal providers when aal option is false for the app generator
 - Preprocess grunt task config to add target config as json object into index for app generator
+- The grunt release task use a prompt to define which target should be execution for the app generator
 
 ### Fixed
 - Error with UI of AAL in app generator

@@ -19,7 +19,6 @@ module.exports = function (grunt) {
 			grunt.task.run([
 				'ngtemplates:release',
 				'concat:release',
-				'concat:concatRelease',
 				'babel:release',
 				'merge-json:min'
 			]);
