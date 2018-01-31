@@ -4,19 +4,19 @@
 
 	angular
 		.module('<%= appNameCamel %>', [
-		    'ngAnimate',
-            'ngAria',
-            'ngCookies',
-            'ngMessages',
-            'ngResource',
-            'ngRoute',
-            'ngSanitize',
-            'ngTouch',
-            'ui.router',
-            'pascalprecht.translate',
-            'tmh.dynamicLocale',
-            'LocalStorageModule',
-            'log.ex.uo'<% if (aal) { %>,
+			'ngAnimate',
+			'ngAria',
+			'ngCookies',
+			'ngMessages',
+			'ngResource',
+			'ngRoute',
+			'ngSanitize',
+			'ngTouch',
+			'ui.router',
+			'pascalprecht.translate',
+			'tmh.dynamicLocale',
+			'LocalStorageModule',
+			'log.ex.uo'<% if (aal) { %>,
 			'altranLib'<% } %>
 		]);
 
