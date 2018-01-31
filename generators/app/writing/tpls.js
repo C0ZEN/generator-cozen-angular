@@ -40,7 +40,7 @@
 			appName       : $that.appName,
 			appDescription: $that.appDescription,
 			authorShort   : $that.authorShort
-		}, 'app/config/tpls/structured-data.json');
+		}, 'app/config/tpls/structured-data.tpl.json');
 	};
 
 })();

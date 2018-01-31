@@ -6,7 +6,7 @@
         "name" : "<%= authorShort %>"
     },
     "@type"           : "WebSite",
-    "url"             : "<!-- @echo configJson.app.canonicalUrl -->",
+    "url"             : "<!-- @echo config.app.canonicalUrl -->",
     "image"           : null,
     "publisher"       : {
         "@type": "Organization",

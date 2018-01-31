@@ -1,7 +1,6 @@
 <%- include('../../../../common/partial/header.txt') %>
 /* eslint key-spacing:"off" */
 module.exports = {
-	devIndex: {
 	devIndex : {
         options: {
             replacements: [
