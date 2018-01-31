@@ -29,6 +29,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Removed bracket into vendors.constant file which where causing crash during grunt serve task for the app generator
 - Error with grunt config task npm-command which should run lint but now run test and the test script in the package was reworked
 - Missing grunt config and task are now added to the app generator
+- Changed the syntax of string-replace grunt config file for the app generator to avoid error with grunt release task
 
 ## [0.14.1]
 ### Fixed
