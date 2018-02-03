@@ -10,6 +10,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.15.2]
+### Changed
+- Readme
+
 ## [0.15.1]
 ### Changed
 - The behavior of the watcher has changed to reduce building when .html file change for the app generator

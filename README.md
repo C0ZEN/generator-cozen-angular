@@ -1,6 +1,6 @@
 # generator-cozen-angular 
 [![Software License][license-image]](LICENSE) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![devDependencies Status][daviddm-dev-image]][daviddm-dev-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Maintainability][code-climate-maintainability-image]][code-climate-maintainability-url] [![Test Coverage][code-climate-coverage-image]][code-climate-coverage-url]
-> Use this yeoman generator to help you create AngularJS applications based to works properly with the Altran Angular Library.
+> Use this yeoman generator to help you create AngularJS applications based to works properly with the Altran Angular Library. Note that the library is optional.
 
 ## Installation
 
@@ -36,8 +36,10 @@ grunt serve
 
 **Note:**  
 For now, the link to `altran-angular-lib` is private.  
-The `grunt serve` task will not works.  
+The `grunt serve` task will not works and the dependencies will fail on install.  
 This is a temporary situation, the lib will be pushed to the public in a few.
+
+Nevertheless the Altran Angular Lib dependency is optional so you can always use this generator.
 
 To list all sub-generators and run them faster:
 
