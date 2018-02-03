@@ -9,6 +9,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+
+## [0.15.0]
 ### Added
 - A lot of new grunt files and npm dependencies to auto create a release with auto tag
 - Header meta canonical for index on app generator
