@@ -33,6 +33,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Removed all aal providers when aal option is false for the app generator
 - Preprocess grunt task config to add target config as json object into index for app generator
 - The grunt release task use a prompt to define which target should be execution for the app generator
+- All files html files are now pug files [#43](https://github.com/C0ZEN/generator-cozen-angular/issues/43)
 
 ### Fixed
 - Error with UI of AAL in app generator
