@@ -2,150 +2,181 @@
 <html ng-app="<%= appNameCamel %>"
       ng-strict-di="true"
       lang="<%= lang %>">
-    <head>
-        <base>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible"
-              content="IE=9; IE=8; IE=7; IE=EDGE"/>
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1">
-        <link rel="manifest"
-              href="manifest.json">
-        <meta name="theme-color"
-              content="<%= themeColor %>"/>
-        <link rel="canonical"
-              href="<!-- @echo configJson.app.canonicalUrl -->">
-        <meta property="og:url"
-              content="<!-- @echo configJson.app.canonicalUrl -->">
-        <meta property="og:title"
-              content="<%= appName %>">
-        <meta name="author"
-              content="<%= authorShort %>">
-        <meta property="og:locale"
-              content="<%= langExtended %>">
-        <meta name="description"
-              content="<%= appDescription %>">
-        <meta property="og:description"
-              content="<%= appDescription %>">
-        <meta property="og:site_name"
-              content="<%= appName %>">
-        <% if (twitterAdded) { %>
-        <meta name="twitter:card"
-              content="summary">
-        <meta name="twitter:site"
-              content="@<%= twitterName %>">
-        <meta name="twitter:creator"
-              content="@<%= twitterName %>">
-        <% } %>
-        <script type="application/ld+json"
-                src="structured-data.json">
-        </script>
+	<head>
+		<base>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible"
+		      content="IE=9; IE=8; IE=7; IE=EDGE"/>
+		<meta name="viewport"
+		      content="width=device-width, initial-scale=1">
+		<link rel="manifest"
+		      href="manifest.json">
+		<meta name="theme-color"
+		      content="<%= themeColor %>"/>
+		<link rel="canonical"
+		      href="<!-- @echo configJson.app.canonicalUrl -->">
+		<meta property="og:url"
+		      content="<!-- @echo configJson.app.canonicalUrl -->">
+		<meta property="og:title"
+		      content="<%= appName %>">
+		<meta name="author"
+		      content="<%= authorShort %>">
+		<meta property="og:locale"
+		      content="<%= langExtended %>">
+		<meta name="description"
+		      content="<%= appDescription %>">
+		<meta property="og:description"
+		      content="<%= appDescription %>">
+		<meta property="og:site_name"
+		      content="<%= appName %>">
+		<% if (twitterAdded) { %>
+		<meta name="twitter:card"
+		      content="summary">
+		<meta name="twitter:site"
+		      content="@<%= twitterName %>">
+		<meta name="twitter:creator"
+		      content="@<%= twitterName %>">
+		<% } %>
+		<script type="application/ld+json"
+		        src="structured-data.json">
+		</script>
 
-        <!-- @if target="dev" -->
-	    <link rel="stylesheet"
-	          href="styles/css/vendors.min.css"/>
-        <link rel="stylesheet"
-              href="styles/css/init-loader.min.css">
-        <link rel="stylesheet"
-              href="styles/css/<%= appNameKebab %>.min.css">
-        <!-- @endif -->
+		<!-- @if target="dev" -->
+		<link rel="preload"
+		      as="style"
+		      onload="this.rel='stylesheet'"
+		      href="styles/css/vendors.min.css"/>
+		<link rel="stylesheet"
+		      href="styles/css/init-loader.min.css">
+		<link rel="preload"
+		      as="style"
+		      onload="this.rel='stylesheet'"
+		      href="styles/css/<%= appNameKebab %>.min.css">
+		<!-- @endif -->
 
-        <!-- @if target="test" -->
-	    <link rel="stylesheet"
-	          href="styles/vendors.min.css"/>
-        <link rel="stylesheet"
-              href="styles/css/init-loader.min.css">
-        <link rel="stylesheet"
-              href="styles/<%= appNameKebab %>.min.css">
-        <!-- @endif -->
+		<!-- @if target="test" -->
+		<link rel="preload"
+		      as="style"
+		      onload="this.rel='stylesheet'"
+		      href="styles/vendors.min.css"/>
+		<link rel="stylesheet"
+		      href="styles/css/init-loader.min.css">
+		<link rel="preload"
+		      as="style"
+		      onload="this.rel='stylesheet'"
+		      href="styles/<%= appNameKebab %>.min.css">
+		<!-- @endif -->
 
-        <!-- @if target="preprod" -->
-	    <link rel="stylesheet"
-	          href="styles/vendors.min.css"/>
-        <link rel="stylesheet"
-              href="styles/css/init-loader.min.css">
-        <link rel="stylesheet"
-              href="styles/<%= appNameKebab %>.min.css">
-        <!-- @endif -->
+		<!-- @if target="preprod" -->
+		<link rel="preload"
+		      as="style"
+		      onload="this.rel='stylesheet'"
+		      href="styles/vendors.min.css"/>
+		<link rel="stylesheet"
+		      href="styles/css/init-loader.min.css">
+		<link rel="preload"
+		      as="style"
+		      onload="this.rel='stylesheet'"
+		      href="styles/<%= appNameKebab %>.min.css">
+		<!-- @endif -->
 
-        <!-- @if target="prod" -->
-	    <link rel="stylesheet"
-	          href="styles/vendors.min.css"/>
-        <link rel="stylesheet"
-              href="styles/css/init-loader.min.css">
-        <link rel="stylesheet"
-              href="styles/<%= appNameKebab %>.min.css">
-        <!-- @endif -->
+		<!-- @if target="prod" -->
+		<link rel="preload"
+		      as="style"
+		      onload="this.rel='stylesheet'"
+		      href="styles/vendors.min.css"/>
+		<link rel="stylesheet"
+		      href="styles/css/init-loader.min.css">
+		<link rel="preload"
+		      as="style"
+		      onload="this.rel='stylesheet'"
+		      href="styles/<%= appNameKebab %>.min.css">
+		<!-- @endif -->
 
-        <!-- Favicon -->
-        <link rel="shortcut icon"
-              href="images/ico/favicon.ico"
-              type="image/x-icon"/>
-        <link rel="apple-touch-icon"
-              href="images/png/icon/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon"
-              sizes="57x57"
-              href="images/png/icon/apple-touch-icon-57x57.png"/>
-        <link rel="apple-touch-icon"
-              sizes="72x72"
-              href="images/png/icon/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon"
-              sizes="76x76"
-              href="images/png/icon/apple-touch-icon-76x76.png"/>
-        <link rel="apple-touch-icon"
-              sizes="114x114"
-              href="images/png/icon/apple-touch-icon-114x114.png"/>
-        <link rel="apple-touch-icon"
-              sizes="120x120"
-              href="images/png/icon/apple-touch-icon-120x120.png"/>
-        <link rel="apple-touch-icon"
-              sizes="144x144"
-              href="images/png/icon/apple-touch-icon-144x144.png"/>
-        <link rel="apple-touch-icon"
-              sizes="152x152"
-              href="images/png/icon/apple-touch-icon-152x152.png"/>
-        <link rel="apple-touch-icon"
-              sizes="180x180"
-              href="images/png/icon/apple-touch-icon-180x180.png"/>
-    </head>
-    <body class="no-overflow">
+		<!-- Favicon -->
+		<link rel="shortcut icon"
+		      href="images/ico/favicon.ico"
+		      type="image/x-icon"/>
+		<link rel="apple-touch-icon"
+		      href="images/png/icon/apple-touch-icon.png"/>
+		<link rel="apple-touch-icon"
+		      sizes="57x57"
+		      href="images/png/icon/apple-touch-icon-57x57.png"/>
+		<link rel="apple-touch-icon"
+		      sizes="72x72"
+		      href="images/png/icon/apple-touch-icon-72x72.png"/>
+		<link rel="apple-touch-icon"
+		      sizes="76x76"
+		      href="images/png/icon/apple-touch-icon-76x76.png"/>
+		<link rel="apple-touch-icon"
+		      sizes="114x114"
+		      href="images/png/icon/apple-touch-icon-114x114.png"/>
+		<link rel="apple-touch-icon"
+		      sizes="120x120"
+		      href="images/png/icon/apple-touch-icon-120x120.png"/>
+		<link rel="apple-touch-icon"
+		      sizes="144x144"
+		      href="images/png/icon/apple-touch-icon-144x144.png"/>
+		<link rel="apple-touch-icon"
+		      sizes="152x152"
+		      href="images/png/icon/apple-touch-icon-152x152.png"/>
+		<link rel="apple-touch-icon"
+		      sizes="180x180"
+		      href="images/png/icon/apple-touch-icon-180x180.png"/>
+	</head>
+	<body class="no-overflow">
 
-        <div class="altran-container margin-l-top">
-            <h1>Hi Captain !</h1>
-            <p>Everything seems fine to me.</p>
-            <pre>
-                If you can read this message, your project is alive !
-                <br>
-                It means that your are not dead. Yet.
-            </pre>
-        </div>
+		<div class="altran-container margin-l-top">
+			<h1>Hi Captain !</h1>
+			<p>Everything seems fine to me.</p>
+			<pre>
+				If you can read this message, your project is alive !
+				<br>
+				It means that your are not dead. Yet.
+			</pre>
+		</div>
 
-        <!-- Main view -->
-        <ui-view></ui-view>
+		<!-- Main view -->
+		<ui-view></ui-view>
 
-	    <!-- Vendors JS -->
-	    <script src="scripts/vendors.min.js"></script>
+		<!-- Vendors JS -->
+		<script type="text/javascript"
+		        defer
+		        src="scripts/vendors.min.js">
+		</script>
 
-        <!-- @if target="dev" -->
-        <script src="scripts/<%= appNameKebab %>.min.js"></script>
-        <!-- @endif -->
+		<!-- @if target="dev" -->
+		<script type="text/javascript"
+		        defer
+		        src="scripts/<%= appNameKebab %>.min.js">
+		</script>
+		<!-- @endif -->
 
-        <!-- @if target="test" -->
-        <script src="scripts/<%= appNameKebab %>.min.js"></script>
-        <!-- @endif -->
+		<!-- @if target="test" -->
+		<script type="text/javascript"
+		        defer
+		        src="scripts/<%= appNameKebab %>.min.js">
+		</script>
+		<!-- @endif -->
 
-        <!-- @if target="preprod" -->
-        <script src="scripts/<%= appNameKebab %>.min.js"></script>
-        <!-- @endif -->
+		<!-- @if target="preprod" -->
+		<script type="text/javascript"
+		        defer
+		        src="scripts/<%= appNameKebab %>.min.js">
+		</script>
+		<!-- @endif -->
 
-        <!-- @if target="prod" -->
-        <script src="scripts/<%= appNameKebab %>.min.js"></script>
-        <!-- @endif -->
+		<!-- @if target="prod" -->
+		<script type="text/javascript"
+		        defer
+		        src="scripts/<%= appNameKebab %>.min.js">
+		</script>
+		<!-- @endif -->
 
-        <!-- No script message -->
-        <noscript>
-            <span>This app require Javascript to be enabled.</span>
-            <span>Make sure to turn it on.</span>
-        </noscript>
-    </body>
+		<!-- No script message -->
+		<noscript>
+			<span>This app require Javascript to be enabled.</span>
+			<span>Make sure to turn it on.</span>
+		</noscript>
+	</body>
 </html>

@@ -151,11 +151,14 @@
 			this.log(chalk.hex(colors.get('green'))('That\'s all folks !'));
 			this.log(chalk.hex(colors.get('green'))('Your project is ready ;)\n'));
 			this.log(
-				'Use the',
-				chalk.hex(colors.get('navy')).bgHex(colors.get('grey'))('grunt-cli'),
-				'or',
+				'You should run the command',
+				chalk.hex(colors.get('navy')).bgHex(colors.get('grey'))('npm install'),
+				'to make sure that all dependencies are up-to-date and well installed.'
+			);
+			this.log(
+				'Run the command',
 				chalk.hex(colors.get('navy')).bgHex(colors.get('grey'))('grunt serve'),
-				'to start the server.'
+				'to start the local Node server.'
 			);
 		}
 	};

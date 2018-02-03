@@ -2,7 +2,7 @@
 /* eslint key-spacing:"off" */
 module.exports = function (grunt) {
 	return {
-		dev    : {
+		dev       : {
 			options: {
 				map       : true,
 				processors: [
