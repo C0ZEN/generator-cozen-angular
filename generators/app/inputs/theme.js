@@ -47,24 +47,32 @@
 		static set($that, $defaultFromMemory) {
 			logs.hintsMultiline($that, hints);
 
-			if ($defaultFromMemory) {
-				prompts[0].choices[0].checked = true;
-			}
-			else {
-				_.forEach(prompts[0].choices, $choice => {
-					$choice.checked = $choice.value === $that.theme;
+			if ($that.aalBowerDependency) {
+				if ($defaultFromMemory) {
+					prompts[0].choices[0].checked = true;
+				}
+				else {
+					_.forEach(prompts[0].choices, $choice => {
+						$choice.checked = $choice.value === $that.theme;
+					});
+				}
+
+				return $that.prompt(prompts).then($response => {
+					this.onSuccess($that, $response);
 				});
 			}
-
-			return $that.prompt(prompts).then($response => {
-				this.onSuccess($that, $response);
-			});
+			logs.hint($that, 'AAL dependency not included. Skip the theme selection.');
+			this.onSuccess($that, '', false);
+			return null;
 		}
 
-		static onSuccess($that, $response) {
+		static onSuccess($that, $response, $log) {
+			const log   = _.isUndefined($log) ? true : $log;
 			$that.theme = $response.theme;
 			$that.config.set('theme', $that.theme);
-			$that.log();
+			if (log) {
+				$that.log();
+			}
 		}
 	};
 

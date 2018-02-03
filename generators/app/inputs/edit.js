@@ -39,6 +39,10 @@
 					short: 'appDescription'
 				},
 				{
+					value: 'aalBowerDependency',
+					short: 'aalBowerDependency'
+				},
+				{
 					value: 'theme',
 					short: 'theme'
 				},
@@ -67,10 +71,6 @@
 					short: 'authorEmail'
 				},
 				{
-					value: 'aalBowerDependency',
-					short: 'aalBowerDependency'
-				},
-				{
 					value: 'twitterName',
 					short: 'twitterName'
 				}
@@ -91,14 +91,14 @@
 			/* eslint no-magic-numbers:"off" */
 			prompts[0].choices[0].name  = logs.choice('App name', $that.appName, longerGenerator);
 			prompts[0].choices[1].name  = logs.choice('App description', $that.appDescription, longerGenerator);
-			prompts[0].choices[2].name  = logs.choice('Theme', $that.theme, longerGenerator);
-			prompts[0].choices[3].name  = logs.choice('Lang', $that.lang, longerGenerator);
-			prompts[0].choices[4].name  = logs.choice('Background color', $that.backgroundColor, longerGenerator);
-			prompts[0].choices[5].name  = logs.choice('Theme color', $that.themeColor, longerGenerator);
-			prompts[0].choices[6].name  = logs.choice('Author first name', $that.authorFirstName, longerGenerator);
-			prompts[0].choices[7].name  = logs.choice('Author last name', $that.authorLastName, longerGenerator);
-			prompts[0].choices[8].name  = logs.choice('Author email', $that.authorEmail, longerGenerator);
-			prompts[0].choices[9].name  = logs.choice('AAL bower dependency', $that.aal, longerGenerator);
+			prompts[0].choices[2].name  = logs.choice('AAL bower dependency', $that.aalBowerDependency, longerGenerator);
+			prompts[0].choices[3].name  = logs.choice('Theme', $that.theme, longerGenerator);
+			prompts[0].choices[4].name  = logs.choice('Lang', $that.lang, longerGenerator);
+			prompts[0].choices[5].name  = logs.choice('Background color', $that.backgroundColor, longerGenerator);
+			prompts[0].choices[6].name  = logs.choice('Theme color', $that.themeColor, longerGenerator);
+			prompts[0].choices[7].name  = logs.choice('Author first name', $that.authorFirstName, longerGenerator);
+			prompts[0].choices[8].name  = logs.choice('Author last name', $that.authorLastName, longerGenerator);
+			prompts[0].choices[9].name  = logs.choice('Author email', $that.authorEmail, longerGenerator);
 			prompts[0].choices[10].name = logs.choice('Twitter name', $that.twitterName, longerGenerator);
 
 			$that.prompt(prompts).then($response => {
@@ -137,7 +137,7 @@
 				case 'authorEmail':
 					$deferred.resolve(authorEmail.set($that, true));
 					break;
-				case 'aal':
+				case 'aalBowerDependency':
 					$deferred.resolve(aal.set($that, true));
 					break;
 				case 'twitterName':

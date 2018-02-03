@@ -10,6 +10,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.15.3]
+### Changed
+- Order of the inputs for the app generator
+- The theme input will be skipped if the aal input is false
+- Edit and validate inputs for app generator due to changed with theme
+
 ## [0.15.2]
 ### Changed
 - Readme

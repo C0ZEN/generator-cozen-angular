@@ -81,6 +81,10 @@
 			return appDescription.set(this);
 		}
 
+		inputAal() {
+			return aal.set(this);
+		}
+
 		inputTheme() {
 			return theme.set(this);
 		}
@@ -99,10 +103,6 @@
 
 		inputAuthorEmail() {
 			return authorEmail.set(this);
-		}
-
-		inputAal() {
-			return aal.set(this);
 		}
 
 		inputTwitterName() {

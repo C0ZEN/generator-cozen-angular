@@ -16,6 +16,7 @@
 		enabled: true
 	});
 	const upperCase     = require('upper-case');
+	const _             = require('lodash');
 	const colors        = require('./colors.js');
 
 	module.exports = class Logs {
@@ -26,8 +27,13 @@
 			$that.log(chalk.hex(colors.get('orange')).bold('>>> %s <<<\n'), upperCase($priority));
 		}
 
-		static hint($that, $text) {
-			$that.log(chalk.hex(colors.get('purple'))($text + '\n'));
+		static hint($that, $text, $newLine) {
+			const newLine = _.isUndefined($newLine) ? true : $newLine;
+			let text      = $text;
+			if (newLine) {
+				text += '\n';
+			}
+			$that.log(chalk.hex(colors.get('purple'))(text));
 		}
 
 		static hints($that, $texts) {

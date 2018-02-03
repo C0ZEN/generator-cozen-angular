@@ -26,21 +26,19 @@
 	module.exports = class Validate {
 		static set($that) {
 			const deferred = q.defer();
-			const hints    = [
-				'App name: ' + logs.value($that.appName),
-				'App description: ' + logs.value($that.appDescription),
-				'Theme: ' + logs.value($that.theme),
-				'Lang: ' + logs.value($that.lang),
-				'Background color: ' + logs.value($that.backgroundColor),
-				'Theme color: ' + logs.value($that.themeColor),
-				'Author first name: ' + logs.value($that.authorFirstName),
-				'Author last name: ' + logs.value($that.authorLastName),
-				'Author email: ' + logs.value($that.authorEmail),
-				'AAL bower dependency: ' + logs.value($that.aalBowerDependency),
-				'Twitter name: ' + logs.value($that.twitterName)
-			];
-
-			logs.hintsMultiline($that, hints);
+			logs.hint($that, 'App name: ' + logs.value($that.appName));
+			logs.hint($that, 'App description: ' + logs.value($that.appDescription));
+			logs.hint($that, 'AAL bower dependency: ' + logs.value($that.aalBowerDependency));
+			if ($that.aalBowerDependency) {
+				logs.hint($that, 'Theme: ' + logs.value($that.theme));
+			}
+			logs.hint($that, 'Lang: ' + logs.value($that.lang));
+			logs.hint($that, 'Background color: ' + logs.value($that.backgroundColor));
+			logs.hint($that, 'Theme color: ' + logs.value($that.themeColor));
+			logs.hint($that, 'Author first name: ' + logs.value($that.authorFirstName));
+			logs.hint($that, 'Author last name: ' + logs.value($that.authorLastName));
+			logs.hint($that, 'Author email: ' + logs.value($that.authorEmail));
+			logs.hint($that, 'Twitter name: ' + logs.value($that.twitterName));
 
 			prompts[0].default = $that.filterName;
 
