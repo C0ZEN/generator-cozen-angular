@@ -10,6 +10,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.15.1]
+### Changed
+- The behavior of the watcher has changed to reduce building when .html file change for the app generator
+
 ## [0.15.0]
 ### Added
 - A lot of new grunt files and npm dependencies to auto create a release with auto tag

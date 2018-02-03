@@ -44,20 +44,6 @@ module.exports = {
 			'notify:less'
 		]
 	},
-	html      : {
-		files: [
-			'<%%= paths.app %%>/**/*.html',
-			'!<%%= paths.app %%>/index.html'
-		],
-		tasks: [
-			'wiredep',
-			'preprocess:dev',
-			'string-replace:devIndex',
-			'htmlmin:dev',
-			'jsMin:dev',
-			'notify:buildReady'
-		]
-	},
 	pug       : {
 		files: [
 			'<%%= paths.app %%>/**/*.pug'
@@ -73,7 +59,8 @@ module.exports = {
 		files  : [
 			'<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js',
 			'<%%= paths.app %%>/styles/css/*.css',
-			'<%%= paths.app %%>/images/**/*.{png,jpg,jpeg,gif,webp,svg,ico}'
+			'<%%= paths.app %%>/images/**/*.{png,jpg,jpeg,gif,webp,svg,ico}',
+			'<%%= paths.app %%>/**/*.html'
 		]
 	}
 };
