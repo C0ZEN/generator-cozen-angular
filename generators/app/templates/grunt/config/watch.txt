@@ -23,7 +23,10 @@ module.exports = {
 	js        : {
 		files: [
 			'<%%= paths.app %%>/**/*.js',
-			'Gruntfile.js'
+			'Gruntfile.js',
+			'!<%%= paths.app %%>/scripts/<%= appNameKebab %>.js',
+			'!<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js',
+			'!<%%= paths.app %%>/scripts/vendors.min.js'
 		],
 		tasks: [
 			'jsMin:dev',
@@ -62,7 +65,7 @@ module.exports = {
 		files  : [
 			'<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js',
 			'<%%= paths.app %%>/styles/css/*.css',
-			'<%%= paths.app %%>/images/**/*.{png,jpg,jpeg,gif,webp,svg}'
+			'<%%= paths.app %%>/images/**/*.{png,jpg,jpeg,gif,webp,svg,ico}'
 		]
 	}
 };

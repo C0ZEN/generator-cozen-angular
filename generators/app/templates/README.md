@@ -11,13 +11,31 @@
 
 This project use `Grunt` to handle development and version control.
 
-Use `grunt serve` to start the development node server.  
+To run the local node server:
 
-Use `grunt release:target` to create a new release version where `target` is an environment target from the list below.  
+```
+grunt serve
+```
+
+To create a new release folder:
+
+```
+grunt release
+```
+
+You will be able to choose between three release:
 
 - test
 - preprod
 - prod
+
+Each one have his own configuration file so that you can do whatever you want.
+
+To create a new git tab:
+
+```
+grunt releaseBump
+```
 
 ## Running the tests
 

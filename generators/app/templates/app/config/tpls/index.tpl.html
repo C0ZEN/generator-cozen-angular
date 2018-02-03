@@ -41,12 +41,9 @@
                 src="structured-data.json">
         </script>
 
-        <!-- build:css(.) styles/vendor.css-->
-        <!-- bower:css-->
-        <!-- endbower-->
-        <!-- endbuild-->
-
         <!-- @if target="dev" -->
+	    <link rel="stylesheet"
+	          href="styles/css/vendors.min.css"/>
         <link rel="stylesheet"
               href="styles/css/init-loader.min.css">
         <link rel="stylesheet"
@@ -54,6 +51,8 @@
         <!-- @endif -->
 
         <!-- @if target="test" -->
+	    <link rel="stylesheet"
+	          href="styles/vendors.min.css"/>
         <link rel="stylesheet"
               href="styles/css/init-loader.min.css">
         <link rel="stylesheet"
@@ -61,6 +60,8 @@
         <!-- @endif -->
 
         <!-- @if target="preprod" -->
+	    <link rel="stylesheet"
+	          href="styles/vendors.min.css"/>
         <link rel="stylesheet"
               href="styles/css/init-loader.min.css">
         <link rel="stylesheet"
@@ -68,6 +69,8 @@
         <!-- @endif -->
 
         <!-- @if target="prod" -->
+	    <link rel="stylesheet"
+	          href="styles/vendors.min.css"/>
         <link rel="stylesheet"
               href="styles/css/init-loader.min.css">
         <link rel="stylesheet"
@@ -120,10 +123,8 @@
         <!-- Main view -->
         <ui-view></ui-view>
 
-        <!-- build:js(.) scripts/vendor.js-->
-        <!-- bower:js-->
-        <!-- endbower-->
-        <!-- endbuild-->
+	    <!-- Vendors JS -->
+	    <script src="scripts/vendors.min.js"></script>
 
         <!-- @if target="dev" -->
         <script src="scripts/<%= appNameKebab %>.min.js"></script>

@@ -87,7 +87,8 @@
 				'app/config/tpls/index.tpl.html',
 				'app/config/tpls/target.config.tpl.js',
 				'app/config/tpls/manifest.tpl.json',
-				'app/config/tpls/structured-data.tpl.json'
+				'app/config/tpls/structured-data.tpl.json',
+				'app/config/tpls/vendors.tpl.json'
 			]);
 		});
 
@@ -180,11 +181,13 @@
 			assert.file([
 				'grunt/tasks/internal.bump.js',
 				'grunt/tasks/internal.changelogRequired.js',
+				'grunt/tasks/internal.release.js',
 				'grunt/tasks/jsMin.js',
 				'grunt/tasks/languages.js',
 				'grunt/tasks/release.js',
 				'grunt/tasks/releaseBump.js',
-				'grunt/tasks/serve.js'
+				'grunt/tasks/serve.js',
+				'grunt/tasks/vendors.js'
 			]);
 		});
 	});

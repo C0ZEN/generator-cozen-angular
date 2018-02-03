@@ -15,11 +15,13 @@
 	const files = [
 		'internal.bump',
 		'internal.changelogRequired',
+		'internal.release',
 		'jsMin',
 		'languages',
 		'release',
 		'releaseBump',
-		'serve'
+		'serve',
+		'vendors'
 	];
 
 	module.exports = $that => {

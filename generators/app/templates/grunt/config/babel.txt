@@ -31,17 +31,6 @@ module.exports = {
 			'<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js': '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js'
 		}
 	},
-	vendors      : {
-		options: {
-			sourceMap: false,
-			minified : true,
-			compact  : true,
-			comments : false
-		},
-		files  : {
-			'<%%= currentTarget %%>/scripts/vendor.js': '<%%= currentTarget %%>/scripts/vendor.js'
-		}
-	},
 	concatScripts: {
 		files: {
 			'.tmp/release/scripts/<%= appNameKebab %>.min.js': '.tmp/release/scripts/<%= appNameKebab %>.min.js'

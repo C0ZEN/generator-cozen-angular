@@ -1,30 +1,18 @@
 <%- include('../../../../common/partial/header.txt') %>
 /* eslint key-spacing:"off" */
 module.exports = {
-	devIndex : {
-        options: {
-            replacements: [
-                {
-                    pattern    : /(..\/..\/)/gmi,
-                    replacement: ''
-                }
-            ]
-        },
-        src    : '<%%= paths.app %%>/index.html',
-        dest   : '<%%= paths.app %%>/index.html'
-    },
-    index    : {
-        options: {
-            replacements: [
-                {
-                    pattern    : /(..\/..\/)/gmi,
-                    replacement: ''
-                }
-            ]
-        },
-        src    : '<%%= currentTarget %%>/index.html',
-        dest   : '<%%= currentTarget %%>/index.html'
-    },
+	vendors  : {
+		options: {
+			replacements: [
+				{
+					pattern    : /(..\/..\/)/gmi,
+					replacement: '../../../'
+				}
+			]
+		},
+		src    : '<%%= paths.app %%>/config/tpls/vendors-generated.tpl.html',
+		dest   : '<%%= paths.app %%>/config/tpls/vendors-generated.tpl.html'
+	},
 	cssPaths: {
 		options: {
 			replacements: [

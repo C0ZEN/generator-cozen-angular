@@ -50,4 +50,21 @@ module.exports = {
 			'<%%= currentTarget %%>/languages/i18n/fr.js': 'bower_components/angular-i18n/angular-locale_fr.js'
 		}
 	}
+	medias      : {
+		expand: true,
+		dest  : '<%%= currentTarget %%>/medias',
+		src   : '<%%= paths.app %%>/medias'
+	},
+	vendors     : {
+		src : '<%%= paths.app %%>/config/tpls/vendors.tpl.html',
+		dest: '<%%= paths.app %%>/config/tpls/vendors-generated.tpl.html'
+	},
+	vendorsJsDev: {
+		src : '.tmp/vendors/vendors.js',
+		dest: '<%%= paths.app %%>/scripts/vendors.min.js'
+	},
+	vendorsJs   : {
+		src : '.tmp/vendors/vendors.js',
+		dest: '<%%= currentTarget %%>/scripts/vendors.min.js'
+	}
 };

@@ -4,11 +4,13 @@ module.exports = function (grunt) {
 	grunt.registerTask('serve', 'Compile then start a connect web server', () => {
 		grunt.task.run([
 			'clean:server',
-			'wiredep',
+			'vendors',
+			'postcss:vendorsDev',
+			'cssmin:vendorsDev',
+			'copy:vendorsJsDev',
 			'preprocess:dev',
 			'preprocess:devManifest',
 			'preprocess:devStructuredData',
-			'string-replace:devIndex',
 			'htmlmin:dev',
 			'jsMin:dev',
 			'less:main',

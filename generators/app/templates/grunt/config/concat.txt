@@ -13,7 +13,8 @@ module.exports = {
 			'<%%= paths.app %%>/**/*.js',
 			'!<%%= paths.app %%>/**/*.tpl.js',
 			'!<%%= paths.app %%>/scripts/<%= appNameKebab %>.js',
-			'!<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js'
+			'!<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js',
+			'!<%= paths.app %>/scripts/vendors.min.js'
 		],
 		dest: '<%%= paths.app %%>/scripts/<%= appNameKebab %>.js'
 	},
@@ -23,7 +24,8 @@ module.exports = {
 			'.tmp/release/template-cache.js',
 			'!<%%= paths.app %%>/**/*.tpl.js',
 			'!<%%= paths.app %%>/scripts/<%= appNameKebab %>.js',
-			'!<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js'
+			'!<%%= paths.app %%>/scripts/<%= appNameKebab %>.min.js',
+			'!<%= paths.app %>/scripts/vendors.min.js'
 		],
 		dest: '<%%= currentTarget %%>/scripts/<%= appNameKebab %>.js'
 	}

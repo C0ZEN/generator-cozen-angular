@@ -2,25 +2,22 @@
 /.sass-cache/
 /bower_components/
 /node_modules/
-/app/languages/min/
 /release/
 /test/
 /preprod/
 /prod/
 /.yo-rc.json
-/app/config/target.config.js
 /.idea/workspace.xml
+/package-lock.json
+/debug.log
+/app/languages/min/
+/app/styles/css/
+/app/config/target.config.js
 /app/scripts/<%= appNameKebab %>.js
 /app/scripts/<%= appNameKebab %>.js.map
 /app/scripts/<%= appNameKebab %>.min.js
 /app/scripts/<%= appNameKebab %>.min.js.map
-/app/styles/css/<%= appNameKebab %>.css
-/app/styles/css/<%= appNameKebab %>.css.map
-/app/styles/css/<%= appNameKebab %>.min.css
-/app/styles/css/<%= appNameKebab %>.min.css.map
-/app/styles/css/init-loader.css
-/app/styles/css/init-loader.css.map
-/app/styles/css/init-loader.min.css
-/app/styles/css/init-loader.min.css.map
 /app/index.html
 /app/manifest.json
+/app/config/tpls/vendors-generated.tpl.html
+/app/scripts/vendors.min.js

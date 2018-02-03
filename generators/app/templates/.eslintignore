@@ -11,3 +11,4 @@
 /app/scripts/<%= appNameKebab %>.js.map
 /app/scripts/<%= appNameKebab %>.min.js
 /app/scripts/<%= appNameKebab %>.min.js.map
+/app/scripts/vendors.min.js

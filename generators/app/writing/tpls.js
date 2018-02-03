@@ -41,6 +41,7 @@
 			appDescription: $that.appDescription,
 			authorShort   : $that.authorShort
 		}, 'app/config/tpls/structured-data.tpl.json');
+		utils.copyFileTpl($that, 'app/config/tpls/vendors.tpl.html');
 	};
 
 })();
