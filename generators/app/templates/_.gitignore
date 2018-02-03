@@ -17,7 +17,7 @@
 /app/scripts/<%= appNameKebab %>.js.map
 /app/scripts/<%= appNameKebab %>.min.js
 /app/scripts/<%= appNameKebab %>.min.js.map
-/app/index.html
+/app/**/*.html
 /app/manifest.json
 /app/config/tpls/vendors-generated.tpl.html
 /app/scripts/vendors.min.js

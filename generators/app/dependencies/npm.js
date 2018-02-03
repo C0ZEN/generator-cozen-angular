@@ -74,7 +74,8 @@
 		'grunt-if',
 		'grunt-git',
 		'grunt-bump',
-		'grunt-force-task'
+		'grunt-force-task',
+		'grunt-contrib-pug'
 	];
 
 	module.exports = class Npm {

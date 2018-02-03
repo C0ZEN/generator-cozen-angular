@@ -6,6 +6,7 @@ module.exports = function (grunt) {
 			'npm-command:test',
 			'clean:release',
 			'clean:devIndex',
+			'pug:html',
 			'preprocess:' + grunt.config.get('currentTarget'),
 			'preprocess:manifest',
 			'preprocess:structuredData',

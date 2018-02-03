@@ -1,0 +1,15 @@
+<%- include('../../../../common/partial/header.txt') %>
+/* eslint valid-jsdoc:"off" */
+module.exports = {
+	html: {
+		options: {
+			pretty: true
+		},
+		files: {
+			src   : '<%%= paths.app %%>/**/*.pug',
+			dest  : '<%%= paths.app %%>',
+			expand: true,
+			ext   : '.html'
+		}
+	}
+};

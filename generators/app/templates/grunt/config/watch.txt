@@ -58,6 +58,14 @@ module.exports = {
 			'notify:buildReady'
 		]
 	},
+	pug       : {
+		files: [
+			'<%%= paths.app %%>/**/*.pug'
+		],
+		tasks: [
+			'pug:html'
+		]
+	},
 	livereload: {
 		options: {
 			livereload: '<%%= connect.options.livereload %%>'

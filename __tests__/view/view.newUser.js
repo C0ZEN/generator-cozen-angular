@@ -36,7 +36,7 @@
 
 		it('create view html files', () => {
 			assert.file([
-				'app/views/mainDirectory/view.template.html'
+				'app/views/mainDirectory/view.template.pug'
 			]);
 		});
 

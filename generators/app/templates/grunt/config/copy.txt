@@ -49,7 +49,7 @@ module.exports = {
 		files: {
 			'<%%= currentTarget %%>/languages/i18n/fr.js': 'bower_components/angular-i18n/angular-locale_fr.js'
 		}
-	}
+	},
 	medias      : {
 		expand: true,
 		dest  : '<%%= currentTarget %%>/medias',

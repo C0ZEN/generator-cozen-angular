@@ -40,6 +40,7 @@
 		'preprocess',
 		'prettier',
 		'prompt',
+		'pug',
 		'release',
 		'string-replace',
 		'usemin',

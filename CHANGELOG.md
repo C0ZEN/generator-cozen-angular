@@ -15,6 +15,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - New input twitterName for the app generator
 - New file structured-data for the app generator
 - A lot of new meta data for the app generator
+- New grunt config file for pug for the app generator (plus grunt npm dependency)
 
 ### Changed
 - Manifest content in the app generator

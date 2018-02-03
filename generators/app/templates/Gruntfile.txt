@@ -46,10 +46,10 @@ module.exports = function (grunt) {
 			paths           : appPaths,
 			config          : globalConfig,
 			currentTarget   : 'toDefine',
-            newVersion      : 'toDefine',
-            newVersionTarget: 'toDefine',
-            version         : 'toDefine',
-            targets
+			newVersion      : 'toDefine',
+			newVersionTarget: 'toDefine',
+			version         : 'toDefine',
+			targets
 		}
 	});
 

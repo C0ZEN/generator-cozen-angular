@@ -13,7 +13,7 @@
 	const utils = require('../../common/utils.js');
 
 	module.exports = $that => {
-		utils.copyFileTpl($that, 'app/config/tpls/index.tpl.html', {
+		utils.copyFileTpl($that, 'app/config/tpls/index.tpl.pug', {
 			appNameCamel  : $that.appNameCamel,
 			lang          : $that.lang,
 			appNameKebab  : $that.appNameKebab,
@@ -41,7 +41,7 @@
 			appDescription: $that.appDescription,
 			authorShort   : $that.authorShort
 		}, 'app/config/tpls/structured-data.tpl.json');
-		utils.copyFileTpl($that, 'app/config/tpls/vendors.tpl.html');
+		utils.copyFileTpl($that, 'app/config/tpls/vendors.tpl.pug');
 	};
 
 })();

@@ -84,11 +84,11 @@
 				'app/config/targets/config.test.json',
 				'app/config/targets/config.preprod.json',
 				'app/config/targets/config.prod.json',
-				'app/config/tpls/index.tpl.html',
+				'app/config/tpls/index.tpl.pug',
 				'app/config/tpls/target.config.tpl.js',
 				'app/config/tpls/manifest.tpl.json',
 				'app/config/tpls/structured-data.tpl.json',
-				'app/config/tpls/vendors.tpl.json'
+				'app/config/tpls/vendors.tpl.pug'
 			]);
 		});
 
@@ -168,6 +168,7 @@
 				'grunt/config/preprocess.js',
 				'grunt/config/prettier.js',
 				'grunt/config/prompt.js',
+				'grunt/config/pug.js',
 				'grunt/config/release.js',
 				'grunt/config/string-replace.js',
 				'grunt/config/usemin.js',
