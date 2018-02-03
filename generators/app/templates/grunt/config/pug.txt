@@ -1,15 +1,21 @@
 <%- include('../../../../common/partial/header.txt') %>
 /* eslint valid-jsdoc:"off" */
+/* eslint key-spacing:"off" */
 module.exports = {
 	html: {
 		options: {
 			pretty: true
 		},
-		files: {
-			src   : '<%%= paths.app %%>/**/*.pug',
-			dest  : '<%%= paths.app %%>',
-			expand: true,
-			ext   : '.html'
-		}
+		files  : [
+			{
+				cwd   : '<%%= paths.app %%>',
+				src   : '**/*.pug',
+				dest  : '<%%= paths.app %%>',
+				expand: true,
+				rename: ($dest, $src) => {
+					return ($dest + '/' + $src).replace('.pug', '.html');
+				}
+			}
+		]
 	}
 };
