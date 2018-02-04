@@ -1,0 +1,49 @@
+<%- include('../../common/partial/header.unfinished.txt') %>
+ *
+ */
+(function (angular) {
+	'use strict';
+
+	angular
+		.module('<%= appNameCamel %>')
+		.directive('<%= directiveName %>', <%= directiveName %>);
+
+	<%= directiveName %>.$inject = [
+	    '_'
+	];
+
+	function <%= directiveName %>(_) {
+		return {
+            link,<% if (parent) { %>
+            require         : '<%= parent %>',<% } %>
+            restrict        : '<%= restrict %>',
+            replace         : <%= replace %>,
+            transclude      : <%= transclude %>,
+            scope           : {},
+            templateUrl     : '<%= templateUrl %>',
+            bindToController: true,
+            controller      : <%= controllerName %>,
+            controllerAs    : 'vm'
+		};
+
+        function link(scope, element, attrs) {
+            const methods = {
+                init,
+                destroy
+            );
+
+            methods.init();
+
+            function init() {
+                vm.data.listeners.push(scope.$on('$destroy', methods.destroy));
+            }
+
+            function destroy() {
+                _.forEach(vm.data.listeners, $listener => {
+                    $listener();
+                });
+            }
+        }
+	}
+
+})(window.angular);

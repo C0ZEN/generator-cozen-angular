@@ -95,6 +95,12 @@ To create a new state:
 yo cozen-angular:state
 ```
 
+To create a new directive:
+
+```bash
+yo cozen-angular:directive
+```
+
 ## Contributing
 
 Check out the [Contributing](CONTRIBUTING.md) file.

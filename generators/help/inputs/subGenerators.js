@@ -64,6 +64,11 @@
 					name : logs.choice('state', 'create an angular state', longerGenerator),
 					value: 'state',
 					short: 'state'
+				},
+				{
+					name : logs.choice('directive', 'create an angular directive', longerGenerator),
+					value: 'directive',
+					short: 'directive'
 				}
 			]
 		}
