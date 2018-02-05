@@ -30,7 +30,8 @@
 			.itemIconRight(config.directives.form.dropdown.item.iconRight)
 			.itemIconRightWhenSelected(config.directives.form.dropdown.item.iconRightWhenSelected)
 			.search(config.directives.form.dropdown.search)
-			.maxHeight(config.directives.form.dropdown.maxHeight);
+			.maxHeight(config.directives.form.dropdown.maxHeight)
+			.appendToBody(config.directives.form.dropdown.appendToBody);
 	}
 
 })(window.angular);

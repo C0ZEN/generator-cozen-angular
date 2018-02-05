@@ -191,7 +191,8 @@
                     "iconRightWhenSelected": "check"
                 },
                 "search": false,
-                "maxHeight": 300
+                "maxHeight": 300,
+				"appendToBody": false
             },
             "radio": {
                 "validDesign": "alwaysIfModel",

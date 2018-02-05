@@ -12,6 +12,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - New generator `directive`
 
+### Changed
+- Updated the config and provider to introduce new param `appendToBody` for dropdown in the app generator
+
 ## [0.15.3]
 ### Changed
 - Order of the inputs for the app generator
