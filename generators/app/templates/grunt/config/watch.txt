@@ -52,6 +52,16 @@ module.exports = {
 			'pug:html'
 		]
 	},
+	index: {
+		files: [
+			'<%%= paths.app %%>/config/tpls/index.tpl.pug'
+		],
+		tasks: [
+			'pug:html',
+			'preprocess:dev',
+			'htmlmin:dev'
+		]
+	},
 	livereload: {
 		options: {
 			livereload: '<%%= connect.options.livereload %%>'

@@ -14,6 +14,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Updated the config and provider to introduce new param `appendToBody` for dropdown in the app generator
+- Grunt watcher for index file for app generator to build it on change
 
 ## [0.15.3]
 ### Changed
