@@ -12,6 +12,7 @@
 
 	const utils = require('../../common/utils.js');
 	const path  = require('path');
+	const slash = require('slash');
 
 	module.exports = $that => {
 		const filePrefixPath = path.join($that.path, $that.fileName);
@@ -27,10 +28,11 @@
 			replace           : $that.replace,
 			parent            : $that.parent,
 			name              : $that.name,
-			controllerName    : $that.name + 'Controller',
+			controllerName    : $that.nameCamel + 'Controller',
 			directiveName     : $that.name,
+			directiveNameCamel: $that.nameCamel,
 			directiveNameKebab: $that.nameKebab,
-			templateUrl       : filePrefixPath.replace('app/', '') + '.template.html'
+			templateUrl       : slash(filePrefixPath.replace('app/', '') + '.template.html')
 		};
 
 		utils.copyFileTplFrom($that, 'controller.directive.txt', config, filePrefixPath + '.controller.js');

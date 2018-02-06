@@ -10,9 +10,11 @@
 (function () {
 	'use strict';
 
-	const _     = require('lodash');
-	const logs  = require('../../common/logs.js');
-	const utils = require('../../common/utils.js');
+	const _               = require('lodash');
+	const logs            = require('../../common/logs.js');
+	const utils           = require('../../common/utils.js');
+	const upperPythonCase = require('case').constant;
+	const camelCase       = require('camelcase');
 
 	const prompts = [
 		{
@@ -45,6 +47,10 @@
 			$that.config.set('name', $that.name);
 			$that.nameKebab = _.kebabCase($that.name);
 			$that.config.set('nameKebab', $that.nameKebab);
+			$that.nameUpperPython = upperPythonCase($that.name);
+			$that.config.set('nameUpperPython', $that.nameUpperPython);
+			$that.nameCamel = camelCase($that.name);
+			$that.config.set('nameCamel', $that.nameCamel);
 			$that.log();
 		}
 	};

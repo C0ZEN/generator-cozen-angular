@@ -35,7 +35,9 @@
 	const parent      = require('./inputs/parent.js');
 	const validate    = require('./inputs/validate.js');
 
-	const writingFiles = require('./writing/files.js');
+	const writingFiles         = require('./writing/files.js');
+	const writingLanguageFiles = require('./writing/languagesFiles.js');
+	const writingStylesFiles   = require('./writing/stylesFiles.js');
 
 	module.exports = class extends Generator {
 		initializing() {
@@ -131,6 +133,8 @@
 			this.log('Now :', chalk.hex(colors.get('cyan'))(this.nowDate, this.nowTime));
 
 			writingFiles(this);
+			writingLanguageFiles(this);
+			writingStylesFiles(this);
 
 			logs.priority(this, 'writing', true);
 		}

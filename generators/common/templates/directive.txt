@@ -6,13 +6,13 @@
 
 	angular
 		.module('<%= appNameCamel %>')
-		.directive('<%= directiveName %>', <%= directiveName %>);
+		.directive('<%= directiveNameCamel %>', <%= directiveNameCamel %>);
 
-	<%= directiveName %>.$inject = [
+	<%= directiveNameCamel %>.$inject = [
 	    '_'
 	];
 
-	function <%= directiveName %>(_) {
+	function <%= directiveNameCamel %>(_) {
 		return {
             link,<% if (parent) { %>
             require         : '<%= parent %>',<% } %>
@@ -30,16 +30,16 @@
             const methods = {
                 init,
                 destroy
-            );
+            };
 
             methods.init();
 
             function init() {
-                vm.data.listeners.push(scope.$on('$destroy', methods.destroy));
+                scope.vm.data.listeners.push(scope.$on('$destroy', methods.destroy));
             }
 
             function destroy() {
-                _.forEach(vm.data.listeners, $listener => {
+                _.forEach(scope.vm.data.listeners, $listener => {
                     $listener();
                 });
             }

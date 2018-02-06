@@ -1,0 +1,5 @@
+@import (less) "<%= fileName %>.mixins.less";
+@import (less) "<%= fileName %>.variables.less";
+.<%= directiveNameKebab %> {
+
+}
