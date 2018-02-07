@@ -14,7 +14,7 @@
 
 	<%= controllerName %>.$inject = [];
 
-	function <%= controllerName %>() {
+	function <%= controllerName %>($scope, $element, $attrs) {
 		const vm = this;
 
 		vm.methods = {};

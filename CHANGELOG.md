@@ -9,6 +9,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+### Added
+- Directive's controller missing parameters
 
 ## [0.16.3]
 ### Fixed
