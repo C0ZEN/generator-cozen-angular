@@ -1,4 +1,18 @@
 <%- include('../../common/partial/header.unfinished.txt') %>
+ * @ngdoc directive
+ * @name <%= appNameCamel %>.directive:<%= directiveNameKebab %>
+ * @scope
+ * @restrict <%= restrict %>
+ * @replace <%= replace %>
+ * @transclude <%= transclude %>
+ *
+ * @description
+ *
+ * [Scope params, one-way binding]
+ *
+ * [Scope params, two-way binding]
+ *
+ * [Attrs params]
  *
  */
 (function (angular) {
@@ -35,10 +49,12 @@
             methods.init();
 
             function init() {
+                element.on('$destroy', methods.destroy);
                 scope.vm.data.listeners.push(scope.$on('$destroy', methods.destroy));
             }
 
             function destroy() {
+                element.off('$destroy', methods.destroy);
                 _.forEach(scope.vm.data.listeners, $listener => {
                     $listener();
                 });

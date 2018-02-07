@@ -10,6 +10,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.16.1]
+### Added
+- Missing `directive` ng-doc attrs
+- Element destroy listener for directive
+
+### Changed
+- The less styles in the directive file is now targeting the element instead of the class
+
+### Removed
+- Content of the template for directive
+
 ## [0.16.0]
 ### Added
 - New generator `directive`
