@@ -49,6 +49,8 @@
             methods.init();
 
             function init() {
+
+                // Destroy listeners
                 element.on('$destroy', methods.destroy);
                 scope.vm.data.listeners.push(scope.$on('$destroy', methods.destroy));
             }
