@@ -36,7 +36,7 @@
             scope           : {},
             templateUrl     : '<%= templateUrl %>',
             bindToController: true,
-            controller      : <%= controllerName %>,
+            controller      : '<%= controllerName %>',
             controllerAs    : 'vm'
 		};
 
