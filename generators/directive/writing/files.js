@@ -32,7 +32,7 @@
 			directiveName     : $that.name,
 			directiveNameCamel: $that.nameCamel,
 			directiveNameKebab: $that.nameKebab,
-			templateUrl       : slash(filePrefixPath.replace('app/', '') + '.template.html')
+			templateUrl       : slash(filePrefixPath.replace('app\\', '') + '.template.html')
 		};
 
 		utils.copyFileTplFrom($that, 'controller.directive.txt', config, filePrefixPath + '.controller.js');

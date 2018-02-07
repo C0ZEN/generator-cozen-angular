@@ -10,6 +10,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.16.3]
+### Fixed
+- Error with directives's template not found
+
 ## [0.16.2]
 ### Fixed
 - Error with directives's controller not found
