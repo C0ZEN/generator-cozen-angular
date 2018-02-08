@@ -9,8 +9,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+
+## [0.16.4]
 ### Added
 - Directive's controller missing parameters
+
+### Fixed
+- Error with un-injected params in the directive's controller
 
 ## [0.16.3]
 ### Fixed

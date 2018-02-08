@@ -12,7 +12,11 @@
 		.module('<%= appNameCamel %>')
 		.controller('<%= controllerName %>', <%= controllerName %>);
 
-	<%= controllerName %>.$inject = [];
+	<%= controllerName %>.$inject = [
+	    '$scope',
+	    '$element',
+	    '$attrs'
+    ];
 
 	function <%= controllerName %>($scope, $element, $attrs) {
 		const vm = this;
