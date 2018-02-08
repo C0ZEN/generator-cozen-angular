@@ -30,7 +30,7 @@
 	function <%= directiveNameCamel %>(_) {
 		return {
             link,<% if (parent) { %>
-            require         : '<%= parent %>',<% } %>
+            require         : '^^<%= parent %>',<% } %>
             restrict        : '<%= restrict %>',
             replace         : <%= replace %>,
             transclude      : <%= transclude %>,
