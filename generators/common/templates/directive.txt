@@ -1,6 +1,7 @@
 <%- include('../../common/partial/header.unfinished.txt') %>
  * @ngdoc directive
- * @name <%= appNameCamel %>.directive:<%= directiveNameKebab %>
+ * @name <%= appNameCamel %>.directive:<%= directiveNameKebab %><% if (parent) { %>
+ * @requires <%= parent %><% } %>
  * @scope
  * @restrict <%= restrict %>
  * @replace <%= replace %>
