@@ -9,6 +9,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+### Changed
+- Order for `vm.data` in the controllers
 
 ## [0.16.5]
 ### Added

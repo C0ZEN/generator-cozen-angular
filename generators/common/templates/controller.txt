@@ -17,9 +17,9 @@
 	function <%= controllerName %>() {
 		const vm = this;
 
-		vm.data = {};
-
 		vm.methods = {};
+
+		vm.data = {};
 	}
 
 })(window.angular);
