@@ -10,6 +10,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.16.5]
+### Added
+- bower.json into the bump config grunt task for app generator
+- New const `vm.data` for each controller
+
 ## [0.16.4]
 ### Added
 - Directive's controller missing parameters

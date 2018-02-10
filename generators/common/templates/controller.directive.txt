@@ -21,6 +21,8 @@
 	function <%= controllerName %>($scope, $element, $attrs) {
 		const vm = this;
 
+		vm.data = {};
+
 		vm.methods = {};
 
 		vm.data = {
