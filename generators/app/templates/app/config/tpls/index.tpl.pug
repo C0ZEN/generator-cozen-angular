@@ -56,68 +56,49 @@ lang="<%= lang %>")
 		type="application/ld+json"
 		src="structured-data.json")
 
+		script(type="text/javascript").
+			newDeferredStylesheet = function ($stylesheetUrl) {
+				var stylesheet  = document.createElement('link');
+				stylesheet.rel  = 'stylesheet';
+				stylesheet.href = $stylesheetUrl;
+				stylesheet.type = 'text/css';
+				document.getElementsByTagName('head')[0].appendChild(stylesheet);
+			}
+
 		<!-- @if target="dev" -->
-		link(
-		rel="preload"
-		as="style"
-		onload="this.rel='stylesheet'"
-		href="styles/css/vendors.min.css")
 		link(
 		rel="stylesheet"
 		href="styles/css/init-loader.min.css")
-		link(
-		rel="preload"
-		as="style"
-		onload="this.rel='stylesheet'"
-		href="styles/css/<%= appNameKebab %>.min.css")
+		script(type="text/javascript").
+			newDeferredStylesheet('styles/css/vendors.min.css');
+			newDeferredStylesheet('styles/css/<%= appNameKebab %>.min.css');
 		<!-- @endif -->
 
 		<!-- @if target="test" -->
 		link(
-		rel="preload"
-		as="style"
-		onload="this.rel='stylesheet'"
-		href="styles/vendors.min.css")
-		link(
 		rel="stylesheet"
 		href="styles/css/init-loader.min.css")
-		link(
-		rel="preload"
-		as="style"
-		onload="this.rel='stylesheet'"
-		href="styles/<%= appNameKebab %>.min.css")
+		script(type="text/javascript").
+			newDeferredStylesheet('styles/vendors.min.css');
+			newDeferredStylesheet('styles/<%= appNameKebab %>.min.css');
 		<!-- @endif -->
 
 		<!-- @if target="preprod" -->
 		link(
-		rel="preload"
-		as="style"
-		onload="this.rel='stylesheet'"
-		href="styles/vendors.min.css")
-		link(
 		rel="stylesheet"
 		href="styles/css/init-loader.min.css")
-		link(
-		rel="preload"
-		as="style"
-		onload="this.rel='stylesheet'"
-		href="styles/<%= appNameKebab %>.min.css")
+		script(type="text/javascript").
+			newDeferredStylesheet('styles/vendors.min.css');
+			newDeferredStylesheet('styles/<%= appNameKebab %>.min.css');
 		<!-- @endif -->
 
 		<!-- @if target="prod" -->
 		link(
-		rel="preload"
-		as="style"
-		onload="this.rel='stylesheet'"
-		href="styles/vendors.min.css")
-		link(
 		rel="stylesheet"
 		href="styles/css/init-loader.min.css")
-		link(
-		rel="preload"
-		as="style"
-		onload="this.rel='stylesheet'"
-		href="styles/<%= appNameKebab %>.min.css")
+		script(type="text/javascript").
+			newDeferredStylesheet('styles/vendors.min.css');
+			newDeferredStylesheet('styles/<%= appNameKebab %>.min.css');
 		<!-- @endif -->
 
 		<!-- Favicon -->
@@ -160,6 +141,7 @@ lang="<%= lang %>")
 		rel="apple-touch-icon"
 		sizes="180x180"
 		href="images/png/icon/apple-touch-icon-180x180.png")
+
 	body(
 	class="no-overflow")
 

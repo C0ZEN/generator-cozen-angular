@@ -9,8 +9,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add more coverage
 
 ## [Unreleased]
+
+## [0.16.6]
 ### Changed
 - Order for `vm.data` in the controllers
+
+### Fixed
+- The stylesheets included in the index are now compatible with all browsers to defer the loading for the app generator
 
 ## [0.16.5]
 ### Added
