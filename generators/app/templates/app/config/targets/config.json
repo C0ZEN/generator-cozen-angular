@@ -251,7 +251,8 @@
                 "years": {
                     "format": "yyyy"
                 },
-                "modelFormat": "iso-string"
+                "modelFormat": "iso-string",
+				"appendToBody": false
             },
             "toggle": {
                 "validDesign": "alwaysIfModel",
