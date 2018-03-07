@@ -10,6 +10,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.16.8]
+### Fixed
+- Wrong medias copy config for app generator
+
 ## [0.16.7]
 ### Changed
 - Updated the app generator to include the configuration of the new attrs from AAL v0.14.10
